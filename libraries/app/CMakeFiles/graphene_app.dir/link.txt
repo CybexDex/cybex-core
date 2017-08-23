@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgraphene_app.a  CMakeFiles/graphene_app.dir/api.cpp.o CMakeFiles/graphene_app.dir/application.cpp.o CMakeFiles/graphene_app.dir/database_api.cpp.o CMakeFiles/graphene_app.dir/impacted.cpp.o CMakeFiles/graphene_app.dir/plugin.cpp.o
+/usr/bin/ranlib libgraphene_app.a

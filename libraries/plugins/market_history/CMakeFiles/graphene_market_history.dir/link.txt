@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgraphene_market_history.a  CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.o
+/usr/bin/ranlib libgraphene_market_history.a

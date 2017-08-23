@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgraphene_egenesis_full.a  CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.o
+/usr/bin/ranlib libgraphene_egenesis_full.a

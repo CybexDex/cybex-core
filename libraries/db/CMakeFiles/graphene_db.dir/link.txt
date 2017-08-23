@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgraphene_db.a  CMakeFiles/graphene_db.dir/undo_database.cpp.o CMakeFiles/graphene_db.dir/index.cpp.o CMakeFiles/graphene_db.dir/object_database.cpp.o
+/usr/bin/ranlib libgraphene_db.a

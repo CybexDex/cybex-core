@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgraphene_net.a  CMakeFiles/graphene_net.dir/node.cpp.o CMakeFiles/graphene_net.dir/stcp_socket.cpp.o CMakeFiles/graphene_net.dir/core_messages.cpp.o CMakeFiles/graphene_net.dir/peer_database.cpp.o CMakeFiles/graphene_net.dir/peer_connection.cpp.o CMakeFiles/graphene_net.dir/message_oriented_connection.cpp.o
+/usr/bin/ranlib libgraphene_net.a

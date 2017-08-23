@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgraphene_utilities.a  CMakeFiles/graphene_utilities.dir/key_conversion.cpp.o CMakeFiles/graphene_utilities.dir/string_escape.cpp.o CMakeFiles/graphene_utilities.dir/tempdir.cpp.o CMakeFiles/graphene_utilities.dir/words.cpp.o CMakeFiles/graphene_utilities.dir/git_revision.cpp.o
+/usr/bin/ranlib libgraphene_utilities.a
