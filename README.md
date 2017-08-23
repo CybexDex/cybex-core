@@ -1,3 +1,15 @@
+由于暂时没有.gitignore配置文件，请clone后拷贝文件夹进行编译，需要修改源码时再回到clone的文件夹进行对应修改
+
+cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .
+
+make
+
+即可在programs文件夹内找到编译好的程序
+
+
+
+
+
 BitShares Core
 ==============
 * [Getting Started](#getting-started)
