@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,17 +78,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -100,16 +89,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target install/strip
-install/strip/fast: install/strip
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : install/strip/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -124,14 +113,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/libraries/db/CMakeFiles/progress.marks
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/db/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/libraries/db/CMakeFiles/progress.marks
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/db/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/db/clean
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/db/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/db/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/db/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/db/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/db/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libraries/db/CMakeFiles/graphene_db.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/db/CMakeFiles/graphene_db.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/db/CMakeFiles/graphene_db.dir/rule
 .PHONY : libraries/db/CMakeFiles/graphene_db.dir/rule
 
 # Convenience name for target.
@@ -166,7 +155,7 @@ graphene_db: libraries/db/CMakeFiles/graphene_db.dir/rule
 
 # fast build rule for target.
 graphene_db/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/build
 .PHONY : graphene_db/fast
 
 index.o: index.cpp.o
@@ -175,7 +164,7 @@ index.o: index.cpp.o
 
 # target to build an object file
 index.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/index.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/index.cpp.o
 .PHONY : index.cpp.o
 
 index.i: index.cpp.i
@@ -184,7 +173,7 @@ index.i: index.cpp.i
 
 # target to preprocess a source file
 index.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/index.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/index.cpp.i
 .PHONY : index.cpp.i
 
 index.s: index.cpp.s
@@ -193,7 +182,7 @@ index.s: index.cpp.s
 
 # target to generate assembly for a file
 index.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/index.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/index.cpp.s
 .PHONY : index.cpp.s
 
 object_database.o: object_database.cpp.o
@@ -202,7 +191,7 @@ object_database.o: object_database.cpp.o
 
 # target to build an object file
 object_database.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/object_database.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/object_database.cpp.o
 .PHONY : object_database.cpp.o
 
 object_database.i: object_database.cpp.i
@@ -211,7 +200,7 @@ object_database.i: object_database.cpp.i
 
 # target to preprocess a source file
 object_database.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/object_database.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/object_database.cpp.i
 .PHONY : object_database.cpp.i
 
 object_database.s: object_database.cpp.s
@@ -220,7 +209,7 @@ object_database.s: object_database.cpp.s
 
 # target to generate assembly for a file
 object_database.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/object_database.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/object_database.cpp.s
 .PHONY : object_database.cpp.s
 
 undo_database.o: undo_database.cpp.o
@@ -229,7 +218,7 @@ undo_database.o: undo_database.cpp.o
 
 # target to build an object file
 undo_database.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/undo_database.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/undo_database.cpp.o
 .PHONY : undo_database.cpp.o
 
 undo_database.i: undo_database.cpp.i
@@ -238,7 +227,7 @@ undo_database.i: undo_database.cpp.i
 
 # target to preprocess a source file
 undo_database.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/undo_database.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/undo_database.cpp.i
 .PHONY : undo_database.cpp.i
 
 undo_database.s: undo_database.cpp.s
@@ -247,7 +236,7 @@ undo_database.s: undo_database.cpp.s
 
 # target to generate assembly for a file
 undo_database.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/undo_database.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/db/CMakeFiles/graphene_db.dir/build.make libraries/db/CMakeFiles/graphene_db.dir/undo_database.cpp.s
 .PHONY : undo_database.cpp.s
 
 # Help Target
@@ -258,10 +247,9 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... rebuild_cache"
 	@echo "... graphene_db"
 	@echo "... install/local"
-	@echo "... install/strip"
+	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... index.o"
 	@echo "... index.i"
@@ -283,6 +271,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

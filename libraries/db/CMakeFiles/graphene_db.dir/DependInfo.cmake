@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/root/cybex8/libraries/db/index.cpp" "/root/cybex8/libraries/db/CMakeFiles/graphene_db.dir/index.cpp.o"
-  "/root/cybex8/libraries/db/object_database.cpp" "/root/cybex8/libraries/db/CMakeFiles/graphene_db.dir/object_database.cpp.o"
-  "/root/cybex8/libraries/db/undo_database.cpp" "/root/cybex8/libraries/db/CMakeFiles/graphene_db.dir/undo_database.cpp.o"
+  "/root/cybex-core/libraries/db/index.cpp" "/root/cybex-core/libraries/db/CMakeFiles/graphene_db.dir/index.cpp.o"
+  "/root/cybex-core/libraries/db/object_database.cpp" "/root/cybex-core/libraries/db/CMakeFiles/graphene_db.dir/object_database.cpp.o"
+  "/root/cybex-core/libraries/db/undo_database.cpp" "/root/cybex-core/libraries/db/CMakeFiles/graphene_db.dir/undo_database.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -23,7 +23,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/root/cybex8/libraries/fc/CMakeFiles/fc.dir/DependInfo.cmake"
+  "/root/cybex-core/libraries/fc/CMakeFiles/fc.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

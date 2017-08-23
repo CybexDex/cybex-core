@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/js_operation_serializer.dir/main.cpp.o"
   "js_operation_serializer.pdb"
   "js_operation_serializer"
+  "js_operation_serializer.pdb"
+  "CMakeFiles/CMakeRelink.dir/js_operation_serializer"
 )
 
 # Per-language clean rules from dependency scanning.

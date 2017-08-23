@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,6 +67,16 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"dev\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -90,27 +100,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"dev\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -124,14 +113,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/libraries/fc/tests/CMakeFiles/progress.marks
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/libraries/fc/tests/CMakeFiles/progress.marks
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/clean
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libraries/fc/tests/CMakeFiles/all_tests.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/all_tests.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/all_tests.dir/rule
 .PHONY : libraries/fc/tests/CMakeFiles/all_tests.dir/rule
 
 # Convenience name for target.
@@ -166,12 +155,12 @@ all_tests: libraries/fc/tests/CMakeFiles/all_tests.dir/rule
 
 # fast build rule for target.
 all_tests/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/build
 .PHONY : all_tests/fast
 
 # Convenience name for target.
 libraries/fc/tests/CMakeFiles/task_cancel_test.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/task_cancel_test.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/task_cancel_test.dir/rule
 .PHONY : libraries/fc/tests/CMakeFiles/task_cancel_test.dir/rule
 
 # Convenience name for target.
@@ -181,12 +170,12 @@ task_cancel_test: libraries/fc/tests/CMakeFiles/task_cancel_test.dir/rule
 
 # fast build rule for target.
 task_cancel_test/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build
 .PHONY : task_cancel_test/fast
 
 # Convenience name for target.
 libraries/fc/tests/CMakeFiles/blind.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/blind.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/blind.dir/rule
 .PHONY : libraries/fc/tests/CMakeFiles/blind.dir/rule
 
 # Convenience name for target.
@@ -196,12 +185,12 @@ blind: libraries/fc/tests/CMakeFiles/blind.dir/rule
 
 # fast build rule for target.
 blind/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/build
 .PHONY : blind/fast
 
 # Convenience name for target.
 libraries/fc/tests/CMakeFiles/api.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/api.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/api.dir/rule
 .PHONY : libraries/fc/tests/CMakeFiles/api.dir/rule
 
 # Convenience name for target.
@@ -211,12 +200,12 @@ api: libraries/fc/tests/CMakeFiles/api.dir/rule
 
 # fast build rule for target.
 api/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/api.dir/build.make libraries/fc/tests/CMakeFiles/api.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/api.dir/build.make libraries/fc/tests/CMakeFiles/api.dir/build
 .PHONY : api/fast
 
 # Convenience name for target.
 libraries/fc/tests/CMakeFiles/hmac_test.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/hmac_test.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/hmac_test.dir/rule
 .PHONY : libraries/fc/tests/CMakeFiles/hmac_test.dir/rule
 
 # Convenience name for target.
@@ -226,12 +215,12 @@ hmac_test: libraries/fc/tests/CMakeFiles/hmac_test.dir/rule
 
 # fast build rule for target.
 hmac_test/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/hmac_test.dir/build.make libraries/fc/tests/CMakeFiles/hmac_test.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/hmac_test.dir/build.make libraries/fc/tests/CMakeFiles/hmac_test.dir/build
 .PHONY : hmac_test/fast
 
 # Convenience name for target.
 libraries/fc/tests/CMakeFiles/bloom_test.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/bloom_test.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/bloom_test.dir/rule
 .PHONY : libraries/fc/tests/CMakeFiles/bloom_test.dir/rule
 
 # Convenience name for target.
@@ -241,12 +230,12 @@ bloom_test: libraries/fc/tests/CMakeFiles/bloom_test.dir/rule
 
 # fast build rule for target.
 bloom_test/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/build
 .PHONY : bloom_test/fast
 
 # Convenience name for target.
 libraries/fc/tests/CMakeFiles/real128_test.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/real128_test.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/real128_test.dir/rule
 .PHONY : libraries/fc/tests/CMakeFiles/real128_test.dir/rule
 
 # Convenience name for target.
@@ -256,12 +245,12 @@ real128_test: libraries/fc/tests/CMakeFiles/real128_test.dir/rule
 
 # fast build rule for target.
 real128_test/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/build
 .PHONY : real128_test/fast
 
 # Convenience name for target.
 libraries/fc/tests/CMakeFiles/log_test.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/log_test.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/log_test.dir/rule
 .PHONY : libraries/fc/tests/CMakeFiles/log_test.dir/rule
 
 # Convenience name for target.
@@ -271,12 +260,12 @@ log_test: libraries/fc/tests/CMakeFiles/log_test.dir/rule
 
 # fast build rule for target.
 log_test/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/log_test.dir/build.make libraries/fc/tests/CMakeFiles/log_test.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/log_test.dir/build.make libraries/fc/tests/CMakeFiles/log_test.dir/build
 .PHONY : log_test/fast
 
 # Convenience name for target.
 libraries/fc/tests/CMakeFiles/blinding_test.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/blinding_test.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/blinding_test.dir/rule
 .PHONY : libraries/fc/tests/CMakeFiles/blinding_test.dir/rule
 
 # Convenience name for target.
@@ -286,12 +275,12 @@ blinding_test: libraries/fc/tests/CMakeFiles/blinding_test.dir/rule
 
 # fast build rule for target.
 blinding_test/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/blinding_test.dir/build.make libraries/fc/tests/CMakeFiles/blinding_test.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/blinding_test.dir/build.make libraries/fc/tests/CMakeFiles/blinding_test.dir/build
 .PHONY : blinding_test/fast
 
 # Convenience name for target.
 libraries/fc/tests/CMakeFiles/bip_lock.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/bip_lock.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/bip_lock.dir/rule
 .PHONY : libraries/fc/tests/CMakeFiles/bip_lock.dir/rule
 
 # Convenience name for target.
@@ -301,12 +290,12 @@ bip_lock: libraries/fc/tests/CMakeFiles/bip_lock.dir/rule
 
 # fast build rule for target.
 bip_lock/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/bip_lock.dir/build.make libraries/fc/tests/CMakeFiles/bip_lock.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/bip_lock.dir/build.make libraries/fc/tests/CMakeFiles/bip_lock.dir/build
 .PHONY : bip_lock/fast
 
 # Convenience name for target.
 libraries/fc/tests/CMakeFiles/ecc_test.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/ecc_test.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/tests/CMakeFiles/ecc_test.dir/rule
 .PHONY : libraries/fc/tests/CMakeFiles/ecc_test.dir/rule
 
 # Convenience name for target.
@@ -316,7 +305,7 @@ ecc_test: libraries/fc/tests/CMakeFiles/ecc_test.dir/rule
 
 # fast build rule for target.
 ecc_test/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/ecc_test.dir/build.make libraries/fc/tests/CMakeFiles/ecc_test.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/ecc_test.dir/build.make libraries/fc/tests/CMakeFiles/ecc_test.dir/build
 .PHONY : ecc_test/fast
 
 all_tests.o: all_tests.cpp.o
@@ -325,11 +314,11 @@ all_tests.o: all_tests.cpp.o
 
 # target to build an object file
 all_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.o
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/all_tests.cpp.o
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/all_tests.cpp.o
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/all_tests.cpp.o
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/all_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/all_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/all_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.o
 .PHONY : all_tests.cpp.o
 
 all_tests.i: all_tests.cpp.i
@@ -338,11 +327,11 @@ all_tests.i: all_tests.cpp.i
 
 # target to preprocess a source file
 all_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.i
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/all_tests.cpp.i
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/all_tests.cpp.i
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/all_tests.cpp.i
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/all_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/all_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/all_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.i
 .PHONY : all_tests.cpp.i
 
 all_tests.s: all_tests.cpp.s
@@ -351,11 +340,11 @@ all_tests.s: all_tests.cpp.s
 
 # target to generate assembly for a file
 all_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.s
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/all_tests.cpp.s
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/all_tests.cpp.s
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/all_tests.cpp.s
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/all_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/all_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/all_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.s
 .PHONY : all_tests.cpp.s
 
 api.o: api.cpp.o
@@ -364,7 +353,7 @@ api.o: api.cpp.o
 
 # target to build an object file
 api.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/api.dir/build.make libraries/fc/tests/CMakeFiles/api.dir/api.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/api.dir/build.make libraries/fc/tests/CMakeFiles/api.dir/api.cpp.o
 .PHONY : api.cpp.o
 
 api.i: api.cpp.i
@@ -373,7 +362,7 @@ api.i: api.cpp.i
 
 # target to preprocess a source file
 api.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/api.dir/build.make libraries/fc/tests/CMakeFiles/api.dir/api.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/api.dir/build.make libraries/fc/tests/CMakeFiles/api.dir/api.cpp.i
 .PHONY : api.cpp.i
 
 api.s: api.cpp.s
@@ -382,7 +371,7 @@ api.s: api.cpp.s
 
 # target to generate assembly for a file
 api.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/api.dir/build.make libraries/fc/tests/CMakeFiles/api.dir/api.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/api.dir/build.make libraries/fc/tests/CMakeFiles/api.dir/api.cpp.s
 .PHONY : api.cpp.s
 
 bip_lock.o: bip_lock.cpp.o
@@ -391,7 +380,7 @@ bip_lock.o: bip_lock.cpp.o
 
 # target to build an object file
 bip_lock.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/bip_lock.dir/build.make libraries/fc/tests/CMakeFiles/bip_lock.dir/bip_lock.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/bip_lock.dir/build.make libraries/fc/tests/CMakeFiles/bip_lock.dir/bip_lock.cpp.o
 .PHONY : bip_lock.cpp.o
 
 bip_lock.i: bip_lock.cpp.i
@@ -400,7 +389,7 @@ bip_lock.i: bip_lock.cpp.i
 
 # target to preprocess a source file
 bip_lock.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/bip_lock.dir/build.make libraries/fc/tests/CMakeFiles/bip_lock.dir/bip_lock.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/bip_lock.dir/build.make libraries/fc/tests/CMakeFiles/bip_lock.dir/bip_lock.cpp.i
 .PHONY : bip_lock.cpp.i
 
 bip_lock.s: bip_lock.cpp.s
@@ -409,7 +398,7 @@ bip_lock.s: bip_lock.cpp.s
 
 # target to generate assembly for a file
 bip_lock.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/bip_lock.dir/build.make libraries/fc/tests/CMakeFiles/bip_lock.dir/bip_lock.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/bip_lock.dir/build.make libraries/fc/tests/CMakeFiles/bip_lock.dir/bip_lock.cpp.s
 .PHONY : bip_lock.cpp.s
 
 blinding_test.o: blinding_test.cpp.o
@@ -418,7 +407,7 @@ blinding_test.o: blinding_test.cpp.o
 
 # target to build an object file
 blinding_test.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/blinding_test.dir/build.make libraries/fc/tests/CMakeFiles/blinding_test.dir/blinding_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/blinding_test.dir/build.make libraries/fc/tests/CMakeFiles/blinding_test.dir/blinding_test.cpp.o
 .PHONY : blinding_test.cpp.o
 
 blinding_test.i: blinding_test.cpp.i
@@ -427,7 +416,7 @@ blinding_test.i: blinding_test.cpp.i
 
 # target to preprocess a source file
 blinding_test.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/blinding_test.dir/build.make libraries/fc/tests/CMakeFiles/blinding_test.dir/blinding_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/blinding_test.dir/build.make libraries/fc/tests/CMakeFiles/blinding_test.dir/blinding_test.cpp.i
 .PHONY : blinding_test.cpp.i
 
 blinding_test.s: blinding_test.cpp.s
@@ -436,7 +425,7 @@ blinding_test.s: blinding_test.cpp.s
 
 # target to generate assembly for a file
 blinding_test.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/blinding_test.dir/build.make libraries/fc/tests/CMakeFiles/blinding_test.dir/blinding_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/blinding_test.dir/build.make libraries/fc/tests/CMakeFiles/blinding_test.dir/blinding_test.cpp.s
 .PHONY : blinding_test.cpp.s
 
 bloom_test.o: bloom_test.cpp.o
@@ -445,8 +434,8 @@ bloom_test.o: bloom_test.cpp.o
 
 # target to build an object file
 bloom_test.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.o
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/bloom_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/bloom_test.cpp.o
 .PHONY : bloom_test.cpp.o
 
 bloom_test.i: bloom_test.cpp.i
@@ -455,8 +444,8 @@ bloom_test.i: bloom_test.cpp.i
 
 # target to preprocess a source file
 bloom_test.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.i
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/bloom_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/bloom_test.cpp.i
 .PHONY : bloom_test.cpp.i
 
 bloom_test.s: bloom_test.cpp.s
@@ -465,8 +454,8 @@ bloom_test.s: bloom_test.cpp.s
 
 # target to generate assembly for a file
 bloom_test.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.s
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/bloom_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/bloom_test.dir/build.make libraries/fc/tests/CMakeFiles/bloom_test.dir/bloom_test.cpp.s
 .PHONY : bloom_test.cpp.s
 
 compress/compress.o: compress/compress.cpp.o
@@ -475,7 +464,7 @@ compress/compress.o: compress/compress.cpp.o
 
 # target to build an object file
 compress/compress.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.o
 .PHONY : compress/compress.cpp.o
 
 compress/compress.i: compress/compress.cpp.i
@@ -484,7 +473,7 @@ compress/compress.i: compress/compress.cpp.i
 
 # target to preprocess a source file
 compress/compress.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.i
 .PHONY : compress/compress.cpp.i
 
 compress/compress.s: compress/compress.cpp.s
@@ -493,7 +482,7 @@ compress/compress.s: compress/compress.cpp.s
 
 # target to generate assembly for a file
 compress/compress.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.s
 .PHONY : compress/compress.cpp.s
 
 crypto/aes_test.o: crypto/aes_test.cpp.o
@@ -502,7 +491,7 @@ crypto/aes_test.o: crypto/aes_test.cpp.o
 
 # target to build an object file
 crypto/aes_test.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.o
 .PHONY : crypto/aes_test.cpp.o
 
 crypto/aes_test.i: crypto/aes_test.cpp.i
@@ -511,7 +500,7 @@ crypto/aes_test.i: crypto/aes_test.cpp.i
 
 # target to preprocess a source file
 crypto/aes_test.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.i
 .PHONY : crypto/aes_test.cpp.i
 
 crypto/aes_test.s: crypto/aes_test.cpp.s
@@ -520,7 +509,7 @@ crypto/aes_test.s: crypto/aes_test.cpp.s
 
 # target to generate assembly for a file
 crypto/aes_test.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.s
 .PHONY : crypto/aes_test.cpp.s
 
 crypto/base_n_tests.o: crypto/base_n_tests.cpp.o
@@ -529,7 +518,7 @@ crypto/base_n_tests.o: crypto/base_n_tests.cpp.o
 
 # target to build an object file
 crypto/base_n_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.o
 .PHONY : crypto/base_n_tests.cpp.o
 
 crypto/base_n_tests.i: crypto/base_n_tests.cpp.i
@@ -538,7 +527,7 @@ crypto/base_n_tests.i: crypto/base_n_tests.cpp.i
 
 # target to preprocess a source file
 crypto/base_n_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.i
 .PHONY : crypto/base_n_tests.cpp.i
 
 crypto/base_n_tests.s: crypto/base_n_tests.cpp.s
@@ -547,7 +536,7 @@ crypto/base_n_tests.s: crypto/base_n_tests.cpp.s
 
 # target to generate assembly for a file
 crypto/base_n_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.s
 .PHONY : crypto/base_n_tests.cpp.s
 
 crypto/bigint_test.o: crypto/bigint_test.cpp.o
@@ -556,7 +545,7 @@ crypto/bigint_test.o: crypto/bigint_test.cpp.o
 
 # target to build an object file
 crypto/bigint_test.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.o
 .PHONY : crypto/bigint_test.cpp.o
 
 crypto/bigint_test.i: crypto/bigint_test.cpp.i
@@ -565,7 +554,7 @@ crypto/bigint_test.i: crypto/bigint_test.cpp.i
 
 # target to preprocess a source file
 crypto/bigint_test.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.i
 .PHONY : crypto/bigint_test.cpp.i
 
 crypto/bigint_test.s: crypto/bigint_test.cpp.s
@@ -574,7 +563,7 @@ crypto/bigint_test.s: crypto/bigint_test.cpp.s
 
 # target to generate assembly for a file
 crypto/bigint_test.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.s
 .PHONY : crypto/bigint_test.cpp.s
 
 crypto/blind.o: crypto/blind.cpp.o
@@ -583,8 +572,8 @@ crypto/blind.o: crypto/blind.cpp.o
 
 # target to build an object file
 crypto/blind.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.o
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/crypto/blind.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/crypto/blind.cpp.o
 .PHONY : crypto/blind.cpp.o
 
 crypto/blind.i: crypto/blind.cpp.i
@@ -593,8 +582,8 @@ crypto/blind.i: crypto/blind.cpp.i
 
 # target to preprocess a source file
 crypto/blind.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.i
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/crypto/blind.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/crypto/blind.cpp.i
 .PHONY : crypto/blind.cpp.i
 
 crypto/blind.s: crypto/blind.cpp.s
@@ -603,8 +592,8 @@ crypto/blind.s: crypto/blind.cpp.s
 
 # target to generate assembly for a file
 crypto/blind.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.s
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/crypto/blind.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/blind.dir/build.make libraries/fc/tests/CMakeFiles/blind.dir/crypto/blind.cpp.s
 .PHONY : crypto/blind.cpp.s
 
 crypto/blowfish_test.o: crypto/blowfish_test.cpp.o
@@ -613,7 +602,7 @@ crypto/blowfish_test.o: crypto/blowfish_test.cpp.o
 
 # target to build an object file
 crypto/blowfish_test.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.o
 .PHONY : crypto/blowfish_test.cpp.o
 
 crypto/blowfish_test.i: crypto/blowfish_test.cpp.i
@@ -622,7 +611,7 @@ crypto/blowfish_test.i: crypto/blowfish_test.cpp.i
 
 # target to preprocess a source file
 crypto/blowfish_test.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.i
 .PHONY : crypto/blowfish_test.cpp.i
 
 crypto/blowfish_test.s: crypto/blowfish_test.cpp.s
@@ -631,7 +620,7 @@ crypto/blowfish_test.s: crypto/blowfish_test.cpp.s
 
 # target to generate assembly for a file
 crypto/blowfish_test.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.s
 .PHONY : crypto/blowfish_test.cpp.s
 
 crypto/dh_test.o: crypto/dh_test.cpp.o
@@ -640,7 +629,7 @@ crypto/dh_test.o: crypto/dh_test.cpp.o
 
 # target to build an object file
 crypto/dh_test.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.o
 .PHONY : crypto/dh_test.cpp.o
 
 crypto/dh_test.i: crypto/dh_test.cpp.i
@@ -649,7 +638,7 @@ crypto/dh_test.i: crypto/dh_test.cpp.i
 
 # target to preprocess a source file
 crypto/dh_test.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.i
 .PHONY : crypto/dh_test.cpp.i
 
 crypto/dh_test.s: crypto/dh_test.cpp.s
@@ -658,7 +647,7 @@ crypto/dh_test.s: crypto/dh_test.cpp.s
 
 # target to generate assembly for a file
 crypto/dh_test.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.s
 .PHONY : crypto/dh_test.cpp.s
 
 crypto/ecc_test.o: crypto/ecc_test.cpp.o
@@ -667,7 +656,7 @@ crypto/ecc_test.o: crypto/ecc_test.cpp.o
 
 # target to build an object file
 crypto/ecc_test.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/ecc_test.dir/build.make libraries/fc/tests/CMakeFiles/ecc_test.dir/crypto/ecc_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/ecc_test.dir/build.make libraries/fc/tests/CMakeFiles/ecc_test.dir/crypto/ecc_test.cpp.o
 .PHONY : crypto/ecc_test.cpp.o
 
 crypto/ecc_test.i: crypto/ecc_test.cpp.i
@@ -676,7 +665,7 @@ crypto/ecc_test.i: crypto/ecc_test.cpp.i
 
 # target to preprocess a source file
 crypto/ecc_test.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/ecc_test.dir/build.make libraries/fc/tests/CMakeFiles/ecc_test.dir/crypto/ecc_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/ecc_test.dir/build.make libraries/fc/tests/CMakeFiles/ecc_test.dir/crypto/ecc_test.cpp.i
 .PHONY : crypto/ecc_test.cpp.i
 
 crypto/ecc_test.s: crypto/ecc_test.cpp.s
@@ -685,7 +674,7 @@ crypto/ecc_test.s: crypto/ecc_test.cpp.s
 
 # target to generate assembly for a file
 crypto/ecc_test.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/ecc_test.dir/build.make libraries/fc/tests/CMakeFiles/ecc_test.dir/crypto/ecc_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/ecc_test.dir/build.make libraries/fc/tests/CMakeFiles/ecc_test.dir/crypto/ecc_test.cpp.s
 .PHONY : crypto/ecc_test.cpp.s
 
 crypto/log_test.o: crypto/log_test.cpp.o
@@ -694,7 +683,7 @@ crypto/log_test.o: crypto/log_test.cpp.o
 
 # target to build an object file
 crypto/log_test.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/log_test.dir/build.make libraries/fc/tests/CMakeFiles/log_test.dir/crypto/log_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/log_test.dir/build.make libraries/fc/tests/CMakeFiles/log_test.dir/crypto/log_test.cpp.o
 .PHONY : crypto/log_test.cpp.o
 
 crypto/log_test.i: crypto/log_test.cpp.i
@@ -703,7 +692,7 @@ crypto/log_test.i: crypto/log_test.cpp.i
 
 # target to preprocess a source file
 crypto/log_test.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/log_test.dir/build.make libraries/fc/tests/CMakeFiles/log_test.dir/crypto/log_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/log_test.dir/build.make libraries/fc/tests/CMakeFiles/log_test.dir/crypto/log_test.cpp.i
 .PHONY : crypto/log_test.cpp.i
 
 crypto/log_test.s: crypto/log_test.cpp.s
@@ -712,7 +701,7 @@ crypto/log_test.s: crypto/log_test.cpp.s
 
 # target to generate assembly for a file
 crypto/log_test.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/log_test.dir/build.make libraries/fc/tests/CMakeFiles/log_test.dir/crypto/log_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/log_test.dir/build.make libraries/fc/tests/CMakeFiles/log_test.dir/crypto/log_test.cpp.s
 .PHONY : crypto/log_test.cpp.s
 
 crypto/rand_test.o: crypto/rand_test.cpp.o
@@ -721,7 +710,7 @@ crypto/rand_test.o: crypto/rand_test.cpp.o
 
 # target to build an object file
 crypto/rand_test.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.o
 .PHONY : crypto/rand_test.cpp.o
 
 crypto/rand_test.i: crypto/rand_test.cpp.i
@@ -730,7 +719,7 @@ crypto/rand_test.i: crypto/rand_test.cpp.i
 
 # target to preprocess a source file
 crypto/rand_test.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.i
 .PHONY : crypto/rand_test.cpp.i
 
 crypto/rand_test.s: crypto/rand_test.cpp.s
@@ -739,7 +728,7 @@ crypto/rand_test.s: crypto/rand_test.cpp.s
 
 # target to generate assembly for a file
 crypto/rand_test.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.s
 .PHONY : crypto/rand_test.cpp.s
 
 crypto/sha_tests.o: crypto/sha_tests.cpp.o
@@ -748,7 +737,7 @@ crypto/sha_tests.o: crypto/sha_tests.cpp.o
 
 # target to build an object file
 crypto/sha_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.o
 .PHONY : crypto/sha_tests.cpp.o
 
 crypto/sha_tests.i: crypto/sha_tests.cpp.i
@@ -757,7 +746,7 @@ crypto/sha_tests.i: crypto/sha_tests.cpp.i
 
 # target to preprocess a source file
 crypto/sha_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.i
 .PHONY : crypto/sha_tests.cpp.i
 
 crypto/sha_tests.s: crypto/sha_tests.cpp.s
@@ -766,7 +755,7 @@ crypto/sha_tests.s: crypto/sha_tests.cpp.s
 
 # target to generate assembly for a file
 crypto/sha_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.s
 .PHONY : crypto/sha_tests.cpp.s
 
 hmac_test.o: hmac_test.cpp.o
@@ -775,7 +764,7 @@ hmac_test.o: hmac_test.cpp.o
 
 # target to build an object file
 hmac_test.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/hmac_test.dir/build.make libraries/fc/tests/CMakeFiles/hmac_test.dir/hmac_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/hmac_test.dir/build.make libraries/fc/tests/CMakeFiles/hmac_test.dir/hmac_test.cpp.o
 .PHONY : hmac_test.cpp.o
 
 hmac_test.i: hmac_test.cpp.i
@@ -784,7 +773,7 @@ hmac_test.i: hmac_test.cpp.i
 
 # target to preprocess a source file
 hmac_test.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/hmac_test.dir/build.make libraries/fc/tests/CMakeFiles/hmac_test.dir/hmac_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/hmac_test.dir/build.make libraries/fc/tests/CMakeFiles/hmac_test.dir/hmac_test.cpp.i
 .PHONY : hmac_test.cpp.i
 
 hmac_test.s: hmac_test.cpp.s
@@ -793,7 +782,7 @@ hmac_test.s: hmac_test.cpp.s
 
 # target to generate assembly for a file
 hmac_test.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/hmac_test.dir/build.make libraries/fc/tests/CMakeFiles/hmac_test.dir/hmac_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/hmac_test.dir/build.make libraries/fc/tests/CMakeFiles/hmac_test.dir/hmac_test.cpp.s
 .PHONY : hmac_test.cpp.s
 
 network/http/websocket_test.o: network/http/websocket_test.cpp.o
@@ -802,7 +791,7 @@ network/http/websocket_test.o: network/http/websocket_test.cpp.o
 
 # target to build an object file
 network/http/websocket_test.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.o
 .PHONY : network/http/websocket_test.cpp.o
 
 network/http/websocket_test.i: network/http/websocket_test.cpp.i
@@ -811,7 +800,7 @@ network/http/websocket_test.i: network/http/websocket_test.cpp.i
 
 # target to preprocess a source file
 network/http/websocket_test.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.i
 .PHONY : network/http/websocket_test.cpp.i
 
 network/http/websocket_test.s: network/http/websocket_test.cpp.s
@@ -820,7 +809,7 @@ network/http/websocket_test.s: network/http/websocket_test.cpp.s
 
 # target to generate assembly for a file
 network/http/websocket_test.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.s
 .PHONY : network/http/websocket_test.cpp.s
 
 real128_test.o: real128_test.cpp.o
@@ -829,8 +818,8 @@ real128_test.o: real128_test.cpp.o
 
 # target to build an object file
 real128_test.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.o
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.o
 .PHONY : real128_test.cpp.o
 
 real128_test.i: real128_test.cpp.i
@@ -839,8 +828,8 @@ real128_test.i: real128_test.cpp.i
 
 # target to preprocess a source file
 real128_test.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.i
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.i
 .PHONY : real128_test.cpp.i
 
 real128_test.s: real128_test.cpp.s
@@ -849,8 +838,8 @@ real128_test.s: real128_test.cpp.s
 
 # target to generate assembly for a file
 real128_test.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.s
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/real128_test.dir/build.make libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.s
 .PHONY : real128_test.cpp.s
 
 thread/task_cancel.o: thread/task_cancel.cpp.o
@@ -859,8 +848,8 @@ thread/task_cancel.o: thread/task_cancel.cpp.o
 
 # target to build an object file
 thread/task_cancel.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.o
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/thread/task_cancel.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/thread/task_cancel.cpp.o
 .PHONY : thread/task_cancel.cpp.o
 
 thread/task_cancel.i: thread/task_cancel.cpp.i
@@ -869,8 +858,8 @@ thread/task_cancel.i: thread/task_cancel.cpp.i
 
 # target to preprocess a source file
 thread/task_cancel.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.i
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/thread/task_cancel.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/thread/task_cancel.cpp.i
 .PHONY : thread/task_cancel.cpp.i
 
 thread/task_cancel.s: thread/task_cancel.cpp.s
@@ -879,8 +868,8 @@ thread/task_cancel.s: thread/task_cancel.cpp.s
 
 # target to generate assembly for a file
 thread/task_cancel.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.s
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/thread/task_cancel.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/task_cancel_test.dir/build.make libraries/fc/tests/CMakeFiles/task_cancel_test.dir/thread/task_cancel.cpp.s
 .PHONY : thread/task_cancel.cpp.s
 
 utf8_test.o: utf8_test.cpp.o
@@ -889,7 +878,7 @@ utf8_test.o: utf8_test.cpp.o
 
 # target to build an object file
 utf8_test.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/utf8_test.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/utf8_test.cpp.o
 .PHONY : utf8_test.cpp.o
 
 utf8_test.i: utf8_test.cpp.i
@@ -898,7 +887,7 @@ utf8_test.i: utf8_test.cpp.i
 
 # target to preprocess a source file
 utf8_test.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/utf8_test.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/utf8_test.cpp.i
 .PHONY : utf8_test.cpp.i
 
 utf8_test.s: utf8_test.cpp.s
@@ -907,7 +896,7 @@ utf8_test.s: utf8_test.cpp.s
 
 # target to generate assembly for a file
 utf8_test.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/utf8_test.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/tests/CMakeFiles/all_tests.dir/build.make libraries/fc/tests/CMakeFiles/all_tests.dir/utf8_test.cpp.s
 .PHONY : utf8_test.cpp.s
 
 # Help Target
@@ -917,10 +906,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... install/local"
-	@echo "... list_install_components"
-	@echo "... install/strip"
 	@echo "... all_tests"
 	@echo "... task_cancel_test"
 	@echo "... blind"
@@ -1007,6 +995,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

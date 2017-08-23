@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 # Utility rule file for build_hardfork_hpp.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /root/cybex8
 include libraries/chain/CMakeFiles/build_hardfork_hpp.dir/progress.make
 
 libraries/chain/CMakeFiles/build_hardfork_hpp:
-	cd /root/cybex8/libraries/chain && ../../programs/build_helpers/cat-parts /root/cybex8/libraries/chain/hardfork.d /root/cybex8/libraries/chain/include/graphene/chain/hardfork.hpp
+	cd /root/cybex-core/libraries/chain && ../../programs/build_helpers/cat-parts /root/cybex-core/libraries/chain/hardfork.d /root/cybex-core/libraries/chain/include/graphene/chain/hardfork.hpp
 
 build_hardfork_hpp: libraries/chain/CMakeFiles/build_hardfork_hpp
 build_hardfork_hpp: libraries/chain/CMakeFiles/build_hardfork_hpp.dir/build.make
@@ -67,10 +67,10 @@ libraries/chain/CMakeFiles/build_hardfork_hpp.dir/build: build_hardfork_hpp
 .PHONY : libraries/chain/CMakeFiles/build_hardfork_hpp.dir/build
 
 libraries/chain/CMakeFiles/build_hardfork_hpp.dir/clean:
-	cd /root/cybex8/libraries/chain && $(CMAKE_COMMAND) -P CMakeFiles/build_hardfork_hpp.dir/cmake_clean.cmake
+	cd /root/cybex-core/libraries/chain && $(CMAKE_COMMAND) -P CMakeFiles/build_hardfork_hpp.dir/cmake_clean.cmake
 .PHONY : libraries/chain/CMakeFiles/build_hardfork_hpp.dir/clean
 
 libraries/chain/CMakeFiles/build_hardfork_hpp.dir/depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex8 /root/cybex8/libraries/chain /root/cybex8 /root/cybex8/libraries/chain /root/cybex8/libraries/chain/CMakeFiles/build_hardfork_hpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex-core /root/cybex-core/libraries/chain /root/cybex-core /root/cybex-core/libraries/chain /root/cybex-core/libraries/chain/CMakeFiles/build_hardfork_hpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libraries/chain/CMakeFiles/build_hardfork_hpp.dir/depend
 

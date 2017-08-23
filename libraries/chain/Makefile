@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,17 +100,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -124,14 +113,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/libraries/chain/CMakeFiles/progress.marks
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/chain/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/libraries/chain/CMakeFiles/progress.marks
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/chain/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/chain/clean
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/chain/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/chain/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/chain/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/chain/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/chain/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libraries/chain/CMakeFiles/build_hardfork_hpp.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/chain/CMakeFiles/build_hardfork_hpp.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/chain/CMakeFiles/build_hardfork_hpp.dir/rule
 .PHONY : libraries/chain/CMakeFiles/build_hardfork_hpp.dir/rule
 
 # Convenience name for target.
@@ -166,12 +155,12 @@ build_hardfork_hpp: libraries/chain/CMakeFiles/build_hardfork_hpp.dir/rule
 
 # fast build rule for target.
 build_hardfork_hpp/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/build_hardfork_hpp.dir/build.make libraries/chain/CMakeFiles/build_hardfork_hpp.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/build_hardfork_hpp.dir/build.make libraries/chain/CMakeFiles/build_hardfork_hpp.dir/build
 .PHONY : build_hardfork_hpp/fast
 
 # Convenience name for target.
 libraries/chain/CMakeFiles/graphene_chain.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/chain/CMakeFiles/graphene_chain.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/chain/CMakeFiles/graphene_chain.dir/rule
 .PHONY : libraries/chain/CMakeFiles/graphene_chain.dir/rule
 
 # Convenience name for target.
@@ -181,7 +170,7 @@ graphene_chain: libraries/chain/CMakeFiles/graphene_chain.dir/rule
 
 # fast build rule for target.
 graphene_chain/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/build
 .PHONY : graphene_chain/fast
 
 account_evaluator.o: account_evaluator.cpp.o
@@ -190,7 +179,7 @@ account_evaluator.o: account_evaluator.cpp.o
 
 # target to build an object file
 account_evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.o
 .PHONY : account_evaluator.cpp.o
 
 account_evaluator.i: account_evaluator.cpp.i
@@ -199,7 +188,7 @@ account_evaluator.i: account_evaluator.cpp.i
 
 # target to preprocess a source file
 account_evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.i
 .PHONY : account_evaluator.cpp.i
 
 account_evaluator.s: account_evaluator.cpp.s
@@ -208,7 +197,7 @@ account_evaluator.s: account_evaluator.cpp.s
 
 # target to generate assembly for a file
 account_evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.s
 .PHONY : account_evaluator.cpp.s
 
 account_object.o: account_object.cpp.o
@@ -217,7 +206,7 @@ account_object.o: account_object.cpp.o
 
 # target to build an object file
 account_object.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.o
 .PHONY : account_object.cpp.o
 
 account_object.i: account_object.cpp.i
@@ -226,7 +215,7 @@ account_object.i: account_object.cpp.i
 
 # target to preprocess a source file
 account_object.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.i
 .PHONY : account_object.cpp.i
 
 account_object.s: account_object.cpp.s
@@ -235,7 +224,7 @@ account_object.s: account_object.cpp.s
 
 # target to generate assembly for a file
 account_object.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.s
 .PHONY : account_object.cpp.s
 
 assert_evaluator.o: assert_evaluator.cpp.o
@@ -244,7 +233,7 @@ assert_evaluator.o: assert_evaluator.cpp.o
 
 # target to build an object file
 assert_evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.o
 .PHONY : assert_evaluator.cpp.o
 
 assert_evaluator.i: assert_evaluator.cpp.i
@@ -253,7 +242,7 @@ assert_evaluator.i: assert_evaluator.cpp.i
 
 # target to preprocess a source file
 assert_evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.i
 .PHONY : assert_evaluator.cpp.i
 
 assert_evaluator.s: assert_evaluator.cpp.s
@@ -262,7 +251,7 @@ assert_evaluator.s: assert_evaluator.cpp.s
 
 # target to generate assembly for a file
 assert_evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.s
 .PHONY : assert_evaluator.cpp.s
 
 asset_evaluator.o: asset_evaluator.cpp.o
@@ -271,7 +260,7 @@ asset_evaluator.o: asset_evaluator.cpp.o
 
 # target to build an object file
 asset_evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.o
 .PHONY : asset_evaluator.cpp.o
 
 asset_evaluator.i: asset_evaluator.cpp.i
@@ -280,7 +269,7 @@ asset_evaluator.i: asset_evaluator.cpp.i
 
 # target to preprocess a source file
 asset_evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.i
 .PHONY : asset_evaluator.cpp.i
 
 asset_evaluator.s: asset_evaluator.cpp.s
@@ -289,7 +278,7 @@ asset_evaluator.s: asset_evaluator.cpp.s
 
 # target to generate assembly for a file
 asset_evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.s
 .PHONY : asset_evaluator.cpp.s
 
 asset_object.o: asset_object.cpp.o
@@ -298,7 +287,7 @@ asset_object.o: asset_object.cpp.o
 
 # target to build an object file
 asset_object.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.o
 .PHONY : asset_object.cpp.o
 
 asset_object.i: asset_object.cpp.i
@@ -307,7 +296,7 @@ asset_object.i: asset_object.cpp.i
 
 # target to preprocess a source file
 asset_object.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.i
 .PHONY : asset_object.cpp.i
 
 asset_object.s: asset_object.cpp.s
@@ -316,7 +305,7 @@ asset_object.s: asset_object.cpp.s
 
 # target to generate assembly for a file
 asset_object.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.s
 .PHONY : asset_object.cpp.s
 
 balance_evaluator.o: balance_evaluator.cpp.o
@@ -325,7 +314,7 @@ balance_evaluator.o: balance_evaluator.cpp.o
 
 # target to build an object file
 balance_evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.o
 .PHONY : balance_evaluator.cpp.o
 
 balance_evaluator.i: balance_evaluator.cpp.i
@@ -334,7 +323,7 @@ balance_evaluator.i: balance_evaluator.cpp.i
 
 # target to preprocess a source file
 balance_evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.i
 .PHONY : balance_evaluator.cpp.i
 
 balance_evaluator.s: balance_evaluator.cpp.s
@@ -343,7 +332,7 @@ balance_evaluator.s: balance_evaluator.cpp.s
 
 # target to generate assembly for a file
 balance_evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.s
 .PHONY : balance_evaluator.cpp.s
 
 block_database.o: block_database.cpp.o
@@ -352,7 +341,7 @@ block_database.o: block_database.cpp.o
 
 # target to build an object file
 block_database.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.o
 .PHONY : block_database.cpp.o
 
 block_database.i: block_database.cpp.i
@@ -361,7 +350,7 @@ block_database.i: block_database.cpp.i
 
 # target to preprocess a source file
 block_database.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.i
 .PHONY : block_database.cpp.i
 
 block_database.s: block_database.cpp.s
@@ -370,7 +359,7 @@ block_database.s: block_database.cpp.s
 
 # target to generate assembly for a file
 block_database.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.s
 .PHONY : block_database.cpp.s
 
 buyback.o: buyback.cpp.o
@@ -379,7 +368,7 @@ buyback.o: buyback.cpp.o
 
 # target to build an object file
 buyback.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.o
 .PHONY : buyback.cpp.o
 
 buyback.i: buyback.cpp.i
@@ -388,7 +377,7 @@ buyback.i: buyback.cpp.i
 
 # target to preprocess a source file
 buyback.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.i
 .PHONY : buyback.cpp.i
 
 buyback.s: buyback.cpp.s
@@ -397,7 +386,7 @@ buyback.s: buyback.cpp.s
 
 # target to generate assembly for a file
 buyback.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.s
 .PHONY : buyback.cpp.s
 
 committee_member_evaluator.o: committee_member_evaluator.cpp.o
@@ -406,7 +395,7 @@ committee_member_evaluator.o: committee_member_evaluator.cpp.o
 
 # target to build an object file
 committee_member_evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.o
 .PHONY : committee_member_evaluator.cpp.o
 
 committee_member_evaluator.i: committee_member_evaluator.cpp.i
@@ -415,7 +404,7 @@ committee_member_evaluator.i: committee_member_evaluator.cpp.i
 
 # target to preprocess a source file
 committee_member_evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.i
 .PHONY : committee_member_evaluator.cpp.i
 
 committee_member_evaluator.s: committee_member_evaluator.cpp.s
@@ -424,7 +413,7 @@ committee_member_evaluator.s: committee_member_evaluator.cpp.s
 
 # target to generate assembly for a file
 committee_member_evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.s
 .PHONY : committee_member_evaluator.cpp.s
 
 confidential_evaluator.o: confidential_evaluator.cpp.o
@@ -433,7 +422,7 @@ confidential_evaluator.o: confidential_evaluator.cpp.o
 
 # target to build an object file
 confidential_evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.o
 .PHONY : confidential_evaluator.cpp.o
 
 confidential_evaluator.i: confidential_evaluator.cpp.i
@@ -442,7 +431,7 @@ confidential_evaluator.i: confidential_evaluator.cpp.i
 
 # target to preprocess a source file
 confidential_evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.i
 .PHONY : confidential_evaluator.cpp.i
 
 confidential_evaluator.s: confidential_evaluator.cpp.s
@@ -451,7 +440,7 @@ confidential_evaluator.s: confidential_evaluator.cpp.s
 
 # target to generate assembly for a file
 confidential_evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.s
 .PHONY : confidential_evaluator.cpp.s
 
 database.o: database.cpp.o
@@ -460,7 +449,7 @@ database.o: database.cpp.o
 
 # target to build an object file
 database.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.o
 .PHONY : database.cpp.o
 
 database.i: database.cpp.i
@@ -469,7 +458,7 @@ database.i: database.cpp.i
 
 # target to preprocess a source file
 database.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.i
 .PHONY : database.cpp.i
 
 database.s: database.cpp.s
@@ -478,7 +467,7 @@ database.s: database.cpp.s
 
 # target to generate assembly for a file
 database.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.s
 .PHONY : database.cpp.s
 
 evaluator.o: evaluator.cpp.o
@@ -487,7 +476,7 @@ evaluator.o: evaluator.cpp.o
 
 # target to build an object file
 evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.o
 .PHONY : evaluator.cpp.o
 
 evaluator.i: evaluator.cpp.i
@@ -496,7 +485,7 @@ evaluator.i: evaluator.cpp.i
 
 # target to preprocess a source file
 evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.i
 .PHONY : evaluator.cpp.i
 
 evaluator.s: evaluator.cpp.s
@@ -505,7 +494,7 @@ evaluator.s: evaluator.cpp.s
 
 # target to generate assembly for a file
 evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.s
 .PHONY : evaluator.cpp.s
 
 fba_object.o: fba_object.cpp.o
@@ -514,7 +503,7 @@ fba_object.o: fba_object.cpp.o
 
 # target to build an object file
 fba_object.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.o
 .PHONY : fba_object.cpp.o
 
 fba_object.i: fba_object.cpp.i
@@ -523,7 +512,7 @@ fba_object.i: fba_object.cpp.i
 
 # target to preprocess a source file
 fba_object.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.i
 .PHONY : fba_object.cpp.i
 
 fba_object.s: fba_object.cpp.s
@@ -532,7 +521,7 @@ fba_object.s: fba_object.cpp.s
 
 # target to generate assembly for a file
 fba_object.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.s
 .PHONY : fba_object.cpp.s
 
 fork_database.o: fork_database.cpp.o
@@ -541,7 +530,7 @@ fork_database.o: fork_database.cpp.o
 
 # target to build an object file
 fork_database.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.o
 .PHONY : fork_database.cpp.o
 
 fork_database.i: fork_database.cpp.i
@@ -550,7 +539,7 @@ fork_database.i: fork_database.cpp.i
 
 # target to preprocess a source file
 fork_database.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.i
 .PHONY : fork_database.cpp.i
 
 fork_database.s: fork_database.cpp.s
@@ -559,7 +548,7 @@ fork_database.s: fork_database.cpp.s
 
 # target to generate assembly for a file
 fork_database.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.s
 .PHONY : fork_database.cpp.s
 
 genesis_state.o: genesis_state.cpp.o
@@ -568,7 +557,7 @@ genesis_state.o: genesis_state.cpp.o
 
 # target to build an object file
 genesis_state.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.o
 .PHONY : genesis_state.cpp.o
 
 genesis_state.i: genesis_state.cpp.i
@@ -577,7 +566,7 @@ genesis_state.i: genesis_state.cpp.i
 
 # target to preprocess a source file
 genesis_state.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.i
 .PHONY : genesis_state.cpp.i
 
 genesis_state.s: genesis_state.cpp.s
@@ -586,7 +575,7 @@ genesis_state.s: genesis_state.cpp.s
 
 # target to generate assembly for a file
 genesis_state.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.s
 .PHONY : genesis_state.cpp.s
 
 get_config.o: get_config.cpp.o
@@ -595,7 +584,7 @@ get_config.o: get_config.cpp.o
 
 # target to build an object file
 get_config.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.o
 .PHONY : get_config.cpp.o
 
 get_config.i: get_config.cpp.i
@@ -604,7 +593,7 @@ get_config.i: get_config.cpp.i
 
 # target to preprocess a source file
 get_config.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.i
 .PHONY : get_config.cpp.i
 
 get_config.s: get_config.cpp.s
@@ -613,7 +602,7 @@ get_config.s: get_config.cpp.s
 
 # target to generate assembly for a file
 get_config.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.s
 .PHONY : get_config.cpp.s
 
 is_authorized_asset.o: is_authorized_asset.cpp.o
@@ -622,7 +611,7 @@ is_authorized_asset.o: is_authorized_asset.cpp.o
 
 # target to build an object file
 is_authorized_asset.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.o
 .PHONY : is_authorized_asset.cpp.o
 
 is_authorized_asset.i: is_authorized_asset.cpp.i
@@ -631,7 +620,7 @@ is_authorized_asset.i: is_authorized_asset.cpp.i
 
 # target to preprocess a source file
 is_authorized_asset.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.i
 .PHONY : is_authorized_asset.cpp.i
 
 is_authorized_asset.s: is_authorized_asset.cpp.s
@@ -640,7 +629,7 @@ is_authorized_asset.s: is_authorized_asset.cpp.s
 
 # target to generate assembly for a file
 is_authorized_asset.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.s
 .PHONY : is_authorized_asset.cpp.s
 
 market_evaluator.o: market_evaluator.cpp.o
@@ -649,7 +638,7 @@ market_evaluator.o: market_evaluator.cpp.o
 
 # target to build an object file
 market_evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.o
 .PHONY : market_evaluator.cpp.o
 
 market_evaluator.i: market_evaluator.cpp.i
@@ -658,7 +647,7 @@ market_evaluator.i: market_evaluator.cpp.i
 
 # target to preprocess a source file
 market_evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.i
 .PHONY : market_evaluator.cpp.i
 
 market_evaluator.s: market_evaluator.cpp.s
@@ -667,7 +656,7 @@ market_evaluator.s: market_evaluator.cpp.s
 
 # target to generate assembly for a file
 market_evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.s
 .PHONY : market_evaluator.cpp.s
 
 proposal_evaluator.o: proposal_evaluator.cpp.o
@@ -676,7 +665,7 @@ proposal_evaluator.o: proposal_evaluator.cpp.o
 
 # target to build an object file
 proposal_evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.o
 .PHONY : proposal_evaluator.cpp.o
 
 proposal_evaluator.i: proposal_evaluator.cpp.i
@@ -685,7 +674,7 @@ proposal_evaluator.i: proposal_evaluator.cpp.i
 
 # target to preprocess a source file
 proposal_evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.i
 .PHONY : proposal_evaluator.cpp.i
 
 proposal_evaluator.s: proposal_evaluator.cpp.s
@@ -694,7 +683,7 @@ proposal_evaluator.s: proposal_evaluator.cpp.s
 
 # target to generate assembly for a file
 proposal_evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.s
 .PHONY : proposal_evaluator.cpp.s
 
 proposal_object.o: proposal_object.cpp.o
@@ -703,7 +692,7 @@ proposal_object.o: proposal_object.cpp.o
 
 # target to build an object file
 proposal_object.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.o
 .PHONY : proposal_object.cpp.o
 
 proposal_object.i: proposal_object.cpp.i
@@ -712,7 +701,7 @@ proposal_object.i: proposal_object.cpp.i
 
 # target to preprocess a source file
 proposal_object.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.i
 .PHONY : proposal_object.cpp.i
 
 proposal_object.s: proposal_object.cpp.s
@@ -721,7 +710,7 @@ proposal_object.s: proposal_object.cpp.s
 
 # target to generate assembly for a file
 proposal_object.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.s
 .PHONY : proposal_object.cpp.s
 
 protocol/account.o: protocol/account.cpp.o
@@ -730,7 +719,7 @@ protocol/account.o: protocol/account.cpp.o
 
 # target to build an object file
 protocol/account.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.o
 .PHONY : protocol/account.cpp.o
 
 protocol/account.i: protocol/account.cpp.i
@@ -739,7 +728,7 @@ protocol/account.i: protocol/account.cpp.i
 
 # target to preprocess a source file
 protocol/account.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.i
 .PHONY : protocol/account.cpp.i
 
 protocol/account.s: protocol/account.cpp.s
@@ -748,7 +737,7 @@ protocol/account.s: protocol/account.cpp.s
 
 # target to generate assembly for a file
 protocol/account.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.s
 .PHONY : protocol/account.cpp.s
 
 protocol/address.o: protocol/address.cpp.o
@@ -757,7 +746,7 @@ protocol/address.o: protocol/address.cpp.o
 
 # target to build an object file
 protocol/address.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.o
 .PHONY : protocol/address.cpp.o
 
 protocol/address.i: protocol/address.cpp.i
@@ -766,7 +755,7 @@ protocol/address.i: protocol/address.cpp.i
 
 # target to preprocess a source file
 protocol/address.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.i
 .PHONY : protocol/address.cpp.i
 
 protocol/address.s: protocol/address.cpp.s
@@ -775,7 +764,7 @@ protocol/address.s: protocol/address.cpp.s
 
 # target to generate assembly for a file
 protocol/address.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.s
 .PHONY : protocol/address.cpp.s
 
 protocol/assert.o: protocol/assert.cpp.o
@@ -784,7 +773,7 @@ protocol/assert.o: protocol/assert.cpp.o
 
 # target to build an object file
 protocol/assert.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.o
 .PHONY : protocol/assert.cpp.o
 
 protocol/assert.i: protocol/assert.cpp.i
@@ -793,7 +782,7 @@ protocol/assert.i: protocol/assert.cpp.i
 
 # target to preprocess a source file
 protocol/assert.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.i
 .PHONY : protocol/assert.cpp.i
 
 protocol/assert.s: protocol/assert.cpp.s
@@ -802,7 +791,7 @@ protocol/assert.s: protocol/assert.cpp.s
 
 # target to generate assembly for a file
 protocol/assert.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.s
 .PHONY : protocol/assert.cpp.s
 
 protocol/asset.o: protocol/asset.cpp.o
@@ -811,7 +800,7 @@ protocol/asset.o: protocol/asset.cpp.o
 
 # target to build an object file
 protocol/asset.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.o
 .PHONY : protocol/asset.cpp.o
 
 protocol/asset.i: protocol/asset.cpp.i
@@ -820,7 +809,7 @@ protocol/asset.i: protocol/asset.cpp.i
 
 # target to preprocess a source file
 protocol/asset.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.i
 .PHONY : protocol/asset.cpp.i
 
 protocol/asset.s: protocol/asset.cpp.s
@@ -829,7 +818,7 @@ protocol/asset.s: protocol/asset.cpp.s
 
 # target to generate assembly for a file
 protocol/asset.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.s
 .PHONY : protocol/asset.cpp.s
 
 protocol/asset_ops.o: protocol/asset_ops.cpp.o
@@ -838,7 +827,7 @@ protocol/asset_ops.o: protocol/asset_ops.cpp.o
 
 # target to build an object file
 protocol/asset_ops.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.o
 .PHONY : protocol/asset_ops.cpp.o
 
 protocol/asset_ops.i: protocol/asset_ops.cpp.i
@@ -847,7 +836,7 @@ protocol/asset_ops.i: protocol/asset_ops.cpp.i
 
 # target to preprocess a source file
 protocol/asset_ops.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.i
 .PHONY : protocol/asset_ops.cpp.i
 
 protocol/asset_ops.s: protocol/asset_ops.cpp.s
@@ -856,7 +845,7 @@ protocol/asset_ops.s: protocol/asset_ops.cpp.s
 
 # target to generate assembly for a file
 protocol/asset_ops.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.s
 .PHONY : protocol/asset_ops.cpp.s
 
 protocol/authority.o: protocol/authority.cpp.o
@@ -865,7 +854,7 @@ protocol/authority.o: protocol/authority.cpp.o
 
 # target to build an object file
 protocol/authority.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.o
 .PHONY : protocol/authority.cpp.o
 
 protocol/authority.i: protocol/authority.cpp.i
@@ -874,7 +863,7 @@ protocol/authority.i: protocol/authority.cpp.i
 
 # target to preprocess a source file
 protocol/authority.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.i
 .PHONY : protocol/authority.cpp.i
 
 protocol/authority.s: protocol/authority.cpp.s
@@ -883,7 +872,7 @@ protocol/authority.s: protocol/authority.cpp.s
 
 # target to generate assembly for a file
 protocol/authority.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.s
 .PHONY : protocol/authority.cpp.s
 
 protocol/block.o: protocol/block.cpp.o
@@ -892,7 +881,7 @@ protocol/block.o: protocol/block.cpp.o
 
 # target to build an object file
 protocol/block.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.o
 .PHONY : protocol/block.cpp.o
 
 protocol/block.i: protocol/block.cpp.i
@@ -901,7 +890,7 @@ protocol/block.i: protocol/block.cpp.i
 
 # target to preprocess a source file
 protocol/block.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.i
 .PHONY : protocol/block.cpp.i
 
 protocol/block.s: protocol/block.cpp.s
@@ -910,7 +899,7 @@ protocol/block.s: protocol/block.cpp.s
 
 # target to generate assembly for a file
 protocol/block.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.s
 .PHONY : protocol/block.cpp.s
 
 protocol/committee_member.o: protocol/committee_member.cpp.o
@@ -919,7 +908,7 @@ protocol/committee_member.o: protocol/committee_member.cpp.o
 
 # target to build an object file
 protocol/committee_member.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.o
 .PHONY : protocol/committee_member.cpp.o
 
 protocol/committee_member.i: protocol/committee_member.cpp.i
@@ -928,7 +917,7 @@ protocol/committee_member.i: protocol/committee_member.cpp.i
 
 # target to preprocess a source file
 protocol/committee_member.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.i
 .PHONY : protocol/committee_member.cpp.i
 
 protocol/committee_member.s: protocol/committee_member.cpp.s
@@ -937,7 +926,7 @@ protocol/committee_member.s: protocol/committee_member.cpp.s
 
 # target to generate assembly for a file
 protocol/committee_member.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.s
 .PHONY : protocol/committee_member.cpp.s
 
 protocol/confidential.o: protocol/confidential.cpp.o
@@ -946,7 +935,7 @@ protocol/confidential.o: protocol/confidential.cpp.o
 
 # target to build an object file
 protocol/confidential.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.o
 .PHONY : protocol/confidential.cpp.o
 
 protocol/confidential.i: protocol/confidential.cpp.i
@@ -955,7 +944,7 @@ protocol/confidential.i: protocol/confidential.cpp.i
 
 # target to preprocess a source file
 protocol/confidential.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.i
 .PHONY : protocol/confidential.cpp.i
 
 protocol/confidential.s: protocol/confidential.cpp.s
@@ -964,7 +953,7 @@ protocol/confidential.s: protocol/confidential.cpp.s
 
 # target to generate assembly for a file
 protocol/confidential.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.s
 .PHONY : protocol/confidential.cpp.s
 
 protocol/custom.o: protocol/custom.cpp.o
@@ -973,7 +962,7 @@ protocol/custom.o: protocol/custom.cpp.o
 
 # target to build an object file
 protocol/custom.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.o
 .PHONY : protocol/custom.cpp.o
 
 protocol/custom.i: protocol/custom.cpp.i
@@ -982,7 +971,7 @@ protocol/custom.i: protocol/custom.cpp.i
 
 # target to preprocess a source file
 protocol/custom.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.i
 .PHONY : protocol/custom.cpp.i
 
 protocol/custom.s: protocol/custom.cpp.s
@@ -991,7 +980,7 @@ protocol/custom.s: protocol/custom.cpp.s
 
 # target to generate assembly for a file
 protocol/custom.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.s
 .PHONY : protocol/custom.cpp.s
 
 protocol/fee_schedule.o: protocol/fee_schedule.cpp.o
@@ -1000,7 +989,7 @@ protocol/fee_schedule.o: protocol/fee_schedule.cpp.o
 
 # target to build an object file
 protocol/fee_schedule.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.o
 .PHONY : protocol/fee_schedule.cpp.o
 
 protocol/fee_schedule.i: protocol/fee_schedule.cpp.i
@@ -1009,7 +998,7 @@ protocol/fee_schedule.i: protocol/fee_schedule.cpp.i
 
 # target to preprocess a source file
 protocol/fee_schedule.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.i
 .PHONY : protocol/fee_schedule.cpp.i
 
 protocol/fee_schedule.s: protocol/fee_schedule.cpp.s
@@ -1018,7 +1007,7 @@ protocol/fee_schedule.s: protocol/fee_schedule.cpp.s
 
 # target to generate assembly for a file
 protocol/fee_schedule.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.s
 .PHONY : protocol/fee_schedule.cpp.s
 
 protocol/market.o: protocol/market.cpp.o
@@ -1027,7 +1016,7 @@ protocol/market.o: protocol/market.cpp.o
 
 # target to build an object file
 protocol/market.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.o
 .PHONY : protocol/market.cpp.o
 
 protocol/market.i: protocol/market.cpp.i
@@ -1036,7 +1025,7 @@ protocol/market.i: protocol/market.cpp.i
 
 # target to preprocess a source file
 protocol/market.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.i
 .PHONY : protocol/market.cpp.i
 
 protocol/market.s: protocol/market.cpp.s
@@ -1045,7 +1034,7 @@ protocol/market.s: protocol/market.cpp.s
 
 # target to generate assembly for a file
 protocol/market.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.s
 .PHONY : protocol/market.cpp.s
 
 protocol/memo.o: protocol/memo.cpp.o
@@ -1054,7 +1043,7 @@ protocol/memo.o: protocol/memo.cpp.o
 
 # target to build an object file
 protocol/memo.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.o
 .PHONY : protocol/memo.cpp.o
 
 protocol/memo.i: protocol/memo.cpp.i
@@ -1063,7 +1052,7 @@ protocol/memo.i: protocol/memo.cpp.i
 
 # target to preprocess a source file
 protocol/memo.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.i
 .PHONY : protocol/memo.cpp.i
 
 protocol/memo.s: protocol/memo.cpp.s
@@ -1072,7 +1061,7 @@ protocol/memo.s: protocol/memo.cpp.s
 
 # target to generate assembly for a file
 protocol/memo.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.s
 .PHONY : protocol/memo.cpp.s
 
 protocol/operations.o: protocol/operations.cpp.o
@@ -1081,7 +1070,7 @@ protocol/operations.o: protocol/operations.cpp.o
 
 # target to build an object file
 protocol/operations.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.o
 .PHONY : protocol/operations.cpp.o
 
 protocol/operations.i: protocol/operations.cpp.i
@@ -1090,7 +1079,7 @@ protocol/operations.i: protocol/operations.cpp.i
 
 # target to preprocess a source file
 protocol/operations.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.i
 .PHONY : protocol/operations.cpp.i
 
 protocol/operations.s: protocol/operations.cpp.s
@@ -1099,7 +1088,7 @@ protocol/operations.s: protocol/operations.cpp.s
 
 # target to generate assembly for a file
 protocol/operations.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.s
 .PHONY : protocol/operations.cpp.s
 
 protocol/proposal.o: protocol/proposal.cpp.o
@@ -1108,7 +1097,7 @@ protocol/proposal.o: protocol/proposal.cpp.o
 
 # target to build an object file
 protocol/proposal.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.o
 .PHONY : protocol/proposal.cpp.o
 
 protocol/proposal.i: protocol/proposal.cpp.i
@@ -1117,7 +1106,7 @@ protocol/proposal.i: protocol/proposal.cpp.i
 
 # target to preprocess a source file
 protocol/proposal.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.i
 .PHONY : protocol/proposal.cpp.i
 
 protocol/proposal.s: protocol/proposal.cpp.s
@@ -1126,7 +1115,7 @@ protocol/proposal.s: protocol/proposal.cpp.s
 
 # target to generate assembly for a file
 protocol/proposal.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.s
 .PHONY : protocol/proposal.cpp.s
 
 protocol/transaction.o: protocol/transaction.cpp.o
@@ -1135,7 +1124,7 @@ protocol/transaction.o: protocol/transaction.cpp.o
 
 # target to build an object file
 protocol/transaction.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.o
 .PHONY : protocol/transaction.cpp.o
 
 protocol/transaction.i: protocol/transaction.cpp.i
@@ -1144,7 +1133,7 @@ protocol/transaction.i: protocol/transaction.cpp.i
 
 # target to preprocess a source file
 protocol/transaction.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.i
 .PHONY : protocol/transaction.cpp.i
 
 protocol/transaction.s: protocol/transaction.cpp.s
@@ -1153,7 +1142,7 @@ protocol/transaction.s: protocol/transaction.cpp.s
 
 # target to generate assembly for a file
 protocol/transaction.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.s
 .PHONY : protocol/transaction.cpp.s
 
 protocol/transfer.o: protocol/transfer.cpp.o
@@ -1162,7 +1151,7 @@ protocol/transfer.o: protocol/transfer.cpp.o
 
 # target to build an object file
 protocol/transfer.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.o
 .PHONY : protocol/transfer.cpp.o
 
 protocol/transfer.i: protocol/transfer.cpp.i
@@ -1171,7 +1160,7 @@ protocol/transfer.i: protocol/transfer.cpp.i
 
 # target to preprocess a source file
 protocol/transfer.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.i
 .PHONY : protocol/transfer.cpp.i
 
 protocol/transfer.s: protocol/transfer.cpp.s
@@ -1180,7 +1169,7 @@ protocol/transfer.s: protocol/transfer.cpp.s
 
 # target to generate assembly for a file
 protocol/transfer.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.s
 .PHONY : protocol/transfer.cpp.s
 
 protocol/types.o: protocol/types.cpp.o
@@ -1189,7 +1178,7 @@ protocol/types.o: protocol/types.cpp.o
 
 # target to build an object file
 protocol/types.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.o
 .PHONY : protocol/types.cpp.o
 
 protocol/types.i: protocol/types.cpp.i
@@ -1198,7 +1187,7 @@ protocol/types.i: protocol/types.cpp.i
 
 # target to preprocess a source file
 protocol/types.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.i
 .PHONY : protocol/types.cpp.i
 
 protocol/types.s: protocol/types.cpp.s
@@ -1207,7 +1196,7 @@ protocol/types.s: protocol/types.cpp.s
 
 # target to generate assembly for a file
 protocol/types.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.s
 .PHONY : protocol/types.cpp.s
 
 protocol/vote.o: protocol/vote.cpp.o
@@ -1216,7 +1205,7 @@ protocol/vote.o: protocol/vote.cpp.o
 
 # target to build an object file
 protocol/vote.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.o
 .PHONY : protocol/vote.cpp.o
 
 protocol/vote.i: protocol/vote.cpp.i
@@ -1225,7 +1214,7 @@ protocol/vote.i: protocol/vote.cpp.i
 
 # target to preprocess a source file
 protocol/vote.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.i
 .PHONY : protocol/vote.cpp.i
 
 protocol/vote.s: protocol/vote.cpp.s
@@ -1234,7 +1223,7 @@ protocol/vote.s: protocol/vote.cpp.s
 
 # target to generate assembly for a file
 protocol/vote.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.s
 .PHONY : protocol/vote.cpp.s
 
 protocol/withdraw_permission.o: protocol/withdraw_permission.cpp.o
@@ -1243,7 +1232,7 @@ protocol/withdraw_permission.o: protocol/withdraw_permission.cpp.o
 
 # target to build an object file
 protocol/withdraw_permission.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.o
 .PHONY : protocol/withdraw_permission.cpp.o
 
 protocol/withdraw_permission.i: protocol/withdraw_permission.cpp.i
@@ -1252,7 +1241,7 @@ protocol/withdraw_permission.i: protocol/withdraw_permission.cpp.i
 
 # target to preprocess a source file
 protocol/withdraw_permission.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.i
 .PHONY : protocol/withdraw_permission.cpp.i
 
 protocol/withdraw_permission.s: protocol/withdraw_permission.cpp.s
@@ -1261,7 +1250,7 @@ protocol/withdraw_permission.s: protocol/withdraw_permission.cpp.s
 
 # target to generate assembly for a file
 protocol/withdraw_permission.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.s
 .PHONY : protocol/withdraw_permission.cpp.s
 
 protocol/witness.o: protocol/witness.cpp.o
@@ -1270,7 +1259,7 @@ protocol/witness.o: protocol/witness.cpp.o
 
 # target to build an object file
 protocol/witness.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.o
 .PHONY : protocol/witness.cpp.o
 
 protocol/witness.i: protocol/witness.cpp.i
@@ -1279,7 +1268,7 @@ protocol/witness.i: protocol/witness.cpp.i
 
 # target to preprocess a source file
 protocol/witness.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.i
 .PHONY : protocol/witness.cpp.i
 
 protocol/witness.s: protocol/witness.cpp.s
@@ -1288,7 +1277,7 @@ protocol/witness.s: protocol/witness.cpp.s
 
 # target to generate assembly for a file
 protocol/witness.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.s
 .PHONY : protocol/witness.cpp.s
 
 protocol/worker.o: protocol/worker.cpp.o
@@ -1297,7 +1286,7 @@ protocol/worker.o: protocol/worker.cpp.o
 
 # target to build an object file
 protocol/worker.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.o
 .PHONY : protocol/worker.cpp.o
 
 protocol/worker.i: protocol/worker.cpp.i
@@ -1306,7 +1295,7 @@ protocol/worker.i: protocol/worker.cpp.i
 
 # target to preprocess a source file
 protocol/worker.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.i
 .PHONY : protocol/worker.cpp.i
 
 protocol/worker.s: protocol/worker.cpp.s
@@ -1315,7 +1304,7 @@ protocol/worker.s: protocol/worker.cpp.s
 
 # target to generate assembly for a file
 protocol/worker.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.s
 .PHONY : protocol/worker.cpp.s
 
 pts_address.o: pts_address.cpp.o
@@ -1324,7 +1313,7 @@ pts_address.o: pts_address.cpp.o
 
 # target to build an object file
 pts_address.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.o
 .PHONY : pts_address.cpp.o
 
 pts_address.i: pts_address.cpp.i
@@ -1333,7 +1322,7 @@ pts_address.i: pts_address.cpp.i
 
 # target to preprocess a source file
 pts_address.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.i
 .PHONY : pts_address.cpp.i
 
 pts_address.s: pts_address.cpp.s
@@ -1342,7 +1331,7 @@ pts_address.s: pts_address.cpp.s
 
 # target to generate assembly for a file
 pts_address.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.s
 .PHONY : pts_address.cpp.s
 
 special_authority.o: special_authority.cpp.o
@@ -1351,7 +1340,7 @@ special_authority.o: special_authority.cpp.o
 
 # target to build an object file
 special_authority.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.o
 .PHONY : special_authority.cpp.o
 
 special_authority.i: special_authority.cpp.i
@@ -1360,7 +1349,7 @@ special_authority.i: special_authority.cpp.i
 
 # target to preprocess a source file
 special_authority.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.i
 .PHONY : special_authority.cpp.i
 
 special_authority.s: special_authority.cpp.s
@@ -1369,7 +1358,7 @@ special_authority.s: special_authority.cpp.s
 
 # target to generate assembly for a file
 special_authority.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.s
 .PHONY : special_authority.cpp.s
 
 transfer_evaluator.o: transfer_evaluator.cpp.o
@@ -1378,7 +1367,7 @@ transfer_evaluator.o: transfer_evaluator.cpp.o
 
 # target to build an object file
 transfer_evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.o
 .PHONY : transfer_evaluator.cpp.o
 
 transfer_evaluator.i: transfer_evaluator.cpp.i
@@ -1387,7 +1376,7 @@ transfer_evaluator.i: transfer_evaluator.cpp.i
 
 # target to preprocess a source file
 transfer_evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.i
 .PHONY : transfer_evaluator.cpp.i
 
 transfer_evaluator.s: transfer_evaluator.cpp.s
@@ -1396,7 +1385,7 @@ transfer_evaluator.s: transfer_evaluator.cpp.s
 
 # target to generate assembly for a file
 transfer_evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.s
 .PHONY : transfer_evaluator.cpp.s
 
 vesting_balance_evaluator.o: vesting_balance_evaluator.cpp.o
@@ -1405,7 +1394,7 @@ vesting_balance_evaluator.o: vesting_balance_evaluator.cpp.o
 
 # target to build an object file
 vesting_balance_evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.o
 .PHONY : vesting_balance_evaluator.cpp.o
 
 vesting_balance_evaluator.i: vesting_balance_evaluator.cpp.i
@@ -1414,7 +1403,7 @@ vesting_balance_evaluator.i: vesting_balance_evaluator.cpp.i
 
 # target to preprocess a source file
 vesting_balance_evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.i
 .PHONY : vesting_balance_evaluator.cpp.i
 
 vesting_balance_evaluator.s: vesting_balance_evaluator.cpp.s
@@ -1423,7 +1412,7 @@ vesting_balance_evaluator.s: vesting_balance_evaluator.cpp.s
 
 # target to generate assembly for a file
 vesting_balance_evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.s
 .PHONY : vesting_balance_evaluator.cpp.s
 
 vesting_balance_object.o: vesting_balance_object.cpp.o
@@ -1432,7 +1421,7 @@ vesting_balance_object.o: vesting_balance_object.cpp.o
 
 # target to build an object file
 vesting_balance_object.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.o
 .PHONY : vesting_balance_object.cpp.o
 
 vesting_balance_object.i: vesting_balance_object.cpp.i
@@ -1441,7 +1430,7 @@ vesting_balance_object.i: vesting_balance_object.cpp.i
 
 # target to preprocess a source file
 vesting_balance_object.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.i
 .PHONY : vesting_balance_object.cpp.i
 
 vesting_balance_object.s: vesting_balance_object.cpp.s
@@ -1450,7 +1439,7 @@ vesting_balance_object.s: vesting_balance_object.cpp.s
 
 # target to generate assembly for a file
 vesting_balance_object.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.s
 .PHONY : vesting_balance_object.cpp.s
 
 withdraw_permission_evaluator.o: withdraw_permission_evaluator.cpp.o
@@ -1459,7 +1448,7 @@ withdraw_permission_evaluator.o: withdraw_permission_evaluator.cpp.o
 
 # target to build an object file
 withdraw_permission_evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.o
 .PHONY : withdraw_permission_evaluator.cpp.o
 
 withdraw_permission_evaluator.i: withdraw_permission_evaluator.cpp.i
@@ -1468,7 +1457,7 @@ withdraw_permission_evaluator.i: withdraw_permission_evaluator.cpp.i
 
 # target to preprocess a source file
 withdraw_permission_evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.i
 .PHONY : withdraw_permission_evaluator.cpp.i
 
 withdraw_permission_evaluator.s: withdraw_permission_evaluator.cpp.s
@@ -1477,7 +1466,7 @@ withdraw_permission_evaluator.s: withdraw_permission_evaluator.cpp.s
 
 # target to generate assembly for a file
 withdraw_permission_evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.s
 .PHONY : withdraw_permission_evaluator.cpp.s
 
 witness_evaluator.o: witness_evaluator.cpp.o
@@ -1486,7 +1475,7 @@ witness_evaluator.o: witness_evaluator.cpp.o
 
 # target to build an object file
 witness_evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.o
 .PHONY : witness_evaluator.cpp.o
 
 witness_evaluator.i: witness_evaluator.cpp.i
@@ -1495,7 +1484,7 @@ witness_evaluator.i: witness_evaluator.cpp.i
 
 # target to preprocess a source file
 witness_evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.i
 .PHONY : witness_evaluator.cpp.i
 
 witness_evaluator.s: witness_evaluator.cpp.s
@@ -1504,7 +1493,7 @@ witness_evaluator.s: witness_evaluator.cpp.s
 
 # target to generate assembly for a file
 witness_evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.s
 .PHONY : witness_evaluator.cpp.s
 
 worker_evaluator.o: worker_evaluator.cpp.o
@@ -1513,7 +1502,7 @@ worker_evaluator.o: worker_evaluator.cpp.o
 
 # target to build an object file
 worker_evaluator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.o
 .PHONY : worker_evaluator.cpp.o
 
 worker_evaluator.i: worker_evaluator.cpp.i
@@ -1522,7 +1511,7 @@ worker_evaluator.i: worker_evaluator.cpp.i
 
 # target to preprocess a source file
 worker_evaluator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.i
 .PHONY : worker_evaluator.cpp.i
 
 worker_evaluator.s: worker_evaluator.cpp.s
@@ -1531,7 +1520,7 @@ worker_evaluator.s: worker_evaluator.cpp.s
 
 # target to generate assembly for a file
 worker_evaluator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/chain/CMakeFiles/graphene_chain.dir/build.make libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.s
 .PHONY : worker_evaluator.cpp.s
 
 # Help Target
@@ -1543,10 +1532,9 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... build_hardfork_hpp"
+	@echo "... edit_cache"
 	@echo "... graphene_chain"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... account_evaluator.o"
 	@echo "... account_evaluator.i"
@@ -1709,6 +1697,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

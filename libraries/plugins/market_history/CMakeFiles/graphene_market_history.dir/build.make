@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 # Include any dependencies generated for this target.
 include libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/depend.make
@@ -59,16 +59,16 @@ include libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/
 
 libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.o: libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/flags.make
 libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.o: libraries/plugins/market_history/market_history_plugin.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.o"
-	cd /root/cybex8/libraries/plugins/market_history && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.o -c /root/cybex8/libraries/plugins/market_history/market_history_plugin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.o"
+	cd /root/cybex-core/libraries/plugins/market_history && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.o -c /root/cybex-core/libraries/plugins/market_history/market_history_plugin.cpp
 
 libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.i"
-	cd /root/cybex8/libraries/plugins/market_history && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/plugins/market_history/market_history_plugin.cpp > CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.i
+	cd /root/cybex-core/libraries/plugins/market_history && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/plugins/market_history/market_history_plugin.cpp > CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.i
 
 libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.s"
-	cd /root/cybex8/libraries/plugins/market_history && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/plugins/market_history/market_history_plugin.cpp -o CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.s
+	cd /root/cybex-core/libraries/plugins/market_history && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/plugins/market_history/market_history_plugin.cpp -o CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.s
 
 libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.o.requires:
 
@@ -91,9 +91,9 @@ graphene_market_history_EXTERNAL_OBJECTS =
 libraries/plugins/market_history/libgraphene_market_history.a: libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.o
 libraries/plugins/market_history/libgraphene_market_history.a: libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/build.make
 libraries/plugins/market_history/libgraphene_market_history.a: libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgraphene_market_history.a"
-	cd /root/cybex8/libraries/plugins/market_history && $(CMAKE_COMMAND) -P CMakeFiles/graphene_market_history.dir/cmake_clean_target.cmake
-	cd /root/cybex8/libraries/plugins/market_history && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphene_market_history.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgraphene_market_history.a"
+	cd /root/cybex-core/libraries/plugins/market_history && $(CMAKE_COMMAND) -P CMakeFiles/graphene_market_history.dir/cmake_clean_target.cmake
+	cd /root/cybex-core/libraries/plugins/market_history && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphene_market_history.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/build: libraries/plugins/market_history/libgraphene_market_history.a
@@ -105,10 +105,10 @@ libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/requires
 .PHONY : libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/requires
 
 libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/clean:
-	cd /root/cybex8/libraries/plugins/market_history && $(CMAKE_COMMAND) -P CMakeFiles/graphene_market_history.dir/cmake_clean.cmake
+	cd /root/cybex-core/libraries/plugins/market_history && $(CMAKE_COMMAND) -P CMakeFiles/graphene_market_history.dir/cmake_clean.cmake
 .PHONY : libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/clean
 
 libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex8 /root/cybex8/libraries/plugins/market_history /root/cybex8 /root/cybex8/libraries/plugins/market_history /root/cybex8/libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex-core /root/cybex-core/libraries/plugins/market_history /root/cybex-core /root/cybex-core/libraries/plugins/market_history /root/cybex-core/libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/depend
 

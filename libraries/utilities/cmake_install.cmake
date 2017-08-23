@@ -1,4 +1,4 @@
-# Install script for directory: /root/cybex8/libraries/utilities
+# Install script for directory: /root/cybex-core/libraries/utilities
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/root/cybex8/libraries/utilities/libgraphene_utilities.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/root/cybex-core/libraries/utilities/libgraphene_utilities.a")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/graphene/utilities" TYPE FILE FILES
-    "/root/cybex8/libraries/utilities/include/graphene/utilities/words.hpp"
-    "/root/cybex8/libraries/utilities/include/graphene/utilities/tempdir.hpp"
-    "/root/cybex8/libraries/utilities/include/graphene/utilities/padding_ostream.hpp"
-    "/root/cybex8/libraries/utilities/include/graphene/utilities/string_escape.hpp"
-    "/root/cybex8/libraries/utilities/include/graphene/utilities/key_conversion.hpp"
-    "/root/cybex8/libraries/utilities/include/graphene/utilities/git_revision.hpp"
+    "/root/cybex-core/libraries/utilities/include/graphene/utilities/words.hpp"
+    "/root/cybex-core/libraries/utilities/include/graphene/utilities/tempdir.hpp"
+    "/root/cybex-core/libraries/utilities/include/graphene/utilities/padding_ostream.hpp"
+    "/root/cybex-core/libraries/utilities/include/graphene/utilities/string_escape.hpp"
+    "/root/cybex-core/libraries/utilities/include/graphene/utilities/key_conversion.hpp"
+    "/root/cybex-core/libraries/utilities/include/graphene/utilities/git_revision.hpp"
     )
 endif()
 

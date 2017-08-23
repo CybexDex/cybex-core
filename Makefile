@@ -48,46 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"dev\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -122,11 +89,33 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"dev\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -414,6 +403,11 @@ embed_genesis/fast:
 	$(MAKE) -f libraries/egenesis/CMakeFiles/embed_genesis.dir/build.make libraries/egenesis/CMakeFiles/embed_genesis.dir/build
 .PHONY : embed_genesis/fast
 
+# Manual pre-install relink rule for target.
+embed_genesis/preinstall:
+	$(MAKE) -f libraries/egenesis/CMakeFiles/embed_genesis.dir/build.make libraries/egenesis/CMakeFiles/embed_genesis.dir/preinstall
+.PHONY : embed_genesis/preinstall
+
 #=============================================================================
 # Target rules for targets named graphene_egenesis_brief
 
@@ -583,6 +577,11 @@ cli_wallet/fast:
 	$(MAKE) -f programs/cli_wallet/CMakeFiles/cli_wallet.dir/build.make programs/cli_wallet/CMakeFiles/cli_wallet.dir/build
 .PHONY : cli_wallet/fast
 
+# Manual pre-install relink rule for target.
+cli_wallet/preinstall:
+	$(MAKE) -f programs/cli_wallet/CMakeFiles/cli_wallet.dir/build.make programs/cli_wallet/CMakeFiles/cli_wallet.dir/preinstall
+.PHONY : cli_wallet/preinstall
+
 #=============================================================================
 # Target rules for targets named genesis_update
 
@@ -596,6 +595,11 @@ genesis_update/fast:
 	$(MAKE) -f programs/genesis_util/CMakeFiles/genesis_update.dir/build.make programs/genesis_util/CMakeFiles/genesis_update.dir/build
 .PHONY : genesis_update/fast
 
+# Manual pre-install relink rule for target.
+genesis_update/preinstall:
+	$(MAKE) -f programs/genesis_util/CMakeFiles/genesis_update.dir/build.make programs/genesis_util/CMakeFiles/genesis_update.dir/preinstall
+.PHONY : genesis_update/preinstall
+
 #=============================================================================
 # Target rules for targets named get_dev_key
 
@@ -608,6 +612,11 @@ get_dev_key: cmake_check_build_system
 get_dev_key/fast:
 	$(MAKE) -f programs/genesis_util/CMakeFiles/get_dev_key.dir/build.make programs/genesis_util/CMakeFiles/get_dev_key.dir/build
 .PHONY : get_dev_key/fast
+
+# Manual pre-install relink rule for target.
+get_dev_key/preinstall:
+	$(MAKE) -f programs/genesis_util/CMakeFiles/get_dev_key.dir/build.make programs/genesis_util/CMakeFiles/get_dev_key.dir/preinstall
+.PHONY : get_dev_key/preinstall
 
 #=============================================================================
 # Target rules for targets named convert_address
@@ -635,6 +644,11 @@ witness_node/fast:
 	$(MAKE) -f programs/witness_node/CMakeFiles/witness_node.dir/build.make programs/witness_node/CMakeFiles/witness_node.dir/build
 .PHONY : witness_node/fast
 
+# Manual pre-install relink rule for target.
+witness_node/preinstall:
+	$(MAKE) -f programs/witness_node/CMakeFiles/witness_node.dir/build.make programs/witness_node/CMakeFiles/witness_node.dir/preinstall
+.PHONY : witness_node/preinstall
+
 #=============================================================================
 # Target rules for targets named debug_node
 
@@ -647,6 +661,11 @@ debug_node: cmake_check_build_system
 debug_node/fast:
 	$(MAKE) -f programs/debug_node/CMakeFiles/debug_node.dir/build.make programs/debug_node/CMakeFiles/debug_node.dir/build
 .PHONY : debug_node/fast
+
+# Manual pre-install relink rule for target.
+debug_node/preinstall:
+	$(MAKE) -f programs/debug_node/CMakeFiles/debug_node.dir/build.make programs/debug_node/CMakeFiles/debug_node.dir/preinstall
+.PHONY : debug_node/preinstall
 
 #=============================================================================
 # Target rules for targets named delayed_node
@@ -661,6 +680,11 @@ delayed_node/fast:
 	$(MAKE) -f programs/delayed_node/CMakeFiles/delayed_node.dir/build.make programs/delayed_node/CMakeFiles/delayed_node.dir/build
 .PHONY : delayed_node/fast
 
+# Manual pre-install relink rule for target.
+delayed_node/preinstall:
+	$(MAKE) -f programs/delayed_node/CMakeFiles/delayed_node.dir/build.make programs/delayed_node/CMakeFiles/delayed_node.dir/preinstall
+.PHONY : delayed_node/preinstall
+
 #=============================================================================
 # Target rules for targets named js_operation_serializer
 
@@ -673,6 +697,11 @@ js_operation_serializer: cmake_check_build_system
 js_operation_serializer/fast:
 	$(MAKE) -f programs/js_operation_serializer/CMakeFiles/js_operation_serializer.dir/build.make programs/js_operation_serializer/CMakeFiles/js_operation_serializer.dir/build
 .PHONY : js_operation_serializer/fast
+
+# Manual pre-install relink rule for target.
+js_operation_serializer/preinstall:
+	$(MAKE) -f programs/js_operation_serializer/CMakeFiles/js_operation_serializer.dir/build.make programs/js_operation_serializer/CMakeFiles/js_operation_serializer.dir/preinstall
+.PHONY : js_operation_serializer/preinstall
 
 #=============================================================================
 # Target rules for targets named size_checker
@@ -687,57 +716,10 @@ size_checker/fast:
 	$(MAKE) -f programs/size_checker/CMakeFiles/size_checker.dir/build.make programs/size_checker/CMakeFiles/size_checker.dir/build
 .PHONY : size_checker/fast
 
-#=============================================================================
-# Target rules for targets named app_test
-
-# Build rule for target.
-app_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 app_test
-.PHONY : app_test
-
-# fast build rule for target.
-app_test/fast:
-	$(MAKE) -f tests/CMakeFiles/app_test.dir/build.make tests/CMakeFiles/app_test.dir/build
-.PHONY : app_test/fast
-
-#=============================================================================
-# Target rules for targets named performance_test
-
-# Build rule for target.
-performance_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 performance_test
-.PHONY : performance_test
-
-# fast build rule for target.
-performance_test/fast:
-	$(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/build
-.PHONY : performance_test/fast
-
-#=============================================================================
-# Target rules for targets named chain_bench
-
-# Build rule for target.
-chain_bench: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 chain_bench
-.PHONY : chain_bench
-
-# fast build rule for target.
-chain_bench/fast:
-	$(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/build
-.PHONY : chain_bench/fast
-
-#=============================================================================
-# Target rules for targets named chain_test
-
-# Build rule for target.
-chain_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 chain_test
-.PHONY : chain_test
-
-# fast build rule for target.
-chain_test/fast:
-	$(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/build
-.PHONY : chain_test/fast
+# Manual pre-install relink rule for target.
+size_checker/preinstall:
+	$(MAKE) -f programs/size_checker/CMakeFiles/size_checker.dir/build.make programs/size_checker/CMakeFiles/size_checker.dir/preinstall
+.PHONY : size_checker/preinstall
 
 #=============================================================================
 # Target rules for targets named intense_test
@@ -753,6 +735,58 @@ intense_test/fast:
 .PHONY : intense_test/fast
 
 #=============================================================================
+# Target rules for targets named chain_test
+
+# Build rule for target.
+chain_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 chain_test
+.PHONY : chain_test
+
+# fast build rule for target.
+chain_test/fast:
+	$(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/build
+.PHONY : chain_test/fast
+
+#=============================================================================
+# Target rules for targets named chain_bench
+
+# Build rule for target.
+chain_bench: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 chain_bench
+.PHONY : chain_bench
+
+# fast build rule for target.
+chain_bench/fast:
+	$(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/build
+.PHONY : chain_bench/fast
+
+#=============================================================================
+# Target rules for targets named performance_test
+
+# Build rule for target.
+performance_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 performance_test
+.PHONY : performance_test
+
+# fast build rule for target.
+performance_test/fast:
+	$(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/build
+.PHONY : performance_test/fast
+
+#=============================================================================
+# Target rules for targets named app_test
+
+# Build rule for target.
+app_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 app_test
+.PHONY : app_test
+
+# fast build rule for target.
+app_test/fast:
+	$(MAKE) -f tests/CMakeFiles/app_test.dir/build.make tests/CMakeFiles/app_test.dir/build
+.PHONY : app_test/fast
+
+#=============================================================================
 # Target rules for targets named generate_empty_blocks
 
 # Build rule for target.
@@ -765,18 +799,22 @@ generate_empty_blocks/fast:
 	$(MAKE) -f tests/generate_empty_blocks/CMakeFiles/generate_empty_blocks.dir/build.make tests/generate_empty_blocks/CMakeFiles/generate_empty_blocks.dir/build
 .PHONY : generate_empty_blocks/fast
 
+# Manual pre-install relink rule for target.
+generate_empty_blocks/preinstall:
+	$(MAKE) -f tests/generate_empty_blocks/CMakeFiles/generate_empty_blocks.dir/build.make tests/generate_empty_blocks/CMakeFiles/generate_empty_blocks.dir/preinstall
+.PHONY : generate_empty_blocks/preinstall
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... project_secp256k1"
 	@echo "... fc"
 	@echo "... all_tests"
@@ -818,11 +856,11 @@ help:
 	@echo "... delayed_node"
 	@echo "... js_operation_serializer"
 	@echo "... size_checker"
-	@echo "... app_test"
-	@echo "... performance_test"
-	@echo "... chain_bench"
-	@echo "... chain_test"
 	@echo "... intense_test"
+	@echo "... chain_test"
+	@echo "... chain_bench"
+	@echo "... performance_test"
+	@echo "... app_test"
 	@echo "... generate_empty_blocks"
 .PHONY : help
 

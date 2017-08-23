@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/root/cybex8/libraries/fc/tests/all_tests.cpp" "/root/cybex8/libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.o"
-  "/root/cybex8/libraries/fc/tests/real128_test.cpp" "/root/cybex8/libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.o"
+  "/root/cybex-core/libraries/fc/tests/all_tests.cpp" "/root/cybex-core/libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.o"
+  "/root/cybex-core/libraries/fc/tests/real128_test.cpp" "/root/cybex-core/libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -25,7 +25,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/root/cybex8/libraries/fc/CMakeFiles/fc.dir/DependInfo.cmake"
+  "/root/cybex-core/libraries/fc/CMakeFiles/fc.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

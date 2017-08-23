@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -89,28 +89,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -122,16 +100,27 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/programs/build_helpers/CMakeFiles/progress.marks
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 programs/build_helpers/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/programs/build_helpers/CMakeFiles/progress.marks
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/build_helpers/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 programs/build_helpers/clean
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/build_helpers/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 programs/build_helpers/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/build_helpers/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 programs/build_helpers/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/build_helpers/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 programs/build_helpers/CMakeFiles/cat-parts.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 programs/build_helpers/CMakeFiles/cat-parts.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/build_helpers/CMakeFiles/cat-parts.dir/rule
 .PHONY : programs/build_helpers/CMakeFiles/cat-parts.dir/rule
 
 # Convenience name for target.
@@ -166,12 +155,12 @@ cat-parts: programs/build_helpers/CMakeFiles/cat-parts.dir/rule
 
 # fast build rule for target.
 cat-parts/fast:
-	cd /root/cybex8 && $(MAKE) -f programs/build_helpers/CMakeFiles/cat-parts.dir/build.make programs/build_helpers/CMakeFiles/cat-parts.dir/build
+	cd /root/cybex-core && $(MAKE) -f programs/build_helpers/CMakeFiles/cat-parts.dir/build.make programs/build_helpers/CMakeFiles/cat-parts.dir/build
 .PHONY : cat-parts/fast
 
 # Convenience name for target.
 programs/build_helpers/CMakeFiles/member_enumerator.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 programs/build_helpers/CMakeFiles/member_enumerator.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/build_helpers/CMakeFiles/member_enumerator.dir/rule
 .PHONY : programs/build_helpers/CMakeFiles/member_enumerator.dir/rule
 
 # Convenience name for target.
@@ -181,7 +170,7 @@ member_enumerator: programs/build_helpers/CMakeFiles/member_enumerator.dir/rule
 
 # fast build rule for target.
 member_enumerator/fast:
-	cd /root/cybex8 && $(MAKE) -f programs/build_helpers/CMakeFiles/member_enumerator.dir/build.make programs/build_helpers/CMakeFiles/member_enumerator.dir/build
+	cd /root/cybex-core && $(MAKE) -f programs/build_helpers/CMakeFiles/member_enumerator.dir/build.make programs/build_helpers/CMakeFiles/member_enumerator.dir/build
 .PHONY : member_enumerator/fast
 
 cat-parts.o: cat-parts.cpp.o
@@ -190,7 +179,7 @@ cat-parts.o: cat-parts.cpp.o
 
 # target to build an object file
 cat-parts.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f programs/build_helpers/CMakeFiles/cat-parts.dir/build.make programs/build_helpers/CMakeFiles/cat-parts.dir/cat-parts.cpp.o
+	cd /root/cybex-core && $(MAKE) -f programs/build_helpers/CMakeFiles/cat-parts.dir/build.make programs/build_helpers/CMakeFiles/cat-parts.dir/cat-parts.cpp.o
 .PHONY : cat-parts.cpp.o
 
 cat-parts.i: cat-parts.cpp.i
@@ -199,7 +188,7 @@ cat-parts.i: cat-parts.cpp.i
 
 # target to preprocess a source file
 cat-parts.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f programs/build_helpers/CMakeFiles/cat-parts.dir/build.make programs/build_helpers/CMakeFiles/cat-parts.dir/cat-parts.cpp.i
+	cd /root/cybex-core && $(MAKE) -f programs/build_helpers/CMakeFiles/cat-parts.dir/build.make programs/build_helpers/CMakeFiles/cat-parts.dir/cat-parts.cpp.i
 .PHONY : cat-parts.cpp.i
 
 cat-parts.s: cat-parts.cpp.s
@@ -208,7 +197,7 @@ cat-parts.s: cat-parts.cpp.s
 
 # target to generate assembly for a file
 cat-parts.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f programs/build_helpers/CMakeFiles/cat-parts.dir/build.make programs/build_helpers/CMakeFiles/cat-parts.dir/cat-parts.cpp.s
+	cd /root/cybex-core && $(MAKE) -f programs/build_helpers/CMakeFiles/cat-parts.dir/build.make programs/build_helpers/CMakeFiles/cat-parts.dir/cat-parts.cpp.s
 .PHONY : cat-parts.cpp.s
 
 member_enumerator.o: member_enumerator.cpp.o
@@ -217,7 +206,7 @@ member_enumerator.o: member_enumerator.cpp.o
 
 # target to build an object file
 member_enumerator.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f programs/build_helpers/CMakeFiles/member_enumerator.dir/build.make programs/build_helpers/CMakeFiles/member_enumerator.dir/member_enumerator.cpp.o
+	cd /root/cybex-core && $(MAKE) -f programs/build_helpers/CMakeFiles/member_enumerator.dir/build.make programs/build_helpers/CMakeFiles/member_enumerator.dir/member_enumerator.cpp.o
 .PHONY : member_enumerator.cpp.o
 
 member_enumerator.i: member_enumerator.cpp.i
@@ -226,7 +215,7 @@ member_enumerator.i: member_enumerator.cpp.i
 
 # target to preprocess a source file
 member_enumerator.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f programs/build_helpers/CMakeFiles/member_enumerator.dir/build.make programs/build_helpers/CMakeFiles/member_enumerator.dir/member_enumerator.cpp.i
+	cd /root/cybex-core && $(MAKE) -f programs/build_helpers/CMakeFiles/member_enumerator.dir/build.make programs/build_helpers/CMakeFiles/member_enumerator.dir/member_enumerator.cpp.i
 .PHONY : member_enumerator.cpp.i
 
 member_enumerator.s: member_enumerator.cpp.s
@@ -235,7 +224,7 @@ member_enumerator.s: member_enumerator.cpp.s
 
 # target to generate assembly for a file
 member_enumerator.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f programs/build_helpers/CMakeFiles/member_enumerator.dir/build.make programs/build_helpers/CMakeFiles/member_enumerator.dir/member_enumerator.cpp.s
+	cd /root/cybex-core && $(MAKE) -f programs/build_helpers/CMakeFiles/member_enumerator.dir/build.make programs/build_helpers/CMakeFiles/member_enumerator.dir/member_enumerator.cpp.s
 .PHONY : member_enumerator.cpp.s
 
 # Help Target
@@ -247,11 +236,10 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... cat-parts"
 	@echo "... member_enumerator"
-	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... edit_cache"
 	@echo "... cat-parts.o"
 	@echo "... cat-parts.i"
 	@echo "... cat-parts.s"
@@ -269,6 +257,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

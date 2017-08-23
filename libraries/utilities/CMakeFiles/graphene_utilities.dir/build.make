@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 # Include any dependencies generated for this target.
 include libraries/utilities/CMakeFiles/graphene_utilities.dir/depend.make
@@ -59,16 +59,16 @@ include libraries/utilities/CMakeFiles/graphene_utilities.dir/flags.make
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.o: libraries/utilities/CMakeFiles/graphene_utilities.dir/flags.make
 libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.o: libraries/utilities/key_conversion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.o"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_utilities.dir/key_conversion.cpp.o -c /root/cybex8/libraries/utilities/key_conversion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.o"
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_utilities.dir/key_conversion.cpp.o -c /root/cybex-core/libraries/utilities/key_conversion.cpp
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_utilities.dir/key_conversion.cpp.i"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/utilities/key_conversion.cpp > CMakeFiles/graphene_utilities.dir/key_conversion.cpp.i
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/utilities/key_conversion.cpp > CMakeFiles/graphene_utilities.dir/key_conversion.cpp.i
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_utilities.dir/key_conversion.cpp.s"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/utilities/key_conversion.cpp -o CMakeFiles/graphene_utilities.dir/key_conversion.cpp.s
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/utilities/key_conversion.cpp -o CMakeFiles/graphene_utilities.dir/key_conversion.cpp.s
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.o.requires:
 
@@ -83,16 +83,16 @@ libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.o.provi
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.o: libraries/utilities/CMakeFiles/graphene_utilities.dir/flags.make
 libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.o: libraries/utilities/string_escape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.o"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_utilities.dir/string_escape.cpp.o -c /root/cybex8/libraries/utilities/string_escape.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.o"
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_utilities.dir/string_escape.cpp.o -c /root/cybex-core/libraries/utilities/string_escape.cpp
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_utilities.dir/string_escape.cpp.i"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/utilities/string_escape.cpp > CMakeFiles/graphene_utilities.dir/string_escape.cpp.i
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/utilities/string_escape.cpp > CMakeFiles/graphene_utilities.dir/string_escape.cpp.i
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_utilities.dir/string_escape.cpp.s"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/utilities/string_escape.cpp -o CMakeFiles/graphene_utilities.dir/string_escape.cpp.s
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/utilities/string_escape.cpp -o CMakeFiles/graphene_utilities.dir/string_escape.cpp.s
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.o.requires:
 
@@ -107,16 +107,16 @@ libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.o.provid
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.o: libraries/utilities/CMakeFiles/graphene_utilities.dir/flags.make
 libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.o: libraries/utilities/tempdir.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.o"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_utilities.dir/tempdir.cpp.o -c /root/cybex8/libraries/utilities/tempdir.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.o"
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_utilities.dir/tempdir.cpp.o -c /root/cybex-core/libraries/utilities/tempdir.cpp
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_utilities.dir/tempdir.cpp.i"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/utilities/tempdir.cpp > CMakeFiles/graphene_utilities.dir/tempdir.cpp.i
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/utilities/tempdir.cpp > CMakeFiles/graphene_utilities.dir/tempdir.cpp.i
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_utilities.dir/tempdir.cpp.s"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/utilities/tempdir.cpp -o CMakeFiles/graphene_utilities.dir/tempdir.cpp.s
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/utilities/tempdir.cpp -o CMakeFiles/graphene_utilities.dir/tempdir.cpp.s
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.o.requires:
 
@@ -131,16 +131,16 @@ libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.o.provides.bui
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.o: libraries/utilities/CMakeFiles/graphene_utilities.dir/flags.make
 libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.o: libraries/utilities/words.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.o"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_utilities.dir/words.cpp.o -c /root/cybex8/libraries/utilities/words.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.o"
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_utilities.dir/words.cpp.o -c /root/cybex-core/libraries/utilities/words.cpp
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_utilities.dir/words.cpp.i"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/utilities/words.cpp > CMakeFiles/graphene_utilities.dir/words.cpp.i
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/utilities/words.cpp > CMakeFiles/graphene_utilities.dir/words.cpp.i
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_utilities.dir/words.cpp.s"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/utilities/words.cpp -o CMakeFiles/graphene_utilities.dir/words.cpp.s
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/utilities/words.cpp -o CMakeFiles/graphene_utilities.dir/words.cpp.s
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.o.requires:
 
@@ -155,16 +155,16 @@ libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.o.provides.build
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.o: libraries/utilities/CMakeFiles/graphene_utilities.dir/flags.make
 libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.o: libraries/utilities/git_revision.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.o"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_utilities.dir/git_revision.cpp.o -c /root/cybex8/libraries/utilities/git_revision.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.o"
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_utilities.dir/git_revision.cpp.o -c /root/cybex-core/libraries/utilities/git_revision.cpp
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_utilities.dir/git_revision.cpp.i"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/utilities/git_revision.cpp > CMakeFiles/graphene_utilities.dir/git_revision.cpp.i
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/utilities/git_revision.cpp > CMakeFiles/graphene_utilities.dir/git_revision.cpp.i
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_utilities.dir/git_revision.cpp.s"
-	cd /root/cybex8/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/utilities/git_revision.cpp -o CMakeFiles/graphene_utilities.dir/git_revision.cpp.s
+	cd /root/cybex-core/libraries/utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/utilities/git_revision.cpp -o CMakeFiles/graphene_utilities.dir/git_revision.cpp.s
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.o.requires:
 
@@ -195,9 +195,9 @@ libraries/utilities/libgraphene_utilities.a: libraries/utilities/CMakeFiles/grap
 libraries/utilities/libgraphene_utilities.a: libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.o
 libraries/utilities/libgraphene_utilities.a: libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make
 libraries/utilities/libgraphene_utilities.a: libraries/utilities/CMakeFiles/graphene_utilities.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libgraphene_utilities.a"
-	cd /root/cybex8/libraries/utilities && $(CMAKE_COMMAND) -P CMakeFiles/graphene_utilities.dir/cmake_clean_target.cmake
-	cd /root/cybex8/libraries/utilities && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphene_utilities.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libgraphene_utilities.a"
+	cd /root/cybex-core/libraries/utilities && $(CMAKE_COMMAND) -P CMakeFiles/graphene_utilities.dir/cmake_clean_target.cmake
+	cd /root/cybex-core/libraries/utilities && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphene_utilities.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 libraries/utilities/CMakeFiles/graphene_utilities.dir/build: libraries/utilities/libgraphene_utilities.a
@@ -213,10 +213,10 @@ libraries/utilities/CMakeFiles/graphene_utilities.dir/requires: libraries/utilit
 .PHONY : libraries/utilities/CMakeFiles/graphene_utilities.dir/requires
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/clean:
-	cd /root/cybex8/libraries/utilities && $(CMAKE_COMMAND) -P CMakeFiles/graphene_utilities.dir/cmake_clean.cmake
+	cd /root/cybex-core/libraries/utilities && $(CMAKE_COMMAND) -P CMakeFiles/graphene_utilities.dir/cmake_clean.cmake
 .PHONY : libraries/utilities/CMakeFiles/graphene_utilities.dir/clean
 
 libraries/utilities/CMakeFiles/graphene_utilities.dir/depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex8 /root/cybex8/libraries/utilities /root/cybex8 /root/cybex8/libraries/utilities /root/cybex8/libraries/utilities/CMakeFiles/graphene_utilities.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex-core /root/cybex-core/libraries/utilities /root/cybex-core /root/cybex-core/libraries/utilities /root/cybex-core/libraries/utilities/CMakeFiles/graphene_utilities.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libraries/utilities/CMakeFiles/graphene_utilities.dir/depend
 

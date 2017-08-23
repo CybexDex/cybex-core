@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 # Include any dependencies generated for this target.
 include tests/CMakeFiles/chain_test.dir/depend.make
@@ -59,16 +59,16 @@ include tests/CMakeFiles/chain_test.dir/flags.make
 
 tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.o: tests/tests/wallet_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.o -c /root/cybex8/tests/tests/wallet_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.o -c /root/cybex-core/tests/tests/wallet_tests.cpp
 
 tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/tests/wallet_tests.cpp > CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/tests/wallet_tests.cpp > CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.i
 
 tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/tests/wallet_tests.cpp -o CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/tests/wallet_tests.cpp -o CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.s
 
 tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.o.requires:
 
@@ -83,16 +83,16 @@ tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.o.provides.build: tests/C
 
 tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.o: tests/tests/basic_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/basic_tests.cpp.o -c /root/cybex8/tests/tests/basic_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/basic_tests.cpp.o -c /root/cybex-core/tests/tests/basic_tests.cpp
 
 tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/tests/basic_tests.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/tests/basic_tests.cpp > CMakeFiles/chain_test.dir/tests/basic_tests.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/tests/basic_tests.cpp > CMakeFiles/chain_test.dir/tests/basic_tests.cpp.i
 
 tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/tests/basic_tests.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/tests/basic_tests.cpp -o CMakeFiles/chain_test.dir/tests/basic_tests.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/tests/basic_tests.cpp -o CMakeFiles/chain_test.dir/tests/basic_tests.cpp.s
 
 tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.o.requires:
 
@@ -107,16 +107,16 @@ tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.o.provides.build: tests/CM
 
 tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.o: tests/tests/block_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/block_tests.cpp.o -c /root/cybex8/tests/tests/block_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/block_tests.cpp.o -c /root/cybex-core/tests/tests/block_tests.cpp
 
 tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/tests/block_tests.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/tests/block_tests.cpp > CMakeFiles/chain_test.dir/tests/block_tests.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/tests/block_tests.cpp > CMakeFiles/chain_test.dir/tests/block_tests.cpp.i
 
 tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/tests/block_tests.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/tests/block_tests.cpp -o CMakeFiles/chain_test.dir/tests/block_tests.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/tests/block_tests.cpp -o CMakeFiles/chain_test.dir/tests/block_tests.cpp.s
 
 tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.o.requires:
 
@@ -131,16 +131,16 @@ tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.o.provides.build: tests/CM
 
 tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.o: tests/tests/authority_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/authority_tests.cpp.o -c /root/cybex8/tests/tests/authority_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/authority_tests.cpp.o -c /root/cybex-core/tests/tests/authority_tests.cpp
 
 tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/tests/authority_tests.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/tests/authority_tests.cpp > CMakeFiles/chain_test.dir/tests/authority_tests.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/tests/authority_tests.cpp > CMakeFiles/chain_test.dir/tests/authority_tests.cpp.i
 
 tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/tests/authority_tests.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/tests/authority_tests.cpp -o CMakeFiles/chain_test.dir/tests/authority_tests.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/tests/authority_tests.cpp -o CMakeFiles/chain_test.dir/tests/authority_tests.cpp.s
 
 tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.o.requires:
 
@@ -155,16 +155,16 @@ tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.o.provides.build: test
 
 tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.o: tests/tests/fee_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/fee_tests.cpp.o -c /root/cybex8/tests/tests/fee_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/fee_tests.cpp.o -c /root/cybex-core/tests/tests/fee_tests.cpp
 
 tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/tests/fee_tests.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/tests/fee_tests.cpp > CMakeFiles/chain_test.dir/tests/fee_tests.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/tests/fee_tests.cpp > CMakeFiles/chain_test.dir/tests/fee_tests.cpp.i
 
 tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/tests/fee_tests.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/tests/fee_tests.cpp -o CMakeFiles/chain_test.dir/tests/fee_tests.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/tests/fee_tests.cpp -o CMakeFiles/chain_test.dir/tests/fee_tests.cpp.s
 
 tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.o.requires:
 
@@ -179,16 +179,16 @@ tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.o.provides.build: tests/CMak
 
 tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.o: tests/tests/database_api_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.o -c /root/cybex8/tests/tests/database_api_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.o -c /root/cybex-core/tests/tests/database_api_tests.cpp
 
 tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/tests/database_api_tests.cpp > CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/tests/database_api_tests.cpp > CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.i
 
 tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/tests/database_api_tests.cpp -o CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/tests/database_api_tests.cpp -o CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.s
 
 tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.o.requires:
 
@@ -203,16 +203,16 @@ tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.o.provides.build: t
 
 tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.o: tests/tests/serialization_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.o -c /root/cybex8/tests/tests/serialization_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.o -c /root/cybex-core/tests/tests/serialization_tests.cpp
 
 tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/tests/serialization_tests.cpp > CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/tests/serialization_tests.cpp > CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.i
 
 tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/tests/serialization_tests.cpp -o CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/tests/serialization_tests.cpp -o CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.s
 
 tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.o.requires:
 
@@ -227,16 +227,16 @@ tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.o.provides.build: 
 
 tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.o: tests/tests/database_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/database_tests.cpp.o -c /root/cybex8/tests/tests/database_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/database_tests.cpp.o -c /root/cybex-core/tests/tests/database_tests.cpp
 
 tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/tests/database_tests.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/tests/database_tests.cpp > CMakeFiles/chain_test.dir/tests/database_tests.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/tests/database_tests.cpp > CMakeFiles/chain_test.dir/tests/database_tests.cpp.i
 
 tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/tests/database_tests.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/tests/database_tests.cpp -o CMakeFiles/chain_test.dir/tests/database_tests.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/tests/database_tests.cpp -o CMakeFiles/chain_test.dir/tests/database_tests.cpp.s
 
 tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.o.requires:
 
@@ -251,16 +251,16 @@ tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.o.provides.build: tests
 
 tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.o: tests/tests/confidential_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.o -c /root/cybex8/tests/tests/confidential_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.o -c /root/cybex-core/tests/tests/confidential_tests.cpp
 
 tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/tests/confidential_tests.cpp > CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/tests/confidential_tests.cpp > CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.i
 
 tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/tests/confidential_tests.cpp -o CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/tests/confidential_tests.cpp -o CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.s
 
 tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.o.requires:
 
@@ -275,16 +275,16 @@ tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.o.provides.build: t
 
 tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.o: tests/tests/uia_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/uia_tests.cpp.o -c /root/cybex8/tests/tests/uia_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/uia_tests.cpp.o -c /root/cybex-core/tests/tests/uia_tests.cpp
 
 tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/tests/uia_tests.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/tests/uia_tests.cpp > CMakeFiles/chain_test.dir/tests/uia_tests.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/tests/uia_tests.cpp > CMakeFiles/chain_test.dir/tests/uia_tests.cpp.i
 
 tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/tests/uia_tests.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/tests/uia_tests.cpp -o CMakeFiles/chain_test.dir/tests/uia_tests.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/tests/uia_tests.cpp -o CMakeFiles/chain_test.dir/tests/uia_tests.cpp.s
 
 tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.o.requires:
 
@@ -299,16 +299,16 @@ tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.o.provides.build: tests/CMak
 
 tests/CMakeFiles/chain_test.dir/tests/main.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/tests/main.cpp.o: tests/tests/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/main.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/main.cpp.o -c /root/cybex8/tests/tests/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/main.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/main.cpp.o -c /root/cybex-core/tests/tests/main.cpp
 
 tests/CMakeFiles/chain_test.dir/tests/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/tests/main.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/tests/main.cpp > CMakeFiles/chain_test.dir/tests/main.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/tests/main.cpp > CMakeFiles/chain_test.dir/tests/main.cpp.i
 
 tests/CMakeFiles/chain_test.dir/tests/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/tests/main.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/tests/main.cpp -o CMakeFiles/chain_test.dir/tests/main.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/tests/main.cpp -o CMakeFiles/chain_test.dir/tests/main.cpp.s
 
 tests/CMakeFiles/chain_test.dir/tests/main.cpp.o.requires:
 
@@ -323,16 +323,16 @@ tests/CMakeFiles/chain_test.dir/tests/main.cpp.o.provides.build: tests/CMakeFile
 
 tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.o: tests/tests/operation_tests2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.o -c /root/cybex8/tests/tests/operation_tests2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.o -c /root/cybex-core/tests/tests/operation_tests2.cpp
 
 tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/tests/operation_tests2.cpp > CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/tests/operation_tests2.cpp > CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.i
 
 tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/tests/operation_tests2.cpp -o CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/tests/operation_tests2.cpp -o CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.s
 
 tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.o.requires:
 
@@ -347,16 +347,16 @@ tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.o.provides.build: tes
 
 tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.o: tests/tests/operation_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/operation_tests.cpp.o -c /root/cybex8/tests/tests/operation_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/tests/operation_tests.cpp.o -c /root/cybex-core/tests/tests/operation_tests.cpp
 
 tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/tests/operation_tests.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/tests/operation_tests.cpp > CMakeFiles/chain_test.dir/tests/operation_tests.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/tests/operation_tests.cpp > CMakeFiles/chain_test.dir/tests/operation_tests.cpp.i
 
 tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/tests/operation_tests.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/tests/operation_tests.cpp -o CMakeFiles/chain_test.dir/tests/operation_tests.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/tests/operation_tests.cpp -o CMakeFiles/chain_test.dir/tests/operation_tests.cpp.s
 
 tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.o.requires:
 
@@ -371,16 +371,16 @@ tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.o.provides.build: test
 
 tests/CMakeFiles/chain_test.dir/common/database_fixture.cpp.o: tests/CMakeFiles/chain_test.dir/flags.make
 tests/CMakeFiles/chain_test.dir/common/database_fixture.cpp.o: tests/common/database_fixture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object tests/CMakeFiles/chain_test.dir/common/database_fixture.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/common/database_fixture.cpp.o -c /root/cybex8/tests/common/database_fixture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object tests/CMakeFiles/chain_test.dir/common/database_fixture.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_test.dir/common/database_fixture.cpp.o -c /root/cybex-core/tests/common/database_fixture.cpp
 
 tests/CMakeFiles/chain_test.dir/common/database_fixture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_test.dir/common/database_fixture.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/common/database_fixture.cpp > CMakeFiles/chain_test.dir/common/database_fixture.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/common/database_fixture.cpp > CMakeFiles/chain_test.dir/common/database_fixture.cpp.i
 
 tests/CMakeFiles/chain_test.dir/common/database_fixture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_test.dir/common/database_fixture.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/common/database_fixture.cpp -o CMakeFiles/chain_test.dir/common/database_fixture.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/common/database_fixture.cpp -o CMakeFiles/chain_test.dir/common/database_fixture.cpp.s
 
 tests/CMakeFiles/chain_test.dir/common/database_fixture.cpp.o.requires:
 
@@ -466,8 +466,8 @@ tests/chain_test: /usr/lib/x86_64-linux-gnu/libcrypto.a
 tests/chain_test: /usr/lib/x86_64-linux-gnu/libz.so
 tests/chain_test: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build/.libs/libsecp256k1.a
 tests/chain_test: tests/CMakeFiles/chain_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable chain_test"
-	cd /root/cybex8/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chain_test.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable chain_test"
+	cd /root/cybex-core/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chain_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tests/CMakeFiles/chain_test.dir/build: tests/chain_test
@@ -492,10 +492,10 @@ tests/CMakeFiles/chain_test.dir/requires: tests/CMakeFiles/chain_test.dir/common
 .PHONY : tests/CMakeFiles/chain_test.dir/requires
 
 tests/CMakeFiles/chain_test.dir/clean:
-	cd /root/cybex8/tests && $(CMAKE_COMMAND) -P CMakeFiles/chain_test.dir/cmake_clean.cmake
+	cd /root/cybex-core/tests && $(CMAKE_COMMAND) -P CMakeFiles/chain_test.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/chain_test.dir/clean
 
 tests/CMakeFiles/chain_test.dir/depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex8 /root/cybex8/tests /root/cybex8 /root/cybex8/tests /root/cybex8/tests/CMakeFiles/chain_test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex-core /root/cybex-core/tests /root/cybex-core /root/cybex-core/tests /root/cybex-core/tests/CMakeFiles/chain_test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tests/CMakeFiles/chain_test.dir/depend
 

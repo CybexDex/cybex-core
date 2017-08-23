@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/get_dev_key.dir/get_dev_key.cpp.o"
   "get_dev_key.pdb"
   "get_dev_key"
+  "get_dev_key.pdb"
+  "CMakeFiles/CMakeRelink.dir/get_dev_key"
 )
 
 # Per-language clean rules from dependency scanning.

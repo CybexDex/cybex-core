@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,17 +78,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -99,17 +88,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -122,16 +100,27 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/libraries/net/CMakeFiles/progress.marks
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/net/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/libraries/net/CMakeFiles/progress.marks
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/net/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/net/clean
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/net/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/net/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/net/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/net/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/net/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libraries/net/CMakeFiles/graphene_net.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/net/CMakeFiles/graphene_net.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/net/CMakeFiles/graphene_net.dir/rule
 .PHONY : libraries/net/CMakeFiles/graphene_net.dir/rule
 
 # Convenience name for target.
@@ -166,7 +155,7 @@ graphene_net: libraries/net/CMakeFiles/graphene_net.dir/rule
 
 # fast build rule for target.
 graphene_net/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/build
 .PHONY : graphene_net/fast
 
 core_messages.o: core_messages.cpp.o
@@ -175,7 +164,7 @@ core_messages.o: core_messages.cpp.o
 
 # target to build an object file
 core_messages.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/core_messages.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/core_messages.cpp.o
 .PHONY : core_messages.cpp.o
 
 core_messages.i: core_messages.cpp.i
@@ -184,7 +173,7 @@ core_messages.i: core_messages.cpp.i
 
 # target to preprocess a source file
 core_messages.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/core_messages.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/core_messages.cpp.i
 .PHONY : core_messages.cpp.i
 
 core_messages.s: core_messages.cpp.s
@@ -193,7 +182,7 @@ core_messages.s: core_messages.cpp.s
 
 # target to generate assembly for a file
 core_messages.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/core_messages.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/core_messages.cpp.s
 .PHONY : core_messages.cpp.s
 
 message_oriented_connection.o: message_oriented_connection.cpp.o
@@ -202,7 +191,7 @@ message_oriented_connection.o: message_oriented_connection.cpp.o
 
 # target to build an object file
 message_oriented_connection.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/message_oriented_connection.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/message_oriented_connection.cpp.o
 .PHONY : message_oriented_connection.cpp.o
 
 message_oriented_connection.i: message_oriented_connection.cpp.i
@@ -211,7 +200,7 @@ message_oriented_connection.i: message_oriented_connection.cpp.i
 
 # target to preprocess a source file
 message_oriented_connection.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/message_oriented_connection.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/message_oriented_connection.cpp.i
 .PHONY : message_oriented_connection.cpp.i
 
 message_oriented_connection.s: message_oriented_connection.cpp.s
@@ -220,7 +209,7 @@ message_oriented_connection.s: message_oriented_connection.cpp.s
 
 # target to generate assembly for a file
 message_oriented_connection.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/message_oriented_connection.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/message_oriented_connection.cpp.s
 .PHONY : message_oriented_connection.cpp.s
 
 node.o: node.cpp.o
@@ -229,7 +218,7 @@ node.o: node.cpp.o
 
 # target to build an object file
 node.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/node.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/node.cpp.o
 .PHONY : node.cpp.o
 
 node.i: node.cpp.i
@@ -238,7 +227,7 @@ node.i: node.cpp.i
 
 # target to preprocess a source file
 node.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/node.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/node.cpp.i
 .PHONY : node.cpp.i
 
 node.s: node.cpp.s
@@ -247,7 +236,7 @@ node.s: node.cpp.s
 
 # target to generate assembly for a file
 node.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/node.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/node.cpp.s
 .PHONY : node.cpp.s
 
 peer_connection.o: peer_connection.cpp.o
@@ -256,7 +245,7 @@ peer_connection.o: peer_connection.cpp.o
 
 # target to build an object file
 peer_connection.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/peer_connection.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/peer_connection.cpp.o
 .PHONY : peer_connection.cpp.o
 
 peer_connection.i: peer_connection.cpp.i
@@ -265,7 +254,7 @@ peer_connection.i: peer_connection.cpp.i
 
 # target to preprocess a source file
 peer_connection.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/peer_connection.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/peer_connection.cpp.i
 .PHONY : peer_connection.cpp.i
 
 peer_connection.s: peer_connection.cpp.s
@@ -274,7 +263,7 @@ peer_connection.s: peer_connection.cpp.s
 
 # target to generate assembly for a file
 peer_connection.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/peer_connection.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/peer_connection.cpp.s
 .PHONY : peer_connection.cpp.s
 
 peer_database.o: peer_database.cpp.o
@@ -283,7 +272,7 @@ peer_database.o: peer_database.cpp.o
 
 # target to build an object file
 peer_database.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/peer_database.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/peer_database.cpp.o
 .PHONY : peer_database.cpp.o
 
 peer_database.i: peer_database.cpp.i
@@ -292,7 +281,7 @@ peer_database.i: peer_database.cpp.i
 
 # target to preprocess a source file
 peer_database.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/peer_database.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/peer_database.cpp.i
 .PHONY : peer_database.cpp.i
 
 peer_database.s: peer_database.cpp.s
@@ -301,7 +290,7 @@ peer_database.s: peer_database.cpp.s
 
 # target to generate assembly for a file
 peer_database.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/peer_database.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/peer_database.cpp.s
 .PHONY : peer_database.cpp.s
 
 stcp_socket.o: stcp_socket.cpp.o
@@ -310,7 +299,7 @@ stcp_socket.o: stcp_socket.cpp.o
 
 # target to build an object file
 stcp_socket.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/stcp_socket.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/stcp_socket.cpp.o
 .PHONY : stcp_socket.cpp.o
 
 stcp_socket.i: stcp_socket.cpp.i
@@ -319,7 +308,7 @@ stcp_socket.i: stcp_socket.cpp.i
 
 # target to preprocess a source file
 stcp_socket.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/stcp_socket.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/stcp_socket.cpp.i
 .PHONY : stcp_socket.cpp.i
 
 stcp_socket.s: stcp_socket.cpp.s
@@ -328,7 +317,7 @@ stcp_socket.s: stcp_socket.cpp.s
 
 # target to generate assembly for a file
 stcp_socket.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/stcp_socket.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/net/CMakeFiles/graphene_net.dir/build.make libraries/net/CMakeFiles/graphene_net.dir/stcp_socket.cpp.s
 .PHONY : stcp_socket.cpp.s
 
 # Help Target
@@ -339,11 +328,10 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... graphene_net"
-	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... rebuild_cache"
 	@echo "... core_messages.o"
 	@echo "... core_messages.i"
 	@echo "... core_messages.s"
@@ -373,6 +361,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

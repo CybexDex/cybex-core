@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 # Include any dependencies generated for this target.
 include libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/depend.make
@@ -59,16 +59,16 @@ include libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/fl
 
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.o: libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/flags.make
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.o: libraries/plugins/debug_witness/debug_api.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.o"
-	cd /root/cybex8/libraries/plugins/debug_witness && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.o -c /root/cybex8/libraries/plugins/debug_witness/debug_api.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.o"
+	cd /root/cybex-core/libraries/plugins/debug_witness && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.o -c /root/cybex-core/libraries/plugins/debug_witness/debug_api.cpp
 
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.i"
-	cd /root/cybex8/libraries/plugins/debug_witness && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/plugins/debug_witness/debug_api.cpp > CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.i
+	cd /root/cybex-core/libraries/plugins/debug_witness && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/plugins/debug_witness/debug_api.cpp > CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.i
 
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.s"
-	cd /root/cybex8/libraries/plugins/debug_witness && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/plugins/debug_witness/debug_api.cpp -o CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.s
+	cd /root/cybex-core/libraries/plugins/debug_witness && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/plugins/debug_witness/debug_api.cpp -o CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.s
 
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.o.requires:
 
@@ -83,16 +83,16 @@ libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.
 
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.o: libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/flags.make
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.o: libraries/plugins/debug_witness/debug_witness.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.o"
-	cd /root/cybex8/libraries/plugins/debug_witness && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.o -c /root/cybex8/libraries/plugins/debug_witness/debug_witness.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.o"
+	cd /root/cybex-core/libraries/plugins/debug_witness && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.o -c /root/cybex-core/libraries/plugins/debug_witness/debug_witness.cpp
 
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.i"
-	cd /root/cybex8/libraries/plugins/debug_witness && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/plugins/debug_witness/debug_witness.cpp > CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.i
+	cd /root/cybex-core/libraries/plugins/debug_witness && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/plugins/debug_witness/debug_witness.cpp > CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.i
 
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.s"
-	cd /root/cybex8/libraries/plugins/debug_witness && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/plugins/debug_witness/debug_witness.cpp -o CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.s
+	cd /root/cybex-core/libraries/plugins/debug_witness && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/plugins/debug_witness/debug_witness.cpp -o CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.s
 
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.o.requires:
 
@@ -117,9 +117,9 @@ libraries/plugins/debug_witness/libgraphene_debug_witness.a: libraries/plugins/d
 libraries/plugins/debug_witness/libgraphene_debug_witness.a: libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.o
 libraries/plugins/debug_witness/libgraphene_debug_witness.a: libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make
 libraries/plugins/debug_witness/libgraphene_debug_witness.a: libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libgraphene_debug_witness.a"
-	cd /root/cybex8/libraries/plugins/debug_witness && $(CMAKE_COMMAND) -P CMakeFiles/graphene_debug_witness.dir/cmake_clean_target.cmake
-	cd /root/cybex8/libraries/plugins/debug_witness && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphene_debug_witness.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libgraphene_debug_witness.a"
+	cd /root/cybex-core/libraries/plugins/debug_witness && $(CMAKE_COMMAND) -P CMakeFiles/graphene_debug_witness.dir/cmake_clean_target.cmake
+	cd /root/cybex-core/libraries/plugins/debug_witness && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphene_debug_witness.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build: libraries/plugins/debug_witness/libgraphene_debug_witness.a
@@ -132,10 +132,10 @@ libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/requires: 
 .PHONY : libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/requires
 
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/clean:
-	cd /root/cybex8/libraries/plugins/debug_witness && $(CMAKE_COMMAND) -P CMakeFiles/graphene_debug_witness.dir/cmake_clean.cmake
+	cd /root/cybex-core/libraries/plugins/debug_witness && $(CMAKE_COMMAND) -P CMakeFiles/graphene_debug_witness.dir/cmake_clean.cmake
 .PHONY : libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/clean
 
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex8 /root/cybex8/libraries/plugins/debug_witness /root/cybex8 /root/cybex8/libraries/plugins/debug_witness /root/cybex8/libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex-core /root/cybex-core/libraries/plugins/debug_witness /root/cybex-core /root/cybex-core/libraries/plugins/debug_witness /root/cybex-core/libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/depend
 

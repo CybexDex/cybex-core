@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/witness_node.dir/main.cpp.o"
   "witness_node.pdb"
   "witness_node"
+  "witness_node.pdb"
+  "CMakeFiles/CMakeRelink.dir/witness_node"
 )
 
 # Per-language clean rules from dependency scanning.

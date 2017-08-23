@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -111,27 +111,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/programs/genesis_util/CMakeFiles/progress.marks
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/programs/genesis_util/CMakeFiles/progress.marks
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/clean
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 programs/genesis_util/CMakeFiles/genesis_update.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/CMakeFiles/genesis_update.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/CMakeFiles/genesis_update.dir/rule
 .PHONY : programs/genesis_util/CMakeFiles/genesis_update.dir/rule
 
 # Convenience name for target.
@@ -166,12 +155,17 @@ genesis_update: programs/genesis_util/CMakeFiles/genesis_update.dir/rule
 
 # fast build rule for target.
 genesis_update/fast:
-	cd /root/cybex8 && $(MAKE) -f programs/genesis_util/CMakeFiles/genesis_update.dir/build.make programs/genesis_util/CMakeFiles/genesis_update.dir/build
+	cd /root/cybex-core && $(MAKE) -f programs/genesis_util/CMakeFiles/genesis_update.dir/build.make programs/genesis_util/CMakeFiles/genesis_update.dir/build
 .PHONY : genesis_update/fast
+
+# Manual pre-install relink rule for target.
+genesis_update/preinstall:
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/CMakeFiles/genesis_update.dir/preinstall
+.PHONY : genesis_update/preinstall
 
 # Convenience name for target.
 programs/genesis_util/CMakeFiles/get_dev_key.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/CMakeFiles/get_dev_key.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/CMakeFiles/get_dev_key.dir/rule
 .PHONY : programs/genesis_util/CMakeFiles/get_dev_key.dir/rule
 
 # Convenience name for target.
@@ -181,12 +175,17 @@ get_dev_key: programs/genesis_util/CMakeFiles/get_dev_key.dir/rule
 
 # fast build rule for target.
 get_dev_key/fast:
-	cd /root/cybex8 && $(MAKE) -f programs/genesis_util/CMakeFiles/get_dev_key.dir/build.make programs/genesis_util/CMakeFiles/get_dev_key.dir/build
+	cd /root/cybex-core && $(MAKE) -f programs/genesis_util/CMakeFiles/get_dev_key.dir/build.make programs/genesis_util/CMakeFiles/get_dev_key.dir/build
 .PHONY : get_dev_key/fast
+
+# Manual pre-install relink rule for target.
+get_dev_key/preinstall:
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/CMakeFiles/get_dev_key.dir/preinstall
+.PHONY : get_dev_key/preinstall
 
 # Convenience name for target.
 programs/genesis_util/CMakeFiles/convert_address.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/CMakeFiles/convert_address.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 programs/genesis_util/CMakeFiles/convert_address.dir/rule
 .PHONY : programs/genesis_util/CMakeFiles/convert_address.dir/rule
 
 # Convenience name for target.
@@ -196,7 +195,7 @@ convert_address: programs/genesis_util/CMakeFiles/convert_address.dir/rule
 
 # fast build rule for target.
 convert_address/fast:
-	cd /root/cybex8 && $(MAKE) -f programs/genesis_util/CMakeFiles/convert_address.dir/build.make programs/genesis_util/CMakeFiles/convert_address.dir/build
+	cd /root/cybex-core && $(MAKE) -f programs/genesis_util/CMakeFiles/convert_address.dir/build.make programs/genesis_util/CMakeFiles/convert_address.dir/build
 .PHONY : convert_address/fast
 
 convert_address.o: convert_address.cpp.o
@@ -205,7 +204,7 @@ convert_address.o: convert_address.cpp.o
 
 # target to build an object file
 convert_address.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f programs/genesis_util/CMakeFiles/convert_address.dir/build.make programs/genesis_util/CMakeFiles/convert_address.dir/convert_address.cpp.o
+	cd /root/cybex-core && $(MAKE) -f programs/genesis_util/CMakeFiles/convert_address.dir/build.make programs/genesis_util/CMakeFiles/convert_address.dir/convert_address.cpp.o
 .PHONY : convert_address.cpp.o
 
 convert_address.i: convert_address.cpp.i
@@ -214,7 +213,7 @@ convert_address.i: convert_address.cpp.i
 
 # target to preprocess a source file
 convert_address.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f programs/genesis_util/CMakeFiles/convert_address.dir/build.make programs/genesis_util/CMakeFiles/convert_address.dir/convert_address.cpp.i
+	cd /root/cybex-core && $(MAKE) -f programs/genesis_util/CMakeFiles/convert_address.dir/build.make programs/genesis_util/CMakeFiles/convert_address.dir/convert_address.cpp.i
 .PHONY : convert_address.cpp.i
 
 convert_address.s: convert_address.cpp.s
@@ -223,7 +222,7 @@ convert_address.s: convert_address.cpp.s
 
 # target to generate assembly for a file
 convert_address.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f programs/genesis_util/CMakeFiles/convert_address.dir/build.make programs/genesis_util/CMakeFiles/convert_address.dir/convert_address.cpp.s
+	cd /root/cybex-core && $(MAKE) -f programs/genesis_util/CMakeFiles/convert_address.dir/build.make programs/genesis_util/CMakeFiles/convert_address.dir/convert_address.cpp.s
 .PHONY : convert_address.cpp.s
 
 genesis_update.o: genesis_update.cpp.o
@@ -232,7 +231,7 @@ genesis_update.o: genesis_update.cpp.o
 
 # target to build an object file
 genesis_update.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f programs/genesis_util/CMakeFiles/genesis_update.dir/build.make programs/genesis_util/CMakeFiles/genesis_update.dir/genesis_update.cpp.o
+	cd /root/cybex-core && $(MAKE) -f programs/genesis_util/CMakeFiles/genesis_update.dir/build.make programs/genesis_util/CMakeFiles/genesis_update.dir/genesis_update.cpp.o
 .PHONY : genesis_update.cpp.o
 
 genesis_update.i: genesis_update.cpp.i
@@ -241,7 +240,7 @@ genesis_update.i: genesis_update.cpp.i
 
 # target to preprocess a source file
 genesis_update.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f programs/genesis_util/CMakeFiles/genesis_update.dir/build.make programs/genesis_util/CMakeFiles/genesis_update.dir/genesis_update.cpp.i
+	cd /root/cybex-core && $(MAKE) -f programs/genesis_util/CMakeFiles/genesis_update.dir/build.make programs/genesis_util/CMakeFiles/genesis_update.dir/genesis_update.cpp.i
 .PHONY : genesis_update.cpp.i
 
 genesis_update.s: genesis_update.cpp.s
@@ -250,7 +249,7 @@ genesis_update.s: genesis_update.cpp.s
 
 # target to generate assembly for a file
 genesis_update.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f programs/genesis_util/CMakeFiles/genesis_update.dir/build.make programs/genesis_util/CMakeFiles/genesis_update.dir/genesis_update.cpp.s
+	cd /root/cybex-core && $(MAKE) -f programs/genesis_util/CMakeFiles/genesis_update.dir/build.make programs/genesis_util/CMakeFiles/genesis_update.dir/genesis_update.cpp.s
 .PHONY : genesis_update.cpp.s
 
 get_dev_key.o: get_dev_key.cpp.o
@@ -259,7 +258,7 @@ get_dev_key.o: get_dev_key.cpp.o
 
 # target to build an object file
 get_dev_key.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f programs/genesis_util/CMakeFiles/get_dev_key.dir/build.make programs/genesis_util/CMakeFiles/get_dev_key.dir/get_dev_key.cpp.o
+	cd /root/cybex-core && $(MAKE) -f programs/genesis_util/CMakeFiles/get_dev_key.dir/build.make programs/genesis_util/CMakeFiles/get_dev_key.dir/get_dev_key.cpp.o
 .PHONY : get_dev_key.cpp.o
 
 get_dev_key.i: get_dev_key.cpp.i
@@ -268,7 +267,7 @@ get_dev_key.i: get_dev_key.cpp.i
 
 # target to preprocess a source file
 get_dev_key.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f programs/genesis_util/CMakeFiles/get_dev_key.dir/build.make programs/genesis_util/CMakeFiles/get_dev_key.dir/get_dev_key.cpp.i
+	cd /root/cybex-core && $(MAKE) -f programs/genesis_util/CMakeFiles/get_dev_key.dir/build.make programs/genesis_util/CMakeFiles/get_dev_key.dir/get_dev_key.cpp.i
 .PHONY : get_dev_key.cpp.i
 
 get_dev_key.s: get_dev_key.cpp.s
@@ -277,7 +276,7 @@ get_dev_key.s: get_dev_key.cpp.s
 
 # target to generate assembly for a file
 get_dev_key.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f programs/genesis_util/CMakeFiles/get_dev_key.dir/build.make programs/genesis_util/CMakeFiles/get_dev_key.dir/get_dev_key.cpp.s
+	cd /root/cybex-core && $(MAKE) -f programs/genesis_util/CMakeFiles/get_dev_key.dir/build.make programs/genesis_util/CMakeFiles/get_dev_key.dir/get_dev_key.cpp.s
 .PHONY : get_dev_key.cpp.s
 
 # Help Target
@@ -294,7 +293,6 @@ help:
 	@echo "... get_dev_key"
 	@echo "... convert_address"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... convert_address.o"
 	@echo "... convert_address.i"
 	@echo "... convert_address.s"
@@ -315,6 +313,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

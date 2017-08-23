@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 # Utility rule file for project_secp256k1.
 
@@ -65,58 +65,58 @@ libraries/fc/CMakeFiles/project_secp256k1-complete: libraries/fc/vendor/secp256k
 libraries/fc/CMakeFiles/project_secp256k1-complete: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-build
 libraries/fc/CMakeFiles/project_secp256k1-complete: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-install
 libraries/fc/CMakeFiles/project_secp256k1-complete: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-autogen
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'project_secp256k1'"
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex8/libraries/fc/CMakeFiles/.
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E touch /root/cybex8/libraries/fc/CMakeFiles/./project_secp256k1-complete
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E touch /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/./project_secp256k1-done
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'project_secp256k1'"
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex-core/libraries/fc/CMakeFiles
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E touch /root/cybex-core/libraries/fc/CMakeFiles/project_secp256k1-complete
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E touch /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-done
 
 libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-install: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Performing install step for 'project_secp256k1'"
-	cd /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build && true
-	cd /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build && /usr/bin/cmake -E touch /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/./project_secp256k1-install
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Performing install step for 'project_secp256k1'"
+	cd /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build && true
+	cd /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build && /usr/bin/cmake -E touch /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-install
 
 libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-mkdir:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Creating directories for 'project_secp256k1'"
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex8/libraries/fc/vendor/secp256k1-zkp
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex8/libraries/fc/vendor/secp256k1-zkp
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex8/libraries/fc/vendor/secp256k1-zkp/tmp
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/.
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E touch /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/./project_secp256k1-mkdir
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Creating directories for 'project_secp256k1'"
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex-core/libraries/fc/vendor/secp256k1-zkp
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex-core/libraries/fc/vendor/secp256k1-zkp
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/tmp
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E make_directory /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E touch /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-mkdir
 
 libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-download: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-mkdir
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "No download step for 'project_secp256k1'"
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E echo_append
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E touch /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/./project_secp256k1-download
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "No download step for 'project_secp256k1'"
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E echo_append
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E touch /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-download
 
 libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-update: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No update step for 'project_secp256k1'"
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E echo_append
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E touch /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/./project_secp256k1-update
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No update step for 'project_secp256k1'"
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E echo_append
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E touch /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-update
 
 libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-patch: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "No patch step for 'project_secp256k1'"
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E echo_append
-	cd /root/cybex8/libraries/fc && /usr/bin/cmake -E touch /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/./project_secp256k1-patch
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "No patch step for 'project_secp256k1'"
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E echo_append
+	cd /root/cybex-core/libraries/fc && /usr/bin/cmake -E touch /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-patch
 
 libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-configure: libraries/fc/vendor/secp256k1-zkp/tmp/project_secp256k1-cfgcmd.txt
 libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-configure: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-update
 libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-configure: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-patch
 libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-configure: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-autogen
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Performing configure step for 'project_secp256k1'"
-	cd /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build && /root/cybex8/libraries/fc/vendor/secp256k1-zkp/configure --prefix=/root/cybex8/libraries/fc/vendor/secp256k1-zkp --with-bignum=no
-	cd /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build && /usr/bin/cmake -E touch /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/./project_secp256k1-configure
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Performing configure step for 'project_secp256k1'"
+	cd /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build && /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/configure --prefix=/root/cybex-core/libraries/fc/vendor/secp256k1-zkp --with-bignum=no
+	cd /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build && /usr/bin/cmake -E touch /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-configure
 
 libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-build: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-configure
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'project_secp256k1'"
-	cd /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build && make
-	cd /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build && /usr/bin/cmake -E touch /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/./project_secp256k1-build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'project_secp256k1'"
+	cd /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build && make
+	cd /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build && /usr/bin/cmake -E touch /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-build
 
 libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing autogen step for 'project_secp256k1'"
-	cd /root/cybex8/libraries/fc/vendor/secp256k1-zkp && /root/cybex8/libraries/fc/vendor/secp256k1-zkp/autogen.sh
-	cd /root/cybex8/libraries/fc/vendor/secp256k1-zkp && /usr/bin/cmake -E touch /root/cybex8/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/./project_secp256k1-autogen
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing autogen step for 'project_secp256k1'"
+	cd /root/cybex-core/libraries/fc/vendor/secp256k1-zkp && /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/autogen.sh
+	cd /root/cybex-core/libraries/fc/vendor/secp256k1-zkp && /usr/bin/cmake -E touch /root/cybex-core/libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-stamp/project_secp256k1-autogen
 
 project_secp256k1: libraries/fc/CMakeFiles/project_secp256k1
 project_secp256k1: libraries/fc/CMakeFiles/project_secp256k1-complete
@@ -138,10 +138,10 @@ libraries/fc/CMakeFiles/project_secp256k1.dir/build: project_secp256k1
 .PHONY : libraries/fc/CMakeFiles/project_secp256k1.dir/build
 
 libraries/fc/CMakeFiles/project_secp256k1.dir/clean:
-	cd /root/cybex8/libraries/fc && $(CMAKE_COMMAND) -P CMakeFiles/project_secp256k1.dir/cmake_clean.cmake
+	cd /root/cybex-core/libraries/fc && $(CMAKE_COMMAND) -P CMakeFiles/project_secp256k1.dir/cmake_clean.cmake
 .PHONY : libraries/fc/CMakeFiles/project_secp256k1.dir/clean
 
 libraries/fc/CMakeFiles/project_secp256k1.dir/depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex8 /root/cybex8/libraries/fc /root/cybex8 /root/cybex8/libraries/fc /root/cybex8/libraries/fc/CMakeFiles/project_secp256k1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex-core /root/cybex-core/libraries/fc /root/cybex-core /root/cybex-core/libraries/fc /root/cybex-core/libraries/fc/CMakeFiles/project_secp256k1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libraries/fc/CMakeFiles/project_secp256k1.dir/depend
 

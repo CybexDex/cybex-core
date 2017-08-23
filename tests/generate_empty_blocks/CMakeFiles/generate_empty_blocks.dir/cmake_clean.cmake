@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/generate_empty_blocks.dir/main.cpp.o"
   "generate_empty_blocks.pdb"
   "generate_empty_blocks"
+  "generate_empty_blocks.pdb"
+  "CMakeFiles/CMakeRelink.dir/generate_empty_blocks"
 )
 
 # Per-language clean rules from dependency scanning.

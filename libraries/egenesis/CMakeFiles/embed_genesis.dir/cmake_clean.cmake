@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/embed_genesis.dir/embed_genesis.cpp.o"
   "embed_genesis.pdb"
   "embed_genesis"
+  "embed_genesis.pdb"
+  "CMakeFiles/CMakeRelink.dir/embed_genesis"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 # Include any dependencies generated for this target.
 include libraries/chain/CMakeFiles/graphene_chain.dir/depend.make
@@ -59,16 +59,16 @@ include libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 
 libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.o: libraries/chain/database.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/database.cpp.o -c /root/cybex8/libraries/chain/database.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/database.cpp.o -c /root/cybex-core/libraries/chain/database.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/database.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/database.cpp > CMakeFiles/graphene_chain.dir/database.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/database.cpp > CMakeFiles/graphene_chain.dir/database.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/database.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/database.cpp -o CMakeFiles/graphene_chain.dir/database.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/database.cpp -o CMakeFiles/graphene_chain.dir/database.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.o.requires:
 
@@ -83,16 +83,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/database.cpp.o.provides.build: lib
 
 libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.o: libraries/chain/fork_database.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/fork_database.cpp.o -c /root/cybex8/libraries/chain/fork_database.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/fork_database.cpp.o -c /root/cybex-core/libraries/chain/fork_database.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/fork_database.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/fork_database.cpp > CMakeFiles/graphene_chain.dir/fork_database.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/fork_database.cpp > CMakeFiles/graphene_chain.dir/fork_database.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/fork_database.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/fork_database.cpp -o CMakeFiles/graphene_chain.dir/fork_database.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/fork_database.cpp -o CMakeFiles/graphene_chain.dir/fork_database.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.o.requires:
 
@@ -107,16 +107,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/fork_database.cpp.o.provides.build
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.o: libraries/chain/protocol/types.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/types.cpp.o -c /root/cybex8/libraries/chain/protocol/types.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/types.cpp.o -c /root/cybex-core/libraries/chain/protocol/types.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/types.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/types.cpp > CMakeFiles/graphene_chain.dir/protocol/types.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/types.cpp > CMakeFiles/graphene_chain.dir/protocol/types.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/types.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/types.cpp -o CMakeFiles/graphene_chain.dir/protocol/types.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/types.cpp -o CMakeFiles/graphene_chain.dir/protocol/types.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.o.requires:
 
@@ -131,16 +131,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/types.cpp.o.provides.buil
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.o: libraries/chain/protocol/address.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/address.cpp.o -c /root/cybex8/libraries/chain/protocol/address.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/address.cpp.o -c /root/cybex-core/libraries/chain/protocol/address.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/address.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/address.cpp > CMakeFiles/graphene_chain.dir/protocol/address.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/address.cpp > CMakeFiles/graphene_chain.dir/protocol/address.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/address.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/address.cpp -o CMakeFiles/graphene_chain.dir/protocol/address.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/address.cpp -o CMakeFiles/graphene_chain.dir/protocol/address.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.o.requires:
 
@@ -155,16 +155,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/address.cpp.o.provides.bu
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.o: libraries/chain/protocol/authority.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/authority.cpp.o -c /root/cybex8/libraries/chain/protocol/authority.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/authority.cpp.o -c /root/cybex-core/libraries/chain/protocol/authority.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/authority.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/authority.cpp > CMakeFiles/graphene_chain.dir/protocol/authority.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/authority.cpp > CMakeFiles/graphene_chain.dir/protocol/authority.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/authority.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/authority.cpp -o CMakeFiles/graphene_chain.dir/protocol/authority.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/authority.cpp -o CMakeFiles/graphene_chain.dir/protocol/authority.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.o.requires:
 
@@ -179,16 +179,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/authority.cpp.o.provides.
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.o: libraries/chain/protocol/asset.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/asset.cpp.o -c /root/cybex8/libraries/chain/protocol/asset.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/asset.cpp.o -c /root/cybex-core/libraries/chain/protocol/asset.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/asset.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/asset.cpp > CMakeFiles/graphene_chain.dir/protocol/asset.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/asset.cpp > CMakeFiles/graphene_chain.dir/protocol/asset.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/asset.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/asset.cpp -o CMakeFiles/graphene_chain.dir/protocol/asset.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/asset.cpp -o CMakeFiles/graphene_chain.dir/protocol/asset.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.o.requires:
 
@@ -203,16 +203,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset.cpp.o.provides.buil
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.o: libraries/chain/protocol/assert.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/assert.cpp.o -c /root/cybex8/libraries/chain/protocol/assert.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/assert.cpp.o -c /root/cybex-core/libraries/chain/protocol/assert.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/assert.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/assert.cpp > CMakeFiles/graphene_chain.dir/protocol/assert.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/assert.cpp > CMakeFiles/graphene_chain.dir/protocol/assert.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/assert.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/assert.cpp -o CMakeFiles/graphene_chain.dir/protocol/assert.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/assert.cpp -o CMakeFiles/graphene_chain.dir/protocol/assert.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.o.requires:
 
@@ -227,16 +227,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/assert.cpp.o.provides.bui
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.o: libraries/chain/protocol/account.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/account.cpp.o -c /root/cybex8/libraries/chain/protocol/account.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/account.cpp.o -c /root/cybex-core/libraries/chain/protocol/account.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/account.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/account.cpp > CMakeFiles/graphene_chain.dir/protocol/account.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/account.cpp > CMakeFiles/graphene_chain.dir/protocol/account.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/account.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/account.cpp -o CMakeFiles/graphene_chain.dir/protocol/account.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/account.cpp -o CMakeFiles/graphene_chain.dir/protocol/account.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.o.requires:
 
@@ -251,16 +251,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/account.cpp.o.provides.bu
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.o: libraries/chain/protocol/transfer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.o -c /root/cybex8/libraries/chain/protocol/transfer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.o -c /root/cybex-core/libraries/chain/protocol/transfer.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/transfer.cpp > CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/transfer.cpp > CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/transfer.cpp -o CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/transfer.cpp -o CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.o.requires:
 
@@ -275,16 +275,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transfer.cpp.o.provides.b
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.o: libraries/chain/protocol/committee_member.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.o -c /root/cybex8/libraries/chain/protocol/committee_member.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.o -c /root/cybex-core/libraries/chain/protocol/committee_member.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/committee_member.cpp > CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/committee_member.cpp > CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/committee_member.cpp -o CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/committee_member.cpp -o CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.o.requires:
 
@@ -299,16 +299,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/committee_member.cpp.o.pr
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.o: libraries/chain/protocol/witness.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/witness.cpp.o -c /root/cybex8/libraries/chain/protocol/witness.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/witness.cpp.o -c /root/cybex-core/libraries/chain/protocol/witness.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/witness.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/witness.cpp > CMakeFiles/graphene_chain.dir/protocol/witness.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/witness.cpp > CMakeFiles/graphene_chain.dir/protocol/witness.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/witness.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/witness.cpp -o CMakeFiles/graphene_chain.dir/protocol/witness.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/witness.cpp -o CMakeFiles/graphene_chain.dir/protocol/witness.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.o.requires:
 
@@ -323,16 +323,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/witness.cpp.o.provides.bu
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.o: libraries/chain/protocol/market.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/market.cpp.o -c /root/cybex8/libraries/chain/protocol/market.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/market.cpp.o -c /root/cybex-core/libraries/chain/protocol/market.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/market.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/market.cpp > CMakeFiles/graphene_chain.dir/protocol/market.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/market.cpp > CMakeFiles/graphene_chain.dir/protocol/market.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/market.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/market.cpp -o CMakeFiles/graphene_chain.dir/protocol/market.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/market.cpp -o CMakeFiles/graphene_chain.dir/protocol/market.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.o.requires:
 
@@ -347,16 +347,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/market.cpp.o.provides.bui
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.o: libraries/chain/protocol/proposal.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.o -c /root/cybex8/libraries/chain/protocol/proposal.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.o -c /root/cybex-core/libraries/chain/protocol/proposal.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/proposal.cpp > CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/proposal.cpp > CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/proposal.cpp -o CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/proposal.cpp -o CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.o.requires:
 
@@ -371,16 +371,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/proposal.cpp.o.provides.b
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.o: libraries/chain/protocol/withdraw_permission.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.o -c /root/cybex8/libraries/chain/protocol/withdraw_permission.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.o -c /root/cybex-core/libraries/chain/protocol/withdraw_permission.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/withdraw_permission.cpp > CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/withdraw_permission.cpp > CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/withdraw_permission.cpp -o CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/withdraw_permission.cpp -o CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.o.requires:
 
@@ -395,16 +395,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/withdraw_permission.cpp.o
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.o: libraries/chain/protocol/asset_ops.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.o -c /root/cybex8/libraries/chain/protocol/asset_ops.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.o -c /root/cybex-core/libraries/chain/protocol/asset_ops.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/asset_ops.cpp > CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/asset_ops.cpp > CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/asset_ops.cpp -o CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/asset_ops.cpp -o CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.o.requires:
 
@@ -419,16 +419,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/asset_ops.cpp.o.provides.
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.o: libraries/chain/protocol/memo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/memo.cpp.o -c /root/cybex8/libraries/chain/protocol/memo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/memo.cpp.o -c /root/cybex-core/libraries/chain/protocol/memo.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/memo.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/memo.cpp > CMakeFiles/graphene_chain.dir/protocol/memo.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/memo.cpp > CMakeFiles/graphene_chain.dir/protocol/memo.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/memo.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/memo.cpp -o CMakeFiles/graphene_chain.dir/protocol/memo.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/memo.cpp -o CMakeFiles/graphene_chain.dir/protocol/memo.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.o.requires:
 
@@ -443,16 +443,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/memo.cpp.o.provides.build
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.o: libraries/chain/protocol/worker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/worker.cpp.o -c /root/cybex8/libraries/chain/protocol/worker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/worker.cpp.o -c /root/cybex-core/libraries/chain/protocol/worker.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/worker.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/worker.cpp > CMakeFiles/graphene_chain.dir/protocol/worker.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/worker.cpp > CMakeFiles/graphene_chain.dir/protocol/worker.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/worker.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/worker.cpp -o CMakeFiles/graphene_chain.dir/protocol/worker.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/worker.cpp -o CMakeFiles/graphene_chain.dir/protocol/worker.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.o.requires:
 
@@ -467,16 +467,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/worker.cpp.o.provides.bui
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.o: libraries/chain/protocol/custom.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/custom.cpp.o -c /root/cybex8/libraries/chain/protocol/custom.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/custom.cpp.o -c /root/cybex-core/libraries/chain/protocol/custom.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/custom.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/custom.cpp > CMakeFiles/graphene_chain.dir/protocol/custom.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/custom.cpp > CMakeFiles/graphene_chain.dir/protocol/custom.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/custom.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/custom.cpp -o CMakeFiles/graphene_chain.dir/protocol/custom.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/custom.cpp -o CMakeFiles/graphene_chain.dir/protocol/custom.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.o.requires:
 
@@ -491,16 +491,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/custom.cpp.o.provides.bui
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.o: libraries/chain/protocol/operations.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/operations.cpp.o -c /root/cybex8/libraries/chain/protocol/operations.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/operations.cpp.o -c /root/cybex-core/libraries/chain/protocol/operations.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/operations.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/operations.cpp > CMakeFiles/graphene_chain.dir/protocol/operations.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/operations.cpp > CMakeFiles/graphene_chain.dir/protocol/operations.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/operations.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/operations.cpp -o CMakeFiles/graphene_chain.dir/protocol/operations.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/operations.cpp -o CMakeFiles/graphene_chain.dir/protocol/operations.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.o.requires:
 
@@ -515,16 +515,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/operations.cpp.o.provides
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.o: libraries/chain/protocol/transaction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.o -c /root/cybex8/libraries/chain/protocol/transaction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.o -c /root/cybex-core/libraries/chain/protocol/transaction.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/transaction.cpp > CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/transaction.cpp > CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/transaction.cpp -o CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/transaction.cpp -o CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.o.requires:
 
@@ -539,16 +539,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/transaction.cpp.o.provide
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.o: libraries/chain/protocol/block.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/block.cpp.o -c /root/cybex8/libraries/chain/protocol/block.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/block.cpp.o -c /root/cybex-core/libraries/chain/protocol/block.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/block.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/block.cpp > CMakeFiles/graphene_chain.dir/protocol/block.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/block.cpp > CMakeFiles/graphene_chain.dir/protocol/block.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/block.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/block.cpp -o CMakeFiles/graphene_chain.dir/protocol/block.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/block.cpp -o CMakeFiles/graphene_chain.dir/protocol/block.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.o.requires:
 
@@ -563,16 +563,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/block.cpp.o.provides.buil
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.o: libraries/chain/protocol/fee_schedule.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.o -c /root/cybex8/libraries/chain/protocol/fee_schedule.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.o -c /root/cybex-core/libraries/chain/protocol/fee_schedule.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/fee_schedule.cpp > CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/fee_schedule.cpp > CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/fee_schedule.cpp -o CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/fee_schedule.cpp -o CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.o.requires:
 
@@ -587,16 +587,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/fee_schedule.cpp.o.provid
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.o: libraries/chain/protocol/confidential.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.o -c /root/cybex8/libraries/chain/protocol/confidential.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.o -c /root/cybex-core/libraries/chain/protocol/confidential.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/confidential.cpp > CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/confidential.cpp > CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/confidential.cpp -o CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/confidential.cpp -o CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.o.requires:
 
@@ -611,16 +611,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/confidential.cpp.o.provid
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.o: libraries/chain/protocol/vote.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/vote.cpp.o -c /root/cybex8/libraries/chain/protocol/vote.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/protocol/vote.cpp.o -c /root/cybex-core/libraries/chain/protocol/vote.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/protocol/vote.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/protocol/vote.cpp > CMakeFiles/graphene_chain.dir/protocol/vote.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/protocol/vote.cpp > CMakeFiles/graphene_chain.dir/protocol/vote.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/protocol/vote.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/protocol/vote.cpp -o CMakeFiles/graphene_chain.dir/protocol/vote.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/protocol/vote.cpp -o CMakeFiles/graphene_chain.dir/protocol/vote.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.o.requires:
 
@@ -635,16 +635,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/protocol/vote.cpp.o.provides.build
 
 libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.o: libraries/chain/genesis_state.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/genesis_state.cpp.o -c /root/cybex8/libraries/chain/genesis_state.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/genesis_state.cpp.o -c /root/cybex-core/libraries/chain/genesis_state.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/genesis_state.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/genesis_state.cpp > CMakeFiles/graphene_chain.dir/genesis_state.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/genesis_state.cpp > CMakeFiles/graphene_chain.dir/genesis_state.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/genesis_state.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/genesis_state.cpp -o CMakeFiles/graphene_chain.dir/genesis_state.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/genesis_state.cpp -o CMakeFiles/graphene_chain.dir/genesis_state.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.o.requires:
 
@@ -659,16 +659,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/genesis_state.cpp.o.provides.build
 
 libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.o: libraries/chain/get_config.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/get_config.cpp.o -c /root/cybex8/libraries/chain/get_config.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/get_config.cpp.o -c /root/cybex-core/libraries/chain/get_config.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/get_config.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/get_config.cpp > CMakeFiles/graphene_chain.dir/get_config.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/get_config.cpp > CMakeFiles/graphene_chain.dir/get_config.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/get_config.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/get_config.cpp -o CMakeFiles/graphene_chain.dir/get_config.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/get_config.cpp -o CMakeFiles/graphene_chain.dir/get_config.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.o.requires:
 
@@ -683,16 +683,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/get_config.cpp.o.provides.build: l
 
 libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.o: libraries/chain/pts_address.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/pts_address.cpp.o -c /root/cybex8/libraries/chain/pts_address.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/pts_address.cpp.o -c /root/cybex-core/libraries/chain/pts_address.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/pts_address.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/pts_address.cpp > CMakeFiles/graphene_chain.dir/pts_address.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/pts_address.cpp > CMakeFiles/graphene_chain.dir/pts_address.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/pts_address.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/pts_address.cpp -o CMakeFiles/graphene_chain.dir/pts_address.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/pts_address.cpp -o CMakeFiles/graphene_chain.dir/pts_address.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.o.requires:
 
@@ -707,16 +707,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/pts_address.cpp.o.provides.build: 
 
 libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.o: libraries/chain/evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/evaluator.cpp.o -c /root/cybex8/libraries/chain/evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/evaluator.cpp.o -c /root/cybex-core/libraries/chain/evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/evaluator.cpp > CMakeFiles/graphene_chain.dir/evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/evaluator.cpp > CMakeFiles/graphene_chain.dir/evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/evaluator.cpp -o CMakeFiles/graphene_chain.dir/evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/evaluator.cpp -o CMakeFiles/graphene_chain.dir/evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.o.requires:
 
@@ -731,16 +731,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/evaluator.cpp.o.provides.build: li
 
 libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.o: libraries/chain/balance_evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.o -c /root/cybex8/libraries/chain/balance_evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.o -c /root/cybex-core/libraries/chain/balance_evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/balance_evaluator.cpp > CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/balance_evaluator.cpp > CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/balance_evaluator.cpp -o CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/balance_evaluator.cpp -o CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.o.requires:
 
@@ -755,16 +755,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/balance_evaluator.cpp.o.provides.b
 
 libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.o: libraries/chain/account_evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/account_evaluator.cpp.o -c /root/cybex8/libraries/chain/account_evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/account_evaluator.cpp.o -c /root/cybex-core/libraries/chain/account_evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/account_evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/account_evaluator.cpp > CMakeFiles/graphene_chain.dir/account_evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/account_evaluator.cpp > CMakeFiles/graphene_chain.dir/account_evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/account_evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/account_evaluator.cpp -o CMakeFiles/graphene_chain.dir/account_evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/account_evaluator.cpp -o CMakeFiles/graphene_chain.dir/account_evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.o.requires:
 
@@ -779,16 +779,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/account_evaluator.cpp.o.provides.b
 
 libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.o: libraries/chain/assert_evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.o -c /root/cybex8/libraries/chain/assert_evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.o -c /root/cybex-core/libraries/chain/assert_evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/assert_evaluator.cpp > CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/assert_evaluator.cpp > CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/assert_evaluator.cpp -o CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/assert_evaluator.cpp -o CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.o.requires:
 
@@ -803,16 +803,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/assert_evaluator.cpp.o.provides.bu
 
 libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.o: libraries/chain/witness_evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.o -c /root/cybex8/libraries/chain/witness_evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.o -c /root/cybex-core/libraries/chain/witness_evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/witness_evaluator.cpp > CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/witness_evaluator.cpp > CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/witness_evaluator.cpp -o CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/witness_evaluator.cpp -o CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.o.requires:
 
@@ -827,16 +827,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/witness_evaluator.cpp.o.provides.b
 
 libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.o: libraries/chain/committee_member_evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.o -c /root/cybex8/libraries/chain/committee_member_evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.o -c /root/cybex-core/libraries/chain/committee_member_evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/committee_member_evaluator.cpp > CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/committee_member_evaluator.cpp > CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/committee_member_evaluator.cpp -o CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/committee_member_evaluator.cpp -o CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.o.requires:
 
@@ -851,16 +851,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/committee_member_evaluator.cpp.o.p
 
 libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.o: libraries/chain/asset_evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.o -c /root/cybex8/libraries/chain/asset_evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.o -c /root/cybex-core/libraries/chain/asset_evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/asset_evaluator.cpp > CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/asset_evaluator.cpp > CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/asset_evaluator.cpp -o CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/asset_evaluator.cpp -o CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.o.requires:
 
@@ -875,16 +875,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/asset_evaluator.cpp.o.provides.bui
 
 libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.o: libraries/chain/transfer_evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.o -c /root/cybex8/libraries/chain/transfer_evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.o -c /root/cybex-core/libraries/chain/transfer_evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/transfer_evaluator.cpp > CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/transfer_evaluator.cpp > CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/transfer_evaluator.cpp -o CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/transfer_evaluator.cpp -o CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.o.requires:
 
@@ -899,16 +899,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/transfer_evaluator.cpp.o.provides.
 
 libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.o: libraries/chain/proposal_evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.o -c /root/cybex8/libraries/chain/proposal_evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.o -c /root/cybex-core/libraries/chain/proposal_evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/proposal_evaluator.cpp > CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/proposal_evaluator.cpp > CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/proposal_evaluator.cpp -o CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/proposal_evaluator.cpp -o CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.o.requires:
 
@@ -923,16 +923,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/proposal_evaluator.cpp.o.provides.
 
 libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.o: libraries/chain/market_evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/market_evaluator.cpp.o -c /root/cybex8/libraries/chain/market_evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/market_evaluator.cpp.o -c /root/cybex-core/libraries/chain/market_evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/market_evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/market_evaluator.cpp > CMakeFiles/graphene_chain.dir/market_evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/market_evaluator.cpp > CMakeFiles/graphene_chain.dir/market_evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/market_evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/market_evaluator.cpp -o CMakeFiles/graphene_chain.dir/market_evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/market_evaluator.cpp -o CMakeFiles/graphene_chain.dir/market_evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.o.requires:
 
@@ -947,16 +947,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/market_evaluator.cpp.o.provides.bu
 
 libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.o: libraries/chain/vesting_balance_evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.o -c /root/cybex8/libraries/chain/vesting_balance_evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.o -c /root/cybex-core/libraries/chain/vesting_balance_evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/vesting_balance_evaluator.cpp > CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/vesting_balance_evaluator.cpp > CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/vesting_balance_evaluator.cpp -o CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/vesting_balance_evaluator.cpp -o CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.o.requires:
 
@@ -971,16 +971,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_evaluator.cpp.o.pr
 
 libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.o: libraries/chain/withdraw_permission_evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.o -c /root/cybex8/libraries/chain/withdraw_permission_evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.o -c /root/cybex-core/libraries/chain/withdraw_permission_evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/withdraw_permission_evaluator.cpp > CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/withdraw_permission_evaluator.cpp > CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/withdraw_permission_evaluator.cpp -o CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/withdraw_permission_evaluator.cpp -o CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.o.requires:
 
@@ -995,16 +995,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/withdraw_permission_evaluator.cpp.
 
 libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.o: libraries/chain/worker_evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.o -c /root/cybex8/libraries/chain/worker_evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.o -c /root/cybex-core/libraries/chain/worker_evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/worker_evaluator.cpp > CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/worker_evaluator.cpp > CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/worker_evaluator.cpp -o CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/worker_evaluator.cpp -o CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.o.requires:
 
@@ -1019,16 +1019,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/worker_evaluator.cpp.o.provides.bu
 
 libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.o: libraries/chain/confidential_evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.o -c /root/cybex8/libraries/chain/confidential_evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.o -c /root/cybex-core/libraries/chain/confidential_evaluator.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/confidential_evaluator.cpp > CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/confidential_evaluator.cpp > CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/confidential_evaluator.cpp -o CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/confidential_evaluator.cpp -o CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.o.requires:
 
@@ -1043,16 +1043,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/confidential_evaluator.cpp.o.provi
 
 libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.o: libraries/chain/special_authority.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/special_authority.cpp.o -c /root/cybex8/libraries/chain/special_authority.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/special_authority.cpp.o -c /root/cybex-core/libraries/chain/special_authority.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/special_authority.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/special_authority.cpp > CMakeFiles/graphene_chain.dir/special_authority.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/special_authority.cpp > CMakeFiles/graphene_chain.dir/special_authority.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/special_authority.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/special_authority.cpp -o CMakeFiles/graphene_chain.dir/special_authority.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/special_authority.cpp -o CMakeFiles/graphene_chain.dir/special_authority.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.o.requires:
 
@@ -1067,16 +1067,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/special_authority.cpp.o.provides.b
 
 libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.o: libraries/chain/buyback.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/buyback.cpp.o -c /root/cybex8/libraries/chain/buyback.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/buyback.cpp.o -c /root/cybex-core/libraries/chain/buyback.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/buyback.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/buyback.cpp > CMakeFiles/graphene_chain.dir/buyback.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/buyback.cpp > CMakeFiles/graphene_chain.dir/buyback.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/buyback.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/buyback.cpp -o CMakeFiles/graphene_chain.dir/buyback.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/buyback.cpp -o CMakeFiles/graphene_chain.dir/buyback.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.o.requires:
 
@@ -1091,16 +1091,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/buyback.cpp.o.provides.build: libr
 
 libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.o: libraries/chain/account_object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/account_object.cpp.o -c /root/cybex8/libraries/chain/account_object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/account_object.cpp.o -c /root/cybex-core/libraries/chain/account_object.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/account_object.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/account_object.cpp > CMakeFiles/graphene_chain.dir/account_object.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/account_object.cpp > CMakeFiles/graphene_chain.dir/account_object.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/account_object.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/account_object.cpp -o CMakeFiles/graphene_chain.dir/account_object.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/account_object.cpp -o CMakeFiles/graphene_chain.dir/account_object.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.o.requires:
 
@@ -1115,16 +1115,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/account_object.cpp.o.provides.buil
 
 libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.o: libraries/chain/asset_object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/asset_object.cpp.o -c /root/cybex8/libraries/chain/asset_object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/asset_object.cpp.o -c /root/cybex-core/libraries/chain/asset_object.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/asset_object.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/asset_object.cpp > CMakeFiles/graphene_chain.dir/asset_object.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/asset_object.cpp > CMakeFiles/graphene_chain.dir/asset_object.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/asset_object.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/asset_object.cpp -o CMakeFiles/graphene_chain.dir/asset_object.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/asset_object.cpp -o CMakeFiles/graphene_chain.dir/asset_object.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.o.requires:
 
@@ -1139,16 +1139,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/asset_object.cpp.o.provides.build:
 
 libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.o: libraries/chain/fba_object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/fba_object.cpp.o -c /root/cybex8/libraries/chain/fba_object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/fba_object.cpp.o -c /root/cybex-core/libraries/chain/fba_object.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/fba_object.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/fba_object.cpp > CMakeFiles/graphene_chain.dir/fba_object.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/fba_object.cpp > CMakeFiles/graphene_chain.dir/fba_object.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/fba_object.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/fba_object.cpp -o CMakeFiles/graphene_chain.dir/fba_object.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/fba_object.cpp -o CMakeFiles/graphene_chain.dir/fba_object.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.o.requires:
 
@@ -1163,16 +1163,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/fba_object.cpp.o.provides.build: l
 
 libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.o: libraries/chain/proposal_object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/proposal_object.cpp.o -c /root/cybex8/libraries/chain/proposal_object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/proposal_object.cpp.o -c /root/cybex-core/libraries/chain/proposal_object.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/proposal_object.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/proposal_object.cpp > CMakeFiles/graphene_chain.dir/proposal_object.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/proposal_object.cpp > CMakeFiles/graphene_chain.dir/proposal_object.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/proposal_object.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/proposal_object.cpp -o CMakeFiles/graphene_chain.dir/proposal_object.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/proposal_object.cpp -o CMakeFiles/graphene_chain.dir/proposal_object.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.o.requires:
 
@@ -1187,16 +1187,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/proposal_object.cpp.o.provides.bui
 
 libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.o: libraries/chain/vesting_balance_object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.o -c /root/cybex8/libraries/chain/vesting_balance_object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.o -c /root/cybex-core/libraries/chain/vesting_balance_object.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/vesting_balance_object.cpp > CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/vesting_balance_object.cpp > CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/vesting_balance_object.cpp -o CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/vesting_balance_object.cpp -o CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.o.requires:
 
@@ -1211,16 +1211,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/vesting_balance_object.cpp.o.provi
 
 libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.o: libraries/chain/block_database.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/block_database.cpp.o -c /root/cybex8/libraries/chain/block_database.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/block_database.cpp.o -c /root/cybex-core/libraries/chain/block_database.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/block_database.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/block_database.cpp > CMakeFiles/graphene_chain.dir/block_database.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/block_database.cpp > CMakeFiles/graphene_chain.dir/block_database.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/block_database.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/block_database.cpp -o CMakeFiles/graphene_chain.dir/block_database.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/block_database.cpp -o CMakeFiles/graphene_chain.dir/block_database.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.o.requires:
 
@@ -1235,16 +1235,16 @@ libraries/chain/CMakeFiles/graphene_chain.dir/block_database.cpp.o.provides.buil
 
 libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.o: libraries/chain/CMakeFiles/graphene_chain.dir/flags.make
 libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.o: libraries/chain/is_authorized_asset.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.o"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.o -c /root/cybex8/libraries/chain/is_authorized_asset.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.o"
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.o -c /root/cybex-core/libraries/chain/is_authorized_asset.cpp
 
 libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.i"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/chain/is_authorized_asset.cpp > CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.i
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/chain/is_authorized_asset.cpp > CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.i
 
 libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.s"
-	cd /root/cybex8/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/chain/is_authorized_asset.cpp -o CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.s
+	cd /root/cybex-core/libraries/chain && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/chain/is_authorized_asset.cpp -o CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.s
 
 libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.o.requires:
 
@@ -1365,9 +1365,9 @@ libraries/chain/libgraphene_chain.a: libraries/chain/CMakeFiles/graphene_chain.d
 libraries/chain/libgraphene_chain.a: libraries/chain/CMakeFiles/graphene_chain.dir/is_authorized_asset.cpp.o
 libraries/chain/libgraphene_chain.a: libraries/chain/CMakeFiles/graphene_chain.dir/build.make
 libraries/chain/libgraphene_chain.a: libraries/chain/CMakeFiles/graphene_chain.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Linking CXX static library libgraphene_chain.a"
-	cd /root/cybex8/libraries/chain && $(CMAKE_COMMAND) -P CMakeFiles/graphene_chain.dir/cmake_clean_target.cmake
-	cd /root/cybex8/libraries/chain && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphene_chain.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Linking CXX static library libgraphene_chain.a"
+	cd /root/cybex-core/libraries/chain && $(CMAKE_COMMAND) -P CMakeFiles/graphene_chain.dir/cmake_clean_target.cmake
+	cd /root/cybex-core/libraries/chain && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphene_chain.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 libraries/chain/CMakeFiles/graphene_chain.dir/build: libraries/chain/libgraphene_chain.a
@@ -1428,10 +1428,10 @@ libraries/chain/CMakeFiles/graphene_chain.dir/requires: libraries/chain/CMakeFil
 .PHONY : libraries/chain/CMakeFiles/graphene_chain.dir/requires
 
 libraries/chain/CMakeFiles/graphene_chain.dir/clean:
-	cd /root/cybex8/libraries/chain && $(CMAKE_COMMAND) -P CMakeFiles/graphene_chain.dir/cmake_clean.cmake
+	cd /root/cybex-core/libraries/chain && $(CMAKE_COMMAND) -P CMakeFiles/graphene_chain.dir/cmake_clean.cmake
 .PHONY : libraries/chain/CMakeFiles/graphene_chain.dir/clean
 
 libraries/chain/CMakeFiles/graphene_chain.dir/depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex8 /root/cybex8/libraries/chain /root/cybex8 /root/cybex8/libraries/chain /root/cybex8/libraries/chain/CMakeFiles/graphene_chain.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex-core /root/cybex-core/libraries/chain /root/cybex-core /root/cybex-core/libraries/chain /root/cybex-core/libraries/chain/CMakeFiles/graphene_chain.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libraries/chain/CMakeFiles/graphene_chain.dir/depend
 

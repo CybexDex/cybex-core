@@ -1,4 +1,4 @@
-# Install script for directory: /root/cybex8/libraries/plugins/market_history
+# Install script for directory: /root/cybex-core/libraries/plugins/market_history
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -33,10 +33,10 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/root/cybex8/libraries/plugins/market_history/libgraphene_market_history.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/root/cybex-core/libraries/plugins/market_history/libgraphene_market_history.a")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/graphene/market_history" TYPE FILE FILES "/root/cybex8/libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/graphene/market_history" TYPE FILE FILES "/root/cybex-core/libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp")
 endif()
 

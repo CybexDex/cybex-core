@@ -1,4 +1,4 @@
-# Install script for directory: /root/cybex8/libraries/plugins
+# Install script for directory: /root/cybex-core/libraries/plugins
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -34,11 +34,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/root/cybex8/libraries/plugins/witness/cmake_install.cmake")
-  include("/root/cybex8/libraries/plugins/account_history/cmake_install.cmake")
-  include("/root/cybex8/libraries/plugins/market_history/cmake_install.cmake")
-  include("/root/cybex8/libraries/plugins/delayed_node/cmake_install.cmake")
-  include("/root/cybex8/libraries/plugins/debug_witness/cmake_install.cmake")
+  include("/root/cybex-core/libraries/plugins/witness/cmake_install.cmake")
+  include("/root/cybex-core/libraries/plugins/account_history/cmake_install.cmake")
+  include("/root/cybex-core/libraries/plugins/market_history/cmake_install.cmake")
+  include("/root/cybex-core/libraries/plugins/delayed_node/cmake_install.cmake")
+  include("/root/cybex-core/libraries/plugins/debug_witness/cmake_install.cmake")
 
 endif()
 

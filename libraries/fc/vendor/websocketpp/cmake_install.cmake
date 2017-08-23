@@ -1,4 +1,4 @@
-# Install script for directory: /root/cybex8/libraries/fc/vendor/websocketpp
+# Install script for directory: /root/cybex-core/libraries/fc/vendor/websocketpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -42,14 +42,14 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "dev")
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
 file(INSTALL DESTINATION "/usr/local/lib/cmake/websocketpp" TYPE FILE FILES
-    "/root/cybex8/libraries/fc/vendor/websocketpp/CMakeFiles/websocketpp-config.cmake"
-    "/root/cybex8/libraries/fc/vendor/websocketpp/CMakeFiles/websocketpp-configVersion.cmake"
+    "/root/cybex-core/libraries/fc/vendor/websocketpp/CMakeFiles/websocketpp-config.cmake"
+    "/root/cybex-core/libraries/fc/vendor/websocketpp/CMakeFiles/websocketpp-configVersion.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/root/cybex8/libraries/fc/vendor/websocketpp/websocketpp/cmake_install.cmake")
+  include("/root/cybex-core/libraries/fc/vendor/websocketpp/websocketpp/cmake_install.cmake")
 
 endif()
 

@@ -1,4 +1,4 @@
-# Install script for directory: /root/cybex8/libraries/net
+# Install script for directory: /root/cybex-core/libraries/net
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -33,20 +33,20 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/root/cybex8/libraries/net/libgraphene_net.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/root/cybex-core/libraries/net/libgraphene_net.a")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/graphene/net" TYPE FILE FILES
-    "/root/cybex8/libraries/net/include/graphene/net/peer_database.hpp"
-    "/root/cybex8/libraries/net/include/graphene/net/message_oriented_connection.hpp"
-    "/root/cybex8/libraries/net/include/graphene/net/node.hpp"
-    "/root/cybex8/libraries/net/include/graphene/net/exceptions.hpp"
-    "/root/cybex8/libraries/net/include/graphene/net/peer_connection.hpp"
-    "/root/cybex8/libraries/net/include/graphene/net/config.hpp"
-    "/root/cybex8/libraries/net/include/graphene/net/message.hpp"
-    "/root/cybex8/libraries/net/include/graphene/net/core_messages.hpp"
-    "/root/cybex8/libraries/net/include/graphene/net/stcp_socket.hpp"
+    "/root/cybex-core/libraries/net/include/graphene/net/peer_database.hpp"
+    "/root/cybex-core/libraries/net/include/graphene/net/message_oriented_connection.hpp"
+    "/root/cybex-core/libraries/net/include/graphene/net/node.hpp"
+    "/root/cybex-core/libraries/net/include/graphene/net/exceptions.hpp"
+    "/root/cybex-core/libraries/net/include/graphene/net/peer_connection.hpp"
+    "/root/cybex-core/libraries/net/include/graphene/net/config.hpp"
+    "/root/cybex-core/libraries/net/include/graphene/net/message.hpp"
+    "/root/cybex-core/libraries/net/include/graphene/net/core_messages.hpp"
+    "/root/cybex-core/libraries/net/include/graphene/net/stcp_socket.hpp"
     )
 endif()
 

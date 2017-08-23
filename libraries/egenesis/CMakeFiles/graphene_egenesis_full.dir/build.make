@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 # Include any dependencies generated for this target.
 include libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/depend.make
@@ -61,24 +61,24 @@ libraries/egenesis/egenesis_brief.cpp: genesis.json
 libraries/egenesis/egenesis_brief.cpp: libraries/egenesis/egenesis_brief.cpp.tmpl
 libraries/egenesis/egenesis_brief.cpp: libraries/egenesis/egenesis_full.cpp.tmpl
 libraries/egenesis/egenesis_brief.cpp: libraries/egenesis/embed_genesis
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating egenesis_brief.cpp, egenesis_full.cpp"
-	cd /root/cybex8/libraries/egenesis && /root/cybex8/libraries/egenesis/embed_genesis -t /root/cybex8/libraries/egenesis/egenesis_brief.cpp.tmpl---/root/cybex8/libraries/egenesis/egenesis_brief.cpp -t /root/cybex8/libraries/egenesis/egenesis_full.cpp.tmpl---/root/cybex8/libraries/egenesis/egenesis_full.cpp --genesis-json /root/cybex8/genesis.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating egenesis_brief.cpp, egenesis_full.cpp"
+	cd /root/cybex-core/libraries/egenesis && /root/cybex-core/libraries/egenesis/embed_genesis -t /root/cybex-core/libraries/egenesis/egenesis_brief.cpp.tmpl---/root/cybex-core/libraries/egenesis/egenesis_brief.cpp -t /root/cybex-core/libraries/egenesis/egenesis_full.cpp.tmpl---/root/cybex-core/libraries/egenesis/egenesis_full.cpp --genesis-json /root/cybex-core/genesis.json
 
 libraries/egenesis/egenesis_full.cpp: libraries/egenesis/egenesis_brief.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate libraries/egenesis/egenesis_full.cpp
 
 libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.o: libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/flags.make
 libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.o: libraries/egenesis/egenesis_full.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.o"
-	cd /root/cybex8/libraries/egenesis && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.o -c /root/cybex8/libraries/egenesis/egenesis_full.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.o"
+	cd /root/cybex-core/libraries/egenesis && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.o -c /root/cybex-core/libraries/egenesis/egenesis_full.cpp
 
 libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.i"
-	cd /root/cybex8/libraries/egenesis && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/egenesis/egenesis_full.cpp > CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.i
+	cd /root/cybex-core/libraries/egenesis && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/egenesis/egenesis_full.cpp > CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.i
 
 libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.s"
-	cd /root/cybex8/libraries/egenesis && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/egenesis/egenesis_full.cpp -o CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.s
+	cd /root/cybex-core/libraries/egenesis && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/egenesis/egenesis_full.cpp -o CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.s
 
 libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.o.requires:
 
@@ -101,9 +101,9 @@ graphene_egenesis_full_EXTERNAL_OBJECTS =
 libraries/egenesis/libgraphene_egenesis_full.a: libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.o
 libraries/egenesis/libgraphene_egenesis_full.a: libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/build.make
 libraries/egenesis/libgraphene_egenesis_full.a: libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libgraphene_egenesis_full.a"
-	cd /root/cybex8/libraries/egenesis && $(CMAKE_COMMAND) -P CMakeFiles/graphene_egenesis_full.dir/cmake_clean_target.cmake
-	cd /root/cybex8/libraries/egenesis && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphene_egenesis_full.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libgraphene_egenesis_full.a"
+	cd /root/cybex-core/libraries/egenesis && $(CMAKE_COMMAND) -P CMakeFiles/graphene_egenesis_full.dir/cmake_clean_target.cmake
+	cd /root/cybex-core/libraries/egenesis && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphene_egenesis_full.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/build: libraries/egenesis/libgraphene_egenesis_full.a
@@ -115,11 +115,11 @@ libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/requires: libraries/ege
 .PHONY : libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/requires
 
 libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/clean:
-	cd /root/cybex8/libraries/egenesis && $(CMAKE_COMMAND) -P CMakeFiles/graphene_egenesis_full.dir/cmake_clean.cmake
+	cd /root/cybex-core/libraries/egenesis && $(CMAKE_COMMAND) -P CMakeFiles/graphene_egenesis_full.dir/cmake_clean.cmake
 .PHONY : libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/clean
 
 libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/depend: libraries/egenesis/egenesis_brief.cpp
 libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/depend: libraries/egenesis/egenesis_full.cpp
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex8 /root/cybex8/libraries/egenesis /root/cybex8 /root/cybex8/libraries/egenesis /root/cybex8/libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex-core /root/cybex-core/libraries/egenesis /root/cybex-core /root/cybex-core/libraries/egenesis /root/cybex-core/libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/depend
 

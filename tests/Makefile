@@ -48,13 +48,46 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install
 install: preinstall
@@ -68,17 +101,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"dev\""
@@ -89,49 +111,16 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # The main all target
 all: cmake_check_build_system
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/tests/CMakeFiles/progress.marks
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/tests/CMakeFiles/progress.marks
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,82 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-tests/CMakeFiles/app_test.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/app_test.dir/rule
-.PHONY : tests/CMakeFiles/app_test.dir/rule
-
-# Convenience name for target.
-app_test: tests/CMakeFiles/app_test.dir/rule
-
-.PHONY : app_test
-
-# fast build rule for target.
-app_test/fast:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/app_test.dir/build.make tests/CMakeFiles/app_test.dir/build
-.PHONY : app_test/fast
-
-# Convenience name for target.
-tests/CMakeFiles/performance_test.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/performance_test.dir/rule
-.PHONY : tests/CMakeFiles/performance_test.dir/rule
-
-# Convenience name for target.
-performance_test: tests/CMakeFiles/performance_test.dir/rule
-
-.PHONY : performance_test
-
-# fast build rule for target.
-performance_test/fast:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/build
-.PHONY : performance_test/fast
-
-# Convenience name for target.
-tests/CMakeFiles/chain_bench.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/chain_bench.dir/rule
-.PHONY : tests/CMakeFiles/chain_bench.dir/rule
-
-# Convenience name for target.
-chain_bench: tests/CMakeFiles/chain_bench.dir/rule
-
-.PHONY : chain_bench
-
-# fast build rule for target.
-chain_bench/fast:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/build
-.PHONY : chain_bench/fast
-
-# Convenience name for target.
-tests/CMakeFiles/chain_test.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/chain_test.dir/rule
-.PHONY : tests/CMakeFiles/chain_test.dir/rule
-
-# Convenience name for target.
-chain_test: tests/CMakeFiles/chain_test.dir/rule
-
-.PHONY : chain_test
-
-# fast build rule for target.
-chain_test/fast:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/build
-.PHONY : chain_test/fast
-
-# Convenience name for target.
 tests/CMakeFiles/intense_test.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/intense_test.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/intense_test.dir/rule
 .PHONY : tests/CMakeFiles/intense_test.dir/rule
 
 # Convenience name for target.
@@ -226,8 +155,68 @@ intense_test: tests/CMakeFiles/intense_test.dir/rule
 
 # fast build rule for target.
 intense_test/fast:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/build
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/build
 .PHONY : intense_test/fast
+
+# Convenience name for target.
+tests/CMakeFiles/chain_test.dir/rule:
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/chain_test.dir/rule
+.PHONY : tests/CMakeFiles/chain_test.dir/rule
+
+# Convenience name for target.
+chain_test: tests/CMakeFiles/chain_test.dir/rule
+
+.PHONY : chain_test
+
+# fast build rule for target.
+chain_test/fast:
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/build
+.PHONY : chain_test/fast
+
+# Convenience name for target.
+tests/CMakeFiles/chain_bench.dir/rule:
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/chain_bench.dir/rule
+.PHONY : tests/CMakeFiles/chain_bench.dir/rule
+
+# Convenience name for target.
+chain_bench: tests/CMakeFiles/chain_bench.dir/rule
+
+.PHONY : chain_bench
+
+# fast build rule for target.
+chain_bench/fast:
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/build
+.PHONY : chain_bench/fast
+
+# Convenience name for target.
+tests/CMakeFiles/performance_test.dir/rule:
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/performance_test.dir/rule
+.PHONY : tests/CMakeFiles/performance_test.dir/rule
+
+# Convenience name for target.
+performance_test: tests/CMakeFiles/performance_test.dir/rule
+
+.PHONY : performance_test
+
+# fast build rule for target.
+performance_test/fast:
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/build
+.PHONY : performance_test/fast
+
+# Convenience name for target.
+tests/CMakeFiles/app_test.dir/rule:
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/app_test.dir/rule
+.PHONY : tests/CMakeFiles/app_test.dir/rule
+
+# Convenience name for target.
+app_test: tests/CMakeFiles/app_test.dir/rule
+
+.PHONY : app_test
+
+# fast build rule for target.
+app_test/fast:
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/app_test.dir/build.make tests/CMakeFiles/app_test.dir/build
+.PHONY : app_test/fast
 
 app/main.o: app/main.cpp.o
 
@@ -235,7 +224,7 @@ app/main.o: app/main.cpp.o
 
 # target to build an object file
 app/main.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/app_test.dir/build.make tests/CMakeFiles/app_test.dir/app/main.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/app_test.dir/build.make tests/CMakeFiles/app_test.dir/app/main.cpp.o
 .PHONY : app/main.cpp.o
 
 app/main.i: app/main.cpp.i
@@ -244,7 +233,7 @@ app/main.i: app/main.cpp.i
 
 # target to preprocess a source file
 app/main.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/app_test.dir/build.make tests/CMakeFiles/app_test.dir/app/main.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/app_test.dir/build.make tests/CMakeFiles/app_test.dir/app/main.cpp.i
 .PHONY : app/main.cpp.i
 
 app/main.s: app/main.cpp.s
@@ -253,7 +242,7 @@ app/main.s: app/main.cpp.s
 
 # target to generate assembly for a file
 app/main.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/app_test.dir/build.make tests/CMakeFiles/app_test.dir/app/main.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/app_test.dir/build.make tests/CMakeFiles/app_test.dir/app/main.cpp.s
 .PHONY : app/main.cpp.s
 
 benchmarks/genesis_allocation.o: benchmarks/genesis_allocation.cpp.o
@@ -262,7 +251,7 @@ benchmarks/genesis_allocation.o: benchmarks/genesis_allocation.cpp.o
 
 # target to build an object file
 benchmarks/genesis_allocation.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.o
 .PHONY : benchmarks/genesis_allocation.cpp.o
 
 benchmarks/genesis_allocation.i: benchmarks/genesis_allocation.cpp.i
@@ -271,7 +260,7 @@ benchmarks/genesis_allocation.i: benchmarks/genesis_allocation.cpp.i
 
 # target to preprocess a source file
 benchmarks/genesis_allocation.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.i
 .PHONY : benchmarks/genesis_allocation.cpp.i
 
 benchmarks/genesis_allocation.s: benchmarks/genesis_allocation.cpp.s
@@ -280,7 +269,7 @@ benchmarks/genesis_allocation.s: benchmarks/genesis_allocation.cpp.s
 
 # target to generate assembly for a file
 benchmarks/genesis_allocation.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.s
 .PHONY : benchmarks/genesis_allocation.cpp.s
 
 benchmarks/main.o: benchmarks/main.cpp.o
@@ -289,7 +278,7 @@ benchmarks/main.o: benchmarks/main.cpp.o
 
 # target to build an object file
 benchmarks/main.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.o
 .PHONY : benchmarks/main.cpp.o
 
 benchmarks/main.i: benchmarks/main.cpp.i
@@ -298,7 +287,7 @@ benchmarks/main.i: benchmarks/main.cpp.i
 
 # target to preprocess a source file
 benchmarks/main.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.i
 .PHONY : benchmarks/main.cpp.i
 
 benchmarks/main.s: benchmarks/main.cpp.s
@@ -307,7 +296,7 @@ benchmarks/main.s: benchmarks/main.cpp.s
 
 # target to generate assembly for a file
 benchmarks/main.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.s
 .PHONY : benchmarks/main.cpp.s
 
 common/database_fixture.o: common/database_fixture.cpp.o
@@ -316,10 +305,10 @@ common/database_fixture.o: common/database_fixture.cpp.o
 
 # target to build an object file
 common/database_fixture.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/common/database_fixture.cpp.o
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/common/database_fixture.cpp.o
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/common/database_fixture.cpp.o
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/common/database_fixture.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/common/database_fixture.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/common/database_fixture.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/common/database_fixture.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/common/database_fixture.cpp.o
 .PHONY : common/database_fixture.cpp.o
 
 common/database_fixture.i: common/database_fixture.cpp.i
@@ -328,10 +317,10 @@ common/database_fixture.i: common/database_fixture.cpp.i
 
 # target to preprocess a source file
 common/database_fixture.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/common/database_fixture.cpp.i
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/common/database_fixture.cpp.i
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/common/database_fixture.cpp.i
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/common/database_fixture.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/common/database_fixture.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/common/database_fixture.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/common/database_fixture.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/common/database_fixture.cpp.i
 .PHONY : common/database_fixture.cpp.i
 
 common/database_fixture.s: common/database_fixture.cpp.s
@@ -340,10 +329,10 @@ common/database_fixture.s: common/database_fixture.cpp.s
 
 # target to generate assembly for a file
 common/database_fixture.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/common/database_fixture.cpp.s
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/common/database_fixture.cpp.s
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/common/database_fixture.cpp.s
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/common/database_fixture.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/common/database_fixture.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/common/database_fixture.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_bench.dir/build.make tests/CMakeFiles/chain_bench.dir/common/database_fixture.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/common/database_fixture.cpp.s
 .PHONY : common/database_fixture.cpp.s
 
 intense/block_tests.o: intense/block_tests.cpp.o
@@ -352,7 +341,7 @@ intense/block_tests.o: intense/block_tests.cpp.o
 
 # target to build an object file
 intense/block_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.o
 .PHONY : intense/block_tests.cpp.o
 
 intense/block_tests.i: intense/block_tests.cpp.i
@@ -361,7 +350,7 @@ intense/block_tests.i: intense/block_tests.cpp.i
 
 # target to preprocess a source file
 intense/block_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.i
 .PHONY : intense/block_tests.cpp.i
 
 intense/block_tests.s: intense/block_tests.cpp.s
@@ -370,7 +359,7 @@ intense/block_tests.s: intense/block_tests.cpp.s
 
 # target to generate assembly for a file
 intense/block_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.s
 .PHONY : intense/block_tests.cpp.s
 
 intense/main.o: intense/main.cpp.o
@@ -379,7 +368,7 @@ intense/main.o: intense/main.cpp.o
 
 # target to build an object file
 intense/main.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/intense/main.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/intense/main.cpp.o
 .PHONY : intense/main.cpp.o
 
 intense/main.i: intense/main.cpp.i
@@ -388,7 +377,7 @@ intense/main.i: intense/main.cpp.i
 
 # target to preprocess a source file
 intense/main.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/intense/main.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/intense/main.cpp.i
 .PHONY : intense/main.cpp.i
 
 intense/main.s: intense/main.cpp.s
@@ -397,7 +386,7 @@ intense/main.s: intense/main.cpp.s
 
 # target to generate assembly for a file
 intense/main.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/intense/main.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/intense_test.dir/build.make tests/CMakeFiles/intense_test.dir/intense/main.cpp.s
 .PHONY : intense/main.cpp.s
 
 performance/performance_tests.o: performance/performance_tests.cpp.o
@@ -406,7 +395,7 @@ performance/performance_tests.o: performance/performance_tests.cpp.o
 
 # target to build an object file
 performance/performance_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/performance/performance_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/performance/performance_tests.cpp.o
 .PHONY : performance/performance_tests.cpp.o
 
 performance/performance_tests.i: performance/performance_tests.cpp.i
@@ -415,7 +404,7 @@ performance/performance_tests.i: performance/performance_tests.cpp.i
 
 # target to preprocess a source file
 performance/performance_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/performance/performance_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/performance/performance_tests.cpp.i
 .PHONY : performance/performance_tests.cpp.i
 
 performance/performance_tests.s: performance/performance_tests.cpp.s
@@ -424,7 +413,7 @@ performance/performance_tests.s: performance/performance_tests.cpp.s
 
 # target to generate assembly for a file
 performance/performance_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/performance/performance_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/performance_test.dir/build.make tests/CMakeFiles/performance_test.dir/performance/performance_tests.cpp.s
 .PHONY : performance/performance_tests.cpp.s
 
 tests/authority_tests.o: tests/authority_tests.cpp.o
@@ -433,7 +422,7 @@ tests/authority_tests.o: tests/authority_tests.cpp.o
 
 # target to build an object file
 tests/authority_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.o
 .PHONY : tests/authority_tests.cpp.o
 
 tests/authority_tests.i: tests/authority_tests.cpp.i
@@ -442,7 +431,7 @@ tests/authority_tests.i: tests/authority_tests.cpp.i
 
 # target to preprocess a source file
 tests/authority_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.i
 .PHONY : tests/authority_tests.cpp.i
 
 tests/authority_tests.s: tests/authority_tests.cpp.s
@@ -451,7 +440,7 @@ tests/authority_tests.s: tests/authority_tests.cpp.s
 
 # target to generate assembly for a file
 tests/authority_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/authority_tests.cpp.s
 .PHONY : tests/authority_tests.cpp.s
 
 tests/basic_tests.o: tests/basic_tests.cpp.o
@@ -460,7 +449,7 @@ tests/basic_tests.o: tests/basic_tests.cpp.o
 
 # target to build an object file
 tests/basic_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.o
 .PHONY : tests/basic_tests.cpp.o
 
 tests/basic_tests.i: tests/basic_tests.cpp.i
@@ -469,7 +458,7 @@ tests/basic_tests.i: tests/basic_tests.cpp.i
 
 # target to preprocess a source file
 tests/basic_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.i
 .PHONY : tests/basic_tests.cpp.i
 
 tests/basic_tests.s: tests/basic_tests.cpp.s
@@ -478,7 +467,7 @@ tests/basic_tests.s: tests/basic_tests.cpp.s
 
 # target to generate assembly for a file
 tests/basic_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/basic_tests.cpp.s
 .PHONY : tests/basic_tests.cpp.s
 
 tests/block_tests.o: tests/block_tests.cpp.o
@@ -487,7 +476,7 @@ tests/block_tests.o: tests/block_tests.cpp.o
 
 # target to build an object file
 tests/block_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.o
 .PHONY : tests/block_tests.cpp.o
 
 tests/block_tests.i: tests/block_tests.cpp.i
@@ -496,7 +485,7 @@ tests/block_tests.i: tests/block_tests.cpp.i
 
 # target to preprocess a source file
 tests/block_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.i
 .PHONY : tests/block_tests.cpp.i
 
 tests/block_tests.s: tests/block_tests.cpp.s
@@ -505,7 +494,7 @@ tests/block_tests.s: tests/block_tests.cpp.s
 
 # target to generate assembly for a file
 tests/block_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/block_tests.cpp.s
 .PHONY : tests/block_tests.cpp.s
 
 tests/confidential_tests.o: tests/confidential_tests.cpp.o
@@ -514,7 +503,7 @@ tests/confidential_tests.o: tests/confidential_tests.cpp.o
 
 # target to build an object file
 tests/confidential_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.o
 .PHONY : tests/confidential_tests.cpp.o
 
 tests/confidential_tests.i: tests/confidential_tests.cpp.i
@@ -523,7 +512,7 @@ tests/confidential_tests.i: tests/confidential_tests.cpp.i
 
 # target to preprocess a source file
 tests/confidential_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.i
 .PHONY : tests/confidential_tests.cpp.i
 
 tests/confidential_tests.s: tests/confidential_tests.cpp.s
@@ -532,7 +521,7 @@ tests/confidential_tests.s: tests/confidential_tests.cpp.s
 
 # target to generate assembly for a file
 tests/confidential_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/confidential_tests.cpp.s
 .PHONY : tests/confidential_tests.cpp.s
 
 tests/database_api_tests.o: tests/database_api_tests.cpp.o
@@ -541,7 +530,7 @@ tests/database_api_tests.o: tests/database_api_tests.cpp.o
 
 # target to build an object file
 tests/database_api_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.o
 .PHONY : tests/database_api_tests.cpp.o
 
 tests/database_api_tests.i: tests/database_api_tests.cpp.i
@@ -550,7 +539,7 @@ tests/database_api_tests.i: tests/database_api_tests.cpp.i
 
 # target to preprocess a source file
 tests/database_api_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.i
 .PHONY : tests/database_api_tests.cpp.i
 
 tests/database_api_tests.s: tests/database_api_tests.cpp.s
@@ -559,7 +548,7 @@ tests/database_api_tests.s: tests/database_api_tests.cpp.s
 
 # target to generate assembly for a file
 tests/database_api_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/database_api_tests.cpp.s
 .PHONY : tests/database_api_tests.cpp.s
 
 tests/database_tests.o: tests/database_tests.cpp.o
@@ -568,7 +557,7 @@ tests/database_tests.o: tests/database_tests.cpp.o
 
 # target to build an object file
 tests/database_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.o
 .PHONY : tests/database_tests.cpp.o
 
 tests/database_tests.i: tests/database_tests.cpp.i
@@ -577,7 +566,7 @@ tests/database_tests.i: tests/database_tests.cpp.i
 
 # target to preprocess a source file
 tests/database_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.i
 .PHONY : tests/database_tests.cpp.i
 
 tests/database_tests.s: tests/database_tests.cpp.s
@@ -586,7 +575,7 @@ tests/database_tests.s: tests/database_tests.cpp.s
 
 # target to generate assembly for a file
 tests/database_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/database_tests.cpp.s
 .PHONY : tests/database_tests.cpp.s
 
 tests/fee_tests.o: tests/fee_tests.cpp.o
@@ -595,7 +584,7 @@ tests/fee_tests.o: tests/fee_tests.cpp.o
 
 # target to build an object file
 tests/fee_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.o
 .PHONY : tests/fee_tests.cpp.o
 
 tests/fee_tests.i: tests/fee_tests.cpp.i
@@ -604,7 +593,7 @@ tests/fee_tests.i: tests/fee_tests.cpp.i
 
 # target to preprocess a source file
 tests/fee_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.i
 .PHONY : tests/fee_tests.cpp.i
 
 tests/fee_tests.s: tests/fee_tests.cpp.s
@@ -613,7 +602,7 @@ tests/fee_tests.s: tests/fee_tests.cpp.s
 
 # target to generate assembly for a file
 tests/fee_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/fee_tests.cpp.s
 .PHONY : tests/fee_tests.cpp.s
 
 tests/main.o: tests/main.cpp.o
@@ -622,7 +611,7 @@ tests/main.o: tests/main.cpp.o
 
 # target to build an object file
 tests/main.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/main.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/main.cpp.o
 .PHONY : tests/main.cpp.o
 
 tests/main.i: tests/main.cpp.i
@@ -631,7 +620,7 @@ tests/main.i: tests/main.cpp.i
 
 # target to preprocess a source file
 tests/main.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/main.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/main.cpp.i
 .PHONY : tests/main.cpp.i
 
 tests/main.s: tests/main.cpp.s
@@ -640,7 +629,7 @@ tests/main.s: tests/main.cpp.s
 
 # target to generate assembly for a file
 tests/main.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/main.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/main.cpp.s
 .PHONY : tests/main.cpp.s
 
 tests/operation_tests.o: tests/operation_tests.cpp.o
@@ -649,7 +638,7 @@ tests/operation_tests.o: tests/operation_tests.cpp.o
 
 # target to build an object file
 tests/operation_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.o
 .PHONY : tests/operation_tests.cpp.o
 
 tests/operation_tests.i: tests/operation_tests.cpp.i
@@ -658,7 +647,7 @@ tests/operation_tests.i: tests/operation_tests.cpp.i
 
 # target to preprocess a source file
 tests/operation_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.i
 .PHONY : tests/operation_tests.cpp.i
 
 tests/operation_tests.s: tests/operation_tests.cpp.s
@@ -667,7 +656,7 @@ tests/operation_tests.s: tests/operation_tests.cpp.s
 
 # target to generate assembly for a file
 tests/operation_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/operation_tests.cpp.s
 .PHONY : tests/operation_tests.cpp.s
 
 tests/operation_tests2.o: tests/operation_tests2.cpp.o
@@ -676,7 +665,7 @@ tests/operation_tests2.o: tests/operation_tests2.cpp.o
 
 # target to build an object file
 tests/operation_tests2.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.o
 .PHONY : tests/operation_tests2.cpp.o
 
 tests/operation_tests2.i: tests/operation_tests2.cpp.i
@@ -685,7 +674,7 @@ tests/operation_tests2.i: tests/operation_tests2.cpp.i
 
 # target to preprocess a source file
 tests/operation_tests2.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.i
 .PHONY : tests/operation_tests2.cpp.i
 
 tests/operation_tests2.s: tests/operation_tests2.cpp.s
@@ -694,7 +683,7 @@ tests/operation_tests2.s: tests/operation_tests2.cpp.s
 
 # target to generate assembly for a file
 tests/operation_tests2.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/operation_tests2.cpp.s
 .PHONY : tests/operation_tests2.cpp.s
 
 tests/serialization_tests.o: tests/serialization_tests.cpp.o
@@ -703,7 +692,7 @@ tests/serialization_tests.o: tests/serialization_tests.cpp.o
 
 # target to build an object file
 tests/serialization_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.o
 .PHONY : tests/serialization_tests.cpp.o
 
 tests/serialization_tests.i: tests/serialization_tests.cpp.i
@@ -712,7 +701,7 @@ tests/serialization_tests.i: tests/serialization_tests.cpp.i
 
 # target to preprocess a source file
 tests/serialization_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.i
 .PHONY : tests/serialization_tests.cpp.i
 
 tests/serialization_tests.s: tests/serialization_tests.cpp.s
@@ -721,7 +710,7 @@ tests/serialization_tests.s: tests/serialization_tests.cpp.s
 
 # target to generate assembly for a file
 tests/serialization_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/serialization_tests.cpp.s
 .PHONY : tests/serialization_tests.cpp.s
 
 tests/uia_tests.o: tests/uia_tests.cpp.o
@@ -730,7 +719,7 @@ tests/uia_tests.o: tests/uia_tests.cpp.o
 
 # target to build an object file
 tests/uia_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.o
 .PHONY : tests/uia_tests.cpp.o
 
 tests/uia_tests.i: tests/uia_tests.cpp.i
@@ -739,7 +728,7 @@ tests/uia_tests.i: tests/uia_tests.cpp.i
 
 # target to preprocess a source file
 tests/uia_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.i
 .PHONY : tests/uia_tests.cpp.i
 
 tests/uia_tests.s: tests/uia_tests.cpp.s
@@ -748,7 +737,7 @@ tests/uia_tests.s: tests/uia_tests.cpp.s
 
 # target to generate assembly for a file
 tests/uia_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/uia_tests.cpp.s
 .PHONY : tests/uia_tests.cpp.s
 
 tests/wallet_tests.o: tests/wallet_tests.cpp.o
@@ -757,7 +746,7 @@ tests/wallet_tests.o: tests/wallet_tests.cpp.o
 
 # target to build an object file
 tests/wallet_tests.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.o
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.o
 .PHONY : tests/wallet_tests.cpp.o
 
 tests/wallet_tests.i: tests/wallet_tests.cpp.i
@@ -766,7 +755,7 @@ tests/wallet_tests.i: tests/wallet_tests.cpp.i
 
 # target to preprocess a source file
 tests/wallet_tests.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.i
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.i
 .PHONY : tests/wallet_tests.cpp.i
 
 tests/wallet_tests.s: tests/wallet_tests.cpp.s
@@ -775,7 +764,7 @@ tests/wallet_tests.s: tests/wallet_tests.cpp.s
 
 # target to generate assembly for a file
 tests/wallet_tests.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.s
+	cd /root/cybex-core && $(MAKE) -f tests/CMakeFiles/chain_test.dir/build.make tests/CMakeFiles/chain_test.dir/tests/wallet_tests.cpp.s
 .PHONY : tests/wallet_tests.cpp.s
 
 # Help Target
@@ -784,17 +773,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... app_test"
-	@echo "... performance_test"
-	@echo "... chain_bench"
-	@echo "... rebuild_cache"
-	@echo "... chain_test"
-	@echo "... intense_test"
-	@echo "... list_install_components"
-	@echo "... install/strip"
-	@echo "... install/local"
 	@echo "... edit_cache"
+	@echo "... install/local"
+	@echo "... intense_test"
+	@echo "... chain_test"
+	@echo "... rebuild_cache"
+	@echo "... chain_bench"
+	@echo "... performance_test"
+	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... app_test"
 	@echo "... app/main.o"
 	@echo "... app/main.i"
 	@echo "... app/main.s"
@@ -866,6 +854,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

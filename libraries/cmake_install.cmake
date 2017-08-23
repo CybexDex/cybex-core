@@ -1,4 +1,4 @@
-# Install script for directory: /root/cybex8/libraries
+# Install script for directory: /root/cybex-core/libraries
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -34,16 +34,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/root/cybex8/libraries/fc/cmake_install.cmake")
-  include("/root/cybex8/libraries/db/cmake_install.cmake")
-  include("/root/cybex8/libraries/deterministic_openssl_rand/cmake_install.cmake")
-  include("/root/cybex8/libraries/chain/cmake_install.cmake")
-  include("/root/cybex8/libraries/egenesis/cmake_install.cmake")
-  include("/root/cybex8/libraries/net/cmake_install.cmake")
-  include("/root/cybex8/libraries/utilities/cmake_install.cmake")
-  include("/root/cybex8/libraries/app/cmake_install.cmake")
-  include("/root/cybex8/libraries/plugins/cmake_install.cmake")
-  include("/root/cybex8/libraries/wallet/cmake_install.cmake")
+  include("/root/cybex-core/libraries/fc/cmake_install.cmake")
+  include("/root/cybex-core/libraries/db/cmake_install.cmake")
+  include("/root/cybex-core/libraries/deterministic_openssl_rand/cmake_install.cmake")
+  include("/root/cybex-core/libraries/chain/cmake_install.cmake")
+  include("/root/cybex-core/libraries/egenesis/cmake_install.cmake")
+  include("/root/cybex-core/libraries/net/cmake_install.cmake")
+  include("/root/cybex-core/libraries/utilities/cmake_install.cmake")
+  include("/root/cybex-core/libraries/app/cmake_install.cmake")
+  include("/root/cybex-core/libraries/plugins/cmake_install.cmake")
+  include("/root/cybex-core/libraries/wallet/cmake_install.cmake")
 
 endif()
 

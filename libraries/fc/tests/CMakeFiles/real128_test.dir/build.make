@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 # Include any dependencies generated for this target.
 include libraries/fc/tests/CMakeFiles/real128_test.dir/depend.make
@@ -59,16 +59,16 @@ include libraries/fc/tests/CMakeFiles/real128_test.dir/flags.make
 
 libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.o: libraries/fc/tests/CMakeFiles/real128_test.dir/flags.make
 libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.o: libraries/fc/tests/all_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/real128_test.dir/all_tests.cpp.o -c /root/cybex8/libraries/fc/tests/all_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/real128_test.dir/all_tests.cpp.o -c /root/cybex-core/libraries/fc/tests/all_tests.cpp
 
 libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/real128_test.dir/all_tests.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/all_tests.cpp > CMakeFiles/real128_test.dir/all_tests.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/all_tests.cpp > CMakeFiles/real128_test.dir/all_tests.cpp.i
 
 libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/real128_test.dir/all_tests.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/all_tests.cpp -o CMakeFiles/real128_test.dir/all_tests.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/all_tests.cpp -o CMakeFiles/real128_test.dir/all_tests.cpp.s
 
 libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.o.requires:
 
@@ -83,16 +83,16 @@ libraries/fc/tests/CMakeFiles/real128_test.dir/all_tests.cpp.o.provides.build: l
 
 libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.o: libraries/fc/tests/CMakeFiles/real128_test.dir/flags.make
 libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.o: libraries/fc/tests/real128_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/real128_test.dir/real128_test.cpp.o -c /root/cybex8/libraries/fc/tests/real128_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/real128_test.dir/real128_test.cpp.o -c /root/cybex-core/libraries/fc/tests/real128_test.cpp
 
 libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/real128_test.dir/real128_test.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/real128_test.cpp > CMakeFiles/real128_test.dir/real128_test.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/real128_test.cpp > CMakeFiles/real128_test.dir/real128_test.cpp.i
 
 libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/real128_test.dir/real128_test.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/real128_test.cpp -o CMakeFiles/real128_test.dir/real128_test.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/real128_test.cpp -o CMakeFiles/real128_test.dir/real128_test.cpp.s
 
 libraries/fc/tests/CMakeFiles/real128_test.dir/real128_test.cpp.o.requires:
 
@@ -136,8 +136,8 @@ libraries/fc/tests/real128_test: /usr/lib/x86_64-linux-gnu/libcrypto.a
 libraries/fc/tests/real128_test: /usr/lib/x86_64-linux-gnu/libz.so
 libraries/fc/tests/real128_test: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build/.libs/libsecp256k1.a
 libraries/fc/tests/real128_test: libraries/fc/tests/CMakeFiles/real128_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable real128_test"
-	cd /root/cybex8/libraries/fc/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/real128_test.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable real128_test"
+	cd /root/cybex-core/libraries/fc/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/real128_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 libraries/fc/tests/CMakeFiles/real128_test.dir/build: libraries/fc/tests/real128_test
@@ -150,10 +150,10 @@ libraries/fc/tests/CMakeFiles/real128_test.dir/requires: libraries/fc/tests/CMak
 .PHONY : libraries/fc/tests/CMakeFiles/real128_test.dir/requires
 
 libraries/fc/tests/CMakeFiles/real128_test.dir/clean:
-	cd /root/cybex8/libraries/fc/tests && $(CMAKE_COMMAND) -P CMakeFiles/real128_test.dir/cmake_clean.cmake
+	cd /root/cybex-core/libraries/fc/tests && $(CMAKE_COMMAND) -P CMakeFiles/real128_test.dir/cmake_clean.cmake
 .PHONY : libraries/fc/tests/CMakeFiles/real128_test.dir/clean
 
 libraries/fc/tests/CMakeFiles/real128_test.dir/depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex8 /root/cybex8/libraries/fc/tests /root/cybex8 /root/cybex8/libraries/fc/tests /root/cybex8/libraries/fc/tests/CMakeFiles/real128_test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex-core /root/cybex-core/libraries/fc/tests /root/cybex-core /root/cybex-core/libraries/fc/tests /root/cybex-core/libraries/fc/tests/CMakeFiles/real128_test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libraries/fc/tests/CMakeFiles/real128_test.dir/depend
 

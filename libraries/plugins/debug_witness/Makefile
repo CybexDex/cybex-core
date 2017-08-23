@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,28 +78,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -110,6 +88,17 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -124,14 +113,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/libraries/plugins/debug_witness/CMakeFiles/progress.marks
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/debug_witness/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/libraries/plugins/debug_witness/CMakeFiles/progress.marks
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/debug_witness/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/debug_witness/clean
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/debug_witness/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/debug_witness/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/debug_witness/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/debug_witness/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/debug_witness/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/rule
 .PHONY : libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/rule
 
 # Convenience name for target.
@@ -166,7 +155,7 @@ graphene_debug_witness: libraries/plugins/debug_witness/CMakeFiles/graphene_debu
 
 # fast build rule for target.
 graphene_debug_witness/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build
 .PHONY : graphene_debug_witness/fast
 
 debug_api.o: debug_api.cpp.o
@@ -175,7 +164,7 @@ debug_api.o: debug_api.cpp.o
 
 # target to build an object file
 debug_api.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.o
 .PHONY : debug_api.cpp.o
 
 debug_api.i: debug_api.cpp.i
@@ -184,7 +173,7 @@ debug_api.i: debug_api.cpp.i
 
 # target to preprocess a source file
 debug_api.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.i
 .PHONY : debug_api.cpp.i
 
 debug_api.s: debug_api.cpp.s
@@ -193,7 +182,7 @@ debug_api.s: debug_api.cpp.s
 
 # target to generate assembly for a file
 debug_api.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.s
 .PHONY : debug_api.cpp.s
 
 debug_witness.o: debug_witness.cpp.o
@@ -202,7 +191,7 @@ debug_witness.o: debug_witness.cpp.o
 
 # target to build an object file
 debug_witness.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.o
 .PHONY : debug_witness.cpp.o
 
 debug_witness.i: debug_witness.cpp.i
@@ -211,7 +200,7 @@ debug_witness.i: debug_witness.cpp.i
 
 # target to preprocess a source file
 debug_witness.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.i
 .PHONY : debug_witness.cpp.i
 
 debug_witness.s: debug_witness.cpp.s
@@ -220,7 +209,7 @@ debug_witness.s: debug_witness.cpp.s
 
 # target to generate assembly for a file
 debug_witness.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/build.make libraries/plugins/debug_witness/CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.s
 .PHONY : debug_witness.cpp.s
 
 # Help Target
@@ -231,10 +220,9 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... graphene_debug_witness"
-	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... graphene_debug_witness"
+	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... debug_api.o"
 	@echo "... debug_api.i"
@@ -253,6 +241,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

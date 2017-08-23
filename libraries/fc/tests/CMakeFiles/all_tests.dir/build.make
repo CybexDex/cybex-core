@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 # Include any dependencies generated for this target.
 include libraries/fc/tests/CMakeFiles/all_tests.dir/depend.make
@@ -59,16 +59,16 @@ include libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.o: libraries/fc/tests/all_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/all_tests.cpp.o -c /root/cybex8/libraries/fc/tests/all_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/all_tests.cpp.o -c /root/cybex-core/libraries/fc/tests/all_tests.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/all_tests.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/all_tests.cpp > CMakeFiles/all_tests.dir/all_tests.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/all_tests.cpp > CMakeFiles/all_tests.dir/all_tests.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/all_tests.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/all_tests.cpp -o CMakeFiles/all_tests.dir/all_tests.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/all_tests.cpp -o CMakeFiles/all_tests.dir/all_tests.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.o.requires:
 
@@ -83,16 +83,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/all_tests.cpp.o.provides.build: libr
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.o: libraries/fc/tests/compress/compress.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/compress/compress.cpp.o -c /root/cybex8/libraries/fc/tests/compress/compress.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/compress/compress.cpp.o -c /root/cybex-core/libraries/fc/tests/compress/compress.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/compress/compress.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/compress/compress.cpp > CMakeFiles/all_tests.dir/compress/compress.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/compress/compress.cpp > CMakeFiles/all_tests.dir/compress/compress.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/compress/compress.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/compress/compress.cpp -o CMakeFiles/all_tests.dir/compress/compress.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/compress/compress.cpp -o CMakeFiles/all_tests.dir/compress/compress.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.o.requires:
 
@@ -107,16 +107,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/compress/compress.cpp.o.provides.bui
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.o: libraries/fc/tests/crypto/aes_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/aes_test.cpp.o -c /root/cybex8/libraries/fc/tests/crypto/aes_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/aes_test.cpp.o -c /root/cybex-core/libraries/fc/tests/crypto/aes_test.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/crypto/aes_test.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/crypto/aes_test.cpp > CMakeFiles/all_tests.dir/crypto/aes_test.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/crypto/aes_test.cpp > CMakeFiles/all_tests.dir/crypto/aes_test.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/crypto/aes_test.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/crypto/aes_test.cpp -o CMakeFiles/all_tests.dir/crypto/aes_test.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/crypto/aes_test.cpp -o CMakeFiles/all_tests.dir/crypto/aes_test.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.o.requires:
 
@@ -131,16 +131,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/aes_test.cpp.o.provides.build
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.o: libraries/fc/tests/crypto/base_n_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.o -c /root/cybex8/libraries/fc/tests/crypto/base_n_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.o -c /root/cybex-core/libraries/fc/tests/crypto/base_n_tests.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/crypto/base_n_tests.cpp > CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/crypto/base_n_tests.cpp > CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/crypto/base_n_tests.cpp -o CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/crypto/base_n_tests.cpp -o CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.o.requires:
 
@@ -155,16 +155,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/base_n_tests.cpp.o.provides.b
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.o: libraries/fc/tests/crypto/bigint_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.o -c /root/cybex8/libraries/fc/tests/crypto/bigint_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.o -c /root/cybex-core/libraries/fc/tests/crypto/bigint_test.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/crypto/bigint_test.cpp > CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/crypto/bigint_test.cpp > CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/crypto/bigint_test.cpp -o CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/crypto/bigint_test.cpp -o CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.o.requires:
 
@@ -179,16 +179,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/bigint_test.cpp.o.provides.bu
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.o: libraries/fc/tests/crypto/blind.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/blind.cpp.o -c /root/cybex8/libraries/fc/tests/crypto/blind.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/blind.cpp.o -c /root/cybex-core/libraries/fc/tests/crypto/blind.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/crypto/blind.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/crypto/blind.cpp > CMakeFiles/all_tests.dir/crypto/blind.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/crypto/blind.cpp > CMakeFiles/all_tests.dir/crypto/blind.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/crypto/blind.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/crypto/blind.cpp -o CMakeFiles/all_tests.dir/crypto/blind.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/crypto/blind.cpp -o CMakeFiles/all_tests.dir/crypto/blind.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.o.requires:
 
@@ -203,16 +203,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blind.cpp.o.provides.build: l
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.o: libraries/fc/tests/crypto/blowfish_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.o -c /root/cybex8/libraries/fc/tests/crypto/blowfish_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.o -c /root/cybex-core/libraries/fc/tests/crypto/blowfish_test.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/crypto/blowfish_test.cpp > CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/crypto/blowfish_test.cpp > CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/crypto/blowfish_test.cpp -o CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/crypto/blowfish_test.cpp -o CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.o.requires:
 
@@ -227,16 +227,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/blowfish_test.cpp.o.provides.
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.o: libraries/fc/tests/crypto/dh_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/dh_test.cpp.o -c /root/cybex8/libraries/fc/tests/crypto/dh_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/dh_test.cpp.o -c /root/cybex-core/libraries/fc/tests/crypto/dh_test.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/crypto/dh_test.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/crypto/dh_test.cpp > CMakeFiles/all_tests.dir/crypto/dh_test.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/crypto/dh_test.cpp > CMakeFiles/all_tests.dir/crypto/dh_test.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/crypto/dh_test.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/crypto/dh_test.cpp -o CMakeFiles/all_tests.dir/crypto/dh_test.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/crypto/dh_test.cpp -o CMakeFiles/all_tests.dir/crypto/dh_test.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.o.requires:
 
@@ -251,16 +251,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/dh_test.cpp.o.provides.build:
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.o: libraries/fc/tests/crypto/rand_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/rand_test.cpp.o -c /root/cybex8/libraries/fc/tests/crypto/rand_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/rand_test.cpp.o -c /root/cybex-core/libraries/fc/tests/crypto/rand_test.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/crypto/rand_test.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/crypto/rand_test.cpp > CMakeFiles/all_tests.dir/crypto/rand_test.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/crypto/rand_test.cpp > CMakeFiles/all_tests.dir/crypto/rand_test.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/crypto/rand_test.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/crypto/rand_test.cpp -o CMakeFiles/all_tests.dir/crypto/rand_test.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/crypto/rand_test.cpp -o CMakeFiles/all_tests.dir/crypto/rand_test.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.o.requires:
 
@@ -275,16 +275,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/rand_test.cpp.o.provides.buil
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.o: libraries/fc/tests/crypto/sha_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.o -c /root/cybex8/libraries/fc/tests/crypto/sha_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.o -c /root/cybex-core/libraries/fc/tests/crypto/sha_tests.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/crypto/sha_tests.cpp > CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/crypto/sha_tests.cpp > CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/crypto/sha_tests.cpp -o CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/crypto/sha_tests.cpp -o CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.o.requires:
 
@@ -299,16 +299,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/crypto/sha_tests.cpp.o.provides.buil
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.o: libraries/fc/tests/network/http/websocket_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.o -c /root/cybex8/libraries/fc/tests/network/http/websocket_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.o -c /root/cybex-core/libraries/fc/tests/network/http/websocket_test.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/network/http/websocket_test.cpp > CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/network/http/websocket_test.cpp > CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/network/http/websocket_test.cpp -o CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/network/http/websocket_test.cpp -o CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.o.requires:
 
@@ -323,16 +323,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/network/http/websocket_test.cpp.o.pr
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.o: libraries/fc/tests/thread/task_cancel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/thread/task_cancel.cpp.o -c /root/cybex8/libraries/fc/tests/thread/task_cancel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/thread/task_cancel.cpp.o -c /root/cybex-core/libraries/fc/tests/thread/task_cancel.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/thread/task_cancel.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/thread/task_cancel.cpp > CMakeFiles/all_tests.dir/thread/task_cancel.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/thread/task_cancel.cpp > CMakeFiles/all_tests.dir/thread/task_cancel.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/thread/task_cancel.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/thread/task_cancel.cpp -o CMakeFiles/all_tests.dir/thread/task_cancel.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/thread/task_cancel.cpp -o CMakeFiles/all_tests.dir/thread/task_cancel.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.o.requires:
 
@@ -347,16 +347,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/thread/task_cancel.cpp.o.provides.bu
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.o: libraries/fc/tests/bloom_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/bloom_test.cpp.o -c /root/cybex8/libraries/fc/tests/bloom_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/bloom_test.cpp.o -c /root/cybex-core/libraries/fc/tests/bloom_test.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/bloom_test.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/bloom_test.cpp > CMakeFiles/all_tests.dir/bloom_test.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/bloom_test.cpp > CMakeFiles/all_tests.dir/bloom_test.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/bloom_test.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/bloom_test.cpp -o CMakeFiles/all_tests.dir/bloom_test.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/bloom_test.cpp -o CMakeFiles/all_tests.dir/bloom_test.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.o.requires:
 
@@ -371,16 +371,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/bloom_test.cpp.o.provides.build: lib
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.o: libraries/fc/tests/real128_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/real128_test.cpp.o -c /root/cybex8/libraries/fc/tests/real128_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/real128_test.cpp.o -c /root/cybex-core/libraries/fc/tests/real128_test.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/real128_test.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/real128_test.cpp > CMakeFiles/all_tests.dir/real128_test.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/real128_test.cpp > CMakeFiles/all_tests.dir/real128_test.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/real128_test.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/real128_test.cpp -o CMakeFiles/all_tests.dir/real128_test.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/real128_test.cpp -o CMakeFiles/all_tests.dir/real128_test.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.o.requires:
 
@@ -395,16 +395,16 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/real128_test.cpp.o.provides.build: l
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/utf8_test.cpp.o: libraries/fc/tests/CMakeFiles/all_tests.dir/flags.make
 libraries/fc/tests/CMakeFiles/all_tests.dir/utf8_test.cpp.o: libraries/fc/tests/utf8_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/utf8_test.cpp.o"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/utf8_test.cpp.o -c /root/cybex8/libraries/fc/tests/utf8_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object libraries/fc/tests/CMakeFiles/all_tests.dir/utf8_test.cpp.o"
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/all_tests.dir/utf8_test.cpp.o -c /root/cybex-core/libraries/fc/tests/utf8_test.cpp
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/utf8_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all_tests.dir/utf8_test.cpp.i"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/fc/tests/utf8_test.cpp > CMakeFiles/all_tests.dir/utf8_test.cpp.i
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/fc/tests/utf8_test.cpp > CMakeFiles/all_tests.dir/utf8_test.cpp.i
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/utf8_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all_tests.dir/utf8_test.cpp.s"
-	cd /root/cybex8/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/fc/tests/utf8_test.cpp -o CMakeFiles/all_tests.dir/utf8_test.cpp.s
+	cd /root/cybex-core/libraries/fc/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/fc/tests/utf8_test.cpp -o CMakeFiles/all_tests.dir/utf8_test.cpp.s
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/utf8_test.cpp.o.requires:
 
@@ -474,8 +474,8 @@ libraries/fc/tests/all_tests: /usr/lib/x86_64-linux-gnu/libcrypto.a
 libraries/fc/tests/all_tests: /usr/lib/x86_64-linux-gnu/libz.so
 libraries/fc/tests/all_tests: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build/.libs/libsecp256k1.a
 libraries/fc/tests/all_tests: libraries/fc/tests/CMakeFiles/all_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable all_tests"
-	cd /root/cybex8/libraries/fc/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/all_tests.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable all_tests"
+	cd /root/cybex-core/libraries/fc/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/all_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 libraries/fc/tests/CMakeFiles/all_tests.dir/build: libraries/fc/tests/all_tests
@@ -501,10 +501,10 @@ libraries/fc/tests/CMakeFiles/all_tests.dir/requires: libraries/fc/tests/CMakeFi
 .PHONY : libraries/fc/tests/CMakeFiles/all_tests.dir/requires
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/clean:
-	cd /root/cybex8/libraries/fc/tests && $(CMAKE_COMMAND) -P CMakeFiles/all_tests.dir/cmake_clean.cmake
+	cd /root/cybex-core/libraries/fc/tests && $(CMAKE_COMMAND) -P CMakeFiles/all_tests.dir/cmake_clean.cmake
 .PHONY : libraries/fc/tests/CMakeFiles/all_tests.dir/clean
 
 libraries/fc/tests/CMakeFiles/all_tests.dir/depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex8 /root/cybex8/libraries/fc/tests /root/cybex8 /root/cybex8/libraries/fc/tests /root/cybex8/libraries/fc/tests/CMakeFiles/all_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex-core /root/cybex-core/libraries/fc/tests /root/cybex-core /root/cybex-core/libraries/fc/tests /root/cybex-core/libraries/fc/tests/CMakeFiles/all_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libraries/fc/tests/CMakeFiles/all_tests.dir/depend
 

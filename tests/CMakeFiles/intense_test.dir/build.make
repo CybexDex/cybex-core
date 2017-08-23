@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 # Include any dependencies generated for this target.
 include tests/CMakeFiles/intense_test.dir/depend.make
@@ -59,16 +59,16 @@ include tests/CMakeFiles/intense_test.dir/flags.make
 
 tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.o: tests/CMakeFiles/intense_test.dir/flags.make
 tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.o: tests/intense/block_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/intense_test.dir/intense/block_tests.cpp.o -c /root/cybex8/tests/intense/block_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/intense_test.dir/intense/block_tests.cpp.o -c /root/cybex-core/tests/intense/block_tests.cpp
 
 tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/intense_test.dir/intense/block_tests.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/intense/block_tests.cpp > CMakeFiles/intense_test.dir/intense/block_tests.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/intense/block_tests.cpp > CMakeFiles/intense_test.dir/intense/block_tests.cpp.i
 
 tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/intense_test.dir/intense/block_tests.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/intense/block_tests.cpp -o CMakeFiles/intense_test.dir/intense/block_tests.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/intense/block_tests.cpp -o CMakeFiles/intense_test.dir/intense/block_tests.cpp.s
 
 tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.o.requires:
 
@@ -83,16 +83,16 @@ tests/CMakeFiles/intense_test.dir/intense/block_tests.cpp.o.provides.build: test
 
 tests/CMakeFiles/intense_test.dir/intense/main.cpp.o: tests/CMakeFiles/intense_test.dir/flags.make
 tests/CMakeFiles/intense_test.dir/intense/main.cpp.o: tests/intense/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/intense_test.dir/intense/main.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/intense_test.dir/intense/main.cpp.o -c /root/cybex8/tests/intense/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/intense_test.dir/intense/main.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/intense_test.dir/intense/main.cpp.o -c /root/cybex-core/tests/intense/main.cpp
 
 tests/CMakeFiles/intense_test.dir/intense/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/intense_test.dir/intense/main.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/intense/main.cpp > CMakeFiles/intense_test.dir/intense/main.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/intense/main.cpp > CMakeFiles/intense_test.dir/intense/main.cpp.i
 
 tests/CMakeFiles/intense_test.dir/intense/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/intense_test.dir/intense/main.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/intense/main.cpp -o CMakeFiles/intense_test.dir/intense/main.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/intense/main.cpp -o CMakeFiles/intense_test.dir/intense/main.cpp.s
 
 tests/CMakeFiles/intense_test.dir/intense/main.cpp.o.requires:
 
@@ -107,16 +107,16 @@ tests/CMakeFiles/intense_test.dir/intense/main.cpp.o.provides.build: tests/CMake
 
 tests/CMakeFiles/intense_test.dir/common/database_fixture.cpp.o: tests/CMakeFiles/intense_test.dir/flags.make
 tests/CMakeFiles/intense_test.dir/common/database_fixture.cpp.o: tests/common/database_fixture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/CMakeFiles/intense_test.dir/common/database_fixture.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/intense_test.dir/common/database_fixture.cpp.o -c /root/cybex8/tests/common/database_fixture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/CMakeFiles/intense_test.dir/common/database_fixture.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/intense_test.dir/common/database_fixture.cpp.o -c /root/cybex-core/tests/common/database_fixture.cpp
 
 tests/CMakeFiles/intense_test.dir/common/database_fixture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/intense_test.dir/common/database_fixture.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/common/database_fixture.cpp > CMakeFiles/intense_test.dir/common/database_fixture.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/common/database_fixture.cpp > CMakeFiles/intense_test.dir/common/database_fixture.cpp.i
 
 tests/CMakeFiles/intense_test.dir/common/database_fixture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/intense_test.dir/common/database_fixture.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/common/database_fixture.cpp -o CMakeFiles/intense_test.dir/common/database_fixture.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/common/database_fixture.cpp -o CMakeFiles/intense_test.dir/common/database_fixture.cpp.s
 
 tests/CMakeFiles/intense_test.dir/common/database_fixture.cpp.o.requires:
 
@@ -177,8 +177,8 @@ tests/intense_test: /usr/lib/x86_64-linux-gnu/libcrypto.a
 tests/intense_test: /usr/lib/x86_64-linux-gnu/libz.so
 tests/intense_test: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build/.libs/libsecp256k1.a
 tests/intense_test: tests/CMakeFiles/intense_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable intense_test"
-	cd /root/cybex8/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/intense_test.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable intense_test"
+	cd /root/cybex-core/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/intense_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tests/CMakeFiles/intense_test.dir/build: tests/intense_test
@@ -192,10 +192,10 @@ tests/CMakeFiles/intense_test.dir/requires: tests/CMakeFiles/intense_test.dir/co
 .PHONY : tests/CMakeFiles/intense_test.dir/requires
 
 tests/CMakeFiles/intense_test.dir/clean:
-	cd /root/cybex8/tests && $(CMAKE_COMMAND) -P CMakeFiles/intense_test.dir/cmake_clean.cmake
+	cd /root/cybex-core/tests && $(CMAKE_COMMAND) -P CMakeFiles/intense_test.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/intense_test.dir/clean
 
 tests/CMakeFiles/intense_test.dir/depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex8 /root/cybex8/tests /root/cybex8 /root/cybex8/tests /root/cybex8/tests/CMakeFiles/intense_test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex-core /root/cybex-core/tests /root/cybex-core /root/cybex-core/tests /root/cybex-core/tests/CMakeFiles/intense_test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tests/CMakeFiles/intense_test.dir/depend
 

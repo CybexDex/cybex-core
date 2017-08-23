@@ -1,4 +1,4 @@
-# Install script for directory: /root/cybex8/libraries/app
+# Install script for directory: /root/cybex-core/libraries/app
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -33,18 +33,18 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/root/cybex8/libraries/app/libgraphene_app.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/root/cybex-core/libraries/app/libgraphene_app.a")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/graphene/app" TYPE FILE FILES
-    "/root/cybex8/libraries/app/include/graphene/app/full_account.hpp"
-    "/root/cybex8/libraries/app/include/graphene/app/database_api.hpp"
-    "/root/cybex8/libraries/app/include/graphene/app/plugin.hpp"
-    "/root/cybex8/libraries/app/include/graphene/app/application.hpp"
-    "/root/cybex8/libraries/app/include/graphene/app/impacted.hpp"
-    "/root/cybex8/libraries/app/include/graphene/app/api.hpp"
-    "/root/cybex8/libraries/app/include/graphene/app/api_access.hpp"
+    "/root/cybex-core/libraries/app/include/graphene/app/full_account.hpp"
+    "/root/cybex-core/libraries/app/include/graphene/app/database_api.hpp"
+    "/root/cybex-core/libraries/app/include/graphene/app/plugin.hpp"
+    "/root/cybex-core/libraries/app/include/graphene/app/application.hpp"
+    "/root/cybex-core/libraries/app/include/graphene/app/impacted.hpp"
+    "/root/cybex-core/libraries/app/include/graphene/app/api.hpp"
+    "/root/cybex-core/libraries/app/include/graphene/app/api_access.hpp"
     )
 endif()
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 # Include any dependencies generated for this target.
 include tests/CMakeFiles/chain_bench.dir/depend.make
@@ -59,16 +59,16 @@ include tests/CMakeFiles/chain_bench.dir/flags.make
 
 tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.o: tests/CMakeFiles/chain_bench.dir/flags.make
 tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.o: tests/benchmarks/genesis_allocation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.o -c /root/cybex8/tests/benchmarks/genesis_allocation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.o -c /root/cybex-core/tests/benchmarks/genesis_allocation.cpp
 
 tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/benchmarks/genesis_allocation.cpp > CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/benchmarks/genesis_allocation.cpp > CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.i
 
 tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/benchmarks/genesis_allocation.cpp -o CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/benchmarks/genesis_allocation.cpp -o CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.s
 
 tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.o.requires:
 
@@ -83,16 +83,16 @@ tests/CMakeFiles/chain_bench.dir/benchmarks/genesis_allocation.cpp.o.provides.bu
 
 tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.o: tests/CMakeFiles/chain_bench.dir/flags.make
 tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.o: tests/benchmarks/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_bench.dir/benchmarks/main.cpp.o -c /root/cybex8/tests/benchmarks/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_bench.dir/benchmarks/main.cpp.o -c /root/cybex-core/tests/benchmarks/main.cpp
 
 tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_bench.dir/benchmarks/main.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/benchmarks/main.cpp > CMakeFiles/chain_bench.dir/benchmarks/main.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/benchmarks/main.cpp > CMakeFiles/chain_bench.dir/benchmarks/main.cpp.i
 
 tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_bench.dir/benchmarks/main.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/benchmarks/main.cpp -o CMakeFiles/chain_bench.dir/benchmarks/main.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/benchmarks/main.cpp -o CMakeFiles/chain_bench.dir/benchmarks/main.cpp.s
 
 tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.o.requires:
 
@@ -107,16 +107,16 @@ tests/CMakeFiles/chain_bench.dir/benchmarks/main.cpp.o.provides.build: tests/CMa
 
 tests/CMakeFiles/chain_bench.dir/common/database_fixture.cpp.o: tests/CMakeFiles/chain_bench.dir/flags.make
 tests/CMakeFiles/chain_bench.dir/common/database_fixture.cpp.o: tests/common/database_fixture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/CMakeFiles/chain_bench.dir/common/database_fixture.cpp.o"
-	cd /root/cybex8/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_bench.dir/common/database_fixture.cpp.o -c /root/cybex8/tests/common/database_fixture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/CMakeFiles/chain_bench.dir/common/database_fixture.cpp.o"
+	cd /root/cybex-core/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chain_bench.dir/common/database_fixture.cpp.o -c /root/cybex-core/tests/common/database_fixture.cpp
 
 tests/CMakeFiles/chain_bench.dir/common/database_fixture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chain_bench.dir/common/database_fixture.cpp.i"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/tests/common/database_fixture.cpp > CMakeFiles/chain_bench.dir/common/database_fixture.cpp.i
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/tests/common/database_fixture.cpp > CMakeFiles/chain_bench.dir/common/database_fixture.cpp.i
 
 tests/CMakeFiles/chain_bench.dir/common/database_fixture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chain_bench.dir/common/database_fixture.cpp.s"
-	cd /root/cybex8/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/tests/common/database_fixture.cpp -o CMakeFiles/chain_bench.dir/common/database_fixture.cpp.s
+	cd /root/cybex-core/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/tests/common/database_fixture.cpp -o CMakeFiles/chain_bench.dir/common/database_fixture.cpp.s
 
 tests/CMakeFiles/chain_bench.dir/common/database_fixture.cpp.o.requires:
 
@@ -177,8 +177,8 @@ tests/chain_bench: /usr/lib/x86_64-linux-gnu/libcrypto.a
 tests/chain_bench: /usr/lib/x86_64-linux-gnu/libz.so
 tests/chain_bench: libraries/fc/vendor/secp256k1-zkp/src/project_secp256k1-build/.libs/libsecp256k1.a
 tests/chain_bench: tests/CMakeFiles/chain_bench.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable chain_bench"
-	cd /root/cybex8/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chain_bench.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable chain_bench"
+	cd /root/cybex-core/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chain_bench.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tests/CMakeFiles/chain_bench.dir/build: tests/chain_bench
@@ -192,10 +192,10 @@ tests/CMakeFiles/chain_bench.dir/requires: tests/CMakeFiles/chain_bench.dir/comm
 .PHONY : tests/CMakeFiles/chain_bench.dir/requires
 
 tests/CMakeFiles/chain_bench.dir/clean:
-	cd /root/cybex8/tests && $(CMAKE_COMMAND) -P CMakeFiles/chain_bench.dir/cmake_clean.cmake
+	cd /root/cybex-core/tests && $(CMAKE_COMMAND) -P CMakeFiles/chain_bench.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/chain_bench.dir/clean
 
 tests/CMakeFiles/chain_bench.dir/depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex8 /root/cybex8/tests /root/cybex8 /root/cybex8/tests /root/cybex8/tests/CMakeFiles/chain_bench.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex-core /root/cybex-core/tests /root/cybex-core /root/cybex-core/tests /root/cybex-core/tests/CMakeFiles/chain_bench.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tests/CMakeFiles/chain_bench.dir/depend
 

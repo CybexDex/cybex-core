@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 # Include any dependencies generated for this target.
 include libraries/wallet/CMakeFiles/graphene_wallet.dir/depend.make
@@ -58,21 +58,21 @@ include libraries/wallet/CMakeFiles/graphene_wallet.dir/progress.make
 include libraries/wallet/CMakeFiles/graphene_wallet.dir/flags.make
 
 libraries/wallet/api_documentation.cpp: libraries/wallet/api_documentation_standin.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating api_documentation.cpp"
-	cd /root/cybex8/libraries/wallet && /usr/bin/cmake -E copy_if_different /root/cybex8/libraries/wallet/api_documentation_standin.cpp /root/cybex8/libraries/wallet/api_documentation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating api_documentation.cpp"
+	cd /root/cybex-core/libraries/wallet && /usr/bin/cmake -E copy_if_different /root/cybex-core/libraries/wallet/api_documentation_standin.cpp /root/cybex-core/libraries/wallet/api_documentation.cpp
 
 libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.o: libraries/wallet/CMakeFiles/graphene_wallet.dir/flags.make
 libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.o: libraries/wallet/wallet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.o"
-	cd /root/cybex8/libraries/wallet && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_wallet.dir/wallet.cpp.o -c /root/cybex8/libraries/wallet/wallet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.o"
+	cd /root/cybex-core/libraries/wallet && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_wallet.dir/wallet.cpp.o -c /root/cybex-core/libraries/wallet/wallet.cpp
 
 libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_wallet.dir/wallet.cpp.i"
-	cd /root/cybex8/libraries/wallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/wallet/wallet.cpp > CMakeFiles/graphene_wallet.dir/wallet.cpp.i
+	cd /root/cybex-core/libraries/wallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/wallet/wallet.cpp > CMakeFiles/graphene_wallet.dir/wallet.cpp.i
 
 libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_wallet.dir/wallet.cpp.s"
-	cd /root/cybex8/libraries/wallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/wallet/wallet.cpp -o CMakeFiles/graphene_wallet.dir/wallet.cpp.s
+	cd /root/cybex-core/libraries/wallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/wallet/wallet.cpp -o CMakeFiles/graphene_wallet.dir/wallet.cpp.s
 
 libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.o.requires:
 
@@ -87,16 +87,16 @@ libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.o.provides.build: lib
 
 libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.o: libraries/wallet/CMakeFiles/graphene_wallet.dir/flags.make
 libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.o: libraries/wallet/api_documentation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.o"
-	cd /root/cybex8/libraries/wallet && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_wallet.dir/api_documentation.cpp.o -c /root/cybex8/libraries/wallet/api_documentation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.o"
+	cd /root/cybex-core/libraries/wallet && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphene_wallet.dir/api_documentation.cpp.o -c /root/cybex-core/libraries/wallet/api_documentation.cpp
 
 libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphene_wallet.dir/api_documentation.cpp.i"
-	cd /root/cybex8/libraries/wallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex8/libraries/wallet/api_documentation.cpp > CMakeFiles/graphene_wallet.dir/api_documentation.cpp.i
+	cd /root/cybex-core/libraries/wallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/cybex-core/libraries/wallet/api_documentation.cpp > CMakeFiles/graphene_wallet.dir/api_documentation.cpp.i
 
 libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphene_wallet.dir/api_documentation.cpp.s"
-	cd /root/cybex8/libraries/wallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex8/libraries/wallet/api_documentation.cpp -o CMakeFiles/graphene_wallet.dir/api_documentation.cpp.s
+	cd /root/cybex-core/libraries/wallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/cybex-core/libraries/wallet/api_documentation.cpp -o CMakeFiles/graphene_wallet.dir/api_documentation.cpp.s
 
 libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.o.requires:
 
@@ -121,9 +121,9 @@ libraries/wallet/libgraphene_wallet.a: libraries/wallet/CMakeFiles/graphene_wall
 libraries/wallet/libgraphene_wallet.a: libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.o
 libraries/wallet/libgraphene_wallet.a: libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make
 libraries/wallet/libgraphene_wallet.a: libraries/wallet/CMakeFiles/graphene_wallet.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex8/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libgraphene_wallet.a"
-	cd /root/cybex8/libraries/wallet && $(CMAKE_COMMAND) -P CMakeFiles/graphene_wallet.dir/cmake_clean_target.cmake
-	cd /root/cybex8/libraries/wallet && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphene_wallet.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/cybex-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libgraphene_wallet.a"
+	cd /root/cybex-core/libraries/wallet && $(CMAKE_COMMAND) -P CMakeFiles/graphene_wallet.dir/cmake_clean_target.cmake
+	cd /root/cybex-core/libraries/wallet && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphene_wallet.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 libraries/wallet/CMakeFiles/graphene_wallet.dir/build: libraries/wallet/libgraphene_wallet.a
@@ -136,10 +136,10 @@ libraries/wallet/CMakeFiles/graphene_wallet.dir/requires: libraries/wallet/CMake
 .PHONY : libraries/wallet/CMakeFiles/graphene_wallet.dir/requires
 
 libraries/wallet/CMakeFiles/graphene_wallet.dir/clean:
-	cd /root/cybex8/libraries/wallet && $(CMAKE_COMMAND) -P CMakeFiles/graphene_wallet.dir/cmake_clean.cmake
+	cd /root/cybex-core/libraries/wallet && $(CMAKE_COMMAND) -P CMakeFiles/graphene_wallet.dir/cmake_clean.cmake
 .PHONY : libraries/wallet/CMakeFiles/graphene_wallet.dir/clean
 
 libraries/wallet/CMakeFiles/graphene_wallet.dir/depend: libraries/wallet/api_documentation.cpp
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex8 /root/cybex8/libraries/wallet /root/cybex8 /root/cybex8/libraries/wallet /root/cybex8/libraries/wallet/CMakeFiles/graphene_wallet.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/cybex-core /root/cybex-core/libraries/wallet /root/cybex-core /root/cybex-core/libraries/wallet /root/cybex-core/libraries/wallet/CMakeFiles/graphene_wallet.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libraries/wallet/CMakeFiles/graphene_wallet.dir/depend
 

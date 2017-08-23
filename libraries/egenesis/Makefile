@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -111,27 +111,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/libraries/egenesis/CMakeFiles/progress.marks
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/libraries/egenesis/CMakeFiles/progress.marks
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/clean
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/rule
 .PHONY : libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/rule
 
 # Convenience name for target.
@@ -166,12 +155,12 @@ graphene_egenesis_none: libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir
 
 # fast build rule for target.
 graphene_egenesis_none/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/build
 .PHONY : graphene_egenesis_none/fast
 
 # Convenience name for target.
 libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/rule
 .PHONY : libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/rule
 
 # Convenience name for target.
@@ -181,12 +170,12 @@ graphene_egenesis_full: libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir
 
 # fast build rule for target.
 graphene_egenesis_full/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/build
 .PHONY : graphene_egenesis_full/fast
 
 # Convenience name for target.
 libraries/egenesis/CMakeFiles/embed_genesis.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/CMakeFiles/embed_genesis.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/CMakeFiles/embed_genesis.dir/rule
 .PHONY : libraries/egenesis/CMakeFiles/embed_genesis.dir/rule
 
 # Convenience name for target.
@@ -196,12 +185,17 @@ embed_genesis: libraries/egenesis/CMakeFiles/embed_genesis.dir/rule
 
 # fast build rule for target.
 embed_genesis/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/embed_genesis.dir/build.make libraries/egenesis/CMakeFiles/embed_genesis.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/embed_genesis.dir/build.make libraries/egenesis/CMakeFiles/embed_genesis.dir/build
 .PHONY : embed_genesis/fast
+
+# Manual pre-install relink rule for target.
+embed_genesis/preinstall:
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/CMakeFiles/embed_genesis.dir/preinstall
+.PHONY : embed_genesis/preinstall
 
 # Convenience name for target.
 libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/rule
 .PHONY : libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/rule
 
 # Convenience name for target.
@@ -211,7 +205,7 @@ graphene_egenesis_brief: libraries/egenesis/CMakeFiles/graphene_egenesis_brief.d
 
 # fast build rule for target.
 graphene_egenesis_brief/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/build
 .PHONY : graphene_egenesis_brief/fast
 
 egenesis_brief.o: egenesis_brief.cpp.o
@@ -220,7 +214,7 @@ egenesis_brief.o: egenesis_brief.cpp.o
 
 # target to build an object file
 egenesis_brief.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/egenesis_brief.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/egenesis_brief.cpp.o
 .PHONY : egenesis_brief.cpp.o
 
 egenesis_brief.i: egenesis_brief.cpp.i
@@ -229,7 +223,7 @@ egenesis_brief.i: egenesis_brief.cpp.i
 
 # target to preprocess a source file
 egenesis_brief.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/egenesis_brief.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/egenesis_brief.cpp.i
 .PHONY : egenesis_brief.cpp.i
 
 egenesis_brief.s: egenesis_brief.cpp.s
@@ -238,7 +232,7 @@ egenesis_brief.s: egenesis_brief.cpp.s
 
 # target to generate assembly for a file
 egenesis_brief.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/egenesis_brief.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_brief.dir/egenesis_brief.cpp.s
 .PHONY : egenesis_brief.cpp.s
 
 egenesis_full.o: egenesis_full.cpp.o
@@ -247,7 +241,7 @@ egenesis_full.o: egenesis_full.cpp.o
 
 # target to build an object file
 egenesis_full.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.o
 .PHONY : egenesis_full.cpp.o
 
 egenesis_full.i: egenesis_full.cpp.i
@@ -256,7 +250,7 @@ egenesis_full.i: egenesis_full.cpp.i
 
 # target to preprocess a source file
 egenesis_full.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.i
 .PHONY : egenesis_full.cpp.i
 
 egenesis_full.s: egenesis_full.cpp.s
@@ -265,7 +259,7 @@ egenesis_full.s: egenesis_full.cpp.s
 
 # target to generate assembly for a file
 egenesis_full.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_full.dir/egenesis_full.cpp.s
 .PHONY : egenesis_full.cpp.s
 
 egenesis_none.o: egenesis_none.cpp.o
@@ -274,7 +268,7 @@ egenesis_none.o: egenesis_none.cpp.o
 
 # target to build an object file
 egenesis_none.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/egenesis_none.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/egenesis_none.cpp.o
 .PHONY : egenesis_none.cpp.o
 
 egenesis_none.i: egenesis_none.cpp.i
@@ -283,7 +277,7 @@ egenesis_none.i: egenesis_none.cpp.i
 
 # target to preprocess a source file
 egenesis_none.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/egenesis_none.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/egenesis_none.cpp.i
 .PHONY : egenesis_none.cpp.i
 
 egenesis_none.s: egenesis_none.cpp.s
@@ -292,7 +286,7 @@ egenesis_none.s: egenesis_none.cpp.s
 
 # target to generate assembly for a file
 egenesis_none.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/egenesis_none.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/build.make libraries/egenesis/CMakeFiles/graphene_egenesis_none.dir/egenesis_none.cpp.s
 .PHONY : egenesis_none.cpp.s
 
 embed_genesis.o: embed_genesis.cpp.o
@@ -301,7 +295,7 @@ embed_genesis.o: embed_genesis.cpp.o
 
 # target to build an object file
 embed_genesis.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/embed_genesis.dir/build.make libraries/egenesis/CMakeFiles/embed_genesis.dir/embed_genesis.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/embed_genesis.dir/build.make libraries/egenesis/CMakeFiles/embed_genesis.dir/embed_genesis.cpp.o
 .PHONY : embed_genesis.cpp.o
 
 embed_genesis.i: embed_genesis.cpp.i
@@ -310,7 +304,7 @@ embed_genesis.i: embed_genesis.cpp.i
 
 # target to preprocess a source file
 embed_genesis.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/embed_genesis.dir/build.make libraries/egenesis/CMakeFiles/embed_genesis.dir/embed_genesis.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/embed_genesis.dir/build.make libraries/egenesis/CMakeFiles/embed_genesis.dir/embed_genesis.cpp.i
 .PHONY : embed_genesis.cpp.i
 
 embed_genesis.s: embed_genesis.cpp.s
@@ -319,7 +313,7 @@ embed_genesis.s: embed_genesis.cpp.s
 
 # target to generate assembly for a file
 embed_genesis.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/egenesis/CMakeFiles/embed_genesis.dir/build.make libraries/egenesis/CMakeFiles/embed_genesis.dir/embed_genesis.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/egenesis/CMakeFiles/embed_genesis.dir/build.make libraries/egenesis/CMakeFiles/embed_genesis.dir/embed_genesis.cpp.s
 .PHONY : embed_genesis.cpp.s
 
 # Help Target
@@ -333,7 +327,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... graphene_egenesis_none"
 	@echo "... graphene_egenesis_full"
 	@echo "... embed_genesis"
@@ -361,6 +354,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

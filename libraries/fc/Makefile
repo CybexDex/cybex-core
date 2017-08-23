@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -89,28 +89,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -122,16 +100,27 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/libraries/fc/CMakeFiles/progress.marks
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/libraries/fc/CMakeFiles/progress.marks
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/clean
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libraries/fc/CMakeFiles/project_secp256k1.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/CMakeFiles/project_secp256k1.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/CMakeFiles/project_secp256k1.dir/rule
 .PHONY : libraries/fc/CMakeFiles/project_secp256k1.dir/rule
 
 # Convenience name for target.
@@ -166,12 +155,12 @@ project_secp256k1: libraries/fc/CMakeFiles/project_secp256k1.dir/rule
 
 # fast build rule for target.
 project_secp256k1/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/project_secp256k1.dir/build.make libraries/fc/CMakeFiles/project_secp256k1.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/project_secp256k1.dir/build.make libraries/fc/CMakeFiles/project_secp256k1.dir/build
 .PHONY : project_secp256k1/fast
 
 # Convenience name for target.
 libraries/fc/CMakeFiles/fc.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/CMakeFiles/fc.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/fc/CMakeFiles/fc.dir/rule
 .PHONY : libraries/fc/CMakeFiles/fc.dir/rule
 
 # Convenience name for target.
@@ -181,7 +170,7 @@ fc: libraries/fc/CMakeFiles/fc.dir/rule
 
 # fast build rule for target.
 fc/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/build
 .PHONY : fc/fast
 
 git_revision.o: git_revision.cpp.o
@@ -190,7 +179,7 @@ git_revision.o: git_revision.cpp.o
 
 # target to build an object file
 git_revision.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/git_revision.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/git_revision.cpp.o
 .PHONY : git_revision.cpp.o
 
 git_revision.i: git_revision.cpp.i
@@ -199,7 +188,7 @@ git_revision.i: git_revision.cpp.i
 
 # target to preprocess a source file
 git_revision.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/git_revision.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/git_revision.cpp.i
 .PHONY : git_revision.cpp.i
 
 git_revision.s: git_revision.cpp.s
@@ -208,7 +197,7 @@ git_revision.s: git_revision.cpp.s
 
 # target to generate assembly for a file
 git_revision.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/git_revision.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/git_revision.cpp.s
 .PHONY : git_revision.cpp.s
 
 src/asio.o: src/asio.cpp.o
@@ -217,7 +206,7 @@ src/asio.o: src/asio.cpp.o
 
 # target to build an object file
 src/asio.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/asio.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/asio.cpp.o
 .PHONY : src/asio.cpp.o
 
 src/asio.i: src/asio.cpp.i
@@ -226,7 +215,7 @@ src/asio.i: src/asio.cpp.i
 
 # target to preprocess a source file
 src/asio.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/asio.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/asio.cpp.i
 .PHONY : src/asio.cpp.i
 
 src/asio.s: src/asio.cpp.s
@@ -235,7 +224,7 @@ src/asio.s: src/asio.cpp.s
 
 # target to generate assembly for a file
 src/asio.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/asio.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/asio.cpp.s
 .PHONY : src/asio.cpp.s
 
 src/compress/smaz.o: src/compress/smaz.cpp.o
@@ -244,7 +233,7 @@ src/compress/smaz.o: src/compress/smaz.cpp.o
 
 # target to build an object file
 src/compress/smaz.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/compress/smaz.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/compress/smaz.cpp.o
 .PHONY : src/compress/smaz.cpp.o
 
 src/compress/smaz.i: src/compress/smaz.cpp.i
@@ -253,7 +242,7 @@ src/compress/smaz.i: src/compress/smaz.cpp.i
 
 # target to preprocess a source file
 src/compress/smaz.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/compress/smaz.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/compress/smaz.cpp.i
 .PHONY : src/compress/smaz.cpp.i
 
 src/compress/smaz.s: src/compress/smaz.cpp.s
@@ -262,7 +251,7 @@ src/compress/smaz.s: src/compress/smaz.cpp.s
 
 # target to generate assembly for a file
 src/compress/smaz.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/compress/smaz.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/compress/smaz.cpp.s
 .PHONY : src/compress/smaz.cpp.s
 
 src/compress/zlib.o: src/compress/zlib.cpp.o
@@ -271,7 +260,7 @@ src/compress/zlib.o: src/compress/zlib.cpp.o
 
 # target to build an object file
 src/compress/zlib.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/compress/zlib.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/compress/zlib.cpp.o
 .PHONY : src/compress/zlib.cpp.o
 
 src/compress/zlib.i: src/compress/zlib.cpp.i
@@ -280,7 +269,7 @@ src/compress/zlib.i: src/compress/zlib.cpp.i
 
 # target to preprocess a source file
 src/compress/zlib.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/compress/zlib.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/compress/zlib.cpp.i
 .PHONY : src/compress/zlib.cpp.i
 
 src/compress/zlib.s: src/compress/zlib.cpp.s
@@ -289,7 +278,7 @@ src/compress/zlib.s: src/compress/zlib.cpp.s
 
 # target to generate assembly for a file
 src/compress/zlib.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/compress/zlib.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/compress/zlib.cpp.s
 .PHONY : src/compress/zlib.cpp.s
 
 src/crypto/_digest_common.o: src/crypto/_digest_common.cpp.o
@@ -298,7 +287,7 @@ src/crypto/_digest_common.o: src/crypto/_digest_common.cpp.o
 
 # target to build an object file
 src/crypto/_digest_common.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/_digest_common.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/_digest_common.cpp.o
 .PHONY : src/crypto/_digest_common.cpp.o
 
 src/crypto/_digest_common.i: src/crypto/_digest_common.cpp.i
@@ -307,7 +296,7 @@ src/crypto/_digest_common.i: src/crypto/_digest_common.cpp.i
 
 # target to preprocess a source file
 src/crypto/_digest_common.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/_digest_common.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/_digest_common.cpp.i
 .PHONY : src/crypto/_digest_common.cpp.i
 
 src/crypto/_digest_common.s: src/crypto/_digest_common.cpp.s
@@ -316,7 +305,7 @@ src/crypto/_digest_common.s: src/crypto/_digest_common.cpp.s
 
 # target to generate assembly for a file
 src/crypto/_digest_common.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/_digest_common.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/_digest_common.cpp.s
 .PHONY : src/crypto/_digest_common.cpp.s
 
 src/crypto/aes.o: src/crypto/aes.cpp.o
@@ -325,7 +314,7 @@ src/crypto/aes.o: src/crypto/aes.cpp.o
 
 # target to build an object file
 src/crypto/aes.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/aes.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/aes.cpp.o
 .PHONY : src/crypto/aes.cpp.o
 
 src/crypto/aes.i: src/crypto/aes.cpp.i
@@ -334,7 +323,7 @@ src/crypto/aes.i: src/crypto/aes.cpp.i
 
 # target to preprocess a source file
 src/crypto/aes.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/aes.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/aes.cpp.i
 .PHONY : src/crypto/aes.cpp.i
 
 src/crypto/aes.s: src/crypto/aes.cpp.s
@@ -343,7 +332,7 @@ src/crypto/aes.s: src/crypto/aes.cpp.s
 
 # target to generate assembly for a file
 src/crypto/aes.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/aes.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/aes.cpp.s
 .PHONY : src/crypto/aes.cpp.s
 
 src/crypto/base36.o: src/crypto/base36.cpp.o
@@ -352,7 +341,7 @@ src/crypto/base36.o: src/crypto/base36.cpp.o
 
 # target to build an object file
 src/crypto/base36.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base36.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base36.cpp.o
 .PHONY : src/crypto/base36.cpp.o
 
 src/crypto/base36.i: src/crypto/base36.cpp.i
@@ -361,7 +350,7 @@ src/crypto/base36.i: src/crypto/base36.cpp.i
 
 # target to preprocess a source file
 src/crypto/base36.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base36.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base36.cpp.i
 .PHONY : src/crypto/base36.cpp.i
 
 src/crypto/base36.s: src/crypto/base36.cpp.s
@@ -370,7 +359,7 @@ src/crypto/base36.s: src/crypto/base36.cpp.s
 
 # target to generate assembly for a file
 src/crypto/base36.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base36.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base36.cpp.s
 .PHONY : src/crypto/base36.cpp.s
 
 src/crypto/base58.o: src/crypto/base58.cpp.o
@@ -379,7 +368,7 @@ src/crypto/base58.o: src/crypto/base58.cpp.o
 
 # target to build an object file
 src/crypto/base58.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base58.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base58.cpp.o
 .PHONY : src/crypto/base58.cpp.o
 
 src/crypto/base58.i: src/crypto/base58.cpp.i
@@ -388,7 +377,7 @@ src/crypto/base58.i: src/crypto/base58.cpp.i
 
 # target to preprocess a source file
 src/crypto/base58.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base58.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base58.cpp.i
 .PHONY : src/crypto/base58.cpp.i
 
 src/crypto/base58.s: src/crypto/base58.cpp.s
@@ -397,7 +386,7 @@ src/crypto/base58.s: src/crypto/base58.cpp.s
 
 # target to generate assembly for a file
 src/crypto/base58.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base58.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base58.cpp.s
 .PHONY : src/crypto/base58.cpp.s
 
 src/crypto/base64.o: src/crypto/base64.cpp.o
@@ -406,7 +395,7 @@ src/crypto/base64.o: src/crypto/base64.cpp.o
 
 # target to build an object file
 src/crypto/base64.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base64.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base64.cpp.o
 .PHONY : src/crypto/base64.cpp.o
 
 src/crypto/base64.i: src/crypto/base64.cpp.i
@@ -415,7 +404,7 @@ src/crypto/base64.i: src/crypto/base64.cpp.i
 
 # target to preprocess a source file
 src/crypto/base64.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base64.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base64.cpp.i
 .PHONY : src/crypto/base64.cpp.i
 
 src/crypto/base64.s: src/crypto/base64.cpp.s
@@ -424,7 +413,7 @@ src/crypto/base64.s: src/crypto/base64.cpp.s
 
 # target to generate assembly for a file
 src/crypto/base64.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base64.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/base64.cpp.s
 .PHONY : src/crypto/base64.cpp.s
 
 src/crypto/bigint.o: src/crypto/bigint.cpp.o
@@ -433,7 +422,7 @@ src/crypto/bigint.o: src/crypto/bigint.cpp.o
 
 # target to build an object file
 src/crypto/bigint.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/bigint.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/bigint.cpp.o
 .PHONY : src/crypto/bigint.cpp.o
 
 src/crypto/bigint.i: src/crypto/bigint.cpp.i
@@ -442,7 +431,7 @@ src/crypto/bigint.i: src/crypto/bigint.cpp.i
 
 # target to preprocess a source file
 src/crypto/bigint.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/bigint.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/bigint.cpp.i
 .PHONY : src/crypto/bigint.cpp.i
 
 src/crypto/bigint.s: src/crypto/bigint.cpp.s
@@ -451,7 +440,7 @@ src/crypto/bigint.s: src/crypto/bigint.cpp.s
 
 # target to generate assembly for a file
 src/crypto/bigint.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/bigint.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/bigint.cpp.s
 .PHONY : src/crypto/bigint.cpp.s
 
 src/crypto/blowfish.o: src/crypto/blowfish.cpp.o
@@ -460,7 +449,7 @@ src/crypto/blowfish.o: src/crypto/blowfish.cpp.o
 
 # target to build an object file
 src/crypto/blowfish.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/blowfish.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/blowfish.cpp.o
 .PHONY : src/crypto/blowfish.cpp.o
 
 src/crypto/blowfish.i: src/crypto/blowfish.cpp.i
@@ -469,7 +458,7 @@ src/crypto/blowfish.i: src/crypto/blowfish.cpp.i
 
 # target to preprocess a source file
 src/crypto/blowfish.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/blowfish.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/blowfish.cpp.i
 .PHONY : src/crypto/blowfish.cpp.i
 
 src/crypto/blowfish.s: src/crypto/blowfish.cpp.s
@@ -478,7 +467,7 @@ src/crypto/blowfish.s: src/crypto/blowfish.cpp.s
 
 # target to generate assembly for a file
 src/crypto/blowfish.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/blowfish.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/blowfish.cpp.s
 .PHONY : src/crypto/blowfish.cpp.s
 
 src/crypto/city.o: src/crypto/city.cpp.o
@@ -487,7 +476,7 @@ src/crypto/city.o: src/crypto/city.cpp.o
 
 # target to build an object file
 src/crypto/city.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/city.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/city.cpp.o
 .PHONY : src/crypto/city.cpp.o
 
 src/crypto/city.i: src/crypto/city.cpp.i
@@ -496,7 +485,7 @@ src/crypto/city.i: src/crypto/city.cpp.i
 
 # target to preprocess a source file
 src/crypto/city.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/city.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/city.cpp.i
 .PHONY : src/crypto/city.cpp.i
 
 src/crypto/city.s: src/crypto/city.cpp.s
@@ -505,7 +494,7 @@ src/crypto/city.s: src/crypto/city.cpp.s
 
 # target to generate assembly for a file
 src/crypto/city.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/city.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/city.cpp.s
 .PHONY : src/crypto/city.cpp.s
 
 src/crypto/crc.o: src/crypto/crc.cpp.o
@@ -514,7 +503,7 @@ src/crypto/crc.o: src/crypto/crc.cpp.o
 
 # target to build an object file
 src/crypto/crc.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/crc.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/crc.cpp.o
 .PHONY : src/crypto/crc.cpp.o
 
 src/crypto/crc.i: src/crypto/crc.cpp.i
@@ -523,7 +512,7 @@ src/crypto/crc.i: src/crypto/crc.cpp.i
 
 # target to preprocess a source file
 src/crypto/crc.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/crc.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/crc.cpp.i
 .PHONY : src/crypto/crc.cpp.i
 
 src/crypto/crc.s: src/crypto/crc.cpp.s
@@ -532,7 +521,7 @@ src/crypto/crc.s: src/crypto/crc.cpp.s
 
 # target to generate assembly for a file
 src/crypto/crc.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/crc.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/crc.cpp.s
 .PHONY : src/crypto/crc.cpp.s
 
 src/crypto/dh.o: src/crypto/dh.cpp.o
@@ -541,7 +530,7 @@ src/crypto/dh.o: src/crypto/dh.cpp.o
 
 # target to build an object file
 src/crypto/dh.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/dh.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/dh.cpp.o
 .PHONY : src/crypto/dh.cpp.o
 
 src/crypto/dh.i: src/crypto/dh.cpp.i
@@ -550,7 +539,7 @@ src/crypto/dh.i: src/crypto/dh.cpp.i
 
 # target to preprocess a source file
 src/crypto/dh.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/dh.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/dh.cpp.i
 .PHONY : src/crypto/dh.cpp.i
 
 src/crypto/dh.s: src/crypto/dh.cpp.s
@@ -559,7 +548,7 @@ src/crypto/dh.s: src/crypto/dh.cpp.s
 
 # target to generate assembly for a file
 src/crypto/dh.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/dh.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/dh.cpp.s
 .PHONY : src/crypto/dh.cpp.s
 
 src/crypto/elliptic_common.o: src/crypto/elliptic_common.cpp.o
@@ -568,7 +557,7 @@ src/crypto/elliptic_common.o: src/crypto/elliptic_common.cpp.o
 
 # target to build an object file
 src/crypto/elliptic_common.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_common.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_common.cpp.o
 .PHONY : src/crypto/elliptic_common.cpp.o
 
 src/crypto/elliptic_common.i: src/crypto/elliptic_common.cpp.i
@@ -577,7 +566,7 @@ src/crypto/elliptic_common.i: src/crypto/elliptic_common.cpp.i
 
 # target to preprocess a source file
 src/crypto/elliptic_common.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_common.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_common.cpp.i
 .PHONY : src/crypto/elliptic_common.cpp.i
 
 src/crypto/elliptic_common.s: src/crypto/elliptic_common.cpp.s
@@ -586,7 +575,7 @@ src/crypto/elliptic_common.s: src/crypto/elliptic_common.cpp.s
 
 # target to generate assembly for a file
 src/crypto/elliptic_common.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_common.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_common.cpp.s
 .PHONY : src/crypto/elliptic_common.cpp.s
 
 src/crypto/elliptic_impl_priv.o: src/crypto/elliptic_impl_priv.cpp.o
@@ -595,7 +584,7 @@ src/crypto/elliptic_impl_priv.o: src/crypto/elliptic_impl_priv.cpp.o
 
 # target to build an object file
 src/crypto/elliptic_impl_priv.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_impl_priv.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_impl_priv.cpp.o
 .PHONY : src/crypto/elliptic_impl_priv.cpp.o
 
 src/crypto/elliptic_impl_priv.i: src/crypto/elliptic_impl_priv.cpp.i
@@ -604,7 +593,7 @@ src/crypto/elliptic_impl_priv.i: src/crypto/elliptic_impl_priv.cpp.i
 
 # target to preprocess a source file
 src/crypto/elliptic_impl_priv.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_impl_priv.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_impl_priv.cpp.i
 .PHONY : src/crypto/elliptic_impl_priv.cpp.i
 
 src/crypto/elliptic_impl_priv.s: src/crypto/elliptic_impl_priv.cpp.s
@@ -613,7 +602,7 @@ src/crypto/elliptic_impl_priv.s: src/crypto/elliptic_impl_priv.cpp.s
 
 # target to generate assembly for a file
 src/crypto/elliptic_impl_priv.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_impl_priv.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_impl_priv.cpp.s
 .PHONY : src/crypto/elliptic_impl_priv.cpp.s
 
 src/crypto/elliptic_secp256k1.o: src/crypto/elliptic_secp256k1.cpp.o
@@ -622,7 +611,7 @@ src/crypto/elliptic_secp256k1.o: src/crypto/elliptic_secp256k1.cpp.o
 
 # target to build an object file
 src/crypto/elliptic_secp256k1.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_secp256k1.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_secp256k1.cpp.o
 .PHONY : src/crypto/elliptic_secp256k1.cpp.o
 
 src/crypto/elliptic_secp256k1.i: src/crypto/elliptic_secp256k1.cpp.i
@@ -631,7 +620,7 @@ src/crypto/elliptic_secp256k1.i: src/crypto/elliptic_secp256k1.cpp.i
 
 # target to preprocess a source file
 src/crypto/elliptic_secp256k1.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_secp256k1.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_secp256k1.cpp.i
 .PHONY : src/crypto/elliptic_secp256k1.cpp.i
 
 src/crypto/elliptic_secp256k1.s: src/crypto/elliptic_secp256k1.cpp.s
@@ -640,7 +629,7 @@ src/crypto/elliptic_secp256k1.s: src/crypto/elliptic_secp256k1.cpp.s
 
 # target to generate assembly for a file
 src/crypto/elliptic_secp256k1.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_secp256k1.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/elliptic_secp256k1.cpp.s
 .PHONY : src/crypto/elliptic_secp256k1.cpp.s
 
 src/crypto/hex.o: src/crypto/hex.cpp.o
@@ -649,7 +638,7 @@ src/crypto/hex.o: src/crypto/hex.cpp.o
 
 # target to build an object file
 src/crypto/hex.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/hex.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/hex.cpp.o
 .PHONY : src/crypto/hex.cpp.o
 
 src/crypto/hex.i: src/crypto/hex.cpp.i
@@ -658,7 +647,7 @@ src/crypto/hex.i: src/crypto/hex.cpp.i
 
 # target to preprocess a source file
 src/crypto/hex.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/hex.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/hex.cpp.i
 .PHONY : src/crypto/hex.cpp.i
 
 src/crypto/hex.s: src/crypto/hex.cpp.s
@@ -667,7 +656,7 @@ src/crypto/hex.s: src/crypto/hex.cpp.s
 
 # target to generate assembly for a file
 src/crypto/hex.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/hex.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/hex.cpp.s
 .PHONY : src/crypto/hex.cpp.s
 
 src/crypto/openssl.o: src/crypto/openssl.cpp.o
@@ -676,7 +665,7 @@ src/crypto/openssl.o: src/crypto/openssl.cpp.o
 
 # target to build an object file
 src/crypto/openssl.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/openssl.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/openssl.cpp.o
 .PHONY : src/crypto/openssl.cpp.o
 
 src/crypto/openssl.i: src/crypto/openssl.cpp.i
@@ -685,7 +674,7 @@ src/crypto/openssl.i: src/crypto/openssl.cpp.i
 
 # target to preprocess a source file
 src/crypto/openssl.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/openssl.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/openssl.cpp.i
 .PHONY : src/crypto/openssl.cpp.i
 
 src/crypto/openssl.s: src/crypto/openssl.cpp.s
@@ -694,7 +683,7 @@ src/crypto/openssl.s: src/crypto/openssl.cpp.s
 
 # target to generate assembly for a file
 src/crypto/openssl.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/openssl.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/openssl.cpp.s
 .PHONY : src/crypto/openssl.cpp.s
 
 src/crypto/rand.o: src/crypto/rand.cpp.o
@@ -703,7 +692,7 @@ src/crypto/rand.o: src/crypto/rand.cpp.o
 
 # target to build an object file
 src/crypto/rand.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/rand.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/rand.cpp.o
 .PHONY : src/crypto/rand.cpp.o
 
 src/crypto/rand.i: src/crypto/rand.cpp.i
@@ -712,7 +701,7 @@ src/crypto/rand.i: src/crypto/rand.cpp.i
 
 # target to preprocess a source file
 src/crypto/rand.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/rand.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/rand.cpp.i
 .PHONY : src/crypto/rand.cpp.i
 
 src/crypto/rand.s: src/crypto/rand.cpp.s
@@ -721,7 +710,7 @@ src/crypto/rand.s: src/crypto/rand.cpp.s
 
 # target to generate assembly for a file
 src/crypto/rand.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/rand.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/rand.cpp.s
 .PHONY : src/crypto/rand.cpp.s
 
 src/crypto/ripemd160.o: src/crypto/ripemd160.cpp.o
@@ -730,7 +719,7 @@ src/crypto/ripemd160.o: src/crypto/ripemd160.cpp.o
 
 # target to build an object file
 src/crypto/ripemd160.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/ripemd160.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/ripemd160.cpp.o
 .PHONY : src/crypto/ripemd160.cpp.o
 
 src/crypto/ripemd160.i: src/crypto/ripemd160.cpp.i
@@ -739,7 +728,7 @@ src/crypto/ripemd160.i: src/crypto/ripemd160.cpp.i
 
 # target to preprocess a source file
 src/crypto/ripemd160.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/ripemd160.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/ripemd160.cpp.i
 .PHONY : src/crypto/ripemd160.cpp.i
 
 src/crypto/ripemd160.s: src/crypto/ripemd160.cpp.s
@@ -748,7 +737,7 @@ src/crypto/ripemd160.s: src/crypto/ripemd160.cpp.s
 
 # target to generate assembly for a file
 src/crypto/ripemd160.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/ripemd160.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/ripemd160.cpp.s
 .PHONY : src/crypto/ripemd160.cpp.s
 
 src/crypto/sha1.o: src/crypto/sha1.cpp.o
@@ -757,7 +746,7 @@ src/crypto/sha1.o: src/crypto/sha1.cpp.o
 
 # target to build an object file
 src/crypto/sha1.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha1.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha1.cpp.o
 .PHONY : src/crypto/sha1.cpp.o
 
 src/crypto/sha1.i: src/crypto/sha1.cpp.i
@@ -766,7 +755,7 @@ src/crypto/sha1.i: src/crypto/sha1.cpp.i
 
 # target to preprocess a source file
 src/crypto/sha1.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha1.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha1.cpp.i
 .PHONY : src/crypto/sha1.cpp.i
 
 src/crypto/sha1.s: src/crypto/sha1.cpp.s
@@ -775,7 +764,7 @@ src/crypto/sha1.s: src/crypto/sha1.cpp.s
 
 # target to generate assembly for a file
 src/crypto/sha1.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha1.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha1.cpp.s
 .PHONY : src/crypto/sha1.cpp.s
 
 src/crypto/sha224.o: src/crypto/sha224.cpp.o
@@ -784,7 +773,7 @@ src/crypto/sha224.o: src/crypto/sha224.cpp.o
 
 # target to build an object file
 src/crypto/sha224.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha224.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha224.cpp.o
 .PHONY : src/crypto/sha224.cpp.o
 
 src/crypto/sha224.i: src/crypto/sha224.cpp.i
@@ -793,7 +782,7 @@ src/crypto/sha224.i: src/crypto/sha224.cpp.i
 
 # target to preprocess a source file
 src/crypto/sha224.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha224.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha224.cpp.i
 .PHONY : src/crypto/sha224.cpp.i
 
 src/crypto/sha224.s: src/crypto/sha224.cpp.s
@@ -802,7 +791,7 @@ src/crypto/sha224.s: src/crypto/sha224.cpp.s
 
 # target to generate assembly for a file
 src/crypto/sha224.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha224.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha224.cpp.s
 .PHONY : src/crypto/sha224.cpp.s
 
 src/crypto/sha256.o: src/crypto/sha256.cpp.o
@@ -811,7 +800,7 @@ src/crypto/sha256.o: src/crypto/sha256.cpp.o
 
 # target to build an object file
 src/crypto/sha256.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha256.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha256.cpp.o
 .PHONY : src/crypto/sha256.cpp.o
 
 src/crypto/sha256.i: src/crypto/sha256.cpp.i
@@ -820,7 +809,7 @@ src/crypto/sha256.i: src/crypto/sha256.cpp.i
 
 # target to preprocess a source file
 src/crypto/sha256.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha256.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha256.cpp.i
 .PHONY : src/crypto/sha256.cpp.i
 
 src/crypto/sha256.s: src/crypto/sha256.cpp.s
@@ -829,7 +818,7 @@ src/crypto/sha256.s: src/crypto/sha256.cpp.s
 
 # target to generate assembly for a file
 src/crypto/sha256.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha256.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha256.cpp.s
 .PHONY : src/crypto/sha256.cpp.s
 
 src/crypto/sha512.o: src/crypto/sha512.cpp.o
@@ -838,7 +827,7 @@ src/crypto/sha512.o: src/crypto/sha512.cpp.o
 
 # target to build an object file
 src/crypto/sha512.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha512.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha512.cpp.o
 .PHONY : src/crypto/sha512.cpp.o
 
 src/crypto/sha512.i: src/crypto/sha512.cpp.i
@@ -847,7 +836,7 @@ src/crypto/sha512.i: src/crypto/sha512.cpp.i
 
 # target to preprocess a source file
 src/crypto/sha512.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha512.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha512.cpp.i
 .PHONY : src/crypto/sha512.cpp.i
 
 src/crypto/sha512.s: src/crypto/sha512.cpp.s
@@ -856,7 +845,7 @@ src/crypto/sha512.s: src/crypto/sha512.cpp.s
 
 # target to generate assembly for a file
 src/crypto/sha512.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha512.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/crypto/sha512.cpp.s
 .PHONY : src/crypto/sha512.cpp.s
 
 src/exception.o: src/exception.cpp.o
@@ -865,7 +854,7 @@ src/exception.o: src/exception.cpp.o
 
 # target to build an object file
 src/exception.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/exception.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/exception.cpp.o
 .PHONY : src/exception.cpp.o
 
 src/exception.i: src/exception.cpp.i
@@ -874,7 +863,7 @@ src/exception.i: src/exception.cpp.i
 
 # target to preprocess a source file
 src/exception.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/exception.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/exception.cpp.i
 .PHONY : src/exception.cpp.i
 
 src/exception.s: src/exception.cpp.s
@@ -883,7 +872,7 @@ src/exception.s: src/exception.cpp.s
 
 # target to generate assembly for a file
 src/exception.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/exception.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/exception.cpp.s
 .PHONY : src/exception.cpp.s
 
 src/filesystem.o: src/filesystem.cpp.o
@@ -892,7 +881,7 @@ src/filesystem.o: src/filesystem.cpp.o
 
 # target to build an object file
 src/filesystem.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/filesystem.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/filesystem.cpp.o
 .PHONY : src/filesystem.cpp.o
 
 src/filesystem.i: src/filesystem.cpp.i
@@ -901,7 +890,7 @@ src/filesystem.i: src/filesystem.cpp.i
 
 # target to preprocess a source file
 src/filesystem.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/filesystem.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/filesystem.cpp.i
 .PHONY : src/filesystem.cpp.i
 
 src/filesystem.s: src/filesystem.cpp.s
@@ -910,7 +899,7 @@ src/filesystem.s: src/filesystem.cpp.s
 
 # target to generate assembly for a file
 src/filesystem.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/filesystem.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/filesystem.cpp.s
 .PHONY : src/filesystem.cpp.s
 
 src/interprocess/file_mapping.o: src/interprocess/file_mapping.cpp.o
@@ -919,7 +908,7 @@ src/interprocess/file_mapping.o: src/interprocess/file_mapping.cpp.o
 
 # target to build an object file
 src/interprocess/file_mapping.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/file_mapping.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/file_mapping.cpp.o
 .PHONY : src/interprocess/file_mapping.cpp.o
 
 src/interprocess/file_mapping.i: src/interprocess/file_mapping.cpp.i
@@ -928,7 +917,7 @@ src/interprocess/file_mapping.i: src/interprocess/file_mapping.cpp.i
 
 # target to preprocess a source file
 src/interprocess/file_mapping.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/file_mapping.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/file_mapping.cpp.i
 .PHONY : src/interprocess/file_mapping.cpp.i
 
 src/interprocess/file_mapping.s: src/interprocess/file_mapping.cpp.s
@@ -937,7 +926,7 @@ src/interprocess/file_mapping.s: src/interprocess/file_mapping.cpp.s
 
 # target to generate assembly for a file
 src/interprocess/file_mapping.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/file_mapping.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/file_mapping.cpp.s
 .PHONY : src/interprocess/file_mapping.cpp.s
 
 src/interprocess/file_mutex.o: src/interprocess/file_mutex.cpp.o
@@ -946,7 +935,7 @@ src/interprocess/file_mutex.o: src/interprocess/file_mutex.cpp.o
 
 # target to build an object file
 src/interprocess/file_mutex.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/file_mutex.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/file_mutex.cpp.o
 .PHONY : src/interprocess/file_mutex.cpp.o
 
 src/interprocess/file_mutex.i: src/interprocess/file_mutex.cpp.i
@@ -955,7 +944,7 @@ src/interprocess/file_mutex.i: src/interprocess/file_mutex.cpp.i
 
 # target to preprocess a source file
 src/interprocess/file_mutex.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/file_mutex.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/file_mutex.cpp.i
 .PHONY : src/interprocess/file_mutex.cpp.i
 
 src/interprocess/file_mutex.s: src/interprocess/file_mutex.cpp.s
@@ -964,7 +953,7 @@ src/interprocess/file_mutex.s: src/interprocess/file_mutex.cpp.s
 
 # target to generate assembly for a file
 src/interprocess/file_mutex.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/file_mutex.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/file_mutex.cpp.s
 .PHONY : src/interprocess/file_mutex.cpp.s
 
 src/interprocess/mmap_struct.o: src/interprocess/mmap_struct.cpp.o
@@ -973,7 +962,7 @@ src/interprocess/mmap_struct.o: src/interprocess/mmap_struct.cpp.o
 
 # target to build an object file
 src/interprocess/mmap_struct.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/mmap_struct.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/mmap_struct.cpp.o
 .PHONY : src/interprocess/mmap_struct.cpp.o
 
 src/interprocess/mmap_struct.i: src/interprocess/mmap_struct.cpp.i
@@ -982,7 +971,7 @@ src/interprocess/mmap_struct.i: src/interprocess/mmap_struct.cpp.i
 
 # target to preprocess a source file
 src/interprocess/mmap_struct.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/mmap_struct.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/mmap_struct.cpp.i
 .PHONY : src/interprocess/mmap_struct.cpp.i
 
 src/interprocess/mmap_struct.s: src/interprocess/mmap_struct.cpp.s
@@ -991,7 +980,7 @@ src/interprocess/mmap_struct.s: src/interprocess/mmap_struct.cpp.s
 
 # target to generate assembly for a file
 src/interprocess/mmap_struct.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/mmap_struct.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/mmap_struct.cpp.s
 .PHONY : src/interprocess/mmap_struct.cpp.s
 
 src/interprocess/process.o: src/interprocess/process.cpp.o
@@ -1000,7 +989,7 @@ src/interprocess/process.o: src/interprocess/process.cpp.o
 
 # target to build an object file
 src/interprocess/process.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/process.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/process.cpp.o
 .PHONY : src/interprocess/process.cpp.o
 
 src/interprocess/process.i: src/interprocess/process.cpp.i
@@ -1009,7 +998,7 @@ src/interprocess/process.i: src/interprocess/process.cpp.i
 
 # target to preprocess a source file
 src/interprocess/process.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/process.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/process.cpp.i
 .PHONY : src/interprocess/process.cpp.i
 
 src/interprocess/process.s: src/interprocess/process.cpp.s
@@ -1018,7 +1007,7 @@ src/interprocess/process.s: src/interprocess/process.cpp.s
 
 # target to generate assembly for a file
 src/interprocess/process.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/process.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/process.cpp.s
 .PHONY : src/interprocess/process.cpp.s
 
 src/interprocess/signals.o: src/interprocess/signals.cpp.o
@@ -1027,7 +1016,7 @@ src/interprocess/signals.o: src/interprocess/signals.cpp.o
 
 # target to build an object file
 src/interprocess/signals.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/signals.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/signals.cpp.o
 .PHONY : src/interprocess/signals.cpp.o
 
 src/interprocess/signals.i: src/interprocess/signals.cpp.i
@@ -1036,7 +1025,7 @@ src/interprocess/signals.i: src/interprocess/signals.cpp.i
 
 # target to preprocess a source file
 src/interprocess/signals.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/signals.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/signals.cpp.i
 .PHONY : src/interprocess/signals.cpp.i
 
 src/interprocess/signals.s: src/interprocess/signals.cpp.s
@@ -1045,7 +1034,7 @@ src/interprocess/signals.s: src/interprocess/signals.cpp.s
 
 # target to generate assembly for a file
 src/interprocess/signals.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/signals.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/interprocess/signals.cpp.s
 .PHONY : src/interprocess/signals.cpp.s
 
 src/io/buffered_iostream.o: src/io/buffered_iostream.cpp.o
@@ -1054,7 +1043,7 @@ src/io/buffered_iostream.o: src/io/buffered_iostream.cpp.o
 
 # target to build an object file
 src/io/buffered_iostream.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/buffered_iostream.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/buffered_iostream.cpp.o
 .PHONY : src/io/buffered_iostream.cpp.o
 
 src/io/buffered_iostream.i: src/io/buffered_iostream.cpp.i
@@ -1063,7 +1052,7 @@ src/io/buffered_iostream.i: src/io/buffered_iostream.cpp.i
 
 # target to preprocess a source file
 src/io/buffered_iostream.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/buffered_iostream.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/buffered_iostream.cpp.i
 .PHONY : src/io/buffered_iostream.cpp.i
 
 src/io/buffered_iostream.s: src/io/buffered_iostream.cpp.s
@@ -1072,7 +1061,7 @@ src/io/buffered_iostream.s: src/io/buffered_iostream.cpp.s
 
 # target to generate assembly for a file
 src/io/buffered_iostream.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/buffered_iostream.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/buffered_iostream.cpp.s
 .PHONY : src/io/buffered_iostream.cpp.s
 
 src/io/console.o: src/io/console.cpp.o
@@ -1081,7 +1070,7 @@ src/io/console.o: src/io/console.cpp.o
 
 # target to build an object file
 src/io/console.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/console.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/console.cpp.o
 .PHONY : src/io/console.cpp.o
 
 src/io/console.i: src/io/console.cpp.i
@@ -1090,7 +1079,7 @@ src/io/console.i: src/io/console.cpp.i
 
 # target to preprocess a source file
 src/io/console.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/console.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/console.cpp.i
 .PHONY : src/io/console.cpp.i
 
 src/io/console.s: src/io/console.cpp.s
@@ -1099,7 +1088,7 @@ src/io/console.s: src/io/console.cpp.s
 
 # target to generate assembly for a file
 src/io/console.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/console.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/console.cpp.s
 .PHONY : src/io/console.cpp.s
 
 src/io/datastream.o: src/io/datastream.cpp.o
@@ -1108,7 +1097,7 @@ src/io/datastream.o: src/io/datastream.cpp.o
 
 # target to build an object file
 src/io/datastream.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/datastream.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/datastream.cpp.o
 .PHONY : src/io/datastream.cpp.o
 
 src/io/datastream.i: src/io/datastream.cpp.i
@@ -1117,7 +1106,7 @@ src/io/datastream.i: src/io/datastream.cpp.i
 
 # target to preprocess a source file
 src/io/datastream.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/datastream.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/datastream.cpp.i
 .PHONY : src/io/datastream.cpp.i
 
 src/io/datastream.s: src/io/datastream.cpp.s
@@ -1126,7 +1115,7 @@ src/io/datastream.s: src/io/datastream.cpp.s
 
 # target to generate assembly for a file
 src/io/datastream.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/datastream.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/datastream.cpp.s
 .PHONY : src/io/datastream.cpp.s
 
 src/io/fstream.o: src/io/fstream.cpp.o
@@ -1135,7 +1124,7 @@ src/io/fstream.o: src/io/fstream.cpp.o
 
 # target to build an object file
 src/io/fstream.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/fstream.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/fstream.cpp.o
 .PHONY : src/io/fstream.cpp.o
 
 src/io/fstream.i: src/io/fstream.cpp.i
@@ -1144,7 +1133,7 @@ src/io/fstream.i: src/io/fstream.cpp.i
 
 # target to preprocess a source file
 src/io/fstream.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/fstream.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/fstream.cpp.i
 .PHONY : src/io/fstream.cpp.i
 
 src/io/fstream.s: src/io/fstream.cpp.s
@@ -1153,7 +1142,7 @@ src/io/fstream.s: src/io/fstream.cpp.s
 
 # target to generate assembly for a file
 src/io/fstream.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/fstream.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/fstream.cpp.s
 .PHONY : src/io/fstream.cpp.s
 
 src/io/iostream.o: src/io/iostream.cpp.o
@@ -1162,7 +1151,7 @@ src/io/iostream.o: src/io/iostream.cpp.o
 
 # target to build an object file
 src/io/iostream.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/iostream.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/iostream.cpp.o
 .PHONY : src/io/iostream.cpp.o
 
 src/io/iostream.i: src/io/iostream.cpp.i
@@ -1171,7 +1160,7 @@ src/io/iostream.i: src/io/iostream.cpp.i
 
 # target to preprocess a source file
 src/io/iostream.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/iostream.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/iostream.cpp.i
 .PHONY : src/io/iostream.cpp.i
 
 src/io/iostream.s: src/io/iostream.cpp.s
@@ -1180,7 +1169,7 @@ src/io/iostream.s: src/io/iostream.cpp.s
 
 # target to generate assembly for a file
 src/io/iostream.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/iostream.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/iostream.cpp.s
 .PHONY : src/io/iostream.cpp.s
 
 src/io/json.o: src/io/json.cpp.o
@@ -1189,7 +1178,7 @@ src/io/json.o: src/io/json.cpp.o
 
 # target to build an object file
 src/io/json.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/json.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/json.cpp.o
 .PHONY : src/io/json.cpp.o
 
 src/io/json.i: src/io/json.cpp.i
@@ -1198,7 +1187,7 @@ src/io/json.i: src/io/json.cpp.i
 
 # target to preprocess a source file
 src/io/json.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/json.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/json.cpp.i
 .PHONY : src/io/json.cpp.i
 
 src/io/json.s: src/io/json.cpp.s
@@ -1207,7 +1196,7 @@ src/io/json.s: src/io/json.cpp.s
 
 # target to generate assembly for a file
 src/io/json.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/json.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/json.cpp.s
 .PHONY : src/io/json.cpp.s
 
 src/io/sstream.o: src/io/sstream.cpp.o
@@ -1216,7 +1205,7 @@ src/io/sstream.o: src/io/sstream.cpp.o
 
 # target to build an object file
 src/io/sstream.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/sstream.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/sstream.cpp.o
 .PHONY : src/io/sstream.cpp.o
 
 src/io/sstream.i: src/io/sstream.cpp.i
@@ -1225,7 +1214,7 @@ src/io/sstream.i: src/io/sstream.cpp.i
 
 # target to preprocess a source file
 src/io/sstream.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/sstream.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/sstream.cpp.i
 .PHONY : src/io/sstream.cpp.i
 
 src/io/sstream.s: src/io/sstream.cpp.s
@@ -1234,7 +1223,7 @@ src/io/sstream.s: src/io/sstream.cpp.s
 
 # target to generate assembly for a file
 src/io/sstream.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/sstream.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/sstream.cpp.s
 .PHONY : src/io/sstream.cpp.s
 
 src/io/varint.o: src/io/varint.cpp.o
@@ -1243,7 +1232,7 @@ src/io/varint.o: src/io/varint.cpp.o
 
 # target to build an object file
 src/io/varint.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/varint.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/varint.cpp.o
 .PHONY : src/io/varint.cpp.o
 
 src/io/varint.i: src/io/varint.cpp.i
@@ -1252,7 +1241,7 @@ src/io/varint.i: src/io/varint.cpp.i
 
 # target to preprocess a source file
 src/io/varint.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/varint.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/varint.cpp.i
 .PHONY : src/io/varint.cpp.i
 
 src/io/varint.s: src/io/varint.cpp.s
@@ -1261,7 +1250,7 @@ src/io/varint.s: src/io/varint.cpp.s
 
 # target to generate assembly for a file
 src/io/varint.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/varint.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/io/varint.cpp.s
 .PHONY : src/io/varint.cpp.s
 
 src/log/appender.o: src/log/appender.cpp.o
@@ -1270,7 +1259,7 @@ src/log/appender.o: src/log/appender.cpp.o
 
 # target to build an object file
 src/log/appender.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/appender.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/appender.cpp.o
 .PHONY : src/log/appender.cpp.o
 
 src/log/appender.i: src/log/appender.cpp.i
@@ -1279,7 +1268,7 @@ src/log/appender.i: src/log/appender.cpp.i
 
 # target to preprocess a source file
 src/log/appender.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/appender.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/appender.cpp.i
 .PHONY : src/log/appender.cpp.i
 
 src/log/appender.s: src/log/appender.cpp.s
@@ -1288,7 +1277,7 @@ src/log/appender.s: src/log/appender.cpp.s
 
 # target to generate assembly for a file
 src/log/appender.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/appender.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/appender.cpp.s
 .PHONY : src/log/appender.cpp.s
 
 src/log/console_appender.o: src/log/console_appender.cpp.o
@@ -1297,7 +1286,7 @@ src/log/console_appender.o: src/log/console_appender.cpp.o
 
 # target to build an object file
 src/log/console_appender.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/console_appender.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/console_appender.cpp.o
 .PHONY : src/log/console_appender.cpp.o
 
 src/log/console_appender.i: src/log/console_appender.cpp.i
@@ -1306,7 +1295,7 @@ src/log/console_appender.i: src/log/console_appender.cpp.i
 
 # target to preprocess a source file
 src/log/console_appender.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/console_appender.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/console_appender.cpp.i
 .PHONY : src/log/console_appender.cpp.i
 
 src/log/console_appender.s: src/log/console_appender.cpp.s
@@ -1315,7 +1304,7 @@ src/log/console_appender.s: src/log/console_appender.cpp.s
 
 # target to generate assembly for a file
 src/log/console_appender.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/console_appender.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/console_appender.cpp.s
 .PHONY : src/log/console_appender.cpp.s
 
 src/log/file_appender.o: src/log/file_appender.cpp.o
@@ -1324,7 +1313,7 @@ src/log/file_appender.o: src/log/file_appender.cpp.o
 
 # target to build an object file
 src/log/file_appender.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/file_appender.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/file_appender.cpp.o
 .PHONY : src/log/file_appender.cpp.o
 
 src/log/file_appender.i: src/log/file_appender.cpp.i
@@ -1333,7 +1322,7 @@ src/log/file_appender.i: src/log/file_appender.cpp.i
 
 # target to preprocess a source file
 src/log/file_appender.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/file_appender.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/file_appender.cpp.i
 .PHONY : src/log/file_appender.cpp.i
 
 src/log/file_appender.s: src/log/file_appender.cpp.s
@@ -1342,7 +1331,7 @@ src/log/file_appender.s: src/log/file_appender.cpp.s
 
 # target to generate assembly for a file
 src/log/file_appender.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/file_appender.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/file_appender.cpp.s
 .PHONY : src/log/file_appender.cpp.s
 
 src/log/gelf_appender.o: src/log/gelf_appender.cpp.o
@@ -1351,7 +1340,7 @@ src/log/gelf_appender.o: src/log/gelf_appender.cpp.o
 
 # target to build an object file
 src/log/gelf_appender.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/gelf_appender.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/gelf_appender.cpp.o
 .PHONY : src/log/gelf_appender.cpp.o
 
 src/log/gelf_appender.i: src/log/gelf_appender.cpp.i
@@ -1360,7 +1349,7 @@ src/log/gelf_appender.i: src/log/gelf_appender.cpp.i
 
 # target to preprocess a source file
 src/log/gelf_appender.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/gelf_appender.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/gelf_appender.cpp.i
 .PHONY : src/log/gelf_appender.cpp.i
 
 src/log/gelf_appender.s: src/log/gelf_appender.cpp.s
@@ -1369,7 +1358,7 @@ src/log/gelf_appender.s: src/log/gelf_appender.cpp.s
 
 # target to generate assembly for a file
 src/log/gelf_appender.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/gelf_appender.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/gelf_appender.cpp.s
 .PHONY : src/log/gelf_appender.cpp.s
 
 src/log/log_message.o: src/log/log_message.cpp.o
@@ -1378,7 +1367,7 @@ src/log/log_message.o: src/log/log_message.cpp.o
 
 # target to build an object file
 src/log/log_message.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/log_message.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/log_message.cpp.o
 .PHONY : src/log/log_message.cpp.o
 
 src/log/log_message.i: src/log/log_message.cpp.i
@@ -1387,7 +1376,7 @@ src/log/log_message.i: src/log/log_message.cpp.i
 
 # target to preprocess a source file
 src/log/log_message.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/log_message.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/log_message.cpp.i
 .PHONY : src/log/log_message.cpp.i
 
 src/log/log_message.s: src/log/log_message.cpp.s
@@ -1396,7 +1385,7 @@ src/log/log_message.s: src/log/log_message.cpp.s
 
 # target to generate assembly for a file
 src/log/log_message.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/log_message.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/log_message.cpp.s
 .PHONY : src/log/log_message.cpp.s
 
 src/log/logger.o: src/log/logger.cpp.o
@@ -1405,7 +1394,7 @@ src/log/logger.o: src/log/logger.cpp.o
 
 # target to build an object file
 src/log/logger.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/logger.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/logger.cpp.o
 .PHONY : src/log/logger.cpp.o
 
 src/log/logger.i: src/log/logger.cpp.i
@@ -1414,7 +1403,7 @@ src/log/logger.i: src/log/logger.cpp.i
 
 # target to preprocess a source file
 src/log/logger.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/logger.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/logger.cpp.i
 .PHONY : src/log/logger.cpp.i
 
 src/log/logger.s: src/log/logger.cpp.s
@@ -1423,7 +1412,7 @@ src/log/logger.s: src/log/logger.cpp.s
 
 # target to generate assembly for a file
 src/log/logger.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/logger.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/logger.cpp.s
 .PHONY : src/log/logger.cpp.s
 
 src/log/logger_config.o: src/log/logger_config.cpp.o
@@ -1432,7 +1421,7 @@ src/log/logger_config.o: src/log/logger_config.cpp.o
 
 # target to build an object file
 src/log/logger_config.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/logger_config.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/logger_config.cpp.o
 .PHONY : src/log/logger_config.cpp.o
 
 src/log/logger_config.i: src/log/logger_config.cpp.i
@@ -1441,7 +1430,7 @@ src/log/logger_config.i: src/log/logger_config.cpp.i
 
 # target to preprocess a source file
 src/log/logger_config.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/logger_config.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/logger_config.cpp.i
 .PHONY : src/log/logger_config.cpp.i
 
 src/log/logger_config.s: src/log/logger_config.cpp.s
@@ -1450,7 +1439,7 @@ src/log/logger_config.s: src/log/logger_config.cpp.s
 
 # target to generate assembly for a file
 src/log/logger_config.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/logger_config.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/log/logger_config.cpp.s
 .PHONY : src/log/logger_config.cpp.s
 
 src/network/http/http_connection.o: src/network/http/http_connection.cpp.o
@@ -1459,7 +1448,7 @@ src/network/http/http_connection.o: src/network/http/http_connection.cpp.o
 
 # target to build an object file
 src/network/http/http_connection.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/http_connection.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/http_connection.cpp.o
 .PHONY : src/network/http/http_connection.cpp.o
 
 src/network/http/http_connection.i: src/network/http/http_connection.cpp.i
@@ -1468,7 +1457,7 @@ src/network/http/http_connection.i: src/network/http/http_connection.cpp.i
 
 # target to preprocess a source file
 src/network/http/http_connection.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/http_connection.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/http_connection.cpp.i
 .PHONY : src/network/http/http_connection.cpp.i
 
 src/network/http/http_connection.s: src/network/http/http_connection.cpp.s
@@ -1477,7 +1466,7 @@ src/network/http/http_connection.s: src/network/http/http_connection.cpp.s
 
 # target to generate assembly for a file
 src/network/http/http_connection.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/http_connection.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/http_connection.cpp.s
 .PHONY : src/network/http/http_connection.cpp.s
 
 src/network/http/http_server.o: src/network/http/http_server.cpp.o
@@ -1486,7 +1475,7 @@ src/network/http/http_server.o: src/network/http/http_server.cpp.o
 
 # target to build an object file
 src/network/http/http_server.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/http_server.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/http_server.cpp.o
 .PHONY : src/network/http/http_server.cpp.o
 
 src/network/http/http_server.i: src/network/http/http_server.cpp.i
@@ -1495,7 +1484,7 @@ src/network/http/http_server.i: src/network/http/http_server.cpp.i
 
 # target to preprocess a source file
 src/network/http/http_server.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/http_server.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/http_server.cpp.i
 .PHONY : src/network/http/http_server.cpp.i
 
 src/network/http/http_server.s: src/network/http/http_server.cpp.s
@@ -1504,7 +1493,7 @@ src/network/http/http_server.s: src/network/http/http_server.cpp.s
 
 # target to generate assembly for a file
 src/network/http/http_server.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/http_server.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/http_server.cpp.s
 .PHONY : src/network/http/http_server.cpp.s
 
 src/network/http/websocket.o: src/network/http/websocket.cpp.o
@@ -1513,7 +1502,7 @@ src/network/http/websocket.o: src/network/http/websocket.cpp.o
 
 # target to build an object file
 src/network/http/websocket.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/websocket.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/websocket.cpp.o
 .PHONY : src/network/http/websocket.cpp.o
 
 src/network/http/websocket.i: src/network/http/websocket.cpp.i
@@ -1522,7 +1511,7 @@ src/network/http/websocket.i: src/network/http/websocket.cpp.i
 
 # target to preprocess a source file
 src/network/http/websocket.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/websocket.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/websocket.cpp.i
 .PHONY : src/network/http/websocket.cpp.i
 
 src/network/http/websocket.s: src/network/http/websocket.cpp.s
@@ -1531,7 +1520,7 @@ src/network/http/websocket.s: src/network/http/websocket.cpp.s
 
 # target to generate assembly for a file
 src/network/http/websocket.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/websocket.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/http/websocket.cpp.s
 .PHONY : src/network/http/websocket.cpp.s
 
 src/network/ip.o: src/network/ip.cpp.o
@@ -1540,7 +1529,7 @@ src/network/ip.o: src/network/ip.cpp.o
 
 # target to build an object file
 src/network/ip.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/ip.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/ip.cpp.o
 .PHONY : src/network/ip.cpp.o
 
 src/network/ip.i: src/network/ip.cpp.i
@@ -1549,7 +1538,7 @@ src/network/ip.i: src/network/ip.cpp.i
 
 # target to preprocess a source file
 src/network/ip.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/ip.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/ip.cpp.i
 .PHONY : src/network/ip.cpp.i
 
 src/network/ip.s: src/network/ip.cpp.s
@@ -1558,7 +1547,7 @@ src/network/ip.s: src/network/ip.cpp.s
 
 # target to generate assembly for a file
 src/network/ip.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/ip.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/ip.cpp.s
 .PHONY : src/network/ip.cpp.s
 
 src/network/rate_limiting.o: src/network/rate_limiting.cpp.o
@@ -1567,7 +1556,7 @@ src/network/rate_limiting.o: src/network/rate_limiting.cpp.o
 
 # target to build an object file
 src/network/rate_limiting.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/rate_limiting.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/rate_limiting.cpp.o
 .PHONY : src/network/rate_limiting.cpp.o
 
 src/network/rate_limiting.i: src/network/rate_limiting.cpp.i
@@ -1576,7 +1565,7 @@ src/network/rate_limiting.i: src/network/rate_limiting.cpp.i
 
 # target to preprocess a source file
 src/network/rate_limiting.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/rate_limiting.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/rate_limiting.cpp.i
 .PHONY : src/network/rate_limiting.cpp.i
 
 src/network/rate_limiting.s: src/network/rate_limiting.cpp.s
@@ -1585,7 +1574,7 @@ src/network/rate_limiting.s: src/network/rate_limiting.cpp.s
 
 # target to generate assembly for a file
 src/network/rate_limiting.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/rate_limiting.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/rate_limiting.cpp.s
 .PHONY : src/network/rate_limiting.cpp.s
 
 src/network/resolve.o: src/network/resolve.cpp.o
@@ -1594,7 +1583,7 @@ src/network/resolve.o: src/network/resolve.cpp.o
 
 # target to build an object file
 src/network/resolve.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/resolve.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/resolve.cpp.o
 .PHONY : src/network/resolve.cpp.o
 
 src/network/resolve.i: src/network/resolve.cpp.i
@@ -1603,7 +1592,7 @@ src/network/resolve.i: src/network/resolve.cpp.i
 
 # target to preprocess a source file
 src/network/resolve.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/resolve.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/resolve.cpp.i
 .PHONY : src/network/resolve.cpp.i
 
 src/network/resolve.s: src/network/resolve.cpp.s
@@ -1612,7 +1601,7 @@ src/network/resolve.s: src/network/resolve.cpp.s
 
 # target to generate assembly for a file
 src/network/resolve.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/resolve.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/resolve.cpp.s
 .PHONY : src/network/resolve.cpp.s
 
 src/network/tcp_socket.o: src/network/tcp_socket.cpp.o
@@ -1621,7 +1610,7 @@ src/network/tcp_socket.o: src/network/tcp_socket.cpp.o
 
 # target to build an object file
 src/network/tcp_socket.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/tcp_socket.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/tcp_socket.cpp.o
 .PHONY : src/network/tcp_socket.cpp.o
 
 src/network/tcp_socket.i: src/network/tcp_socket.cpp.i
@@ -1630,7 +1619,7 @@ src/network/tcp_socket.i: src/network/tcp_socket.cpp.i
 
 # target to preprocess a source file
 src/network/tcp_socket.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/tcp_socket.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/tcp_socket.cpp.i
 .PHONY : src/network/tcp_socket.cpp.i
 
 src/network/tcp_socket.s: src/network/tcp_socket.cpp.s
@@ -1639,7 +1628,7 @@ src/network/tcp_socket.s: src/network/tcp_socket.cpp.s
 
 # target to generate assembly for a file
 src/network/tcp_socket.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/tcp_socket.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/tcp_socket.cpp.s
 .PHONY : src/network/tcp_socket.cpp.s
 
 src/network/udp_socket.o: src/network/udp_socket.cpp.o
@@ -1648,7 +1637,7 @@ src/network/udp_socket.o: src/network/udp_socket.cpp.o
 
 # target to build an object file
 src/network/udp_socket.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/udp_socket.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/udp_socket.cpp.o
 .PHONY : src/network/udp_socket.cpp.o
 
 src/network/udp_socket.i: src/network/udp_socket.cpp.i
@@ -1657,7 +1646,7 @@ src/network/udp_socket.i: src/network/udp_socket.cpp.i
 
 # target to preprocess a source file
 src/network/udp_socket.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/udp_socket.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/udp_socket.cpp.i
 .PHONY : src/network/udp_socket.cpp.i
 
 src/network/udp_socket.s: src/network/udp_socket.cpp.s
@@ -1666,7 +1655,7 @@ src/network/udp_socket.s: src/network/udp_socket.cpp.s
 
 # target to generate assembly for a file
 src/network/udp_socket.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/udp_socket.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/udp_socket.cpp.s
 .PHONY : src/network/udp_socket.cpp.s
 
 src/network/url.o: src/network/url.cpp.o
@@ -1675,7 +1664,7 @@ src/network/url.o: src/network/url.cpp.o
 
 # target to build an object file
 src/network/url.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/url.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/url.cpp.o
 .PHONY : src/network/url.cpp.o
 
 src/network/url.i: src/network/url.cpp.i
@@ -1684,7 +1673,7 @@ src/network/url.i: src/network/url.cpp.i
 
 # target to preprocess a source file
 src/network/url.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/url.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/url.cpp.i
 .PHONY : src/network/url.cpp.i
 
 src/network/url.s: src/network/url.cpp.s
@@ -1693,7 +1682,7 @@ src/network/url.s: src/network/url.cpp.s
 
 # target to generate assembly for a file
 src/network/url.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/url.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/network/url.cpp.s
 .PHONY : src/network/url.cpp.s
 
 src/real128.o: src/real128.cpp.o
@@ -1702,7 +1691,7 @@ src/real128.o: src/real128.cpp.o
 
 # target to build an object file
 src/real128.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/real128.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/real128.cpp.o
 .PHONY : src/real128.cpp.o
 
 src/real128.i: src/real128.cpp.i
@@ -1711,7 +1700,7 @@ src/real128.i: src/real128.cpp.i
 
 # target to preprocess a source file
 src/real128.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/real128.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/real128.cpp.i
 .PHONY : src/real128.cpp.i
 
 src/real128.s: src/real128.cpp.s
@@ -1720,7 +1709,7 @@ src/real128.s: src/real128.cpp.s
 
 # target to generate assembly for a file
 src/real128.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/real128.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/real128.cpp.s
 .PHONY : src/real128.cpp.s
 
 src/rpc/bstate.o: src/rpc/bstate.cpp.o
@@ -1729,7 +1718,7 @@ src/rpc/bstate.o: src/rpc/bstate.cpp.o
 
 # target to build an object file
 src/rpc/bstate.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/bstate.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/bstate.cpp.o
 .PHONY : src/rpc/bstate.cpp.o
 
 src/rpc/bstate.i: src/rpc/bstate.cpp.i
@@ -1738,7 +1727,7 @@ src/rpc/bstate.i: src/rpc/bstate.cpp.i
 
 # target to preprocess a source file
 src/rpc/bstate.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/bstate.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/bstate.cpp.i
 .PHONY : src/rpc/bstate.cpp.i
 
 src/rpc/bstate.s: src/rpc/bstate.cpp.s
@@ -1747,7 +1736,7 @@ src/rpc/bstate.s: src/rpc/bstate.cpp.s
 
 # target to generate assembly for a file
 src/rpc/bstate.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/bstate.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/bstate.cpp.s
 .PHONY : src/rpc/bstate.cpp.s
 
 src/rpc/cli.o: src/rpc/cli.cpp.o
@@ -1756,7 +1745,7 @@ src/rpc/cli.o: src/rpc/cli.cpp.o
 
 # target to build an object file
 src/rpc/cli.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/cli.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/cli.cpp.o
 .PHONY : src/rpc/cli.cpp.o
 
 src/rpc/cli.i: src/rpc/cli.cpp.i
@@ -1765,7 +1754,7 @@ src/rpc/cli.i: src/rpc/cli.cpp.i
 
 # target to preprocess a source file
 src/rpc/cli.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/cli.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/cli.cpp.i
 .PHONY : src/rpc/cli.cpp.i
 
 src/rpc/cli.s: src/rpc/cli.cpp.s
@@ -1774,7 +1763,7 @@ src/rpc/cli.s: src/rpc/cli.cpp.s
 
 # target to generate assembly for a file
 src/rpc/cli.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/cli.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/cli.cpp.s
 .PHONY : src/rpc/cli.cpp.s
 
 src/rpc/http_api.o: src/rpc/http_api.cpp.o
@@ -1783,7 +1772,7 @@ src/rpc/http_api.o: src/rpc/http_api.cpp.o
 
 # target to build an object file
 src/rpc/http_api.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/http_api.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/http_api.cpp.o
 .PHONY : src/rpc/http_api.cpp.o
 
 src/rpc/http_api.i: src/rpc/http_api.cpp.i
@@ -1792,7 +1781,7 @@ src/rpc/http_api.i: src/rpc/http_api.cpp.i
 
 # target to preprocess a source file
 src/rpc/http_api.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/http_api.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/http_api.cpp.i
 .PHONY : src/rpc/http_api.cpp.i
 
 src/rpc/http_api.s: src/rpc/http_api.cpp.s
@@ -1801,7 +1790,7 @@ src/rpc/http_api.s: src/rpc/http_api.cpp.s
 
 # target to generate assembly for a file
 src/rpc/http_api.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/http_api.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/http_api.cpp.s
 .PHONY : src/rpc/http_api.cpp.s
 
 src/rpc/json_connection.o: src/rpc/json_connection.cpp.o
@@ -1810,7 +1799,7 @@ src/rpc/json_connection.o: src/rpc/json_connection.cpp.o
 
 # target to build an object file
 src/rpc/json_connection.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/json_connection.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/json_connection.cpp.o
 .PHONY : src/rpc/json_connection.cpp.o
 
 src/rpc/json_connection.i: src/rpc/json_connection.cpp.i
@@ -1819,7 +1808,7 @@ src/rpc/json_connection.i: src/rpc/json_connection.cpp.i
 
 # target to preprocess a source file
 src/rpc/json_connection.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/json_connection.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/json_connection.cpp.i
 .PHONY : src/rpc/json_connection.cpp.i
 
 src/rpc/json_connection.s: src/rpc/json_connection.cpp.s
@@ -1828,7 +1817,7 @@ src/rpc/json_connection.s: src/rpc/json_connection.cpp.s
 
 # target to generate assembly for a file
 src/rpc/json_connection.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/json_connection.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/json_connection.cpp.s
 .PHONY : src/rpc/json_connection.cpp.s
 
 src/rpc/state.o: src/rpc/state.cpp.o
@@ -1837,7 +1826,7 @@ src/rpc/state.o: src/rpc/state.cpp.o
 
 # target to build an object file
 src/rpc/state.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/state.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/state.cpp.o
 .PHONY : src/rpc/state.cpp.o
 
 src/rpc/state.i: src/rpc/state.cpp.i
@@ -1846,7 +1835,7 @@ src/rpc/state.i: src/rpc/state.cpp.i
 
 # target to preprocess a source file
 src/rpc/state.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/state.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/state.cpp.i
 .PHONY : src/rpc/state.cpp.i
 
 src/rpc/state.s: src/rpc/state.cpp.s
@@ -1855,7 +1844,7 @@ src/rpc/state.s: src/rpc/state.cpp.s
 
 # target to generate assembly for a file
 src/rpc/state.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/state.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/state.cpp.s
 .PHONY : src/rpc/state.cpp.s
 
 src/rpc/websocket_api.o: src/rpc/websocket_api.cpp.o
@@ -1864,7 +1853,7 @@ src/rpc/websocket_api.o: src/rpc/websocket_api.cpp.o
 
 # target to build an object file
 src/rpc/websocket_api.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/websocket_api.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/websocket_api.cpp.o
 .PHONY : src/rpc/websocket_api.cpp.o
 
 src/rpc/websocket_api.i: src/rpc/websocket_api.cpp.i
@@ -1873,7 +1862,7 @@ src/rpc/websocket_api.i: src/rpc/websocket_api.cpp.i
 
 # target to preprocess a source file
 src/rpc/websocket_api.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/websocket_api.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/websocket_api.cpp.i
 .PHONY : src/rpc/websocket_api.cpp.i
 
 src/rpc/websocket_api.s: src/rpc/websocket_api.cpp.s
@@ -1882,7 +1871,7 @@ src/rpc/websocket_api.s: src/rpc/websocket_api.cpp.s
 
 # target to generate assembly for a file
 src/rpc/websocket_api.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/websocket_api.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/rpc/websocket_api.cpp.s
 .PHONY : src/rpc/websocket_api.cpp.s
 
 src/shared_ptr.o: src/shared_ptr.cpp.o
@@ -1891,7 +1880,7 @@ src/shared_ptr.o: src/shared_ptr.cpp.o
 
 # target to build an object file
 src/shared_ptr.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/shared_ptr.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/shared_ptr.cpp.o
 .PHONY : src/shared_ptr.cpp.o
 
 src/shared_ptr.i: src/shared_ptr.cpp.i
@@ -1900,7 +1889,7 @@ src/shared_ptr.i: src/shared_ptr.cpp.i
 
 # target to preprocess a source file
 src/shared_ptr.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/shared_ptr.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/shared_ptr.cpp.i
 .PHONY : src/shared_ptr.cpp.i
 
 src/shared_ptr.s: src/shared_ptr.cpp.s
@@ -1909,7 +1898,7 @@ src/shared_ptr.s: src/shared_ptr.cpp.s
 
 # target to generate assembly for a file
 src/shared_ptr.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/shared_ptr.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/shared_ptr.cpp.s
 .PHONY : src/shared_ptr.cpp.s
 
 src/string.o: src/string.cpp.o
@@ -1918,7 +1907,7 @@ src/string.o: src/string.cpp.o
 
 # target to build an object file
 src/string.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/string.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/string.cpp.o
 .PHONY : src/string.cpp.o
 
 src/string.i: src/string.cpp.i
@@ -1927,7 +1916,7 @@ src/string.i: src/string.cpp.i
 
 # target to preprocess a source file
 src/string.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/string.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/string.cpp.i
 .PHONY : src/string.cpp.i
 
 src/string.s: src/string.cpp.s
@@ -1936,7 +1925,7 @@ src/string.s: src/string.cpp.s
 
 # target to generate assembly for a file
 src/string.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/string.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/string.cpp.s
 .PHONY : src/string.cpp.s
 
 src/thread/future.o: src/thread/future.cpp.o
@@ -1945,7 +1934,7 @@ src/thread/future.o: src/thread/future.cpp.o
 
 # target to build an object file
 src/thread/future.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/future.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/future.cpp.o
 .PHONY : src/thread/future.cpp.o
 
 src/thread/future.i: src/thread/future.cpp.i
@@ -1954,7 +1943,7 @@ src/thread/future.i: src/thread/future.cpp.i
 
 # target to preprocess a source file
 src/thread/future.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/future.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/future.cpp.i
 .PHONY : src/thread/future.cpp.i
 
 src/thread/future.s: src/thread/future.cpp.s
@@ -1963,7 +1952,7 @@ src/thread/future.s: src/thread/future.cpp.s
 
 # target to generate assembly for a file
 src/thread/future.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/future.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/future.cpp.s
 .PHONY : src/thread/future.cpp.s
 
 src/thread/mutex.o: src/thread/mutex.cpp.o
@@ -1972,7 +1961,7 @@ src/thread/mutex.o: src/thread/mutex.cpp.o
 
 # target to build an object file
 src/thread/mutex.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/mutex.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/mutex.cpp.o
 .PHONY : src/thread/mutex.cpp.o
 
 src/thread/mutex.i: src/thread/mutex.cpp.i
@@ -1981,7 +1970,7 @@ src/thread/mutex.i: src/thread/mutex.cpp.i
 
 # target to preprocess a source file
 src/thread/mutex.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/mutex.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/mutex.cpp.i
 .PHONY : src/thread/mutex.cpp.i
 
 src/thread/mutex.s: src/thread/mutex.cpp.s
@@ -1990,7 +1979,7 @@ src/thread/mutex.s: src/thread/mutex.cpp.s
 
 # target to generate assembly for a file
 src/thread/mutex.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/mutex.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/mutex.cpp.s
 .PHONY : src/thread/mutex.cpp.s
 
 src/thread/non_preemptable_scope_check.o: src/thread/non_preemptable_scope_check.cpp.o
@@ -1999,7 +1988,7 @@ src/thread/non_preemptable_scope_check.o: src/thread/non_preemptable_scope_check
 
 # target to build an object file
 src/thread/non_preemptable_scope_check.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/non_preemptable_scope_check.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/non_preemptable_scope_check.cpp.o
 .PHONY : src/thread/non_preemptable_scope_check.cpp.o
 
 src/thread/non_preemptable_scope_check.i: src/thread/non_preemptable_scope_check.cpp.i
@@ -2008,7 +1997,7 @@ src/thread/non_preemptable_scope_check.i: src/thread/non_preemptable_scope_check
 
 # target to preprocess a source file
 src/thread/non_preemptable_scope_check.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/non_preemptable_scope_check.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/non_preemptable_scope_check.cpp.i
 .PHONY : src/thread/non_preemptable_scope_check.cpp.i
 
 src/thread/non_preemptable_scope_check.s: src/thread/non_preemptable_scope_check.cpp.s
@@ -2017,7 +2006,7 @@ src/thread/non_preemptable_scope_check.s: src/thread/non_preemptable_scope_check
 
 # target to generate assembly for a file
 src/thread/non_preemptable_scope_check.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/non_preemptable_scope_check.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/non_preemptable_scope_check.cpp.s
 .PHONY : src/thread/non_preemptable_scope_check.cpp.s
 
 src/thread/spin_lock.o: src/thread/spin_lock.cpp.o
@@ -2026,7 +2015,7 @@ src/thread/spin_lock.o: src/thread/spin_lock.cpp.o
 
 # target to build an object file
 src/thread/spin_lock.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/spin_lock.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/spin_lock.cpp.o
 .PHONY : src/thread/spin_lock.cpp.o
 
 src/thread/spin_lock.i: src/thread/spin_lock.cpp.i
@@ -2035,7 +2024,7 @@ src/thread/spin_lock.i: src/thread/spin_lock.cpp.i
 
 # target to preprocess a source file
 src/thread/spin_lock.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/spin_lock.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/spin_lock.cpp.i
 .PHONY : src/thread/spin_lock.cpp.i
 
 src/thread/spin_lock.s: src/thread/spin_lock.cpp.s
@@ -2044,7 +2033,7 @@ src/thread/spin_lock.s: src/thread/spin_lock.cpp.s
 
 # target to generate assembly for a file
 src/thread/spin_lock.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/spin_lock.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/spin_lock.cpp.s
 .PHONY : src/thread/spin_lock.cpp.s
 
 src/thread/spin_yield_lock.o: src/thread/spin_yield_lock.cpp.o
@@ -2053,7 +2042,7 @@ src/thread/spin_yield_lock.o: src/thread/spin_yield_lock.cpp.o
 
 # target to build an object file
 src/thread/spin_yield_lock.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/spin_yield_lock.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/spin_yield_lock.cpp.o
 .PHONY : src/thread/spin_yield_lock.cpp.o
 
 src/thread/spin_yield_lock.i: src/thread/spin_yield_lock.cpp.i
@@ -2062,7 +2051,7 @@ src/thread/spin_yield_lock.i: src/thread/spin_yield_lock.cpp.i
 
 # target to preprocess a source file
 src/thread/spin_yield_lock.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/spin_yield_lock.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/spin_yield_lock.cpp.i
 .PHONY : src/thread/spin_yield_lock.cpp.i
 
 src/thread/spin_yield_lock.s: src/thread/spin_yield_lock.cpp.s
@@ -2071,7 +2060,7 @@ src/thread/spin_yield_lock.s: src/thread/spin_yield_lock.cpp.s
 
 # target to generate assembly for a file
 src/thread/spin_yield_lock.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/spin_yield_lock.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/spin_yield_lock.cpp.s
 .PHONY : src/thread/spin_yield_lock.cpp.s
 
 src/thread/task.o: src/thread/task.cpp.o
@@ -2080,7 +2069,7 @@ src/thread/task.o: src/thread/task.cpp.o
 
 # target to build an object file
 src/thread/task.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/task.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/task.cpp.o
 .PHONY : src/thread/task.cpp.o
 
 src/thread/task.i: src/thread/task.cpp.i
@@ -2089,7 +2078,7 @@ src/thread/task.i: src/thread/task.cpp.i
 
 # target to preprocess a source file
 src/thread/task.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/task.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/task.cpp.i
 .PHONY : src/thread/task.cpp.i
 
 src/thread/task.s: src/thread/task.cpp.s
@@ -2098,7 +2087,7 @@ src/thread/task.s: src/thread/task.cpp.s
 
 # target to generate assembly for a file
 src/thread/task.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/task.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/task.cpp.s
 .PHONY : src/thread/task.cpp.s
 
 src/thread/thread.o: src/thread/thread.cpp.o
@@ -2107,7 +2096,7 @@ src/thread/thread.o: src/thread/thread.cpp.o
 
 # target to build an object file
 src/thread/thread.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/thread.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/thread.cpp.o
 .PHONY : src/thread/thread.cpp.o
 
 src/thread/thread.i: src/thread/thread.cpp.i
@@ -2116,7 +2105,7 @@ src/thread/thread.i: src/thread/thread.cpp.i
 
 # target to preprocess a source file
 src/thread/thread.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/thread.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/thread.cpp.i
 .PHONY : src/thread/thread.cpp.i
 
 src/thread/thread.s: src/thread/thread.cpp.s
@@ -2125,7 +2114,7 @@ src/thread/thread.s: src/thread/thread.cpp.s
 
 # target to generate assembly for a file
 src/thread/thread.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/thread.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/thread.cpp.s
 .PHONY : src/thread/thread.cpp.s
 
 src/thread/thread_specific.o: src/thread/thread_specific.cpp.o
@@ -2134,7 +2123,7 @@ src/thread/thread_specific.o: src/thread/thread_specific.cpp.o
 
 # target to build an object file
 src/thread/thread_specific.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/thread_specific.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/thread_specific.cpp.o
 .PHONY : src/thread/thread_specific.cpp.o
 
 src/thread/thread_specific.i: src/thread/thread_specific.cpp.i
@@ -2143,7 +2132,7 @@ src/thread/thread_specific.i: src/thread/thread_specific.cpp.i
 
 # target to preprocess a source file
 src/thread/thread_specific.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/thread_specific.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/thread_specific.cpp.i
 .PHONY : src/thread/thread_specific.cpp.i
 
 src/thread/thread_specific.s: src/thread/thread_specific.cpp.s
@@ -2152,7 +2141,7 @@ src/thread/thread_specific.s: src/thread/thread_specific.cpp.s
 
 # target to generate assembly for a file
 src/thread/thread_specific.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/thread_specific.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/thread/thread_specific.cpp.s
 .PHONY : src/thread/thread_specific.cpp.s
 
 src/time.o: src/time.cpp.o
@@ -2161,7 +2150,7 @@ src/time.o: src/time.cpp.o
 
 # target to build an object file
 src/time.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/time.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/time.cpp.o
 .PHONY : src/time.cpp.o
 
 src/time.i: src/time.cpp.i
@@ -2170,7 +2159,7 @@ src/time.i: src/time.cpp.i
 
 # target to preprocess a source file
 src/time.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/time.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/time.cpp.i
 .PHONY : src/time.cpp.i
 
 src/time.s: src/time.cpp.s
@@ -2179,7 +2168,7 @@ src/time.s: src/time.cpp.s
 
 # target to generate assembly for a file
 src/time.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/time.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/time.cpp.s
 .PHONY : src/time.cpp.s
 
 src/uint128.o: src/uint128.cpp.o
@@ -2188,7 +2177,7 @@ src/uint128.o: src/uint128.cpp.o
 
 # target to build an object file
 src/uint128.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/uint128.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/uint128.cpp.o
 .PHONY : src/uint128.cpp.o
 
 src/uint128.i: src/uint128.cpp.i
@@ -2197,7 +2186,7 @@ src/uint128.i: src/uint128.cpp.i
 
 # target to preprocess a source file
 src/uint128.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/uint128.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/uint128.cpp.i
 .PHONY : src/uint128.cpp.i
 
 src/uint128.s: src/uint128.cpp.s
@@ -2206,7 +2195,7 @@ src/uint128.s: src/uint128.cpp.s
 
 # target to generate assembly for a file
 src/uint128.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/uint128.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/uint128.cpp.s
 .PHONY : src/uint128.cpp.s
 
 src/utf8.o: src/utf8.cpp.o
@@ -2215,7 +2204,7 @@ src/utf8.o: src/utf8.cpp.o
 
 # target to build an object file
 src/utf8.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/utf8.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/utf8.cpp.o
 .PHONY : src/utf8.cpp.o
 
 src/utf8.i: src/utf8.cpp.i
@@ -2224,7 +2213,7 @@ src/utf8.i: src/utf8.cpp.i
 
 # target to preprocess a source file
 src/utf8.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/utf8.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/utf8.cpp.i
 .PHONY : src/utf8.cpp.i
 
 src/utf8.s: src/utf8.cpp.s
@@ -2233,7 +2222,7 @@ src/utf8.s: src/utf8.cpp.s
 
 # target to generate assembly for a file
 src/utf8.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/utf8.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/utf8.cpp.s
 .PHONY : src/utf8.cpp.s
 
 src/variant.o: src/variant.cpp.o
@@ -2242,7 +2231,7 @@ src/variant.o: src/variant.cpp.o
 
 # target to build an object file
 src/variant.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/variant.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/variant.cpp.o
 .PHONY : src/variant.cpp.o
 
 src/variant.i: src/variant.cpp.i
@@ -2251,7 +2240,7 @@ src/variant.i: src/variant.cpp.i
 
 # target to preprocess a source file
 src/variant.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/variant.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/variant.cpp.i
 .PHONY : src/variant.cpp.i
 
 src/variant.s: src/variant.cpp.s
@@ -2260,7 +2249,7 @@ src/variant.s: src/variant.cpp.s
 
 # target to generate assembly for a file
 src/variant.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/variant.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/variant.cpp.s
 .PHONY : src/variant.cpp.s
 
 src/variant_object.o: src/variant_object.cpp.o
@@ -2269,7 +2258,7 @@ src/variant_object.o: src/variant_object.cpp.o
 
 # target to build an object file
 src/variant_object.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/variant_object.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/variant_object.cpp.o
 .PHONY : src/variant_object.cpp.o
 
 src/variant_object.i: src/variant_object.cpp.i
@@ -2278,7 +2267,7 @@ src/variant_object.i: src/variant_object.cpp.i
 
 # target to preprocess a source file
 src/variant_object.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/variant_object.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/variant_object.cpp.i
 .PHONY : src/variant_object.cpp.i
 
 src/variant_object.s: src/variant_object.cpp.s
@@ -2287,7 +2276,7 @@ src/variant_object.s: src/variant_object.cpp.s
 
 # target to generate assembly for a file
 src/variant_object.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/variant_object.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/fc/CMakeFiles/fc.dir/build.make libraries/fc/CMakeFiles/fc.dir/src/variant_object.cpp.s
 .PHONY : src/variant_object.cpp.s
 
 # Help Target
@@ -2299,11 +2288,10 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... project_secp256k1"
 	@echo "... fc"
-	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... edit_cache"
 	@echo "... git_revision.o"
 	@echo "... git_revision.i"
 	@echo "... git_revision.s"
@@ -2549,6 +2537,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

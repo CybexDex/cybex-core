@@ -1,4 +1,4 @@
-# Install script for directory: /root/cybex8/libraries/db
+# Install script for directory: /root/cybex-core/libraries/db
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -33,20 +33,20 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/root/cybex8/libraries/db/libgraphene_db.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/root/cybex-core/libraries/db/libgraphene_db.a")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/graphene/db" TYPE FILE FILES
-    "/root/cybex8/libraries/db/include/graphene/db/index.hpp"
-    "/root/cybex8/libraries/db/include/graphene/db/undo_database.hpp"
-    "/root/cybex8/libraries/db/include/graphene/db/fwd.hpp"
-    "/root/cybex8/libraries/db/include/graphene/db/object_id.hpp"
-    "/root/cybex8/libraries/db/include/graphene/db/object_database.hpp"
-    "/root/cybex8/libraries/db/include/graphene/db/flat_index.hpp"
-    "/root/cybex8/libraries/db/include/graphene/db/generic_index.hpp"
-    "/root/cybex8/libraries/db/include/graphene/db/simple_index.hpp"
-    "/root/cybex8/libraries/db/include/graphene/db/object.hpp"
+    "/root/cybex-core/libraries/db/include/graphene/db/index.hpp"
+    "/root/cybex-core/libraries/db/include/graphene/db/undo_database.hpp"
+    "/root/cybex-core/libraries/db/include/graphene/db/fwd.hpp"
+    "/root/cybex-core/libraries/db/include/graphene/db/object_id.hpp"
+    "/root/cybex-core/libraries/db/include/graphene/db/object_database.hpp"
+    "/root/cybex-core/libraries/db/include/graphene/db/flat_index.hpp"
+    "/root/cybex-core/libraries/db/include/graphene/db/generic_index.hpp"
+    "/root/cybex-core/libraries/db/include/graphene/db/simple_index.hpp"
+    "/root/cybex-core/libraries/db/include/graphene/db/object.hpp"
     )
 endif()
 

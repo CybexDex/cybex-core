@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,28 +78,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -110,6 +88,17 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -124,14 +113,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/libraries/utilities/CMakeFiles/progress.marks
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/utilities/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/libraries/utilities/CMakeFiles/progress.marks
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/utilities/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/utilities/clean
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/utilities/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/utilities/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/utilities/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/utilities/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/utilities/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libraries/utilities/CMakeFiles/graphene_utilities.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/utilities/CMakeFiles/graphene_utilities.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/utilities/CMakeFiles/graphene_utilities.dir/rule
 .PHONY : libraries/utilities/CMakeFiles/graphene_utilities.dir/rule
 
 # Convenience name for target.
@@ -166,7 +155,7 @@ graphene_utilities: libraries/utilities/CMakeFiles/graphene_utilities.dir/rule
 
 # fast build rule for target.
 graphene_utilities/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/build
 .PHONY : graphene_utilities/fast
 
 git_revision.o: git_revision.cpp.o
@@ -175,7 +164,7 @@ git_revision.o: git_revision.cpp.o
 
 # target to build an object file
 git_revision.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.o
 .PHONY : git_revision.cpp.o
 
 git_revision.i: git_revision.cpp.i
@@ -184,7 +173,7 @@ git_revision.i: git_revision.cpp.i
 
 # target to preprocess a source file
 git_revision.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.i
 .PHONY : git_revision.cpp.i
 
 git_revision.s: git_revision.cpp.s
@@ -193,7 +182,7 @@ git_revision.s: git_revision.cpp.s
 
 # target to generate assembly for a file
 git_revision.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/git_revision.cpp.s
 .PHONY : git_revision.cpp.s
 
 key_conversion.o: key_conversion.cpp.o
@@ -202,7 +191,7 @@ key_conversion.o: key_conversion.cpp.o
 
 # target to build an object file
 key_conversion.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.o
 .PHONY : key_conversion.cpp.o
 
 key_conversion.i: key_conversion.cpp.i
@@ -211,7 +200,7 @@ key_conversion.i: key_conversion.cpp.i
 
 # target to preprocess a source file
 key_conversion.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.i
 .PHONY : key_conversion.cpp.i
 
 key_conversion.s: key_conversion.cpp.s
@@ -220,7 +209,7 @@ key_conversion.s: key_conversion.cpp.s
 
 # target to generate assembly for a file
 key_conversion.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/key_conversion.cpp.s
 .PHONY : key_conversion.cpp.s
 
 string_escape.o: string_escape.cpp.o
@@ -229,7 +218,7 @@ string_escape.o: string_escape.cpp.o
 
 # target to build an object file
 string_escape.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.o
 .PHONY : string_escape.cpp.o
 
 string_escape.i: string_escape.cpp.i
@@ -238,7 +227,7 @@ string_escape.i: string_escape.cpp.i
 
 # target to preprocess a source file
 string_escape.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.i
 .PHONY : string_escape.cpp.i
 
 string_escape.s: string_escape.cpp.s
@@ -247,7 +236,7 @@ string_escape.s: string_escape.cpp.s
 
 # target to generate assembly for a file
 string_escape.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/string_escape.cpp.s
 .PHONY : string_escape.cpp.s
 
 tempdir.o: tempdir.cpp.o
@@ -256,7 +245,7 @@ tempdir.o: tempdir.cpp.o
 
 # target to build an object file
 tempdir.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.o
 .PHONY : tempdir.cpp.o
 
 tempdir.i: tempdir.cpp.i
@@ -265,7 +254,7 @@ tempdir.i: tempdir.cpp.i
 
 # target to preprocess a source file
 tempdir.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.i
 .PHONY : tempdir.cpp.i
 
 tempdir.s: tempdir.cpp.s
@@ -274,7 +263,7 @@ tempdir.s: tempdir.cpp.s
 
 # target to generate assembly for a file
 tempdir.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/tempdir.cpp.s
 .PHONY : tempdir.cpp.s
 
 words.o: words.cpp.o
@@ -283,7 +272,7 @@ words.o: words.cpp.o
 
 # target to build an object file
 words.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.o
 .PHONY : words.cpp.o
 
 words.i: words.cpp.i
@@ -292,7 +281,7 @@ words.i: words.cpp.i
 
 # target to preprocess a source file
 words.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.i
 .PHONY : words.cpp.i
 
 words.s: words.cpp.s
@@ -301,7 +290,7 @@ words.s: words.cpp.s
 
 # target to generate assembly for a file
 words.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/utilities/CMakeFiles/graphene_utilities.dir/build.make libraries/utilities/CMakeFiles/graphene_utilities.dir/words.cpp.s
 .PHONY : words.cpp.s
 
 # Help Target
@@ -312,10 +301,9 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... rebuild_cache"
 	@echo "... graphene_utilities"
-	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... git_revision.o"
 	@echo "... git_revision.i"
@@ -343,6 +331,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

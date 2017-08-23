@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,17 +78,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -99,17 +88,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -122,16 +100,27 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/libraries/wallet/CMakeFiles/progress.marks
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/wallet/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/libraries/wallet/CMakeFiles/progress.marks
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/wallet/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/wallet/clean
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/wallet/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/wallet/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/wallet/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/wallet/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/wallet/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libraries/wallet/CMakeFiles/graphene_wallet.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/wallet/CMakeFiles/graphene_wallet.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/wallet/CMakeFiles/graphene_wallet.dir/rule
 .PHONY : libraries/wallet/CMakeFiles/graphene_wallet.dir/rule
 
 # Convenience name for target.
@@ -166,7 +155,7 @@ graphene_wallet: libraries/wallet/CMakeFiles/graphene_wallet.dir/rule
 
 # fast build rule for target.
 graphene_wallet/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/build
 .PHONY : graphene_wallet/fast
 
 api_documentation.o: api_documentation.cpp.o
@@ -175,7 +164,7 @@ api_documentation.o: api_documentation.cpp.o
 
 # target to build an object file
 api_documentation.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.o
 .PHONY : api_documentation.cpp.o
 
 api_documentation.i: api_documentation.cpp.i
@@ -184,7 +173,7 @@ api_documentation.i: api_documentation.cpp.i
 
 # target to preprocess a source file
 api_documentation.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.i
 .PHONY : api_documentation.cpp.i
 
 api_documentation.s: api_documentation.cpp.s
@@ -193,7 +182,7 @@ api_documentation.s: api_documentation.cpp.s
 
 # target to generate assembly for a file
 api_documentation.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/api_documentation.cpp.s
 .PHONY : api_documentation.cpp.s
 
 wallet.o: wallet.cpp.o
@@ -202,7 +191,7 @@ wallet.o: wallet.cpp.o
 
 # target to build an object file
 wallet.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.o
 .PHONY : wallet.cpp.o
 
 wallet.i: wallet.cpp.i
@@ -211,7 +200,7 @@ wallet.i: wallet.cpp.i
 
 # target to preprocess a source file
 wallet.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.i
 .PHONY : wallet.cpp.i
 
 wallet.s: wallet.cpp.s
@@ -220,7 +209,7 @@ wallet.s: wallet.cpp.s
 
 # target to generate assembly for a file
 wallet.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/wallet/CMakeFiles/graphene_wallet.dir/build.make libraries/wallet/CMakeFiles/graphene_wallet.dir/wallet.cpp.s
 .PHONY : wallet.cpp.s
 
 # Help Target
@@ -231,11 +220,10 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... graphene_wallet"
-	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... rebuild_cache"
 	@echo "... api_documentation.o"
 	@echo "... api_documentation.i"
 	@echo "... api_documentation.s"
@@ -253,6 +241,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

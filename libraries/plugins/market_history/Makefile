@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/cybex8
+CMAKE_SOURCE_DIR = /root/cybex-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cybex8
+CMAKE_BINARY_DIR = /root/cybex-core
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,17 +78,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -100,16 +89,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target install/strip
-install/strip/fast: install/strip
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : install/strip/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -124,14 +113,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/cybex8 && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles /root/cybex8/libraries/plugins/market_history/CMakeFiles/progress.marks
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/market_history/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex8/CMakeFiles 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles /root/cybex-core/libraries/plugins/market_history/CMakeFiles/progress.marks
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/market_history/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cybex-core/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/market_history/clean
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/market_history/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/market_history/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/market_history/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/market_history/preinstall
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/market_history/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/rule:
-	cd /root/cybex8 && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/rule
+	cd /root/cybex-core && $(MAKE) -f CMakeFiles/Makefile2 libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/rule
 .PHONY : libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/rule
 
 # Convenience name for target.
@@ -166,7 +155,7 @@ graphene_market_history: libraries/plugins/market_history/CMakeFiles/graphene_ma
 
 # fast build rule for target.
 graphene_market_history/fast:
-	cd /root/cybex8 && $(MAKE) -f libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/build.make libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/build
+	cd /root/cybex-core && $(MAKE) -f libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/build.make libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/build
 .PHONY : graphene_market_history/fast
 
 market_history_plugin.o: market_history_plugin.cpp.o
@@ -175,7 +164,7 @@ market_history_plugin.o: market_history_plugin.cpp.o
 
 # target to build an object file
 market_history_plugin.cpp.o:
-	cd /root/cybex8 && $(MAKE) -f libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/build.make libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.o
+	cd /root/cybex-core && $(MAKE) -f libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/build.make libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.o
 .PHONY : market_history_plugin.cpp.o
 
 market_history_plugin.i: market_history_plugin.cpp.i
@@ -184,7 +173,7 @@ market_history_plugin.i: market_history_plugin.cpp.i
 
 # target to preprocess a source file
 market_history_plugin.cpp.i:
-	cd /root/cybex8 && $(MAKE) -f libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/build.make libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.i
+	cd /root/cybex-core && $(MAKE) -f libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/build.make libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.i
 .PHONY : market_history_plugin.cpp.i
 
 market_history_plugin.s: market_history_plugin.cpp.s
@@ -193,7 +182,7 @@ market_history_plugin.s: market_history_plugin.cpp.s
 
 # target to generate assembly for a file
 market_history_plugin.cpp.s:
-	cd /root/cybex8 && $(MAKE) -f libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/build.make libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.s
+	cd /root/cybex-core && $(MAKE) -f libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/build.make libraries/plugins/market_history/CMakeFiles/graphene_market_history.dir/market_history_plugin.cpp.s
 .PHONY : market_history_plugin.cpp.s
 
 # Help Target
@@ -204,10 +193,9 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... rebuild_cache"
 	@echo "... graphene_market_history"
 	@echo "... install/local"
-	@echo "... install/strip"
+	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... market_history_plugin.o"
 	@echo "... market_history_plugin.i"
@@ -223,6 +211,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/cybex8 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/cybex-core && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

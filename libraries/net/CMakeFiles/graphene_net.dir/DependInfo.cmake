@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/root/cybex8/libraries/net/core_messages.cpp" "/root/cybex8/libraries/net/CMakeFiles/graphene_net.dir/core_messages.cpp.o"
-  "/root/cybex8/libraries/net/message_oriented_connection.cpp" "/root/cybex8/libraries/net/CMakeFiles/graphene_net.dir/message_oriented_connection.cpp.o"
-  "/root/cybex8/libraries/net/node.cpp" "/root/cybex8/libraries/net/CMakeFiles/graphene_net.dir/node.cpp.o"
-  "/root/cybex8/libraries/net/peer_connection.cpp" "/root/cybex8/libraries/net/CMakeFiles/graphene_net.dir/peer_connection.cpp.o"
-  "/root/cybex8/libraries/net/peer_database.cpp" "/root/cybex8/libraries/net/CMakeFiles/graphene_net.dir/peer_database.cpp.o"
-  "/root/cybex8/libraries/net/stcp_socket.cpp" "/root/cybex8/libraries/net/CMakeFiles/graphene_net.dir/stcp_socket.cpp.o"
+  "/root/cybex-core/libraries/net/core_messages.cpp" "/root/cybex-core/libraries/net/CMakeFiles/graphene_net.dir/core_messages.cpp.o"
+  "/root/cybex-core/libraries/net/message_oriented_connection.cpp" "/root/cybex-core/libraries/net/CMakeFiles/graphene_net.dir/message_oriented_connection.cpp.o"
+  "/root/cybex-core/libraries/net/node.cpp" "/root/cybex-core/libraries/net/CMakeFiles/graphene_net.dir/node.cpp.o"
+  "/root/cybex-core/libraries/net/peer_connection.cpp" "/root/cybex-core/libraries/net/CMakeFiles/graphene_net.dir/peer_connection.cpp.o"
+  "/root/cybex-core/libraries/net/peer_database.cpp" "/root/cybex-core/libraries/net/CMakeFiles/graphene_net.dir/peer_database.cpp.o"
+  "/root/cybex-core/libraries/net/stcp_socket.cpp" "/root/cybex-core/libraries/net/CMakeFiles/graphene_net.dir/stcp_socket.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -28,8 +28,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/root/cybex8/libraries/fc/CMakeFiles/fc.dir/DependInfo.cmake"
-  "/root/cybex8/libraries/db/CMakeFiles/graphene_db.dir/DependInfo.cmake"
+  "/root/cybex-core/libraries/fc/CMakeFiles/fc.dir/DependInfo.cmake"
+  "/root/cybex-core/libraries/db/CMakeFiles/graphene_db.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
