@@ -7,12 +7,6 @@ BitShares Core
 * [FAQ](#faq)
 * [License](#license)
 
-cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .
-make
-
-
-
-
 BitShares Core is the BitShares blockchain implementation and command-line interface.
 The web wallet is [BitShares UI](https://github.com/bitshares/bitshares-ui).
 

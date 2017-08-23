@@ -1,2 +1,0 @@
-/usr/bin/ar qc libgraphene_egenesis_none.a  CMakeFiles/graphene_egenesis_none.dir/egenesis_none.cpp.o
-/usr/bin/ranlib libgraphene_egenesis_none.a

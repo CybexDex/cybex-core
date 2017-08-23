@@ -1,2 +1,0 @@
-/usr/bin/ar qc libgraphene_wallet.a  CMakeFiles/graphene_wallet.dir/wallet.cpp.o CMakeFiles/graphene_wallet.dir/api_documentation.cpp.o
-/usr/bin/ranlib libgraphene_wallet.a

@@ -1,1 +1,0 @@
-cmd='/root/cybex-core/libraries/fc/vendor/secp256k1-zkp/configure;--prefix=/root/cybex-core/libraries/fc/vendor/secp256k1-zkp;--with-bignum=no'

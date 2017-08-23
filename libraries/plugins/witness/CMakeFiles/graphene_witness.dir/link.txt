@@ -1,2 +1,0 @@
-/usr/bin/ar qc libgraphene_witness.a  CMakeFiles/graphene_witness.dir/witness.cpp.o
-/usr/bin/ranlib libgraphene_witness.a

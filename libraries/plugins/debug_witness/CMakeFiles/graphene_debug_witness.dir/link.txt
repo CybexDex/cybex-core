@@ -1,2 +1,0 @@
-/usr/bin/ar qc libgraphene_debug_witness.a  CMakeFiles/graphene_debug_witness.dir/debug_api.cpp.o CMakeFiles/graphene_debug_witness.dir/debug_witness.cpp.o
-/usr/bin/ranlib libgraphene_debug_witness.a

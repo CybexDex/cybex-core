@@ -1,2 +1,0 @@
-/usr/bin/ar qc libgraphene_account_history.a  CMakeFiles/graphene_account_history.dir/account_history_plugin.cpp.o
-/usr/bin/ranlib libgraphene_account_history.a
