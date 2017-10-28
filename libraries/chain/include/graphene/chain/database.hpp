@@ -299,6 +299,13 @@ namespace graphene { namespace chain {
           * @param delta Asset ID and amount to adjust balance by
           */
          void adjust_balance(account_id_type account, asset delta);
+         /**
+          * @brief Adjust a particular account's vesting balance in a given asset by a delta
+          * @param account ID of account whose balance should be adjusted
+          * @param delta Asset ID and amount to adjust balance by
+          * @param vp linear vesting policy
+          */
+         void adjust_vesting_balance(account_id_type account, asset delta,struct linear_vesting_policy &vp);
 
          /**
           * @brief Helper to make lazy deposit to CDD VBO.

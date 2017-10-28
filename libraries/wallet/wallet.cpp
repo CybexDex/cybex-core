@@ -708,6 +708,7 @@ public:
    }
 
    vector< signed_transaction > import_balance( string name_or_id, const vector<string>& wif_keys, bool broadcast );
+   vector< balance_object > list_balances( string name_or_id);
 
    bool load_wallet_file(string wallet_filename = "")
    {
@@ -3635,13 +3636,49 @@ void wallet_api::set_password( string password )
    my->_checksum = fc::sha512::hash( password.c_str(), password.size() );
    lock();
 }
-
+vector< balance_object > wallet_api::list_balances( string name_or_id)
+{
+   return my->list_balances( name_or_id);
+}
 vector< signed_transaction > wallet_api::import_balance( string name_or_id, const vector<string>& wif_keys, bool broadcast )
 {
    return my->import_balance( name_or_id, wif_keys, broadcast );
 }
 
 namespace detail {
+vector< balance_object > wallet_api_impl::list_balances( string name_or_id)
+{ try {
+   FC_ASSERT(!is_locked());
+   account_object account = get_account( name_or_id );
+
+
+   vector< address > addrs;
+   for( auto &pub_key : account.active.key_auths)
+   {
+   fc::ecc::public_key pk = pub_key.first.operator fc::ecc::public_key() ;
+   addrs.push_back( pk );
+   addrs.push_back( pts_address( pk, false, 56 ) );
+   addrs.push_back( pts_address( pk, true, 56 ) );
+   addrs.push_back( pts_address( pk, false, 0 ) );
+   addrs.push_back( pts_address( pk, true, 0 ) );
+   }    
+   for( auto &pub_key : account.owner.key_auths)
+   {
+   fc::ecc::public_key pk = pub_key.first.operator fc::ecc::public_key() ;
+   addrs.push_back( pk );
+   addrs.push_back( pts_address( pk, false, 56 ) );
+   addrs.push_back( pts_address( pk, true, 56 ) );
+   addrs.push_back( pts_address( pk, false, 0 ) );
+   addrs.push_back( pts_address( pk, true, 0 ) );
+   }    
+
+   vector< balance_object > balances = _remote_db->get_balance_objects( addrs );
+   wdump((balances));
+   addrs.clear();
+
+   return balances;
+} FC_CAPTURE_AND_RETHROW( (name_or_id) ) }
+  
 
 vector< signed_transaction > wallet_api_impl::import_balance( string name_or_id, const vector<string>& wif_keys, bool broadcast )
 { try {
