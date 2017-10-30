@@ -189,10 +189,13 @@ void_result asset_issue_evaluator::do_apply( const asset_issue_operation& o )
 
    //const asset_object &asset_ = asset_id_type(delta.asset_id.instance.value)(*this);
    const asset_object &asset_ = db().get(delta.asset_id);
-   for( future_extensions sv: asset_.options.extensions)
+
+   if( o.issue_to_account != asset_.issuer)
    {
-       printf("tag:%d",sv.which());
-       if(sv.which()==1) {
+       for( future_extensions sv: asset_.options.extensions)
+       {
+           printf("tag:%d",sv.which());
+           if(sv.which()==1) {
                 cybex_ext_vesting & ext1= sv.get<cybex_ext_vesting>();
                 printf("start:%lu,end:%lu,vesting end:%lu\n",ext1.sell_start,ext1.sell_end,ext1.vesting_end);
                 if(now_secs>ext1.sell_start && now_secs <ext1.sell_end)
@@ -201,6 +204,7 @@ void_result asset_issue_evaluator::do_apply( const asset_issue_operation& o )
                      vp.vesting_duration_seconds =  ext1.vesting_end-now_secs;
                      vesting=true;
                 }
+            }
        }
    }
 
