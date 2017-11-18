@@ -708,6 +708,7 @@ public:
    }
 
    vector< signed_transaction > import_balance( string name_or_id, const vector<string>& wif_keys, bool broadcast );
+   vector< signed_transaction > claim_balance( string name_or_id, const vector<string>& balance_ids, bool broadcast );
    vector< balance_object > list_balances( string name_or_id);
 
    bool load_wallet_file(string wallet_filename = "")
@@ -3640,6 +3641,10 @@ vector< balance_object > wallet_api::list_balances( string name_or_id)
 {
    return my->list_balances( name_or_id);
 }
+vector< signed_transaction > wallet_api::claim_balance( string name_or_id, const vector<string>& balance_ids, bool broadcast )
+{
+   return my->claim_balance( name_or_id, balance_ids, broadcast );
+}
 vector< signed_transaction > wallet_api::import_balance( string name_or_id, const vector<string>& wif_keys, bool broadcast )
 {
    return my->import_balance( name_or_id, wif_keys, broadcast );
@@ -3679,6 +3684,121 @@ vector< balance_object > wallet_api_impl::list_balances( string name_or_id)
    return balances;
 } FC_CAPTURE_AND_RETHROW( (name_or_id) ) }
   
+vector< signed_transaction > wallet_api_impl::claim_balance( string name_or_id, const vector<string>& balance_ids, bool broadcast )
+{ try {
+   FC_ASSERT(!is_locked());
+   const dynamic_global_property_object& dpo = _remote_db->get_dynamic_global_properties();
+   account_object claimer = get_account( name_or_id );
+   uint32_t max_ops_per_tx = 30;
+   map< address, private_key_type > keys;  // local index of address -> private key
+   vector< address > addrs;
+
+   for( auto &pub_key : claimer.owner.key_auths)
+   {
+       fc::ecc::public_key pub = pub_key.first.operator fc::ecc::public_key() ;
+       
+       auto it = _keys.find( pub );
+       if( it != _keys.end() )
+       {
+               fc::optional< fc::ecc::private_key > privkey = wif_to_key( it->second );
+               FC_ASSERT( privkey );
+               addrs.push_back( pub );
+               keys[ addrs.back() ] = *privkey;
+               addrs.push_back( pts_address( pub, false, 56 ) );
+               keys[ addrs.back() ] = *privkey;
+               addrs.push_back( pts_address( pub, true, 56 ) );
+               keys[ addrs.back() ] = *privkey;
+               addrs.push_back( pts_address( pub, false, 0 ) );
+               keys[ addrs.back() ] = *privkey;
+               addrs.push_back( pts_address( pub, true, 0 ) );
+               keys[ addrs.back() ] = *privkey;
+       }
+       else
+       {
+               wlog( "Somehow _keys has no private key for keys public key ${k}", ("k", pub) );
+       }
+   }
+   for( auto &pub_key : claimer.active.key_auths)
+   {
+       fc::ecc::public_key pub = pub_key.first.operator fc::ecc::public_key() ;
+       
+       auto it = _keys.find( pub );
+       if( it != _keys.end() )
+       {
+               fc::optional< fc::ecc::private_key > privkey = wif_to_key( it->second );
+               FC_ASSERT( privkey );
+               addrs.push_back( pub );
+               keys[ addrs.back() ] = *privkey;
+               addrs.push_back( pts_address( pub, false, 56 ) );
+               keys[ addrs.back() ] = *privkey;
+               addrs.push_back( pts_address( pub, true, 56 ) );
+               keys[ addrs.back() ] = *privkey;
+               addrs.push_back( pts_address( pub, false, 0 ) );
+               keys[ addrs.back() ] = *privkey;
+               addrs.push_back( pts_address( pub, true, 0 ) );
+               keys[ addrs.back() ] = *privkey;
+       }
+       else
+       {
+               wlog( "Somehow _keys has no private key for public key ${k}", ("k", pub) );
+       }
+   }
+   vector< balance_object > balances = _remote_db->get_balance_objects( addrs );
+   wdump((balances));
+   addrs.clear();
+
+   struct claim_tx
+   {
+      vector< balance_claim_operation > ops;
+      set< address > addrs;
+   };
+   vector< claim_tx > claim_txs;
+
+   for( const string& id : balance_ids )
+   {
+      
+      balance_claim_operation op;
+      op.deposit_to_account = claimer.id;
+      for( const balance_object& b : balances )
+      {
+         if( ((std::string)b.id) == id )
+         {
+            op.total_claimed = b.available( dpo.time );
+            if( op.total_claimed.amount == 0 )
+               continue;
+            op.balance_to_claim = b.id;
+            op.balance_owner_key = keys[b.owner].get_public_key();
+            if( (claim_txs.empty()) || (claim_txs.back().ops.size() >= max_ops_per_tx) )
+               claim_txs.emplace_back();
+            claim_txs.back().ops.push_back(op);
+            claim_txs.back().addrs.insert(b.owner);
+         }
+      }
+   }
+
+   vector< signed_transaction > result;
+
+   for( const claim_tx& ctx : claim_txs )
+   {
+      signed_transaction tx;
+      tx.operations.reserve( ctx.ops.size() );
+      for( const balance_claim_operation& op : ctx.ops )
+         tx.operations.emplace_back( op );
+      set_operation_fees( tx, _remote_db->get_global_properties().parameters.current_fees );
+      tx.validate();
+      signed_transaction signed_tx = sign_transaction( tx, false );
+      for( const address& addr : ctx.addrs )
+         signed_tx.sign( keys[addr], _chain_id );
+      // if the key for a balance object was the same as a key for the account we're importing it into,
+      // we may end up with duplicate signatures, so remove those
+      boost::erase(signed_tx.signatures, boost::unique<boost::return_found_end>(boost::sort(signed_tx.signatures)));
+      result.push_back( signed_tx );
+      if( broadcast )
+         _remote_net_broadcast->broadcast_transaction(signed_tx);
+   }
+
+   return result;
+} FC_CAPTURE_AND_RETHROW( (name_or_id) ) }
 
 vector< signed_transaction > wallet_api_impl::import_balance( string name_or_id, const vector<string>& wif_keys, bool broadcast )
 { try {

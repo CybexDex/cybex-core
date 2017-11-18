@@ -4,10 +4,14 @@
 namespace graphene { namespace chain {
 
 struct cybex_ext_vesting {
-  uint64_t sell_start,sell_end,vesting_end;
+  uint64_t vesting_period;
 };
 
+struct cybex_ext_swap {
+  string   msg;
+};
 
 } }
 
-FC_REFLECT( graphene::chain::cybex_ext_vesting,(sell_start)(sell_end)(vesting_end) )
+FC_REFLECT( graphene::chain::cybex_ext_vesting,(vesting_period) )
+FC_REFLECT( graphene::chain::cybex_ext_swap,(msg) )

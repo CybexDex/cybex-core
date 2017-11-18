@@ -105,7 +105,7 @@ namespace graphene { namespace chain {
     *  always add new types to a static_variant without breaking backward
     *  compatibility.   
     */
-   typedef static_variant<void_t,cybex_ext_vesting>      future_extensions;
+   typedef static_variant<void_t,cybex_ext_vesting,cybex_ext_swap>      future_extensions;
 
    /**
     *  A flat_set is used to make sure that only one extension of

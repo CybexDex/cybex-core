@@ -197,13 +197,10 @@ void_result asset_issue_evaluator::do_apply( const asset_issue_operation& o )
            printf("tag:%d",sv.which());
            if(sv.which()==1) {
                 cybex_ext_vesting & ext1= sv.get<cybex_ext_vesting>();
-                printf("start:%lu,end:%lu,vesting end:%lu\n",ext1.sell_start,ext1.sell_end,ext1.vesting_end);
-                if(now_secs>ext1.sell_start && now_secs <ext1.sell_end)
-                {
-                     printf("set vesting policy:%lu",ext1.vesting_end);
-                     vp.vesting_duration_seconds =  ext1.vesting_end-now_secs;
-                     vesting=true;
-                }
+                printf("vesting period:%lu\n",ext1.vesting_period);
+                /// Duration of the vesting period, in seconds. Must be greater than 0 and greater than vesting_cliff_seconds.  uint32_t 
+                vp.vesting_duration_seconds =  ext1.vesting_period;
+                vesting=true;
             }
        }
    }
@@ -211,13 +208,11 @@ void_result asset_issue_evaluator::do_apply( const asset_issue_operation& o )
    if(vesting) {
 
       /// This is the time at which funds begin vesting.  fc::time_point_sec
-    vp.begin_timestamp=now;
+        vp.begin_timestamp=now;
       /// No amount may be withdrawn before this many seconds of the vesting period have elapsed.  uint32_t 
-    vp.vesting_cliff_seconds = 0;
-      /// Duration of the vesting period, in seconds. Must be greater than 0 and greater than vesting_cliff_seconds.  uint32_t 
-    vp.vesting_duration_seconds = 0;
+        vp.vesting_cliff_seconds = 0;
       /// The total amount of asset to vest.  share_type 
-    vp.begin_balance=delta.amount.value;
+        vp.begin_balance=delta.amount.value;
         db().adjust_vesting_balance( o.issue_to_account, o.asset_to_issue,vp );
    }
    else {

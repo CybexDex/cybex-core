@@ -589,6 +589,7 @@ void database::init_genesis(const genesis_state_type& genesis_state)
             elog( "Genesis for asset ${aname} is not balanced\n"
                   "   Debt is ${debt}\n"
                   "   Supply is ${supply}\n",
+                  ("aname", it->symbol)
                   ("debt", debt_itr->second)
                   ("supply", supply_itr->second)
                 );
