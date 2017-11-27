@@ -203,6 +203,17 @@ void_result asset_issue_evaluator::do_apply( const asset_issue_operation& o )
                 vesting=true;
             }
        }
+       for( future_extensions sv: o.extensions)
+       {
+           printf("tag:%d",sv.which());
+           if(sv.which()==1) {
+                cybex_ext_vesting & ext1= sv.get<cybex_ext_vesting>();
+                printf("vesting period:%lu\n",ext1.vesting_period);
+                /// Duration of the vesting period, in seconds. Must be greater than 0 and greater than vesting_cliff_seconds.  uint32_t 
+                vp.vesting_duration_seconds =  ext1.vesting_period;
+                vesting=true;
+            }
+       }
    }
 
    if(vesting) {

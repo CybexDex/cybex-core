@@ -101,20 +101,20 @@ void database::adjust_vesting_balance(account_id_type account, asset delta,struc
 
 #endif
 
-   const auto& index = get_index_type<balance_index>().indices().get<by_owner>();
-   const auto& itr = index.find(boost::make_tuple(addr, delta.asset_id));
-   if(itr == index.end())
-   {
+//   const auto& index = get_index_type<balance_index>().indices().get<by_owner>();
+//   const auto& itr = index.find(boost::make_tuple(addr, delta.asset_id));
+//   if(itr == index.end())
+//   {
       create<balance_object>([addr,&delta,vp](balance_object& b) {
          b.owner = addr;
          b.balance = delta;
          b.vesting_policy=vp;
       });
-   } else {
-      modify(*itr, [delta](balance_object& b) {
-         b.balance+=delta;
-      });
-   }
+//   } else {
+//      modify(*itr, [delta](balance_object& b) {
+//         b.balance+=delta;
+//      });
+//   }
 
 #if 0
    auto & index = get_index_type<vesting_balance_index>().indices().get<by_account>();
