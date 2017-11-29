@@ -134,6 +134,8 @@ namespace graphene { namespace chain {
       vesting_balance_object_type,
       worker_object_type,
       balance_object_type,
+      crowdfund_object_type,
+      crowdfund_contract_object_type,
       OBJECT_TYPE_COUNT ///< Sentry value which contains the number of different object types
    };
 
@@ -174,6 +176,8 @@ namespace graphene { namespace chain {
    class vesting_balance_object;
    class worker_object;
    class balance_object;
+   class crowdfund_object;
+   class crowdfund_contract_object;
    class blinded_balance_object;
 
    typedef object_id< protocol_ids, account_object_type,            account_object>               account_id_type;
@@ -190,6 +194,8 @@ namespace graphene { namespace chain {
    typedef object_id< protocol_ids, vesting_balance_object_type,    vesting_balance_object>       vesting_balance_id_type;
    typedef object_id< protocol_ids, worker_object_type,             worker_object>                worker_id_type;
    typedef object_id< protocol_ids, balance_object_type,            balance_object>               balance_id_type;
+   typedef object_id< protocol_ids, crowdfund_object_type,          crowdfund_object>             crowdfund_id_type;
+   typedef object_id< protocol_ids, crowdfund_contract_object_type, crowdfund_contract_object>    crowdfund_contract_id_type;
 
    // implementation types
    class global_property_object;
@@ -339,6 +345,8 @@ FC_REFLECT_ENUM( graphene::chain::object_type,
                  (vesting_balance_object_type)
                  (worker_object_type)
                  (balance_object_type)
+                 (crowdfund_object_type)
+                 (crowdfund_contract_object_type)
                  (OBJECT_TYPE_COUNT)
                )
 FC_REFLECT_ENUM( graphene::chain::impl_object_type,
@@ -390,6 +398,8 @@ FC_REFLECT_TYPENAME( graphene::chain::budget_record_id_type )
 FC_REFLECT_TYPENAME( graphene::chain::special_authority_id_type )
 FC_REFLECT_TYPENAME( graphene::chain::buyback_id_type )
 FC_REFLECT_TYPENAME( graphene::chain::fba_accumulator_id_type )
+FC_REFLECT_TYPENAME( graphene::chain::crowdfund_id_type )
+FC_REFLECT_TYPENAME( graphene::chain::crowdfund_contract_id_type )
 
 FC_REFLECT( graphene::chain::void_t, )
 

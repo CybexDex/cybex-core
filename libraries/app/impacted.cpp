@@ -24,7 +24,7 @@
 
 #include <graphene/chain/protocol/authority.hpp>
 #include <graphene/app/impacted.hpp>
-
+#include <cybex/crowdfund_ops.hpp>
 namespace graphene { namespace app {
 
 using namespace fc;
@@ -201,6 +201,18 @@ struct get_impacted_account_visitor
    void operator()( const fba_distribute_operation& op )
    {
       _impacted.insert( op.account_id );
+   }
+   void operator()( const initiate_crowdfund_operation& op )
+   {
+      _impacted.insert( op.owner );
+   }
+   void operator()( const participate_crowdfund_operation& op )
+   {
+      _impacted.insert( op.buyer );
+   }
+   void operator()( const withdraw_crowdfund_operation& op )
+   {
+      _impacted.insert( op.buyer );
    }
 
 };

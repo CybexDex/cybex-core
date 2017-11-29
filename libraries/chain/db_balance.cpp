@@ -45,6 +45,16 @@ asset database::get_balance(const account_object& owner, const asset_object& ass
 {
    return get_balance(owner.get_id(), asset_obj.get_id());
 }
+void database::set_balance(account_id_type owner, asset asset_obj) 
+{
+   auto& index = get_index_type<account_balance_index>().indices().get<by_account_asset>();
+   auto itr = index.find(boost::make_tuple(owner, asset_obj.asset_id));
+   if( itr != index.end() ){
+      modify(*itr, [asset_obj](account_balance_object& b) {
+         b.balance=asset_obj.amount;
+      });
+   }
+}
 
 string database::to_pretty_string( const asset& a )const
 {

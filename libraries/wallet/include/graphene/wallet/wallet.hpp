@@ -25,7 +25,8 @@
 
 #include <graphene/app/api.hpp>
 #include <graphene/utilities/key_conversion.hpp>
-
+#include <cybex/crowdfund.hpp>
+#include <cybex/crowdfund_contract.hpp>
 using namespace graphene::app;
 using namespace graphene::chain;
 using namespace graphene::utilities;
@@ -659,6 +660,29 @@ class wallet_api
        * by the given account.
        */
       vector< balance_object > list_balances( string account_name_or_id);
+      ////////////////////////////
+      //   crowdfund            //
+      ////////////////////////////
+      /**
+       * This call will list all crowdfunds owned
+       * by the given account.
+       */
+      vector< crowdfund_object > get_crowdfunds( string account_name_or_id);
+      /**
+       * This call will list all crowdfund  contracts owned
+       * by the given account.
+       */
+      vector< crowdfund_contract_object > get_crowdfund_contracts( string account_name_or_id);
+      /**
+       * This call will list a number of crowdfunds 
+       * from a given crowdfund id.
+       */
+      vector< crowdfund_object > list_crowdfunds( string id,uint32_t limit);
+
+      signed_transaction initiate_crowdfund(string name_or_id, string id, uint64_t u,uint64_t t , bool broadcast);
+      signed_transaction participate_crowdfund(string name_or_id, string id, uint64_t valuation,uint64_t cap , bool broadcast);
+      signed_transaction withdraw_crowdfund(string name_or_id, string id, bool broadcast);
+
       /**
        * This call will construct transaction(s) that will claim a list of balances owned
        * by the the given account.
@@ -1713,4 +1737,10 @@ FC_API( graphene::wallet::wallet_api,
         (blind_history)
         (receive_blind_transfer)
         (get_order_book)
+        (get_crowdfunds)
+        (get_crowdfund_contracts)
+        (list_crowdfunds)
+        (initiate_crowdfund)
+        (participate_crowdfund)
+        (withdraw_crowdfund)
       )

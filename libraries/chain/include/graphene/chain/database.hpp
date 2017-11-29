@@ -300,6 +300,10 @@ namespace graphene { namespace chain {
           */
          void adjust_balance(account_id_type account, asset delta);
          /**
+          * set balance of an exiting account balance object.
+          */
+         void set_balance(account_id_type account, asset delta);
+         /**
           * @brief Adjust a particular account's vesting balance in a given asset by a delta
           * @param account ID of account whose balance should be adjusted
           * @param delta Asset ID and amount to adjust balance by

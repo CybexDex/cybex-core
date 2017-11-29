@@ -39,7 +39,8 @@
 
 #include <fc/smart_ref_impl.hpp>
 #include <iostream>
-
+#include <cybex/crowdfund.hpp>
+#include <cybex/crowdfund_contract.hpp>
 using namespace graphene::chain;
 
 namespace detail_ns {

@@ -39,6 +39,8 @@
 #include <cfenv>
 #include <iostream>
 
+#include <cybex/crowdfund.hpp>
+#include <cybex/crowdfund_contract.hpp>
 #define GET_REQUIRED_FEES_MAX_RECURSION 4
 
 typedef std::map< std::pair<graphene::chain::asset_id_type, graphene::chain::asset_id_type>, std::vector<fc::variant> > market_queue_type;
@@ -95,6 +97,10 @@ class database_api_impl : public std::enable_shared_from_this<database_api_impl>
       vector<balance_object> get_balance_objects( const vector<address>& addrs )const;
       vector<asset> get_vested_balances( const vector<balance_id_type>& objs )const;
       vector<vesting_balance_object> get_vesting_balances( account_id_type account_id )const;
+      // crowdfund
+      vector<crowdfund_object> get_crowdfund_objects( const account_id_type id  )const;
+      vector<crowdfund_contract_object> get_crowdfund_contract_objects( const account_id_type id )const;
+      vector<crowdfund_object> list_crowdfund_objects( const crowdfund_id_type id,uint32_t limit )const;
 
       // Assets
       vector<optional<asset_object>> get_assets(const vector<asset_id_type>& asset_ids)const;
@@ -867,6 +873,82 @@ vector<balance_object> database_api_impl::get_balance_objects( const vector<addr
    }
    FC_CAPTURE_AND_RETHROW( (addrs) )
 }
+vector<crowdfund_contract_object> database_api::get_crowdfund_contract_objects( const account_id_type id )const
+{
+   return my->get_crowdfund_contract_objects( id );
+}
+vector<crowdfund_contract_object> database_api_impl::get_crowdfund_contract_objects( const account_id_type id )const
+{
+   try
+   {
+      const auto& crowdfund_contract_idx = _db.get_index_type<crowdfund_contract_index>();
+      const auto& by_owner_idx = crowdfund_contract_idx.indices().get<by_owner>();
+
+      vector<crowdfund_contract_object> result;
+      
+         
+         auto itr = by_owner_idx.lower_bound( boost::make_tuple( id, crowdfund_id_type(0) ) );
+         while( itr != by_owner_idx.end() && itr->owner == id )
+         {
+            result.push_back( *itr );
+            ++itr;
+         }
+      return result;
+   }
+   FC_CAPTURE_AND_RETHROW( (id) )
+}
+vector<crowdfund_object> database_api::get_crowdfund_objects( const  account_id_type id)const
+{
+   return my->get_crowdfund_objects( id );
+}
+vector<crowdfund_object> database_api_impl::get_crowdfund_objects( const account_id_type id )const
+{
+   try
+   {
+      const auto& crowdfund_idx = _db.get_index_type<crowdfund_index>();
+      const auto& by_owner_idx = crowdfund_idx.indices().get<by_owner>();
+
+      vector<crowdfund_object> result;
+      
+         
+         auto itr = by_owner_idx.lower_bound( boost::make_tuple( id, asset_id_type(0) ) );
+         while( itr != by_owner_idx.end() && itr->owner == id )
+         {
+            result.push_back( *itr );
+            ++itr;
+         }
+      return result;
+   }
+   FC_CAPTURE_AND_RETHROW( (id) )
+}
+vector<crowdfund_object> database_api::list_crowdfund_objects( const crowdfund_id_type id,uint32_t limits)const
+{
+   return my->list_crowdfund_objects( id,limits );
+}
+vector<crowdfund_object> database_api_impl::list_crowdfund_objects( const crowdfund_id_type  id,uint32_t limit )const
+{
+   try
+   {
+      const auto& crowdfund_idx = _db.get_index_type<crowdfund_index>();
+      const auto& by_id_idx = crowdfund_idx.indices().get<by_id>();
+
+      vector<crowdfund_object> result;
+      
+
+           
+      {
+         auto itr = by_id_idx.lower_bound(id);
+         while( itr != by_id_idx.end() && limit )
+         {
+            result.push_back( *itr );
+            ++itr;
+            --limit;
+         }
+      }
+      return result;
+   }
+   FC_CAPTURE_AND_RETHROW( (id) )
+}
 
 vector<asset> database_api::get_vested_balances( const vector<balance_id_type>& objs )const
 {
@@ -977,7 +1059,7 @@ vector<optional<asset_object>> database_api_impl::lookup_asset_symbols(const vec
    });
    return result;
 }
-
+ 
 //////////////////////////////////////////////////////////////////////
 //                                                                  //
 // Markets / feeds                                                  //

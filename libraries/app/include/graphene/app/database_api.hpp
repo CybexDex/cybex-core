@@ -305,6 +305,15 @@ class database_api
        * @brief Get the total number of accounts registered with the blockchain
        */
       uint64_t get_account_count()const;
+      ///////////////////
+      //  crowdfund    //
+      ///////////////////
+      /** @return all crowdfund  objects for an account  */
+      vector<crowdfund_object> get_crowdfund_objects( const account_id_type account_id)const;
+
+      vector<crowdfund_object> list_crowdfund_objects( const crowdfund_id_type id,uint32_t limit)const;
+      /** @return all crowdfund contract  objects for a set of addresses */
+      vector<crowdfund_contract_object> get_crowdfund_contract_objects( const account_id_type account_id )const;
 
       ////////////
       // Assets //
@@ -627,6 +636,11 @@ FC_API(graphene::app::database_api,
    (get_balance_objects)
    (get_vested_balances)
    (get_vesting_balances)
+
+   // crowdfund
+   (list_crowdfund_objects)
+   (get_crowdfund_contract_objects)
+   (get_crowdfund_objects)
 
    // Assets
    (get_assets)

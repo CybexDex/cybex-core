@@ -39,6 +39,8 @@
 #include <graphene/chain/protocol/witness.hpp>
 #include <graphene/chain/protocol/worker.hpp>
 
+#include <cybex/crowdfund_ops.hpp>
+
 namespace graphene { namespace chain {
 
    /**
@@ -91,7 +93,10 @@ namespace graphene { namespace chain {
             transfer_from_blind_operation,
             asset_settle_cancel_operation,  // VIRTUAL
             asset_claim_fees_operation,
-            fba_distribute_operation        // VIRTUAL
+            fba_distribute_operation,        // VIRTUAL
+            initiate_crowdfund_operation,
+            participate_crowdfund_operation,
+            withdraw_crowdfund_operation
          > operation;
 
    /// @} // operations group

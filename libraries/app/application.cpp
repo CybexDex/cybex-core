@@ -57,6 +57,8 @@
 #include <fc/log/logger_config.hpp>
 
 #include <boost/range/adaptor/reversed.hpp>
+#include <cybex/crowdfund.hpp>
+#include <cybex/crowdfund_contract.hpp>
 
 namespace graphene { namespace app {
 using net::item_hash_t;

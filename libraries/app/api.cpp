@@ -41,6 +41,9 @@
 #include <fc/smart_ref_impl.hpp>
 #include <fc/thread/future.hpp>
 
+#include <cybex/crowdfund.hpp>
+#include <cybex/crowdfund_contract.hpp>
+
 namespace graphene { namespace app {
 
     login_api::login_api(application& a)
@@ -347,6 +350,12 @@ namespace graphene { namespace app {
                result.push_back( aobj->worker_account );
                break;
             } case balance_object_type:{
+               /** these are free from any accounts */
+               break;
+            } case crowdfund_object_type:{
+               /** these are free from any accounts */
+               break;
+            } case crowdfund_contract_object_type:{
                /** these are free from any accounts */
                break;
             }

@@ -185,6 +185,18 @@ struct get_impacted_account_visitor
    {
       _impacted.insert( op.account_id );
    }
+   void operator()( const initiate_crowdfund_operation& op )
+   {
+      _impacted.insert( op.owner );
+   }
+   void operator()( const participate_crowdfund_operation& op )
+   {
+      _impacted.insert( op.buyer );
+   }
+   void operator()( const withdraw_crowdfund_operation& op )
+   {
+      _impacted.insert( op.buyer );
+   }
 
 };
 
@@ -272,6 +284,12 @@ void get_relevant_accounts( const object* obj, flat_set<account_id_type>& accoun
            accounts.insert( aobj->worker_account );
            break;
         } case balance_object_type:{
+           /** these are free from any accounts */
+           break;
+        } case crowdfund_object_type:{
+           /** these are free from any accounts */
+           break;
+        } case crowdfund_contract_object_type:{
            /** these are free from any accounts */
            break;
         }

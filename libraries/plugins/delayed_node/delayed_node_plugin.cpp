@@ -31,7 +31,8 @@
 #include <fc/rpc/websocket_api.hpp>
 #include <fc/api.hpp>
 #include <fc/smart_ref_impl.hpp>
-
+#include <cybex/crowdfund.hpp>
+#include <cybex/crowdfund_contract.hpp>
 
 namespace graphene { namespace delayed_node {
 namespace bpo = boost::program_options;
