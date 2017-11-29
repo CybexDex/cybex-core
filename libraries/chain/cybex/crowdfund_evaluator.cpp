@@ -45,7 +45,7 @@ void_result initiate_crowdfund_evaluator::do_evaluate( const initiate_crowdfund_
    return void_result();
 } FC_CAPTURE_AND_RETHROW( (o) ) }
 
-crowdfund_id_type  initiate_crowdfund_evaluator::do_apply( const initiate_crowdfund_operation& op )
+object_id_type  initiate_crowdfund_evaluator::do_apply( const initiate_crowdfund_operation& op )
 { try {
    fc::time_point_sec now = db().head_block_time();
    uint64_t  now_secs = now.sec_since_epoch();
@@ -62,7 +62,7 @@ crowdfund_id_type  initiate_crowdfund_evaluator::do_apply( const initiate_crowdf
       });
    assert( new_crowdfund.id == next_crowdfund_id );
 
-   return new_crowdfund.id;
+   return (object_id_type)new_crowdfund.id;
 } FC_CAPTURE_AND_RETHROW( (op) ) }
 
 
@@ -90,7 +90,7 @@ void_result participate_crowdfund_evaluator::do_evaluate(const participate_crowd
    return void_result();
 } FC_CAPTURE_AND_RETHROW( (op) ) }
 
-crowdfund_contract_id_type  participate_crowdfund_evaluator::do_apply(const participate_crowdfund_operation& op)
+object_id_type  participate_crowdfund_evaluator::do_apply(const participate_crowdfund_operation& op)
 { try {
    fc::time_point_sec now = db().head_block_time();
    uint64_t  now_secs = now.sec_since_epoch();
@@ -123,7 +123,7 @@ crowdfund_contract_id_type  participate_crowdfund_evaluator::do_apply(const part
    db().adjust_balance( owner.get_id(), -cyb_amount );
    db().adjust_balance( owner.get_id(), b_A_amount );
 
-   return new_crowdfund_contract.id;
+   return (object_id_type)new_crowdfund_contract.id;
 
 
 } FC_CAPTURE_AND_RETHROW( (op) ) }

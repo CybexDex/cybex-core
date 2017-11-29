@@ -34,7 +34,7 @@ namespace graphene { namespace chain {
          typedef initiate_crowdfund_operation operation_type;
 
          void_result do_evaluate( const initiate_crowdfund_operation& o );
-         crowdfund_id_type do_apply( const initiate_crowdfund_operation& o );
+         object_id_type do_apply( const initiate_crowdfund_operation& o );
    };
 
    class participate_crowdfund_evaluator : public evaluator<participate_crowdfund_evaluator>
@@ -42,7 +42,7 @@ namespace graphene { namespace chain {
       public:
          typedef participate_crowdfund_operation operation_type;
          void_result do_evaluate( const participate_crowdfund_operation& o );
-         crowdfund_contract_id_type do_apply( const participate_crowdfund_operation& o );
+         object_id_type do_apply( const participate_crowdfund_operation& o );
 
    };
 
