@@ -53,10 +53,10 @@ namespace graphene { namespace chain {
 
       asset                     fee;
       account_id_type           buyer;
-      share_type                valuation;
-      share_type                cap;
+      int64_t                valuation;
+      int64_t                cap;
       crowdfund_id_type         crowdfund;
-      address                   pubkey;
+      //address                   pubkey;
 
       account_id_type   fee_payer()const { return buyer; }
       void              validate()const;
@@ -83,6 +83,6 @@ namespace graphene { namespace chain {
 FC_REFLECT( graphene::chain::initiate_crowdfund_operation::fee_parameters_type, (fee)(price_per_kbyte) )
 FC_REFLECT( graphene::chain::initiate_crowdfund_operation, (fee)(owner)(asset_id )(t)(u) )
 FC_REFLECT( graphene::chain::participate_crowdfund_operation::fee_parameters_type, (fee)(price_per_kbyte) )
-FC_REFLECT( graphene::chain::participate_crowdfund_operation, (fee)(buyer)(valuation)(cap)(crowdfund)(pubkey) )
+FC_REFLECT( graphene::chain::participate_crowdfund_operation, (fee)(buyer)(valuation)(cap)(crowdfund) )
 FC_REFLECT( graphene::chain::withdraw_crowdfund_operation::fee_parameters_type, (fee)(price_per_kbyte) )
 FC_REFLECT( graphene::chain::withdraw_crowdfund_operation, (fee)(buyer)(crowdfund_contract) )

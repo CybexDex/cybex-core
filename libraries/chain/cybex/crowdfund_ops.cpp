@@ -29,7 +29,7 @@ namespace graphene { namespace chain {
 void initiate_crowdfund_operation::validate()const
 {
    //FC_ASSERT( fee );
-   FC_ASSERT( u>t);
+   FC_ASSERT( u>t,"time lock is bigger than crowd sale duration.");
 }
 void participate_crowdfund_operation::validate()const
 {

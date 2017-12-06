@@ -37,11 +37,14 @@ void_result initiate_crowdfund_evaluator::do_evaluate( const initiate_crowdfund_
 { try {
    const database& d = db();
    const asset_object &a = d.get(o.asset_id);
-   FC_ASSERT( o.owner == a.issuer );
+   FC_ASSERT( o.owner == a.issuer,"only asset issuer can initiate crownfund" );
    FC_ASSERT( !a.is_market_issued(), "Cannot manually issue a market-issued asset." );
 
 
-
+   auto &crowdfund_idx = d.get_index_type<crowdfund_index>().indices().get<by_owner>();
+   auto itr = crowdfund_idx.find(boost::make_tuple(o.owner, o.asset_id));
+   FC_ASSERT( itr == crowdfund_idx.end(),"asset is already on crowd sale." );
+   
    return void_result();
 } FC_CAPTURE_AND_RETHROW( (o) ) }
 
@@ -58,7 +61,8 @@ object_id_type  initiate_crowdfund_evaluator::do_apply( const initiate_crowdfund
          a.t = op.t;
          a.u = op.u;
          a.asset_id = op.asset_id;
-         a.begin = now;  
+         a.begin = now; 
+         a.V=0; 
       });
    assert( new_crowdfund.id == next_crowdfund_id );
 
@@ -75,7 +79,11 @@ void_result participate_crowdfund_evaluator::do_evaluate(const participate_crowd
    const account_object& from_account    = op.buyer(d);
    const crowdfund_object &crowdfund = db().get(op.crowdfund);
    const asset_object & crowdfund_asset = db().get(crowdfund.asset_id); 
-   bool insufficient_balance = d.get_balance( from_account, crowdfund_asset ).amount >= op.cap;
+   const asset_object & cyb_asset = db().get(asset_id_type(0)); 
+   
+   FC_ASSERT( op.buyer != crowdfund_asset.issuer,"asset issuer can not participate crownfund" );
+
+   bool insufficient_balance = d.get_balance( from_account, cyb_asset ).amount >= op.valuation;
    FC_ASSERT( insufficient_balance,
                  "Insufficient Balance: ${balance}, '${a}' is unable to buy '${total_buy}'  '${t}'",
                  ("a",from_account.name)
@@ -84,7 +92,8 @@ void_result participate_crowdfund_evaluator::do_evaluate(const participate_crowd
                  ("balance",d.to_pretty_string(d.get_balance(from_account, crowdfund_asset))) );
 
    uint64_t s = (now-crowdfund.begin).to_seconds();
-   FC_ASSERT(s<crowdfund.u);
+
+   FC_ASSERT(s<crowdfund.u,"crowd sale has ended.");
                  
 
    return void_result();
@@ -104,7 +113,7 @@ object_id_type  participate_crowdfund_evaluator::do_apply(const participate_crow
          a.cap       = op.cap;
          a.crowdfund = op.crowdfund;
          a.when      = now;  
-         a.A         = op.pubkey;
+//         a.A         = op.pubkey;
          a.state     = CROWDFUND_STATE_ACTIVE;  
       });
    assert( new_crowdfund_contract.id == next_crowdfund_contract_id );
@@ -122,6 +131,10 @@ object_id_type  participate_crowdfund_evaluator::do_apply(const participate_crow
 
    db().adjust_balance( owner.get_id(), -cyb_amount );
    db().adjust_balance( owner.get_id(), b_A_amount );
+
+   db().modify( crowdfund,[&](crowdfund_object &c) {
+         c.V+= op.valuation;
+   });
 
    return (object_id_type)new_crowdfund_contract.id;
 
@@ -158,14 +171,20 @@ void_result withdraw_crowdfund_evaluator::do_apply(const withdraw_crowdfund_oper
 
     
    asset cyb_amount,b_A_amount;
-   //refunds v(A)·(t−s)/t native tokens back to A 
+
+   //refunds v(A)·(t−s)/t native tokens back to A
+   share_type refund_amount =  contract.valuation.value*(t-s)/t;
+printf("t:%llu,s:%llu,v:%llu,a:%llu\n",t,s,contract.valuation.value,refund_amount.value);  
    cyb_amount.asset_id = asset_id_type(0);
-   cyb_amount.amount = contract.valuation*(t-s)/t;
+   cyb_amount.amount = refund_amount;
 
    //b(A)=v(A)·s/t·p(s + (u−s)/3), 
-   share_type b_A = contract.valuation*s/t*crowdfund.p(s+(u-s)/3);  
+   share_type b_A = contract.valuation.value*s/t*crowdfund.p(s+(u-s)/3);  
    b_A_amount.asset_id= crowdfund.asset_id;
-   b_A_amount.amount.value= b_A.value;// - d.get_balance( creator, crowdfund.asset_id ).amount;  
+   b_A_amount.amount.value= b_A.value;
+
+   // delta of total asset issued.
+   // share_type delta = b_A.value - d.get_balance( creator, crowdfund.asset_id ).amount;  
 
     
    db().adjust_balance( owner.get_id(), cyb_amount );
@@ -174,6 +193,9 @@ void_result withdraw_crowdfund_evaluator::do_apply(const withdraw_crowdfund_oper
    db().modify(contract, [&](crowdfund_contract_object& c) {
          c.state = CROWDFUND_STATE_PERM;
       } );
+   db().modify( crowdfund,[&](crowdfund_object &c) {
+         c.V -=  refund_amount.value;
+   });
    
 
    return void_result();

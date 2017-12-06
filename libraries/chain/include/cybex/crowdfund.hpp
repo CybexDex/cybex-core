@@ -39,6 +39,7 @@ namespace graphene { namespace chain {
          time_point_sec  begin;
          uint64_t        t;
          uint64_t        u;
+         share_type      V;
 
          float p(int64_t s) const {return 1+(u-s)*0.2/u;}
 
@@ -69,4 +70,4 @@ namespace graphene { namespace chain {
 } }
 
 FC_REFLECT_DERIVED( graphene::chain::crowdfund_object, (graphene::db::object),
-                    (owner)(asset_id)(begin)(t) (u))
+                    (owner)(asset_id)(begin)(t) (u)(V))
