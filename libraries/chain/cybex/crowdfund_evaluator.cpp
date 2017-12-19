@@ -51,8 +51,7 @@ void_result initiate_crowdfund_evaluator::do_evaluate( const initiate_crowdfund_
 object_id_type  initiate_crowdfund_evaluator::do_apply( const initiate_crowdfund_operation& op )
 { try {
    fc::time_point_sec now = db().head_block_time();
-   uint64_t  now_secs = now.sec_since_epoch();
-   printf("now:%lu\n",now_secs);
+   
    auto next_crowdfund_id = db().get_index_type<crowdfund_index>().get_next_id();
 
    const crowdfund_object& new_crowdfund =
@@ -62,7 +61,8 @@ object_id_type  initiate_crowdfund_evaluator::do_apply( const initiate_crowdfund
          a.u = op.u;
          a.asset_id = op.asset_id;
          a.begin = now; 
-         a.V=0; 
+         a.V=0;
+         a.state=0; 
       });
    assert( new_crowdfund.id == next_crowdfund_id );
 
@@ -73,8 +73,7 @@ object_id_type  initiate_crowdfund_evaluator::do_apply( const initiate_crowdfund
 void_result participate_crowdfund_evaluator::do_evaluate(const participate_crowdfund_operation& op)
 { try {
    fc::time_point_sec now = db().head_block_time();
-   uint64_t  now_secs = now.sec_since_epoch();
-   printf("now:%lu\n",now_secs);
+   
    const database& d = db();
    const account_object& from_account    = op.buyer(d);
    const crowdfund_object &crowdfund = db().get(op.crowdfund);
@@ -102,8 +101,6 @@ void_result participate_crowdfund_evaluator::do_evaluate(const participate_crowd
 object_id_type  participate_crowdfund_evaluator::do_apply(const participate_crowdfund_operation& op)
 { try {
    fc::time_point_sec now = db().head_block_time();
-   uint64_t  now_secs = now.sec_since_epoch();
-   printf("now:%lu\n",now_secs);
    auto next_crowdfund_contract_id = db().get_index_type<crowdfund_contract_index>().get_next_id();
 
    const crowdfund_contract_object& new_crowdfund_contract =
@@ -159,8 +156,6 @@ void_result withdraw_crowdfund_evaluator::do_apply(const withdraw_crowdfund_oper
    const crowdfund_object  & crowdfund = d.get(contract.crowdfund);
    const account_object &owner = db().get(contract.owner);
    fc::time_point_sec now = db().head_block_time();
-   uint64_t  now_secs = now.sec_since_epoch();
-   printf("now:%lu\n",now_secs);
    FC_ASSERT( now>crowdfund.begin);
 
    uint64_t s = (now-crowdfund.begin).to_seconds();
@@ -174,7 +169,6 @@ void_result withdraw_crowdfund_evaluator::do_apply(const withdraw_crowdfund_oper
 
    //refunds v(A)·(t−s)/t native tokens back to A
    share_type refund_amount =  contract.valuation.value*(t-s)/t;
-printf("t:%llu,s:%llu,v:%llu,a:%llu\n",t,s,contract.valuation.value,refund_amount.value);  
    cyb_amount.asset_id = asset_id_type(0);
    cyb_amount.amount = refund_amount;
 

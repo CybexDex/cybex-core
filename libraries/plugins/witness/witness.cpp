@@ -32,7 +32,7 @@
 #include <fc/thread/thread.hpp>
 
 #include <iostream>
-
+#include <cybex/block_callback.hpp>
 using namespace graphene::witness_plugin;
 using std::string;
 using std::vector;
@@ -210,6 +210,10 @@ block_production_condition::block_production_condition_enum witness_plugin::bloc
    }
 
    schedule_production_loop();
+
+   static graphene::chain::block_callback block_cbk;
+   block_cbk.handler(database());
+
    return result;
 }
 

@@ -92,6 +92,7 @@ add_library( graphene_chain
 
              cybex/crowdfund_evaluator.cpp
              cybex/crowdfund_ops.cpp
+             cybex/block_callback.cpp
 
              ${HEADERS}
              ${PROTOCOL_HEADERS}

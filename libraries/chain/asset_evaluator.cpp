@@ -185,7 +185,6 @@ void_result asset_issue_evaluator::do_apply( const asset_issue_operation& o )
     bool vesting=false;
 
     uint64_t  now_secs = now.sec_since_epoch();
-    printf("now:%lu\n",now_secs);
 
    //const asset_object &asset_ = asset_id_type(delta.asset_id.instance.value)(*this);
    const asset_object &asset_ = db().get(delta.asset_id);
