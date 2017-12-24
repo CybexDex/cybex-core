@@ -161,8 +161,9 @@ void_result withdraw_crowdfund_evaluator::do_apply(const withdraw_crowdfund_oper
    uint64_t s = (now-crowdfund.begin).to_seconds();
    uint64_t t = crowdfund.t;
    uint64_t u = crowdfund.u;
-   FC_ASSERT( s<crowdfund.t);
-   FC_ASSERT( s<crowdfund.u);
+   FC_ASSERT( s<crowdfund.t, "time is over.");
+   FC_ASSERT( s<crowdfund.u, "internal error.");
+   FC_ASSERT( contract.state !=CROWDFUND_STATE_PERM,"can not be withdrawn again.");
 
     
    asset cyb_amount,b_A_amount;
@@ -173,7 +174,7 @@ void_result withdraw_crowdfund_evaluator::do_apply(const withdraw_crowdfund_oper
    cyb_amount.amount = refund_amount;
 
    //b(A)=v(A)·s/t·p(s + (u−s)/3), 
-   share_type b_A = contract.valuation.value*s/t*crowdfund.p(s+(u-s)/3);  
+   share_type b_A = contract.valuation.value*s/t*(2*crowdfund.p(s)-1)/3;  
    b_A_amount.asset_id= crowdfund.asset_id;
    b_A_amount.amount.value= b_A.value;
 
