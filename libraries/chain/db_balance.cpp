@@ -60,7 +60,10 @@ string database::to_pretty_string( const asset& a )const
 {
    return a.asset_id(*this).amount_to_pretty_string(a.amount);
 }
-
+//
+// vesting balance objects of the same asset type should not be merged.
+//  \because they have differnt begin time. 
+//
 void database::adjust_vesting_balance(account_id_type account, asset delta,struct linear_vesting_policy &vp )
 { try {
     
@@ -71,7 +74,6 @@ void database::adjust_vesting_balance(account_id_type account, asset delta,struc
 
    address addr;
 
-#if 1
    FC_ASSERT(acc.owner.key_auths.size()+acc.active.key_auths.size()>0,
           "no ${a}'s keys",
            ("a",account(*this).name));
@@ -90,67 +92,13 @@ void database::adjust_vesting_balance(account_id_type account, asset delta,struc
    //addr =  pts_address( pk, false, 0 ) ;
    //addr =  pts_address( pk, true, 0 ) ;
 
-#else
-    const auto& idx = get_index_type<account_index>();
-    const auto& aidx = dynamic_cast<const primary_index<account_index>&>(idx);
-    const auto& refs = aidx.get_secondary_index<graphene::chain::account_member_index>();
-    auto acc_addr_itr = refs.account_to_address_memberships.begin();
-    for(;acc_addr_itr!=refs.account_to_address_memberships.end();acc_addr_itr++) {
-         auto acc_itr = acc_addr_itr->second.begin();
-         for (; acc_itr!=acc_addr_itr->second.end();acc_itr++){
-               if(account==*acc_itr) break;
-         }
-         if(acc_itr!=acc_addr_itr->second.end()) break;
-    }
-    FC_ASSERT(acc_addr_itr!=refs.account_to_address_memberships.end(),
-          "no ${a}'s address",
-           ("a",account(*this).name));
 
-
-   addr = acc_addr_itr->first;
-
-#endif
-
-//   const auto& index = get_index_type<balance_index>().indices().get<by_owner>();
-//   const auto& itr = index.find(boost::make_tuple(addr, delta.asset_id));
-//   if(itr == index.end())
-//   {
-      create<balance_object>([addr,&delta,vp](balance_object& b) {
+   create<balance_object>([addr,&delta,vp](balance_object& b) {
          b.owner = addr;
          b.balance = delta;
          b.vesting_policy=vp;
       });
-//   } else {
-//      modify(*itr, [delta](balance_object& b) {
-//         b.balance+=delta;
-//      });
-//   }
 
-#if 0
-   auto & index = get_index_type<vesting_balance_index>().indices().get<by_account>();
-
-   const auto & itr = index.find(account);
-
-   if(itr == index.end())
-   {
-
-      FC_ASSERT( delta.amount > 0, "change ${a}'s vesting balance: ${b} is not positive", 
-                 ("a",account(*this).name)
-                 ("b",to_pretty_string(asset(0,delta.asset_id))));
-      create<vesting_balance_object>([account,&delta,vp](vesting_balance_object& b) {
-         b.owner = account;
-         b.balance = delta;
-         b.policy=vp;
-      });
-   } else {
-      FC_ASSERT( delta.amount > 0, "change ${a}'s vesting balance : ${b} is not positive", 
-("a",account(*this).name)
-("b",to_pretty_string(delta)));
-      modify(*itr, [delta](vesting_balance_object& b) {
-         b.balance+=delta;
-      });
-   }  
-#endif
 
 } FC_CAPTURE_AND_RETHROW( (account)(delta) ) }
 
