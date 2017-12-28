@@ -837,7 +837,7 @@ namespace detail {
               return synopsis; // we have no blocks
           }
 
-          if( low_block_num == 0)
+          if( low_block_num == 0|| low_block_num==(uint32_t)-1)
              low_block_num = 1;
 
           // at this point:
