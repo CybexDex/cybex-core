@@ -36,6 +36,7 @@ void block_callback::handler(database &db)
           itr++;                        
       }
 
+      snapshot(db);
 }
 
 

@@ -59,6 +59,7 @@
 #include <boost/range/adaptor/reversed.hpp>
 #include <cybex/crowdfund.hpp>
 #include <cybex/crowdfund_contract.hpp>
+#include <cybex/block_callback.hpp>
 
 namespace graphene { namespace app {
 using net::item_hash_t;
@@ -342,6 +343,12 @@ namespace detail {
                   genesis.initial_timestamp -= genesis.initial_timestamp.sec_since_epoch() % genesis.initial_parameters.block_interval;
                   modified_genesis = true;
                   std::cerr << "Used genesis timestamp:  " << genesis.initial_timestamp.to_iso_string() << " (PLEASE RECORD THIS)\n";
+               }
+               if( _options->count("snapshot") )
+               {
+                  int val = _options->at("snapshot").as<uint32_t>();
+                  if(val>31) block_callback::snapshot_at_block_num=val;
+                  else block_callback::snapshot_in_day=val;
                }
                if( _options->count("dbg-init-key") )
                {
@@ -981,7 +988,7 @@ void application::set_program_options(boost::program_options::options_descriptio
          ("replay-blockchain", "Rebuild object graph by replaying all blocks")
          ("resync-blockchain", "Delete all blocks and re-sync with network from scratch")
          ("force-validate", "Force validation of all transactions")
-         ("genesis-timestamp", bpo::value<uint32_t>(), "Replace timestamp from genesis.json with current time plus this many seconds (experts only!)")
+         ("genesis-timestamp", bpo::value<uint32_t>(), "Replace timestamp from genesis.json with current time plus this many seconds (experts only!)")("snapshot", bpo::value<uint32_t>(), "create snapshot at block or in day")
          ;
    command_line_options.add(_cli_options);
    configuration_file_options.add(_cfg_options);
