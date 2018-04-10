@@ -41,6 +41,7 @@
 
 #include <cybex/crowdfund.hpp>
 #include <cybex/crowdfund_contract.hpp>
+#include <cybex/block_callback.hpp>
 #define GET_REQUIRED_FEES_MAX_RECURSION 4
 
 typedef std::map< std::pair<graphene::chain::asset_id_type, graphene::chain::asset_id_type>, std::vector<fc::variant> > market_queue_type;
@@ -206,6 +207,7 @@ class database_api_impl : public std::enable_shared_from_this<database_api_impl>
       void on_objects_changed(const vector<object_id_type>& ids, const flat_set<account_id_type>& impacted_accounts);
       void on_objects_removed(const vector<object_id_type>& ids, const vector<const object*>& objs, const flat_set<account_id_type>& impacted_accounts);
       void on_applied_block();
+      void snapshot(const string & type, int64_t param) const;
 
       bool _notify_remove_create = false;
       mutable fc::bloom_filter _subscribe_filter;
@@ -872,6 +874,23 @@ vector<balance_object> database_api_impl::get_balance_objects( const vector<addr
       return result;
    }
    FC_CAPTURE_AND_RETHROW( (addrs) )
+}
+
+void database_api_impl::snapshot(const string & type, int64_t param )const
+{
+    
+    if(type=="block")
+    {
+        graphene::chain::block_callback::snapshot_at_block_num=param;
+    }               
+    else if(type=="day")
+    {
+        graphene::chain::block_callback::snapshot_in_day=param;
+    }               
+}
+void  database_api::snapshot( const string & type, int64_t param )const
+{
+   my->snapshot(type,param);
 }
 vector<crowdfund_contract_object> database_api::get_crowdfund_contract_objects( const account_id_type id )const
 {

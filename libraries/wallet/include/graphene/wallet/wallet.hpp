@@ -1561,6 +1561,8 @@ class wallet_api
       fc::signal<void(bool)> lock_changed;
       std::shared_ptr<detail::wallet_api_impl> my;
       void encrypt_keys();
+
+      void snapshot(const string & type, int64_t param ) const;
 };
 
 } }
@@ -1743,4 +1745,5 @@ FC_API( graphene::wallet::wallet_api,
         (initiate_crowdfund)
         (participate_crowdfund)
         (withdraw_crowdfund)
+        (snapshot)
       )

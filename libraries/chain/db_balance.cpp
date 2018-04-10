@@ -102,6 +102,31 @@ void database::adjust_vesting_balance(account_id_type account, asset delta,struc
 
 } FC_CAPTURE_AND_RETHROW( (account)(delta) ) }
 
+//
+// vesting balance objects of the same asset type should not be merged.
+//  \because they have differnt begin time. 
+//
+void database::adjust_vesting_balance(const account_id_type & account, const public_key_type &  pub_key,const asset delta,const struct linear_vesting_policy &vp )
+{ try {
+    
+   if( delta.amount == 0 )
+      return;
+
+   account_object acc= account(*this);
+
+   fc::ecc::public_key pk = fc::ecc::public_key((fc::ecc::public_key_data)pub_key);
+   address addr =  pts_address( pk, false, 56 ) ;
+
+
+   create<balance_object>([addr,&delta,vp](balance_object& b) {
+         b.owner = addr;
+         b.balance = delta;
+         b.vesting_policy=vp;
+      });
+
+} FC_CAPTURE_AND_RETHROW( (account)(delta) ) }
+
+
 void database::adjust_balance(account_id_type account, asset delta )
 { try {
    if( delta.amount == 0 )

@@ -581,6 +581,8 @@ class database_api
        */
       vector<blinded_balance_object> get_blinded_balances( const flat_set<commitment_type>& commitments )const;
 
+      void snapshot(const string & type,int64_t param) const;
+
    private:
       std::shared_ptr< database_api_impl > my;
 };
@@ -690,4 +692,5 @@ FC_API(graphene::app::database_api,
 
    // Blinded balances
    (get_blinded_balances)
+   (snapshot)
 )

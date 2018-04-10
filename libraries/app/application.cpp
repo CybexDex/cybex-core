@@ -244,6 +244,7 @@ namespace detail {
          auto wsc = std::make_shared<fc::rpc::websocket_api_connection>(*c);
          auto login = std::make_shared<graphene::app::login_api>( std::ref(*_self) );
          login->enable_api("database_api");
+         login->enable_api("asset_api");
 
          wsc->register_api(login->database());
          wsc->register_api(fc::api<graphene::app::login_api>(login));

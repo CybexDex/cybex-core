@@ -24,7 +24,7 @@
 #include <graphene/chain/database.hpp>
 #include <graphene/chain/account_object.hpp>
 #include <graphene/chain/proposal_object.hpp>
-
+#include <graphene/chain/committee_member_object.hpp>
 namespace graphene { namespace chain {
 
 bool proposal_object::is_authorized_to_execute(database& db) const
@@ -45,6 +45,49 @@ bool proposal_object::is_authorized_to_execute(database& db) const
    {
       //idump((available_active_approvals));
       //wlog((e.to_detail_string()));
+      return false;
+   }
+
+   bool need_committee_approve=false;
+   for( auto o :  proposed_transaction.operations)
+   {
+       if( o.which()==31)
+       { 
+           need_committee_approve=true;
+           break;
+       }  
+   }
+
+   if( !need_committee_approve)
+   {
+        return true;
+   }
+   int n=0,i=0;
+   
+   std::vector<account_id_type> v;
+   std::set_union (available_active_approvals.begin(),
+          available_active_approvals.end(),
+          available_owner_approvals.begin(),
+          available_owner_approvals.end(),
+          std::inserter(v,v.begin()));
+   const auto& committee_members_by_id = db.get_index_type<committee_member_index>().indices().get<by_id>();
+
+   auto iter_committee_members = committee_members_by_id.begin();
+   while( iter_committee_members != committee_members_by_id.end())
+  {  
+        if( std::find(v.begin(), v.end(), iter_committee_members->committee_member_account) 
+                    !=v.end())
+        {
+             i++;
+        }
+
+
+        n++;
+        iter_committee_members++;
+   }
+   if( i<n/2)
+   {
+      wlog("must be approved by at least ${num}  committee members.",("num",n/2));
       return false;
    }
    return true;

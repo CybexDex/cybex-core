@@ -74,6 +74,7 @@
 #include <cybex/crowdfund.hpp>
 #include <cybex/crowdfund_contract.hpp>
 #include <cybex/crowdfund_ops.hpp>
+
 #ifndef WIN32
 # include <sys/types.h>
 # include <sys/stat.h>
@@ -718,6 +719,7 @@ public:
    signed_transaction initiate_crowdfund(string name_or_id, string id, uint64_t u,uint64_t t , bool broadcast);
    signed_transaction participate_crowdfund(string name_or_id, string id, uint64_t valuation,uint64_t cap , bool broadcast);
    signed_transaction withdraw_crowdfund(string name_or_id, string id, bool broadcast);
+   void snapshot(const std::string&type, int64_t param)const;
 
    bool load_wallet_file(string wallet_filename = "")
    {
@@ -2295,9 +2297,9 @@ public:
       fc::reflector<chain_parameters>::visit(
          fc::from_variant_visitor<chain_parameters>( changed_values, new_params )
          );
-
       committee_member_update_global_parameters_operation update_op;
       update_op.new_parameters = new_params;
+      update_op.proposer = get_account(proposing_account).id;
 
       proposal_create_operation prop_op;
 
@@ -2380,6 +2382,7 @@ public:
 
       committee_member_update_global_parameters_operation update_op;
       update_op.new_parameters = new_params;
+      update_op.proposer = get_account(proposing_account).id;
 
       proposal_create_operation prop_op;
 
@@ -3686,10 +3689,23 @@ signed_transaction  wallet_api::withdraw_crowdfund(string name_or_id, string id,
    return my->withdraw_crowdfund( name_or_id, id, broadcast );
 }
 
+
+
+void wallet_api::snapshot(const std::string&type, int64_t param) const
+{
+     my->snapshot(type,param);
+}
+
 ////////////////////////////
 //  crowdfund             //
 ////////////////////////////
 namespace detail {
+void wallet_api_impl::snapshot(const std::string&type, int64_t param) const
+{ try{
+
+      _remote_db->snapshot(type,param);
+
+} FC_CAPTURE_AND_RETHROW( (type) ) }
 vector< crowdfund_object > wallet_api_impl::get_crowdfunds( string name_or_id)
 { try {
    FC_ASSERT(!is_locked());

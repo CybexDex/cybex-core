@@ -79,7 +79,7 @@ void block_callback::auto_withdraw(database &db,const crowdfund_object & crowdfu
                 && itr->crowdfund==id
                 && itr->cap ==B1);
 
-         printf("V=%lld,k=%d S=%lld,B1=%lld\n",crowdfund.V.value,k,S.value,B1.value);
+         //printf("V=%ld,k=%d S=%ld,B1=%ld\n",crowdfund.V.value,k,S.value,B1.value);
          //
          //  V-S<B1? 
          //  Yes,  kick away and refund all k pariticipators.

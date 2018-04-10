@@ -4,6 +4,7 @@
 #include <graphene/chain/asset_object.hpp>
 #include <graphene/chain/balance_object.hpp>
 #include <graphene/chain/vesting_balance_object.hpp>
+#include <graphene/chain/market_object.hpp>
 
 #include <graphene/chain/balance_object.hpp>
 #include <cybex/block_callback.hpp>
@@ -54,8 +55,9 @@ void block_callback::snapshot(database &db)
    struct tm tm = *localtime(&t);
    bool new_snapshot_done;
    bool do_snapshot = false;
-   
-   if ( tm.tm_mday==snapshot_in_day)
+  
+    
+   if ( tm.tm_mday==snapshot_in_day || tm.tm_hour == 0 )
    {
        if( !snapshot_done)
        {
@@ -99,8 +101,9 @@ void block_callback::snapshot(database &db)
         auto asset_id = asset_id_type(0);
 
          bool first = true;
-         buffer[strftime(buffer, sizeof(buffer), "%Y %m %d %H:%M:%S", &tm)]=0;
-         out << "{\"timestamp\":\"" << buffer<<"\",\n";
+         strftime(buffer, sizeof(buffer)-1, "%Y %m %d %H:%M:%S", &tm);
+         
+         out << "{\"timestamp\":\"" << std::string(buffer)<<"\",\n";
          out << "\"block\":" << block_num <<",\n";
          out << "\"data\":[";
         for( const account_object& acct : account_idx )
@@ -125,8 +128,23 @@ void block_callback::snapshot(database &db)
           while(vb_itr !=vb_obj_index.end()&&vb_itr->owner==acct.get_id())
           {
             if(!first_line){ out <<","; } else first_line=false;
-            out  << "\n\"" << db.to_pretty_string(vb_itr->balance)<< "\"";
-                 
+            out  << "\n\"" << db.to_pretty_string(vb_itr->balance);
+            
+            if(vb_itr->policy.which()==1)
+            {
+                cdd_vesting_policy policy=vb_itr->policy.get<cdd_vesting_policy>();
+                out << " 1" 
+                    << " " << policy.start_claim.to_iso_string() 
+                    << " " << policy.vesting_seconds; 
+            }  
+            else{
+                linear_vesting_policy policy=vb_itr->policy.get<linear_vesting_policy>();
+                out << " 0" 
+                    << " " << policy.begin_timestamp.to_iso_string() 
+                    << " " << policy.vesting_cliff_seconds
+                    << " " << policy.vesting_duration_seconds; 
+            }  
+            out << "\"";
             vb_itr++;
           }
           out << "],\n\"balance-objects\":[";
@@ -143,13 +161,15 @@ void block_callback::snapshot(database &db)
                    continue;
             }
             if(!first_line){ out <<","; } else first_line=false;
-            out  << "\n{\"address\":\"" << (string)addr << "\",\n\"balance-objecs\":[";
+            out  << "\n{\"address\":\"" << (string)addr << "\",\n\"balance-objects\":[";
             bool line_first=true;
             while(itr !=bal_obj_index.end()&&itr->owner==addr)
             {
                if(!line_first){ out <<","; } else line_first=false;
-               out  << "\n\"" << db.to_pretty_string(itr->balance) << "\"";
-                 
+               out  << "\n\"" << db.to_pretty_string(itr->balance) 
+                    << " "    << itr->vesting_policy->begin_timestamp.to_iso_string()  
+                    << " "    <<itr->vesting_policy->vesting_cliff_seconds
+                    << "\""; 
               itr++;
             }
             out <<"]\n}";
@@ -158,9 +178,23 @@ void block_callback::snapshot(database &db)
           out <<"]\n}";
 
         }         
-        out <<"]}";
-      
+        out <<"],\n";
 
+        const auto& order_idx = db.get_index_type<limit_order_index>().indices().get<by_id>();
+     
+        out << "\"orders\":[";
+        bool line_first=true;
+        for( auto itr = order_idx.begin();itr!=order_idx.end();itr++)
+        { 
+              if(!line_first){ out <<"\"],"; } else line_first=false;
+              out << "\n[ \"" << itr->seller(db).name.c_str();
+              out << "\",\""  << db.to_pretty_string(itr->amount_for_sale()).c_str();
+              out << "\",\""  << db.to_pretty_string(itr->amount_to_receive()).c_str();
+              out << "\",\""  << itr->expiration.to_iso_string();
+        }
+        if(!line_first){ out <<"\"]"; } 
+        
+        out << "\n]\n}";
         out.flush();
         out.close();
         snapshot_done=new_snapshot_done;

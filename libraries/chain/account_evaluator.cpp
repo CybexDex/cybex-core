@@ -186,6 +186,7 @@ object_id_type account_create_evaluator::do_apply( const account_create_operatio
             obj.allowed_assets = o.extensions.value.buyback_options->markets;
             obj.allowed_assets->emplace( o.extensions.value.buyback_options->asset_to_buy );
          }
+         obj.level=0;
    });
 
    if( has_small_percent )
