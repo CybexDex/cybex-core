@@ -1,3 +1,11 @@
+please fork from NebulaCybexDex/bitshares-core. it is aiming to be sync with bitshres/bitshares-core
+
+cybex-core had added code  to support different proposal approval policy.
+the original design is on base of threshhold of committe-account active permission setting.
+after the threshhold check, the count of approvals should be at least half of the nuber of committe members.
+
+if you don't need this, please email to hilbertw@cybex.io to get quick information to revert the change.
+
 由于暂时没有.gitignore配置文件，请clone后拷贝文件夹进行编译，需要修改源码时再回到clone的文件夹进行对应修改
 
 
