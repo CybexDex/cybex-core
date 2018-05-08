@@ -42,7 +42,6 @@
 #include <boost/algorithm/string/predicate.hpp>
 #include <boost/algorithm/string/classification.hpp>
 #include <boost/algorithm/string/split.hpp>
-
 #include <iostream>
 #include <fstream>
 
@@ -51,6 +50,8 @@
 #else
 # include <csignal>
 #endif
+
+#include <cybex/common.hpp>
 
 using namespace graphene;
 namespace bpo = boost::program_options;
@@ -160,6 +161,8 @@ int main(int argc, char** argv) {
       bpo::notify(options);
       node->initialize(data_dir, options);
       node->initialize_plugins( options );
+
+      graphene::chain::cybex::init(node->chain_database().get());
 
       node->startup();
       node->startup_plugins();
