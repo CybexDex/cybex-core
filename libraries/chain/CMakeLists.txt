@@ -101,6 +101,7 @@ add_library( graphene_chain
              cybex/maint_callback.cpp 
              cybex/snapshot.cpp 
              cybex/extension_check.cpp 
+             cybex/common.cpp 
 
              ${HEADERS}
              ${PROTOCOL_HEADERS}
