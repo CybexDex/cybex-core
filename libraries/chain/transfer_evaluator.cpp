@@ -27,6 +27,7 @@
 #include <graphene/chain/hardfork.hpp>
 #include <graphene/chain/is_authorized_asset.hpp>
 #include <graphene/chain/vesting_balance_object.hpp>
+#include <cybex/hardfork.hpp>
 
 namespace graphene { namespace chain {
 void_result transfer_evaluator::do_evaluate( const transfer_operation& op )
@@ -56,6 +57,12 @@ void_result transfer_evaluator::do_evaluate( const transfer_operation& op )
                      ("id",op.fee.asset_id)
                      ("asset",fee_asset_type.symbol)
                      ("sym",ext1.fee_asset_sym) );
+      } else if(ext.which()==1) {
+            if ( d.head_block_time()>HARDFORK_CYBEX_1_TIME)
+            {
+                cybex_ext_vesting & ext1= ext.get<cybex_ext_vesting>();
+                cybex_ext_vesting_check(to_account,ext1);
+            }
       }
    }
    try {

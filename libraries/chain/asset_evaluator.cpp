@@ -30,6 +30,7 @@
 #include <graphene/chain/hardfork.hpp>
 #include <graphene/chain/is_authorized_asset.hpp>
 #include <graphene/chain/vesting_balance_object.hpp>
+#include <cybex/hardfork.hpp>
 #include <functional>
 
 namespace graphene { namespace chain {
@@ -168,6 +169,17 @@ void_result asset_issue_evaluator::do_evaluate( const asset_issue_operation& o )
 
    asset_dyn_data = &a.dynamic_asset_data_id(d);
    FC_ASSERT( (asset_dyn_data->current_supply + o.asset_to_issue.amount) <= a.options.max_supply );
+   for( future_extensions sv: o.extensions)
+   {
+        if(sv.which()==1) 
+        {
+            if ( d.head_block_time()>HARDFORK_CYBEX_1_TIME)
+            {
+                cybex_ext_vesting & ext1= sv.get<cybex_ext_vesting>();
+                cybex_ext_vesting_check(*to_account,ext1);
+            }
+        }
+   }
 
    return void_result();
 } FC_CAPTURE_AND_RETHROW( (o) ) }

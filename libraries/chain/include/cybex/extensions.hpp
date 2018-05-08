@@ -31,7 +31,7 @@ struct cybex_ext_xfer_to_many {
   vector<struct cybex_xfer_item>  list;
 };
 
-
+void cybex_ext_vesting_check(const account_object & acc, const cybex_ext_vesting & ext1) ;
 
 } }
 
