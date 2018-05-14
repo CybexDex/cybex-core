@@ -682,6 +682,7 @@ class wallet_api
       signed_transaction initiate_crowdfund(string name_or_id, string id, uint64_t u,uint64_t t , bool broadcast);
       signed_transaction participate_crowdfund(string name_or_id, string id, uint64_t valuation,uint64_t cap , bool broadcast);
       signed_transaction withdraw_crowdfund(string name_or_id, string id, bool broadcast);
+      signed_transaction cancel_vesting(string name_or_id, string id, bool broadcast);
 
       /**
        * This call will construct transaction(s) that will claim a list of balances owned
@@ -1746,4 +1747,5 @@ FC_API( graphene::wallet::wallet_api,
         (participate_crowdfund)
         (withdraw_crowdfund)
         (snapshot)
+        (cancel_vesting)
       )

@@ -72,6 +72,7 @@
 #include <cybex/crowdfund.hpp>
 #include <cybex/crowdfund_contract.hpp>
 #include <cybex/crowdfund_evaluator.hpp>
+#include <cybex/vesting_evaluator.hpp>
 
 namespace graphene { namespace chain {
 
@@ -182,6 +183,7 @@ void database::initialize_evaluators()
    register_evaluator<initiate_crowdfund_evaluator>();
    register_evaluator<participate_crowdfund_evaluator>();
    register_evaluator<withdraw_crowdfund_evaluator>();
+   register_evaluator<cancel_vesting_evaluator>();
 }
 
 void database::initialize_indexes()

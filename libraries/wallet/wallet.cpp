@@ -719,6 +719,7 @@ public:
    signed_transaction initiate_crowdfund(string name_or_id, string id, uint64_t u,uint64_t t , bool broadcast);
    signed_transaction participate_crowdfund(string name_or_id, string id, uint64_t valuation,uint64_t cap , bool broadcast);
    signed_transaction withdraw_crowdfund(string name_or_id, string id, bool broadcast);
+   signed_transaction cancel_vesting(string name_or_id, string id, bool broadcast);
    void snapshot(const std::string&type, int64_t param)const;
 
    bool load_wallet_file(string wallet_filename = "")
@@ -3688,6 +3689,10 @@ signed_transaction  wallet_api::withdraw_crowdfund(string name_or_id, string id,
 {
    return my->withdraw_crowdfund( name_or_id, id, broadcast );
 }
+signed_transaction  wallet_api::cancel_vesting(string name_or_id, string id, bool broadcast)
+{
+   return my->cancel_vesting( name_or_id, id, broadcast );
+}
 
 
 
@@ -3802,6 +3807,28 @@ signed_transaction wallet_api_impl::withdraw_crowdfund(string name_or_id, string
       tx.validate();
       signed_tx = sign_transaction( tx, broadcast );
       
+   }
+   return signed_tx;
+} FC_CAPTURE_AND_RETHROW( (name_or_id) ) }
+
+signed_transaction wallet_api_impl::cancel_vesting(string name_or_id, string id, bool broadcast)
+{ try {
+   FC_ASSERT(!is_locked());
+   account_object account = get_account( name_or_id );
+   auto bal_id = maybe_id<balance_id_type>(id);
+   signed_transaction tx;
+   signed_transaction signed_tx;
+   if(bal_id)
+   {
+      tx.operations.reserve( 1 );
+      cancel_vesting_operation op;
+      op.sender             = account.get_id();
+      op.balance_object     = *bal_id;
+      tx.operations.emplace_back( op );
+      set_operation_fees( tx, _remote_db->get_global_properties().parameters.current_fees );
+      tx.validate();
+      signed_tx = sign_transaction( tx, broadcast );
+
    }
    return signed_tx;
 } FC_CAPTURE_AND_RETHROW( (name_or_id) ) }

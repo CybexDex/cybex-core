@@ -40,6 +40,7 @@
 #include <graphene/chain/protocol/worker.hpp>
 
 #include <cybex/crowdfund_ops.hpp>
+#include <cybex/vesting_ops.hpp>
 
 namespace graphene { namespace chain {
 
@@ -96,7 +97,8 @@ namespace graphene { namespace chain {
             fba_distribute_operation,        // VIRTUAL
             initiate_crowdfund_operation,
             participate_crowdfund_operation,
-            withdraw_crowdfund_operation
+            withdraw_crowdfund_operation,
+            cancel_vesting_operation
          > operation;
 
    /// @} // operations group

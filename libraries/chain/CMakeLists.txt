@@ -102,6 +102,8 @@ add_library( graphene_chain
              cybex/snapshot.cpp 
              cybex/extension_check.cpp 
              cybex/common.cpp 
+             cybex/vesting_evaluator.cpp
+             cybex/vesting_ops.cpp
 
              ${HEADERS}
              ${PROTOCOL_HEADERS}

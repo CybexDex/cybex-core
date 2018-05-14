@@ -198,6 +198,7 @@ struct get_impacted_account_visitor
       _impacted.insert( op.buyer );
    }
 
+   db_notify_cancel_vesting
 };
 
 void operation_get_impacted_accounts( const operation& op, flat_set<account_id_type>& result )
@@ -286,12 +287,16 @@ void get_relevant_accounts( const object* obj, flat_set<account_id_type>& accoun
         } case balance_object_type:{
            /** these are free from any accounts */
            break;
-        } case crowdfund_object_type:{
-           /** these are free from any accounts */
-           break;
-        } case crowdfund_contract_object_type:{
-           /** these are free from any accounts */
-           break;
+        } case crowdfund_object_type:{                      
+           const auto& aobj = dynamic_cast<const crowdfund_object*>(obj);
+           assert( aobj != nullptr );                     
+           accounts.insert( aobj->owner );                
+           break;                                         
+        } case crowdfund_contract_object_type:{           
+           const auto& aobj = dynamic_cast<const crowdfund_contract_object*>(obj);
+           assert( aobj != nullptr );                     
+           accounts.insert( aobj->owner );                
+           break;                                         
         }
       }
    }

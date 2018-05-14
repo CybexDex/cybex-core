@@ -25,6 +25,8 @@
 #include <graphene/chain/protocol/authority.hpp>
 #include <graphene/app/impacted.hpp>
 #include <cybex/crowdfund_ops.hpp>
+#include <cybex/vesting_ops.hpp>
+
 namespace graphene { namespace app {
 
 using namespace fc;
@@ -214,7 +216,7 @@ struct get_impacted_account_visitor
    {
       _impacted.insert( op.buyer );
    }
-
+   impact_visit_cancel_vesting
 };
 
 void operation_get_impacted_accounts( const operation& op, flat_set<account_id_type>& result )
