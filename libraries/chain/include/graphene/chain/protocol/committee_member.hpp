@@ -86,9 +86,14 @@ namespace graphene { namespace chain {
 
       asset             fee;
       chain_parameters  new_parameters;
-      account_id_type   proposer;
 
-      account_id_type fee_payer()const { return proposer; }
+///////BEGIN cybex BUG: REMOVE for non cybex chain//////
+      account_id_type   proposer;
+      account_id_type fee_payer()const; 
+///////END  cybex BUG: REMOVE for non cybex chain///////
+///////uncomment the following line for non cybex chain///////
+      //account_id_type fee_payer()const { return account_id_type(); }
+
       void            validate()const;
    };
 

@@ -25,6 +25,8 @@
 #include <graphene/chain/account_object.hpp>
 #include <graphene/chain/proposal_object.hpp>
 #include <graphene/chain/committee_member_object.hpp>
+#include <cybex/hardfork.hpp>
+
 namespace graphene { namespace chain {
 
 bool proposal_object::is_authorized_to_execute(database& db) const
@@ -46,6 +48,11 @@ bool proposal_object::is_authorized_to_execute(database& db) const
       //idump((available_active_approvals));
       //wlog((e.to_detail_string()));
       return false;
+   }
+
+   if(db.head_block_time() >HARDFORK_CYBEX_1_TIME )
+   {
+       return true;
    }
 
    bool need_committee_approve=false;

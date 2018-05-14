@@ -22,6 +22,8 @@
  * THE SOFTWARE.
  */
 #include <graphene/chain/protocol/committee_member.hpp>
+#include <cybex/hardfork.hpp>
+#include <cybex/common.hpp>
 
 namespace graphene { namespace chain {
 
@@ -43,5 +45,14 @@ void committee_member_update_global_parameters_operation::validate() const
    FC_ASSERT( fee.amount >= 0 );
    new_parameters.validate();
 }
-
+///////BEGIN cybex BUG: REMOVE following for non cybex chain//////
+account_id_type committee_member_update_global_parameters_operation::fee_payer()const
+{
+           const database & d=cybex::database();
+           if ((&d)!=NULL &&  d.head_block_time() > HARDFORK_CYBEX_1_TIME )
+              return account_id_type();
+           else
+              return proposer;
+}
+///////END cybex BUG: ////////////////////////////////////////////
 } } // graphene::chain
